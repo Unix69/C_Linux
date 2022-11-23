@@ -1,0 +1,13 @@
+-rw-------  1 gianluca gianluca  4184 dic  1 10:51 .bash_history
+-rw-r--r--  1 gianluca gianluca   220 ott 16 16:11 .bash_logout
+-rw-r--r--  1 gianluca gianluca  3637 ott 16 16:11 .bashrc
+-rw-r--r--  1 gianluca gianluca    26 ott 29 15:35 .dmrc
+-rw-rw-r--  1 gianluca gianluca     0 dic  1 11:07 lista.txt
+-rw-r--r--  1 gianluca gianluca   675 ott 16 16:11 .profile
+-rw-------  1 gianluca gianluca 12288 nov 24 14:11 .swp
+-rw-------  1 gianluca gianluca    50 dic  1 09:40 .Xauthority
+-rw-r--r--  1 gianluca gianluca    14 nov  1  2013 .xscreensaver
+-rw-------  1 gianluca gianluca   111 dic  1 09:40 .xsession-errors
+-rw-------  1 gianluca gianluca   224 nov 24 14:15 .xsession-errors.old
+banana
+hgbbbewa
