@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bug_187',['BUG',['../md_Version_BUG.html',1,'']]]
+  ['issue_5ftemplate_137',['ISSUE_TEMPLATE',['../md_ISSUE_TEMPLATE.html',1,'']]]
 ];
