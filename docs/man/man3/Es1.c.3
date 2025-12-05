@@ -1,0 +1,138 @@
+.TH "src/C-Unix-STD-Explore-File-Directories/Es1.c" 3 "Fri Dec 5 2025" "CLinux" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/C-Unix-STD-Explore-File-Directories/Es1.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBN\fP   100"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfunzione\fP (char *)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define N   100"
+
+.PP
+Definition at line 8 of file Es1\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void funzione (char * percorso)"
+
+.PP
+Definition at line 36 of file Es1\&.c\&.
+.PP
+.nf
+37 {
+38     struct dirent *dirp;
+39     int i=0;
+40     DIR *dp;
+41     struct stat statbuf;
+42     char fullName[N];
+43     //Di ogni variabile ne serve una per ogni directory
+44 
+45     if ((dp=opendir(percorso))==NULL)
+46     {
+47         fprintf(stderr, "Errore nell'apertura if\n");
+48         return (-3);
+49     }
+50 
+51     while ( (dirp = readdir(dp)) != NULL)
+52     {
+53         //dirp->d_name è il nome del file nella cartella
+54         if(strcmp(dirp->d_name, "\&.")!=0 && strcmp(dirp->d_name, "\&.\&.")!=0)
+55         {
+56             sprintf (fullName, "%s/%s", percorso, dirp->d_name);
+57             if (lstat(fullName, &statbuf) < 0 )
+58             {
+59                 fprintf (stderr, "Error\&.\n"); exit (1);
+60             }
+61             //Stampa nome file se non è una cartella
+62             if (S_ISDIR(statbuf\&.st_mode) == 0)
+63             {
+64                 fprintf (stdout, "File %d: %s\n", i, fullName);
+65             }
+66             //Stampa nome cartella e ricorri
+67             else
+68             {
+69                 fprintf (stdout, "Dir %d: %s\n", i, fullName);
+70                 funzione(fullName);
+71             }
+72             i++;
+73         }
+74     }
+75 
+76     if (closedir(dp) < 0)
+77     {
+78         fprintf (stderr, "Error\&.\n"); exit (1);
+79     }
+80     return;
+81 }
+.fi
+.PP
+References N\&.
+.PP
+Referenced by main()\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 12 of file Es1\&.c\&.
+.PP
+.nf
+13 {
+14 
+15     struct stat statbuf;
+16     char fullName[N];
+17 
+18     //Controllo errori prima di passare il percorso alla funzione
+19     if (lstat(argv[1], &statbuf)<0)
+20     {
+21         fprintf(stderr, "Errore nel primo if\n");
+22         return (-1);
+23     }
+24     //Controllo che sia una directory
+25     if (S_ISDIR(statbuf\&.st_mode)==0)
+26     {
+27         fprintf(stderr, "Errore nel secondo if\n");
+28         return (-2);
+29     }
+30 
+31     funzione(argv[1]);
+32 
+33     return 0;
+34 }
+.fi
+.PP
+References funzione(), and N\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CLinux from the source code\&.

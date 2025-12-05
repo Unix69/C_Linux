@@ -1,0 +1,62 @@
+\hypertarget{C-Unix-STD-Fork-Sleep_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Fork-\/\+Sleep/main.c File Reference}
+\label{C-Unix-STD-Fork-Sleep_2main_8c}\index{src/C-\/Unix-\/STD-\/Fork-\/Sleep/main.c@{src/C-\/Unix-\/STD-\/Fork-\/Sleep/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Fork-Sleep_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Fork-Sleep_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-Sleep_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Fork-Sleep_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} i, \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}, t;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     assert(argc==3);}
+\DoxyCodeLine{12     \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}=atoi(argv[1]);}
+\DoxyCodeLine{13     t=atoi(argv[2]);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17        \textcolor{keywordflow}{if}(fork())}
+\DoxyCodeLine{18        \{}
+\DoxyCodeLine{19             \textcolor{keywordflow}{if}(fork())}
+\DoxyCodeLine{20             exit(0);}
+\DoxyCodeLine{21        \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     sleep(t);}
+\DoxyCodeLine{26     printf(\textcolor{stringliteral}{"Il processo foglia e' terminato!\(\backslash\)n"});}
+\DoxyCodeLine{27     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+
+
+References n.
+

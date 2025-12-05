@@ -1,0 +1,152 @@
+\hypertarget{C-Unix-STD-Signal-Fork-Pause_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork-\/\+Pause/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork-Pause_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause/main.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Signal-Fork-Pause_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~51
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}} (int sig)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Signal-Fork-Pause_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~51}
+
+
+
+Definition at line 8 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}\label{C-Unix-STD-Signal-Fork-Pause_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}} 
+\index{main.c@{main.c}!handler@{handler}}
+\index{handler@{handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily void handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(sig==SIGUSR1)}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         printf(\textcolor{stringliteral}{"Avvio figlio\(\backslash\)n"});}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sig==SIGCHLD)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         printf(\textcolor{stringliteral}{"Figlio terminato\(\backslash\)n"});}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Signal-Fork-Pause_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     pid\_t son1, son2;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} txt1[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}], txt2[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} f1, f2;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     f1=open(\textcolor{stringliteral}{"son1.txt"}, O\_RDONLY);}
+\DoxyCodeLine{30     f2=open(\textcolor{stringliteral}{"son2.txt"}, O\_RDONLY);}
+\DoxyCodeLine{31     (void)signal(SIGUSR1, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{32     (void)signal(SIGCHLD, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     son1=fork();}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(son1==-\/1)}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         fprintf(stderr, \textcolor{stringliteral}{"Errore fork 1!!!\(\backslash\)n"});}
+\DoxyCodeLine{38         exit(0);}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(son1==0) \textcolor{comment}{//figlio1}}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         pause();}
+\DoxyCodeLine{43         read(f1, txt1, 50);}
+\DoxyCodeLine{44         fwrite(txt1, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}), 50, stdout);}
+\DoxyCodeLine{45         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{46         exit(2);}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         son2=fork();}
+\DoxyCodeLine{51         \textcolor{keywordflow}{if}(son2==-\/1)}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             fprintf(stderr, \textcolor{stringliteral}{"Errore fork 1!!!\(\backslash\)n"});}
+\DoxyCodeLine{54             exit(1);}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(son2==0) \textcolor{comment}{//figlio 2}}
+\DoxyCodeLine{57         \{}
+\DoxyCodeLine{58             pause();}
+\DoxyCodeLine{59             read(f2, txt2, 50);}
+\DoxyCodeLine{60             fwrite(txt2, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}), 50, stdout);}
+\DoxyCodeLine{61             printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{62             sleep(5);}
+\DoxyCodeLine{63             exit(3);}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65         \textcolor{keywordflow}{else} \textcolor{comment}{//padre}}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             printf(\textcolor{stringliteral}{"PID figlio 1: \%d\(\backslash\)nPID figlio 2: \%d\(\backslash\)n"}, son1, son2);}
+\DoxyCodeLine{68             sleep(2);}
+\DoxyCodeLine{69             kill(son1, SIGUSR1);}
+\DoxyCodeLine{70             pause();}
+\DoxyCodeLine{71             kill(son2, SIGUSR1);}
+\DoxyCodeLine{72             pause();}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     close(f1);}
+\DoxyCodeLine{77     close(f2);}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+
+
+References handler(), and N.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal-Fork-Pause_2main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}

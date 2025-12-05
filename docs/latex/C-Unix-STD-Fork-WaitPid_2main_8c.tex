@@ -1,0 +1,91 @@
+\hypertarget{C-Unix-STD-Fork-WaitPid_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Fork-\/\+Wait\+Pid/main.c File Reference}
+\label{C-Unix-STD-Fork-WaitPid_2main_8c}\index{src/C-\/Unix-\/STD-\/Fork-\/WaitPid/main.c@{src/C-\/Unix-\/STD-\/Fork-\/WaitPid/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Fork-WaitPid_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a52037c938e3c1b126c6277da5ca689d0}{M}}~3
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-WaitPid_2main_8c_a52037c938e3c1b126c6277da5ca689d0}\label{C-Unix-STD-Fork-WaitPid_2main_8c_a52037c938e3c1b126c6277da5ca689d0}} 
+\index{main.c@{main.c}!M@{M}}
+\index{M@{M}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily \#define M~3}
+
+
+
+Definition at line 7 of file main.\+c.
+
+\mbox{\Hypertarget{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~5}
+
+
+
+Definition at line 6 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-WaitPid_2main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{C-Unix-STD-Fork-WaitPid_2main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} i, status;}
+\DoxyCodeLine{12     pid\_t childID[\mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}; i++)}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keywordflow}{if}(childID[i]=fork()==(-\/1))}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             fprintf(stderr, \textcolor{stringliteral}{"Errore fork!\(\backslash\)n"});}
+\DoxyCodeLine{19             exit(EXIT\_FAILURE);}
+\DoxyCodeLine{20         \}}
+\DoxyCodeLine{21         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(childID[i]==0)}
+\DoxyCodeLine{22             exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordflow}{for}(i=\mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}; i>\mbox{\hyperlink{C-Unix-STD-Fork-WaitPid_2main_8c_a52037c938e3c1b126c6277da5ca689d0}{M}}; i++)}
+\DoxyCodeLine{26         waitpid(childID[i], \&status, 0);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+
+
+References M, and N.
+

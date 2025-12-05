@@ -1,0 +1,55 @@
+\hypertarget{C-Unix-STD-Kill_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Kill/main.c File Reference}
+\label{C-Unix-STD-Kill_2main_8c}\index{src/C-\/Unix-\/STD-\/Kill/main.c@{src/C-\/Unix-\/STD-\/Kill/main.c}}
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Kill_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} pid;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     assert(argc==3);}
+\DoxyCodeLine{13     pid=atoi(argv[1]);}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if}(strcmp(argv[2], \textcolor{stringliteral}{"somma"})==0)}
+\DoxyCodeLine{15         kill(pid, SIGUSR2);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(strcmp(argv[2], \textcolor{stringliteral}{"differenza"})==0)}
+\DoxyCodeLine{18         kill(pid, SIGUSR1);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(strcmp(argv[2], \textcolor{stringliteral}{"fine"})==0)}
+\DoxyCodeLine{21         kill(pid, SIGINT);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordflow}{else} fprintf(stderr, \textcolor{stringliteral}{"Errore comando non valido!"});}
+\DoxyCodeLine{24     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}

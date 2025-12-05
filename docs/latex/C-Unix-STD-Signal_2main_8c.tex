@@ -1,0 +1,139 @@
+\hypertarget{C-Unix-STD-Signal_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal/main.c File Reference}
+\label{C-Unix-STD-Signal_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal/main.c@{src/C-\/Unix-\/STD-\/Signal/main.c}}
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{C-Unix-STD-Signal_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}} (int sig)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}{b}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}\label{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}} 
+\index{main.c@{main.c}!handler@{handler}}
+\index{handler@{handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily void handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(sig==SIGUSR1)}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         printf(\textcolor{stringliteral}{"La differenza di a e b e': \%d\(\backslash\)n"}, (\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}-\/\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}{b}}));}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sig==SIGUSR2)}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         printf(\textcolor{stringliteral}{"La somma di a e b e': \%d\(\backslash\)n"}, (\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}+\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}{b}}));}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sig==SIGINT) exit(0);}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+
+
+References a, and b.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Signal_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Signal_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     (void)signal(SIGUSR1, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{25     (void)signal(SIGUSR2, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{26     (void)signal(SIGINT, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{27     printf(\textcolor{stringliteral}{"Dammi due interi:\(\backslash\)n"});}
+\DoxyCodeLine{28     scanf(\textcolor{stringliteral}{"\%d \%d"}, \&\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}, \&\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}{b}});}
+\DoxyCodeLine{29     \textcolor{keywordflow}{while}(0==0) pause();}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+
+
+References a, b, and handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal_2main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}\label{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}} 
+\index{main.c@{main.c}!a@{a}}
+\index{a@{a}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily int a}
+
+
+
+Definition at line 6 of file main.\+c.
+
+
+
+Referenced by handler(), inc(), main(), and sub().
+
+\mbox{\Hypertarget{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}\label{C-Unix-STD-Signal_2main_8c_a148e3876077787926724625411d6e7a9}} 
+\index{main.c@{main.c}!b@{b}}
+\index{b@{b}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily int b}
+
+
+
+Definition at line 6 of file main.\+c.
+
+
+
+Referenced by handler(), inc(), main(), show(), and sub().
+

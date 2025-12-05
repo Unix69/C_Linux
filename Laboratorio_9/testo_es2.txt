@@ -1,4 +1,0 @@
-ciao 56 gatto 8
-cane 23
-12 taverna 1
-8 7 6

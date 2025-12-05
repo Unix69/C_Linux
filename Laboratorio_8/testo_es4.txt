@@ -1,4 +1,0 @@
-Franco,Polletti:SqA:24
-Paola,Castelli:SqB:26
-Jackie,Chan:SqB:29
-Rodolfo,Gandolfo:SqC:23

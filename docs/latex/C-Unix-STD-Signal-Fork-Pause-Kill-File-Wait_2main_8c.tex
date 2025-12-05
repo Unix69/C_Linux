@@ -1,0 +1,151 @@
+\hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork-\/\+Pause-\/\+Kill-\/\+File-\/\+Wait/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill-\/File-\/Wait/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill-\/File-\/Wait/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_ae4504f4a7837723d570d36055ef2e91d}{handler}} (int s)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~100}
+
+
+
+Definition at line 9 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_ae4504f4a7837723d570d36055ef2e91d}\label{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_ae4504f4a7837723d570d36055ef2e91d}} 
+\index{main.c@{main.c}!handler@{handler}}
+\index{handler@{handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily void handler (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11                    \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15               \{}
+\DoxyCodeLine{16     pid\_t p1, p2, *pp1, *pp2;}
+\DoxyCodeLine{17     pp1=\&p1;}
+\DoxyCodeLine{18     pp2=\&p2;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} f1, f2, nR1, nW1, nR2, nW2;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{char} buff[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}], buff2[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     (void)signal(SIGUSR1, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{23     (void)signal(SIGCHLD, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     p1=fork();}
+\DoxyCodeLine{26     assert(p1!=-\/1);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}(p1==0) \textcolor{comment}{//Figlio1}}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30        pause();}
+\DoxyCodeLine{31        f1=open(\textcolor{stringliteral}{"testo\_1.txt"}, O\_RDONLY);}
+\DoxyCodeLine{32        \textcolor{keywordflow}{while}((nR1=read(f1, buff, \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}))>0)}
+\DoxyCodeLine{33        \{}
+\DoxyCodeLine{34             nW1=write(1, buff, nR1);}
+\DoxyCodeLine{35             printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{36             kill(*pp2, SIGUSR1);}
+\DoxyCodeLine{37             pause();}
+\DoxyCodeLine{38             assert(nR1==nW1);}
+\DoxyCodeLine{39        \}}
+\DoxyCodeLine{40        close(f1);}
+\DoxyCodeLine{41        kill(*pp2, SIGUSR1);}
+\DoxyCodeLine{42        exit(0);}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//Padre}}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         p2=fork();}
+\DoxyCodeLine{47         assert(p2!=-\/1);}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if}(p2==0) \textcolor{comment}{//Figlio2}}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             pause();}
+\DoxyCodeLine{51             f2=open(\textcolor{stringliteral}{"testo\_2.txt"}, O\_RDONLY);}
+\DoxyCodeLine{52             \textcolor{keywordflow}{while}((nR2=read(f2, buff2, \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}))>0)}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 nW2=write(1, buff2, nR2);}
+\DoxyCodeLine{55                 printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{56                 kill(*pp1, SIGUSR1);}
+\DoxyCodeLine{57                 pause();}
+\DoxyCodeLine{58                 assert(nR2==nW2);}
+\DoxyCodeLine{59             \}}
+\DoxyCodeLine{60             close(f2);}
+\DoxyCodeLine{61             kill(*pp1, SIGUSR1);}
+\DoxyCodeLine{62             exit(0);}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p2!=0) \textcolor{comment}{//Padre}}
+\DoxyCodeLine{65         \{}
+\DoxyCodeLine{66             sleep(1);}
+\DoxyCodeLine{67             kill(p1, SIGUSR1);}
+\DoxyCodeLine{68             pause();}
+\DoxyCodeLine{69             kill(p2, SIGUSR1);}
+\DoxyCodeLine{70             pause();}
+\DoxyCodeLine{71             printf(\textcolor{stringliteral}{"Padre terminato\(\backslash\)n"});}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+
+
+References handler(), and N.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}

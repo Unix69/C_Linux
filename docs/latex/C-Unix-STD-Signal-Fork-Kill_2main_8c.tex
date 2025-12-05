@@ -1,0 +1,123 @@
+\hypertarget{C-Unix-STD-Signal-Fork-Kill_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork-\/\+Kill/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork-Kill_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Kill/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Kill/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{C-Unix-STD-Signal-Fork-Kill_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}} (int sig)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}\label{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}} 
+\index{main.c@{main.c}!handler@{handler}}
+\index{handler@{handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily void handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     printf(\textcolor{stringliteral}{"Ricevuto segnale \%d\(\backslash\)n"}, sig);}
+\DoxyCodeLine{9     \textcolor{keywordflow}{if}(sig==SIGUSR1)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         kill(getppid(), SIGUSR2);}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sig==SIGUSR2)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         kill(getppid(), SIGUSR1);}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sig==SIGINT)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         kill(getppid(), SIGINT);}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} i, j, *s;}
+\DoxyCodeLine{27     pid\_t child;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     s=malloc((argc-\/1)*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{30     \textcolor{keywordflow}{for}(i=1; i<argc; i++)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         j=i-\/1;}
+\DoxyCodeLine{33         s[j]=atoi(argv[i]);}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     i=0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     (void)signal(SIGUSR1, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{38     (void)signal(SIGUSR2, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{39     (void)signal(SIGINT, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     child=fork();}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if}(child==-\/1)}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         fprintf(stderr, \textcolor{stringliteral}{"Errore fork"});}
+\DoxyCodeLine{45         exit(0);}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(child==0)}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \textcolor{keywordflow}{while}(0==0)}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             pause();}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{while}(i!=5) \textcolor{comment}{//ciclo infinito del padre}}
+\DoxyCodeLine{57         \{}
+\DoxyCodeLine{58             sleep(1);}
+\DoxyCodeLine{59             kill(child, s[i]);}
+\DoxyCodeLine{60             i++;}
+\DoxyCodeLine{61             \textcolor{keywordflow}{if}(i>(argc-\/1)) i=0;}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     free(s);}
+\DoxyCodeLine{65     free(s);}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+
+
+References handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal-Fork-Kill_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

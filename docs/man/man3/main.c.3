@@ -1,0 +1,246 @@
+.TH "src/C-Unix-STD-Threads-Files-Assert/main.c" 3 "Fri Dec 5 2025" "CLinux" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/C-Unix-STD-Threads-Files-Assert/main.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnf\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBN\fP   50"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBnf\fP \fBnomifile\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbubblesort\fP (void *ptr)"
+.br
+.ti -1c
+.RI "void * \fBfunzione\fP (void *ptr)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "void \fBReadFileIn\fP (void *ptr)"
+.br
+.ti -1c
+.RI "void \fBWriteFileOut\fP (void *ptr)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define N   50"
+
+.PP
+Definition at line 9 of file main\&.c\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBnf\fP \fBnomifile\fP"
+
+.PP
+Definition at line 23 of file main\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void bubblesort (void * ptr)"
+
+.PP
+Definition at line 70 of file main\&.c\&.
+.PP
+.nf
+71 {
+72 
+73 int i, j, tmp;
+74 
+75 nomifile *arg=(nomifile *)ptr;
+76 
+77 
+78 for(i=1; i<arg->nr; i++){
+79 
+80 for(j=0; j<(arg->nr-i); j++)
+81 {
+82            
+83 if(arg->buf[j]>arg->buf[j+1])
+84 {
+85   
+86 tmp=arg->buf[j];
+87 
+88 arg->buf[j]=arg->buf[j+1];
+89 
+90 arg->buf[j+1]=tmp;
+91 
+92 }
+93 }
+94 
+95 }
+96     
+97 return;
+98 
+99 }
+.fi
+.PP
+References nf::buf, and nf::nr\&.
+.PP
+Referenced by funzione()\&.
+.SS "void* funzione (void * ptr)"
+
+.PP
+Definition at line 32 of file main\&.c\&.
+.PP
+.nf
+33 {
+34 ReadFileIn(ptr);
+35 bubblesort(ptr);
+36 WriteFileOut(ptr);
+37 return NULL;
+38 }
+.fi
+.PP
+References bubblesort(), ReadFileIn(), and WriteFileOut()\&.
+.PP
+Referenced by main()\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 136 of file main\&.c\&.
+.PP
+.nf
+137 {
+138     
+139 if((argc<=2)||(argc%2==0))  //Gli argomenti devono essere almeno 3 e sempre dispari
+140 {
+141     fprintf(stderr, "Errore negli argomenti!\n");
+142     exit(0);
+143 }
+144 
+145     
+146 int n=(argc-1)/2, i, j=1, err; //Il numero di thread è il numero di file/2
+147 pthread_t *tid;
+148 nomifile **v;
+149 tid=malloc(n*sizeof(pthread_t)); //Allocazione vettori
+150 v=malloc(n*sizeof(nomifile *));
+151 
+152 for(i=0; i<n; i++)
+153 v[i]=malloc(sizeof(nomifile));
+154 
+155 for(i=0; i<n; i++)  //Inizializzazione vettore struct
+156 {       
+157 strcpy(v[i]->filein, argv[j]);
+158 j++;
+159 strcpy(v[i]->fileout, argv[j]);    
+160 j++;
+161 err=pthread_create(&tid[i], NULL, funzione, v[i]);    
+162 assert(err==0);
+163 }
+164 
+165 pthread_join(tid[n-1], NULL);
+166 
+167 return 0;
+168 
+169 }
+.fi
+.PP
+References nf::filein, nf::fileout, funzione(), and n\&.
+.SS "void ReadFileIn (void * ptr)"
+
+.PP
+Definition at line 43 of file main\&.c\&.
+.PP
+.nf
+44 {
+45 FILE *fin;
+46 int i;
+47 
+48 nomifile *arg=(nomifile *)ptr;
+49 
+50 fin=fopen(arg->filein, "r");
+51 fscanf(fin, "%d", &arg->nr);
+52 arg->buf=malloc((arg->nr)*sizeof(int));
+53 
+54 for(i=0; i<arg->nr; i++){
+55     fscanf(fin, "%d", &arg->buf[i]);
+56 }
+57 
+58 fclose(fin);
+59 
+60 return;
+61 
+62 }
+.fi
+.PP
+References nf::buf, nf::filein, and nf::nr\&.
+.PP
+Referenced by funzione()\&.
+.SS "void WriteFileOut (void * ptr)"
+
+.PP
+Definition at line 108 of file main\&.c\&.
+.PP
+.nf
+109 {
+110     
+111 FILE *fout;
+112     
+113 int i;
+114     
+115 nomifile *arg=(nomifile *)ptr;
+116 
+117     
+118 fout=fopen(arg->fileout, "w");
+119 
+120     
+121 for(i=0; i<arg->nr; i++)
+122 {
+123         
+124 fprintf(fout, "%d\n", arg->buf[i]);
+125     
+126 }
+127 
+128 fclose(fout);
+129     
+130 return;
+131 
+132 }
+.fi
+.PP
+References nf::buf, nf::fileout, and nf::nr\&.
+.PP
+Referenced by funzione()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CLinux from the source code\&.

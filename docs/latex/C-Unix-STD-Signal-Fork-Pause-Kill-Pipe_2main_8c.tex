@@ -1,0 +1,93 @@
+\hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork-\/\+Pause-\/\+Kill-\/\+Pipe/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill-\/Pipe/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill-\/Pipe/main.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~20}
+
+
+
+Definition at line 7 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     pid\_t p;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} \mbox{\hyperlink{structfile}{file}}[2], f, nr, nw, nw2, nlette;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{char} str[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}], str2[\mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{if}(pipe(\mbox{\hyperlink{structfile}{file}})==0)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         p=fork();}
+\DoxyCodeLine{18         assert(p!=-\/1);}
+\DoxyCodeLine{19         \textcolor{keywordflow}{if}(p==0) \textcolor{comment}{//Figlio}}
+\DoxyCodeLine{20         \{}
+\DoxyCodeLine{21             close(\mbox{\hyperlink{structfile}{file}}[0]);}
+\DoxyCodeLine{22             f=open(\textcolor{stringliteral}{"testo.txt"}, O\_RDONLY);}
+\DoxyCodeLine{23             \textcolor{keywordflow}{while}((nr=read(f, str, \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}))>0)}
+\DoxyCodeLine{24             \{}
+\DoxyCodeLine{25                 nw=write(\mbox{\hyperlink{structfile}{file}}[1], str, nr);}
+\DoxyCodeLine{26                 assert(nr==nw);}
+\DoxyCodeLine{27             \}}
+\DoxyCodeLine{28             close(f);}
+\DoxyCodeLine{29             exit(0);}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31         \textcolor{keywordflow}{else} \textcolor{comment}{//Padre}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             close(\mbox{\hyperlink{structfile}{file}}[1]);}
+\DoxyCodeLine{34             \textcolor{keywordflow}{while}((nlette=read(\mbox{\hyperlink{structfile}{file}}[0], str2, \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}))>0)}
+\DoxyCodeLine{35             \{}
+\DoxyCodeLine{36                 nw2=write(1, str2, nlette);}
+\DoxyCodeLine{37                 assert(nw2==nlette);}
+\DoxyCodeLine{38             \}}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+
+
+References N.
+

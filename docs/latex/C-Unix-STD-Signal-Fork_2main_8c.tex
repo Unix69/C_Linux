@@ -1,0 +1,113 @@
+\hypertarget{C-Unix-STD-Signal-Fork_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Signal-Fork_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal-Fork_2main_8c_ac362edcde293f4b89960bc46fe848ea9}{manager}} (int sig)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Signal-Fork_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     assert(argc==2);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}=atoi(argv[1]), i;}
+\DoxyCodeLine{21     pid\_t pid;}
+\DoxyCodeLine{22     signal(SIGUSR1, \mbox{\hyperlink{C-Unix-STD-Signal-Fork_2main_8c_ac362edcde293f4b89960bc46fe848ea9}{manager}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         pid=fork();}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if}(pid==-\/1)}
+\DoxyCodeLine{28         \{}
+\DoxyCodeLine{29             fprintf(stderr, \textcolor{stringliteral}{"Errore fork \%d"}, i);}
+\DoxyCodeLine{30             exit(0);}
+\DoxyCodeLine{31         \}}
+\DoxyCodeLine{32         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pid==0)}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             pause();}
+\DoxyCodeLine{35             exit(i);}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{38         \{}
+\DoxyCodeLine{39             sleep(2);}
+\DoxyCodeLine{40             printf(\textcolor{stringliteral}{"Sono il padre con PID \%d e il figlio \%d ha PID \%d\(\backslash\)n"}, getpid(), i, pid);}
+\DoxyCodeLine{41             kill(pid, SIGUSR1);}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+References manager(), and n.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{C-Unix-STD-Signal-Fork_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork_2main_8c_ac362edcde293f4b89960bc46fe848ea9}\label{C-Unix-STD-Signal-Fork_2main_8c_ac362edcde293f4b89960bc46fe848ea9}} 
+\index{main.c@{main.c}!manager@{manager}}
+\index{manager@{manager}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{manager()}{manager()}}
+{\footnotesize\ttfamily void manager (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keywordflow}{if}(sig==SIGUSR1)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         printf(\textcolor{stringliteral}{"Il padre ha PID \%d, io sono il figlio con PID \%d, ho ricevuto il seganle \%d\(\backslash\)n"}, getppid(), getpid(), sig);}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{C-Unix-STD-Signal-Fork_2main_8c_ac362edcde293f4b89960bc46fe848ea9_icgraph}
+\end{center}
+\end{figure}

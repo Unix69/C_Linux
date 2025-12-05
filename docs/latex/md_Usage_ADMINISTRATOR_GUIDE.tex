@@ -1,0 +1,349 @@
+
+
+ \doxysection*{🧑‍💼 Administrator Guide}
+
+
+
+ ~\newline
+
+
+  \href{https://github.com/Unix69/EmbeddedDocsTemplates/graphs/contributors}{\texttt{  }} \href{}{\texttt{  }} \href{https://github.com/Unix69/EmbeddedDocsTemplates/network/members}{\texttt{  }} \href{https://github.com/Unix69/EmbeddedDocsTemplates/stargazers}{\texttt{  }} \href{https://github.com/Unix69/EmbeddedDocsTemplates/issues/}{\texttt{  }} \href{https://github.com/Unix69/EmbeddedDocsTemplates/blob/master/LICENSE.md}{\texttt{  }} 
+
+ ~\newline
+~\newline
+
+
+ 
+
+ A {\bfseries{full guide}} to support {\bfseries{Administrators}} during the project administration process and show how to perform administration tasks. 
+
+
+
+
+
+~\newline
+~\newline
+
+
+
+
+\label{_table-of-contents}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md77}{}\doxysubsection{📓 Table of Contents}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md77}
+
+\begin{DoxyItemize}
+\item \href{\#administration-overview}{\texttt{ Administration Overview}}
+\item \href{\#administration-lifecycle}{\texttt{ Administration Life\+Cycle}}
+\item \href{\#administration-tasks}{\texttt{ Administration Tasks}}
+\item \href{\#prerequisites-and-dependencies}{\texttt{ Prerequisites and Dependencies}}
+\item \href{\#installation}{\texttt{ Installation}}
+\item \href{\#build}{\texttt{ Build}}
+\item \href{\#configuration}{\texttt{ Configuration}}
+\item \href{\#testing}{\texttt{ Testing}}
+\item \href{\#documentation-generation}{\texttt{ Documentation Generation}}
+\item \href{\#how-to}{\texttt{ How To}}
+\begin{DoxyItemize}
+\item \href{\#how-to-access-as-administrator}{\texttt{ How to access as administrator}}
+\end{DoxyItemize}
+\item \href{\#other-guides}{\texttt{ Other Guides}}
+\item \href{\#faq}{\texttt{ F\+AQ}}
+\item \href{\#contact-us}{\texttt{ Contact Us}}
+\end{DoxyItemize}
+
+~\newline
+
+
+\label{_administration-overview}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md78}{}\doxysubsection{Administration Overview}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md78}
+ Administrators are responsible for the deployment, configuration, and maintenance of {\bfseries{R\+E\+A\+D\+ME Template}}. They ensure the system is properly installed, dependencies are satisfied, and documentation is consistently updated.
+
+~\newline
+ ~\newline
+
+
+\label{_administration-lifecycle}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md79}{}\doxysubsection{Administration Life\+Cycle}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md79}
+ The Administration Life\+Cycle covers\+:
+
+
+\begin{DoxyEnumerate}
+\item Verifying system prerequisites ~\newline
+
+\item Installing dependencies and the project ~\newline
+
+\item Building and configuring the project ~\newline
+
+\item Generating and maintaining documentation via Doxygen ~\newline
+
+\item Running tests to validate the build ~\newline
+
+\item Managing updates, fixes, and feature integrations ~\newline
+
+\item Monitoring system and project health ~\newline
+
+\end{DoxyEnumerate}
+
+~\newline
+ ~\newline
+
+
+\label{_administration-tasks}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md80}{}\doxysubsection{Administration Tasks}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md80}
+ Administrators perform the following tasks\+:
+
+
+\begin{DoxyItemize}
+\item Install and update project dependencies\+: Git, Doxygen, G\+NU Make ~\newline
+
+\item Setup project environment and folders ~\newline
+
+\item Manage system users and permissions ~\newline
+
+\item Run build scripts and manage Makefile targets ~\newline
+
+\item Generate, configure, and update Doxygen documentation ~\newline
+
+\item Apply patches and fixes as per {\ttfamily \mbox{\hyperlink{FIX_8md}{F\+I\+X.\+md}}} ~\newline
+
+\item Track versioning using {\ttfamily \mbox{\hyperlink{VERSION_8md}{V\+E\+R\+S\+I\+O\+N.\+md}}} and {\ttfamily \mbox{\hyperlink{CHANGELOG_8md}{C\+H\+A\+N\+G\+E\+L\+O\+G.\+md}}} ~\newline
+
+\item Ensure system security, backups, and stable operation ~\newline
+
+\end{DoxyItemize}
+
+~\newline
+ ~\newline
+
+
+\label{_prerequisites-and-dependencies}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md81}{}\doxysubsection{Prerequisites and Dependencies}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md81}
+ Before building or running {\bfseries{R\+E\+A\+D\+ME Template}}, ensure the following\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Operating System}}\+: G\+N\+U/\+Linux or Windows ~\newline
+
+\item {\bfseries{Software Dependencies}}\+: ~\newline
+
+\begin{DoxyItemize}
+\item Git\+Hub / Git ~\newline
+
+\item Doxygen (mandatory) ~\newline
+
+\item G\+NU Make (mandatory) ~\newline
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md82}{}\doxysubsubsection{Dependency Verification}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md82}
+ {\ttfamily  git --version doxygen --version make --version }
+
+If all return version numbers, the system is ready.
+
+~\newline
+ ~\newline
+
+
+\label{_installation}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md83}{}\doxysubsection{Installation}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md83}
+ \hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md84}{}\doxysubsubsection{Option A — Download Z\+IP}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md84}
+ {\ttfamily  mkdir project-\/root cd project-\/root wget \href{https://github.com/Unix69/README-Template/archive/refs/heads/main.zip}{\texttt{ https\+://github.\+com/\+Unix69/\+R\+E\+A\+D\+M\+E-\/\+Template/archive/refs/heads/main.\+zip}} unzip main.\+zip cp -\/R R\+E\+A\+D\+M\+E-\/\+Template-\/main/ ./ rm -\/rf R\+E\+A\+D\+M\+E-\/\+Template-\/main main.\+zip }
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md85}{}\doxysubsubsection{Option B — Clone Repository}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md85}
+ {\ttfamily  mkdir project-\/root cd project-\/root git clone \href{https://github.com/Unix69/EmbeddedDocsTemplates.git}{\texttt{ https\+://github.\+com/\+Unix69/\+Embedded\+Docs\+Templates.\+git}} cp -\/R Embedded\+Docs\+Templates/ ./ rm -\/rf Embedded\+Docs\+Templates }
+
+~\newline
+ ~\newline
+
+
+\label{_build}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md86}{}\doxysubsection{Build}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md86}
+ You can build {\bfseries{R\+E\+A\+D\+ME Template}} using\+:
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md87}{}\doxysubsubsection{Using $<$tt$>$doxygen.\+sh$<$/tt$>$ script\+:}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md87}
+ {\ttfamily  ./doxygen.sh }
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md88}{}\doxysubsubsection{Using Makefile\+:}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md88}
+ {\ttfamily  make build }
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md89}{}\doxysubsubsection{Using Standard Doxyfile\+:}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md89}
+ {\ttfamily  doxygen -\/g Doxyfile }
+
+~\newline
+ ~\newline
+
+
+\label{_configuration}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md90}{}\doxysubsection{Configuration}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md90}
+ Administrators can configure the project by\+:
+
+
+\begin{DoxyEnumerate}
+\item Adding source code to {\ttfamily ./src} ~\newline
+
+\item Modifying {\ttfamily \mbox{\hyperlink{doxygen_8ini}{doxygen.\+ini}}} parameters ~\newline
+
+\item Editing {\ttfamily Doxyfile} (generated via {\ttfamily \mbox{\hyperlink{doxygen_8sh}{doxygen.\+sh}}}) ~\newline
+
+\item Customizing {\ttfamily Makefile} targets ~\newline
+
+\item Adjusting Markdown files for project documentation ~\newline
+
+\end{DoxyEnumerate}
+
+~\newline
+ ~\newline
+
+
+\label{_testing}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md91}{}\doxysubsection{Testing}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md91}
+ Run project tests using\+:
+
+{\ttfamily  sudo ./test.sh }
+
+Ensure all tests pass before deploying or updating documentation.
+
+~\newline
+ ~\newline
+
+
+\label{_documentation-generation}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md92}{}\doxysubsection{Documentation Generation}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md92}
+ To generate project documentation\+:
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md93}{}\doxysubsubsection{Using Doxygen\+:}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md93}
+ {\ttfamily  doxygen Doxyfile }
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md94}{}\doxysubsubsection{Using Makefile\+:}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md94}
+ {\ttfamily  make doc }
+
+Documentation will be available in {\ttfamily ./docs/} or the {\ttfamily O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY} set in {\ttfamily Doxyfile}.
+
+~\newline
+~\newline
+
+
+\label{_how-to}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md95}{}\doxysection{How To 🛠️}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md95}
+ \href{\#table-of-contents}{\texttt{ Table of Contents}}
+
+Below are all the \char`\"{}$\ast$$\ast$\+Administrator How To$\ast$$\ast$\char`\"{}.
+
+
+\begin{DoxyItemize}
+\item \href{\#how-to-access-as-admin}{\texttt{ {\bfseries{How to access as administrator}}}}
+\item \href{\#how-to-restart}{\texttt{ {\bfseries{How to restart the system}}}}
+\item \href{\#how-to-update-config}{\texttt{ {\bfseries{How to update configuration}}}}
+\end{DoxyItemize}
+
+~\newline
+~\newline
+
+
+\label{_how-to-access-as-admin}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md96}{}\doxysubsection{How to access as administrator}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md96}
+ {\ttfamily  sudo -\/i }
+
+~\newline
+~\newline
+
+
+\label{_how-to-restart}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md97}{}\doxysubsection{How to restart the system}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md97}
+ {\ttfamily  systemctl restart \mbox{[}P\+R\+O\+J\+E\+C\+T\+\_\+\+S\+E\+R\+V\+I\+CE\mbox{]} }
+
+~\newline
+~\newline
+
+
+\label{_how-to-update-config}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md98}{}\doxysubsection{How to update configuration}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md98}
+
+\begin{DoxyEnumerate}
+\item Edit the configuration file ~\newline
+ {\ttfamily nano /etc/{\bfseries{Readme Template}}/config.conf}
+\item Apply changes ~\newline
+ {\ttfamily systemctl reload \mbox{[}P\+R\+O\+J\+E\+C\+T\+\_\+\+S\+E\+R\+V\+I\+CE\mbox{]}}
+\end{DoxyEnumerate}
+
+~\newline
+~\newline
+
+
+\label{_other-guides}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md99}{}\doxysection{Other Guides 📚}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md99}
+ \href{\#table-of-contents}{\texttt{ Table of Contents}}
+
+~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Role }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Reference }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Role }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Reference }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-3}
+\endhead
+📘 {\bfseries{User Guide}} &\href{USER_GUIDE.md}{\texttt{ {\bfseries{U\+S\+E\+R\+\_\+\+G\+U\+I\+D\+E.\+md}}}} &End-\/user operations  \\\cline{1-3}
+🧑‍💻 {\bfseries{Developer Guide}} &\href{DEVELOPMENT_GUIDE.md}{\texttt{ {\bfseries{D\+E\+V\+E\+L\+O\+P\+M\+E\+N\+T\+\_\+\+G\+U\+I\+D\+E.\+md}}}} &A\+PI and namespace usage  \\\cline{1-3}
+\end{longtabu}
+
+
+~\newline
+~\newline
+
+
+\label{_faq}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md100}{}\doxysection{F\+A\+Q ❓}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md100}
+ Here you can find the answers to frequently asked questions.
+
+~\newline
+~\newline
+
+
+\label{_contact-us}%
+
+
+\hypertarget{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md101}{}\doxysection{Contact us ☎️}\label{md_Usage_ADMINISTRATOR_GUIDE_autotoc_md101}
+ For {\bfseries{more information}} on {\bfseries{Readme Template}} ~\newline
+ \href{CONTACT_US.md}{\texttt{ {\bfseries{contact us}}}}.
+
+~\newline
+~\newline
+
+
+ 

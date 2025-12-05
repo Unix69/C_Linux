@@ -1,0 +1,177 @@
+\hypertarget{C-Unix-STD-Fork-Wait-Precedence_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Fork-\/\+Wait-\/\+Precedence/main.c File Reference}
+\label{C-Unix-STD-Fork-Wait-Precedence_2main_8c}\index{src/C-\/Unix-\/STD-\/Fork-\/Wait-\/Precedence/main.c@{src/C-\/Unix-\/STD-\/Fork-\/Wait-\/Precedence/main.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Fork-Wait-Precedence_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~13
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~13}
+
+
+
+Definition at line 5 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Fork-Wait-Precedence_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     pid\_t p1, p2, p3;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} i=1;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     p1=fork(); \textcolor{comment}{//P1}}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if}(p1==0)}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16        fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{17        exit(i);}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{else} \textcolor{comment}{//master}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         wait(\&status);}
+\DoxyCodeLine{22         p1=fork(); \textcolor{comment}{//p2}}
+\DoxyCodeLine{23         i++;}
+\DoxyCodeLine{24         \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//nel master}}
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26             p2=fork(); \textcolor{comment}{//p3}}
+\DoxyCodeLine{27             i++;}
+\DoxyCodeLine{28             \textcolor{keywordflow}{if}(p2==0)}
+\DoxyCodeLine{29             \{}
+\DoxyCodeLine{30                 fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{31                 exit(i);}
+\DoxyCodeLine{32             \}}
+\DoxyCodeLine{33             wait(\&status);}
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1==0) \textcolor{comment}{//p2}}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{38             exit(i);}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40         wait(\&status);}
+\DoxyCodeLine{41         p1=fork(); \textcolor{comment}{//p4}}
+\DoxyCodeLine{42         i++;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if}(p1==0)}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{46             exit(i);}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//master}}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             p2=fork();}
+\DoxyCodeLine{51             i++;}
+\DoxyCodeLine{52             \textcolor{keywordflow}{if}(p2==0) \textcolor{comment}{//p5}}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{55                 exit(i);}
+\DoxyCodeLine{56             \}}
+\DoxyCodeLine{57             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p2!=0) \textcolor{comment}{//master}}
+\DoxyCodeLine{58             \{}
+\DoxyCodeLine{59                 p3=fork();}
+\DoxyCodeLine{60                 i++;}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{if}(p3==0) \textcolor{comment}{//p6}}
+\DoxyCodeLine{62                 \{}
+\DoxyCodeLine{63                     fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{64                     exit(i);}
+\DoxyCodeLine{65                 \}}
+\DoxyCodeLine{66                 wait(\&status);}
+\DoxyCodeLine{67             \}}
+\DoxyCodeLine{68             wait(\&status);}
+\DoxyCodeLine{69         \}}
+\DoxyCodeLine{70         wait(\&status);}
+\DoxyCodeLine{71         p1=fork(); \textcolor{comment}{//p7}}
+\DoxyCodeLine{72         i++;}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if}(p1==0)}
+\DoxyCodeLine{74         \{}
+\DoxyCodeLine{75             fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{76             exit(i);}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//master}}
+\DoxyCodeLine{79         \{}
+\DoxyCodeLine{80             p2=fork();}
+\DoxyCodeLine{81             i++;}
+\DoxyCodeLine{82             \textcolor{keywordflow}{if}(p2==0) \textcolor{comment}{//p8}}
+\DoxyCodeLine{83             \{}
+\DoxyCodeLine{84                 fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{85                 exit(i);}
+\DoxyCodeLine{86             \}}
+\DoxyCodeLine{87             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p2!=0) \textcolor{comment}{//master}}
+\DoxyCodeLine{88             \{}
+\DoxyCodeLine{89                 p3=fork();}
+\DoxyCodeLine{90                 i++;}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{if}(p3==0) \textcolor{comment}{//p9}}
+\DoxyCodeLine{92                 \{}
+\DoxyCodeLine{93                     fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{94                     exit(i);}
+\DoxyCodeLine{95                 \}}
+\DoxyCodeLine{96                 wait(\&status);}
+\DoxyCodeLine{97             \}}
+\DoxyCodeLine{98             wait(\&status);}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100         wait(\&status);}
+\DoxyCodeLine{101         p1=fork(); \textcolor{comment}{//p10}}
+\DoxyCodeLine{102         i++;}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if}(p1==0)}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{106             exit(i);}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//master}}
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             p2=fork(); \textcolor{comment}{//p11}}
+\DoxyCodeLine{111             i++;}
+\DoxyCodeLine{112             \textcolor{keywordflow}{if}(p2==0)}
+\DoxyCodeLine{113             \{}
+\DoxyCodeLine{114                 fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{115                 exit(i);}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             wait(\&status);}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119         wait(\&status);}
+\DoxyCodeLine{120         p1=fork(); \textcolor{comment}{//p12}}
+\DoxyCodeLine{121         i++;}
+\DoxyCodeLine{122         \textcolor{keywordflow}{if}(p1==0)}
+\DoxyCodeLine{123         \{}
+\DoxyCodeLine{124             fprintf(stdout, \textcolor{stringliteral}{"\%d PID: \%d Padre: \%d\(\backslash\)n"}, i++, getpid(), getppid());}
+\DoxyCodeLine{125             exit(i);}
+\DoxyCodeLine{126         \}}
+\DoxyCodeLine{127         wait(\&status);}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,67 @@
+\hypertarget{C-Unix-STD-Fork-Wait_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Fork-\/\+Wait/main.c File Reference}
+\label{C-Unix-STD-Fork-Wait_2main_8c}\index{src/C-\/Unix-\/STD-\/Fork-\/Wait/main.c@{src/C-\/Unix-\/STD-\/Fork-\/Wait/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Fork-Wait_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Fork-Wait_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Fork-Wait_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Fork-Wait_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}, i;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} *v;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     assert(argc==2);}
+\DoxyCodeLine{13     \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}=atoi(argv[1]);}
+\DoxyCodeLine{14     v=(\textcolor{keywordtype}{int} *)malloc(\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     printf(\textcolor{stringliteral}{"Dammi \%d numeri interi:\(\backslash\)n"}, \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}});}
+\DoxyCodeLine{17     \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         scanf(\textcolor{stringliteral}{"\%d"}, \&v[i]);}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \textcolor{keywordflow}{if}(fork())}
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26            wait(NULL);}
+\DoxyCodeLine{27            printf(\textcolor{stringliteral}{"\%d "}, v[i]);}
+\DoxyCodeLine{28            exit(i);}
+\DoxyCodeLine{29         \}}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+
+
+References n.
+

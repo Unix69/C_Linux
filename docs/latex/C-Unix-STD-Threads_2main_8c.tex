@@ -1,0 +1,263 @@
+\hypertarget{C-Unix-STD-Threads_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Threads/main.c File Reference}
+\label{C-Unix-STD-Threads_2main_8c}\index{src/C-\/Unix-\/STD-\/Threads/main.c@{src/C-\/Unix-\/STD-\/Threads/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Threads_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfile}{file}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}(\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}})~(\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}-\/1)/2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structfile}{file}} \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a07435a1b8efe8619e22333135f55b960}{ftype}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a70db8bd1d499619f7ff9c1ca2ff3c8df}{main}} (int argc, char $\ast$$\ast$argv)
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5}{proc}} (char $\ast$inputfile, char $\ast$outputfile)
+\item 
+int $\ast$ \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a968d7ae9a169c70c987206c1c3e75b7e}{sort}} (int $\ast$buffer, int nr)
+\item 
+void $\ast$ \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951}{thread\+\_\+function}} (void $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}\label{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}} 
+\index{main.c@{main.c}!n@{n}}
+\index{n@{n}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily \#define n(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}} }\end{DoxyParamCaption})~(\mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_aa4c2a5552e9bc49b1816ff532f558c74}{a}}-\/1)/2}
+
+
+
+Definition at line 9 of file main.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a07435a1b8efe8619e22333135f55b960}\label{C-Unix-STD-Threads_2main_8c_a07435a1b8efe8619e22333135f55b960}} 
+\index{main.c@{main.c}!ftype@{ftype}}
+\index{ftype@{ftype}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ftype}{ftype}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile}{file}} \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a07435a1b8efe8619e22333135f55b960}{ftype}}}
+
+
+
+Definition at line 13 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a70db8bd1d499619f7ff9c1ca2ff3c8df}\label{C-Unix-STD-Threads_2main_8c_a70db8bd1d499619f7ff9c1ca2ff3c8df}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                 \{}
+\DoxyCodeLine{16 \mbox{\hyperlink{structfile}{ftype}} *v;}
+\DoxyCodeLine{17 pthread\_t *tid;}
+\DoxyCodeLine{18 \textcolor{keywordtype}{int} r;}
+\DoxyCodeLine{19 \textcolor{keywordtype}{int} i\_file=((argc>2)\&\&(argc\%2!=0)?\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}(argc):-\/1);}
+\DoxyCodeLine{20 \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{21 \textcolor{keywordtype}{int} j=0;}
+\DoxyCodeLine{22 \textcolor{keywordtype}{int} r=0;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keywordflow}{if}(i\_file==-\/1)}
+\DoxyCodeLine{25 exit(-\/1);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 v=malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structfile}{ftype}})*i\_file);}
+\DoxyCodeLine{28 tid=malloc(\textcolor{keyword}{sizeof}(pthread\_t)*i\_file);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keywordflow}{while}(i<i\_file)\{}
+\DoxyCodeLine{31 tid[i]=i;}
+\DoxyCodeLine{32 v[i].\mbox{\hyperlink{structfile_a180ff7c65113307073261133c0b4e95a}{input\_file}}=malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*strlen(argv[j]) + 1);}
+\DoxyCodeLine{33 strcpy(v[i].input\_file,argv[j++]);}
+\DoxyCodeLine{34 v[i].\mbox{\hyperlink{structfile_a3023b66d40b41162b9e81f68dab5330f}{output\_file}}=malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*strlen(argv[j]) + 1);}
+\DoxyCodeLine{35 strcpy(v[i++].output\_file,argv[j++]);}
+\DoxyCodeLine{36 \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keywordflow}{for}(i=0; i<i\_file; i++, assert(r==0))}
+\DoxyCodeLine{39     r=pthread\_create(\&tid[i],NULL, \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951}{thread\_function}}, \&v[i]);}
+\DoxyCodeLine{40     pthread\_join(tid[i\_file-\/1], NULL);}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+
+
+References file\+::input\+\_\+file, n, file\+::output\+\_\+file, and thread\+\_\+function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Threads_2main_8c_a70db8bd1d499619f7ff9c1ca2ff3c8df_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5}\label{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5}} 
+\index{main.c@{main.c}!proc@{proc}}
+\index{proc@{proc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proc()}{proc()}}
+{\footnotesize\ttfamily void proc (\begin{DoxyParamCaption}\item[{char $\ast$}]{inputfile,  }\item[{char $\ast$}]{outputfile }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                             \{}
+\DoxyCodeLine{45 \textcolor{keywordtype}{int} buffer[MAX];}
+\DoxyCodeLine{46 FILE *fi;}
+\DoxyCodeLine{47 FILE *fo;}
+\DoxyCodeLine{48 \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{49 \textcolor{keywordtype}{int} nr=0;}
+\DoxyCodeLine{50 fi=fopen(inputfile, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{51 fscanf(fi, \textcolor{stringliteral}{"\%d"}, \&nr);}
+\DoxyCodeLine{52 \textcolor{keywordflow}{for}(; i<nr; i++)}
+\DoxyCodeLine{53     fscanf(fi, \textcolor{stringliteral}{"\%d"}, \&buffer[i]);}
+\DoxyCodeLine{54     fclose(fi);}
+\DoxyCodeLine{55 buffer=\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a968d7ae9a169c70c987206c1c3e75b7e}{sort}}(\&buffer, nr);}
+\DoxyCodeLine{56 fo=fopen(outputfile, \textcolor{stringliteral}{"w+"});}
+\DoxyCodeLine{57 \textcolor{keywordflow}{for}(i=0; i<nr; i++)}
+\DoxyCodeLine{58     fprintf(fo, \textcolor{stringliteral}{"\%d"}, buffer[i]);}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+
+
+References sort().
+
+
+
+Referenced by thread\+\_\+function().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a968d7ae9a169c70c987206c1c3e75b7e}\label{C-Unix-STD-Threads_2main_8c_a968d7ae9a169c70c987206c1c3e75b7e}} 
+\index{main.c@{main.c}!sort@{sort}}
+\index{sort@{sort}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily int$\ast$ sort (\begin{DoxyParamCaption}\item[{int $\ast$}]{buffer,  }\item[{int}]{nr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68                               \{}
+\DoxyCodeLine{69 \textcolor{keywordtype}{int} i,j;}
+\DoxyCodeLine{70 \textcolor{keywordtype}{int} temp;}
+\DoxyCodeLine{71 \textcolor{keywordflow}{for}(i=0; i<nr-\/1; i++)}
+\DoxyCodeLine{72 \textcolor{keywordflow}{for}(j=i; j<nr; j++)}
+\DoxyCodeLine{73     \textcolor{keywordflow}{if}(buffer[i]>buffer[j])\{}
+\DoxyCodeLine{74         temp=buffer[i];}
+\DoxyCodeLine{75         buffer[i]=buffer[j];}
+\DoxyCodeLine{76         buffer[j]=temp;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78 \textcolor{keywordflow}{return}(buffer);}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+
+
+Referenced by proc().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Threads_2main_8c_a968d7ae9a169c70c987206c1c3e75b7e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951}\label{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951}} 
+\index{main.c@{main.c}!thread\_function@{thread\_function}}
+\index{thread\_function@{thread\_function}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_function()}{thread\_function()}}
+{\footnotesize\ttfamily void $\ast$ thread\+\_\+function (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                                 \{}
+\DoxyCodeLine{63     \mbox{\hyperlink{structfile}{ftype}} *seg=(\mbox{\hyperlink{structfile}{ftype}} *)arg;}
+\DoxyCodeLine{64     \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a1cb97c3eeabb262b8fa130b26787e8c5}{proc}}(seg-\/>\mbox{\hyperlink{structfile_a180ff7c65113307073261133c0b4e95a}{input\_file}}, seg-\/>\mbox{\hyperlink{structfile_a3023b66d40b41162b9e81f68dab5330f}{output\_file}});}
+\DoxyCodeLine{65     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{66     \}}
+
+\end{DoxyCode}
+
+
+References file\+::input\+\_\+file, file\+::output\+\_\+file, and proc().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{C-Unix-STD-Threads_2main_8c_a6ac9570fad24030ea7da53044f1d4951_icgraph}
+\end{center}
+\end{figure}

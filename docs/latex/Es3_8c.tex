@@ -1,0 +1,48 @@
+\hypertarget{Es3_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Basic-\/\+Fork/\+Es3.c File Reference}
+\label{Es3_8c}\index{src/C-\/Unix-\/STD-\/Basic-\/Fork/Es3.c@{src/C-\/Unix-\/STD-\/Basic-\/Fork/Es3.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for Es3.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{Es3_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Es3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Es3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Es3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Es3.c@{Es3.c}!main@{main}}
+\index{main@{main}!Es3.c@{Es3.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Es3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keywordflow}{for} (i=2; i>=1; i-\/-\/)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordflow}{if} (!fork ())}
+\DoxyCodeLine{12         printf (\textcolor{stringliteral}{"\%d\(\backslash\)n"}, -\/i);}
+\DoxyCodeLine{13         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{14         printf (\textcolor{stringliteral}{"\%d\(\backslash\)n"}, i);}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}

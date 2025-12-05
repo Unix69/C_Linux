@@ -1,0 +1,168 @@
+\hypertarget{Es1_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Explore-\/\+File-\/\+Directories/\+Es1.c File Reference}
+\label{Es1_8c}\index{src/C-\/Unix-\/STD-\/Explore-\/File-\/Directories/Es1.c@{src/C-\/Unix-\/STD-\/Explore-\/File-\/Directories/Es1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for Es1.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Es1_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Es1_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d}{funzione}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{Es1_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Es1_8c_a0240ac851181b84ac374872dc5434ee4}\label{Es1_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{Es1.c@{Es1.c}!N@{N}}
+\index{N@{N}!Es1.c@{Es1.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~100}
+
+
+
+Definition at line 8 of file Es1.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d}\label{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d}} 
+\index{Es1.c@{Es1.c}!funzione@{funzione}}
+\index{funzione@{funzione}!Es1.c@{Es1.c}}
+\doxysubsubsection{\texorpdfstring{funzione()}{funzione()}}
+{\footnotesize\ttfamily void funzione (\begin{DoxyParamCaption}\item[{char $\ast$}]{percorso }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Es1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     \textcolor{keyword}{struct }dirent *dirp;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{40     DIR *dp;}
+\DoxyCodeLine{41     \textcolor{keyword}{struct }stat statbuf;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char} fullName[\mbox{\hyperlink{Es1_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{43     \textcolor{comment}{//Di ogni variabile ne serve una per ogni directory}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordflow}{if} ((dp=opendir(percorso))==NULL)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         fprintf(stderr, \textcolor{stringliteral}{"Errore nell'apertura if\(\backslash\)n"});}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} (-\/3);}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordflow}{while} ( (dirp = readdir(dp)) != NULL)}
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \textcolor{comment}{//dirp-\/>d\_name è il nome del file nella cartella}}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if}(strcmp(dirp-\/>d\_name, \textcolor{stringliteral}{"."})!=0 \&\& strcmp(dirp-\/>d\_name, \textcolor{stringliteral}{".."})!=0)}
+\DoxyCodeLine{55         \{}
+\DoxyCodeLine{56             sprintf (fullName, \textcolor{stringliteral}{"\%s/\%s"}, percorso, dirp-\/>d\_name);}
+\DoxyCodeLine{57             \textcolor{keywordflow}{if} (lstat(fullName, \&statbuf) < 0 )}
+\DoxyCodeLine{58             \{}
+\DoxyCodeLine{59                 fprintf (stderr, \textcolor{stringliteral}{"Error.\(\backslash\)n"}); exit (1);}
+\DoxyCodeLine{60             \}}
+\DoxyCodeLine{61             \textcolor{comment}{//Stampa nome file se non è una cartella}}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (S\_ISDIR(statbuf.st\_mode) == 0)}
+\DoxyCodeLine{63             \{}
+\DoxyCodeLine{64                 fprintf (stdout, \textcolor{stringliteral}{"File \%d: \%s\(\backslash\)n"}, i, fullName);}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66             \textcolor{comment}{//Stampa nome cartella e ricorri}}
+\DoxyCodeLine{67             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{68             \{}
+\DoxyCodeLine{69                 fprintf (stdout, \textcolor{stringliteral}{"Dir \%d: \%s\(\backslash\)n"}, i, fullName);}
+\DoxyCodeLine{70                 \mbox{\hyperlink{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d}{funzione}}(fullName);}
+\DoxyCodeLine{71             \}}
+\DoxyCodeLine{72             i++;}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (closedir(dp) < 0)}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         fprintf (stderr, \textcolor{stringliteral}{"Error.\(\backslash\)n"}); exit (1);}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{81 \}}
+
+\end{DoxyCode}
+
+
+References N.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Es1_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{Es1_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Es1.c@{Es1.c}!main@{main}}
+\index{main@{main}!Es1.c@{Es1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file Es1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keyword}{struct }stat statbuf;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{char} fullName[\mbox{\hyperlink{Es1_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{//Controllo errori prima di passare il percorso alla funzione}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} (lstat(argv[1], \&statbuf)<0)}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         fprintf(stderr, \textcolor{stringliteral}{"Errore nel primo if\(\backslash\)n"});}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} (-\/1);}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     \textcolor{comment}{//Controllo che sia una directory}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{if} (S\_ISDIR(statbuf.st\_mode)==0)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         fprintf(stderr, \textcolor{stringliteral}{"Errore nel secondo if\(\backslash\)n"});}
+\DoxyCodeLine{28         \textcolor{keywordflow}{return} (-\/2);}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \mbox{\hyperlink{Es1_8c_ad0dfd7a4e6fb7bd41c1a36a678f2594d}{funzione}}(argv[1]);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+
+
+References funzione(), and N.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{Es1_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

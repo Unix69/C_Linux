@@ -1,0 +1,209 @@
+\hypertarget{Es2_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Copy-\/\+Directory\+Tree/\+Es2.c File Reference}
+\label{Es2_8c}\index{src/C-\/Unix-\/STD-\/Copy-\/DirectoryTree/Es2.c@{src/C-\/Unix-\/STD-\/Copy-\/DirectoryTree/Es2.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+Include dependency graph for Es2.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Es2_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Es2_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~1000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Es2_8c_ad9e977b3c72a6680e4588e296647cd92}{copia}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{Es2_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Es2_8c_a0240ac851181b84ac374872dc5434ee4}\label{Es2_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{Es2.c@{Es2.c}!N@{N}}
+\index{N@{N}!Es2.c@{Es2.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~1000}
+
+
+
+Definition at line 9 of file Es2.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Es2_8c_ad9e977b3c72a6680e4588e296647cd92}\label{Es2_8c_ad9e977b3c72a6680e4588e296647cd92}} 
+\index{Es2.c@{Es2.c}!copia@{copia}}
+\index{copia@{copia}!Es2.c@{Es2.c}}
+\doxysubsubsection{\texorpdfstring{copia()}{copia()}}
+{\footnotesize\ttfamily void copia (\begin{DoxyParamCaption}\item[{char $\ast$}]{percorso1,  }\item[{char $\ast$}]{percorso2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Es2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     \textcolor{keyword}{struct }dirent *dirp;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} i=0, f1, f2, nr, nw, c;}
+\DoxyCodeLine{51     DIR *dp1, *dp2;}
+\DoxyCodeLine{52     \textcolor{keyword}{struct }stat statbuf;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{char} fullName1[\mbox{\hyperlink{Es2_8c_a0240ac851181b84ac374872dc5434ee4}{N}}], fullName2[\mbox{\hyperlink{Es2_8c_a0240ac851181b84ac374872dc5434ee4}{N}}], vet[\mbox{\hyperlink{Es2_8c_a0240ac851181b84ac374872dc5434ee4}{N}}];}
+\DoxyCodeLine{54     \textcolor{comment}{//Di ogni variabile ne serve una per ogni directory}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{if} ((dp1=opendir(percorso1))==NULL)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         fprintf(stderr, \textcolor{stringliteral}{"Errore nell'apertura directory 1\(\backslash\)n"});}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} (-\/5);}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61     \textcolor{keywordflow}{if} ((dp2=opendir(percorso2))==NULL)}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         fprintf(stderr, \textcolor{stringliteral}{"Errore nell'apertura directory 2\(\backslash\)n"});}
+\DoxyCodeLine{64         \textcolor{keywordflow}{return} (-\/6);}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{while} ( (dirp = readdir(dp1)) != NULL)}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69         \textcolor{comment}{//dirp-\/>d\_name è il nome del file nella cartella}}
+\DoxyCodeLine{70         \textcolor{keywordflow}{if}(strcmp(dirp-\/>d\_name, \textcolor{stringliteral}{"."})!=0 \&\& strcmp(dirp-\/>d\_name, \textcolor{stringliteral}{".."})!=0)}
+\DoxyCodeLine{71         \{}
+\DoxyCodeLine{72             sprintf (fullName1, \textcolor{stringliteral}{"\%s/\%s"}, percorso1, dirp-\/>d\_name);}
+\DoxyCodeLine{73             sprintf (fullName2, \textcolor{stringliteral}{"\%s/\%s"}, percorso2, dirp-\/>d\_name);}
+\DoxyCodeLine{74             \textcolor{keywordflow}{if} (lstat(fullName1, \&statbuf) < 0 )}
+\DoxyCodeLine{75             \{}
+\DoxyCodeLine{76                 fprintf (stderr, \textcolor{stringliteral}{"Error.\(\backslash\)n"}); exit (1);}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78             \textcolor{comment}{//Copia di file}}
+\DoxyCodeLine{79             \textcolor{keywordflow}{if} (S\_ISDIR(statbuf.st\_mode) == 0)}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                f1=open(fullName1, O\_RDONLY);}
+\DoxyCodeLine{82                f2=open(fullName2, O\_WRONLY | O\_CREAT);}
+\DoxyCodeLine{83                \textcolor{keywordflow}{if}(f1==(-\/1) || f2==(-\/1))}
+\DoxyCodeLine{84                \{}
+\DoxyCodeLine{85                     fprintf(stderr, \textcolor{stringliteral}{"Errore apertura file!"});}
+\DoxyCodeLine{86                     exit (2);}
+\DoxyCodeLine{87                \}}
+\DoxyCodeLine{88                \textcolor{keywordflow}{while}((nr=read(f1, vet, \mbox{\hyperlink{Es2_8c_a0240ac851181b84ac374872dc5434ee4}{N}}))>0)}
+\DoxyCodeLine{89                \{}
+\DoxyCodeLine{90                     nw=write(f2, vet, nr);}
+\DoxyCodeLine{91                     \textcolor{keywordflow}{if}(nr!=nw)}
+\DoxyCodeLine{92                     \{}
+\DoxyCodeLine{93                         fprintf(stderr, \textcolor{stringliteral}{"Errore nella copia del file!"});}
+\DoxyCodeLine{94                         exit(3);}
+\DoxyCodeLine{95                     \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97                     close(f1);}
+\DoxyCodeLine{98                     close(f2);}
+\DoxyCodeLine{99                \}}
+\DoxyCodeLine{100             \}}
+\DoxyCodeLine{101             \textcolor{comment}{//Copia cartella e ricorri}}
+\DoxyCodeLine{102             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{103             \{}
+\DoxyCodeLine{104                 c=mkdir(fullName2, S\_IRWXU | S\_IRWXG | S\_IROTH | S\_IXOTH);}
+\DoxyCodeLine{105                 \textcolor{keywordflow}{if}(c==-\/1)}
+\DoxyCodeLine{106                 \{}
+\DoxyCodeLine{107                     fprintf(stderr, \textcolor{stringliteral}{"Errore creazione directory!"});}
+\DoxyCodeLine{108                     exit(4);}
+\DoxyCodeLine{109                 \}}
+\DoxyCodeLine{110                 \mbox{\hyperlink{Es2_8c_ad9e977b3c72a6680e4588e296647cd92}{copia}}(fullName1, fullName2);}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112             i++;}
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{keywordflow}{if} (closedir(dp1) < 0)}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118         fprintf (stderr, \textcolor{stringliteral}{"Error.\(\backslash\)n"});}
+\DoxyCodeLine{119         exit (5);}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+
+
+References N.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{Es2_8c_ad9e977b3c72a6680e4588e296647cd92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Es2_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{Es2_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Es2.c@{Es2.c}!main@{main}}
+\index{main@{main}!Es2.c@{Es2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Es2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keyword}{struct }stat statbuf1, statbuf2;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{//Controllo errori prima di passare i percorsi alla funzione}}
+\DoxyCodeLine{19     assert (argc==3);}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (lstat(argv[1], \&statbuf1)<0)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         fprintf(stderr, \textcolor{stringliteral}{"Errore nel primo statbuf\(\backslash\)n"});}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} (-\/1);}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{if} (lstat(argv[2], \&statbuf2)<0)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         fprintf(stderr, \textcolor{stringliteral}{"Errore nel secondo statbuf\(\backslash\)n"});}
+\DoxyCodeLine{28         \textcolor{keywordflow}{return} (-\/2);}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     \textcolor{comment}{//Controllo che sia una directory}}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if} (S\_ISDIR(statbuf1.st\_mode)==0)}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         fprintf(stderr, \textcolor{stringliteral}{"Il primo percorso non è una directory\(\backslash\)n"});}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} (-\/3);}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36     \textcolor{keywordflow}{if} (S\_ISDIR(statbuf2.st\_mode)==0)}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         fprintf(stderr, \textcolor{stringliteral}{"Il secondo percorso non è una directory\(\backslash\)n"});}
+\DoxyCodeLine{39         \textcolor{keywordflow}{return} (-\/4);}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \mbox{\hyperlink{Es2_8c_ad9e977b3c72a6680e4588e296647cd92}{copia}}(argv[1], argv[2]);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+References copia().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{Es2_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

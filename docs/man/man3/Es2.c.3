@@ -1,0 +1,180 @@
+.TH "src/C-Unix-STD-Copy-DirectoryTree/Es2.c" 3 "Fri Dec 5 2025" "CLinux" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/C-Unix-STD-Copy-DirectoryTree/Es2.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBN\fP   1000"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcopia\fP (char *, char *)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define N   1000"
+
+.PP
+Definition at line 9 of file Es2\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void copia (char * percorso1, char * percorso2)"
+
+.PP
+Definition at line 47 of file Es2\&.c\&.
+.PP
+.nf
+48 {
+49     struct dirent *dirp;
+50     int i=0, f1, f2, nr, nw, c;
+51     DIR *dp1, *dp2;
+52     struct stat statbuf;
+53     char fullName1[N], fullName2[N], vet[N];
+54     //Di ogni variabile ne serve una per ogni directory
+55 
+56     if ((dp1=opendir(percorso1))==NULL)
+57     {
+58         fprintf(stderr, "Errore nell'apertura directory 1\n");
+59         return (-5);
+60     }
+61     if ((dp2=opendir(percorso2))==NULL)
+62     {
+63         fprintf(stderr, "Errore nell'apertura directory 2\n");
+64         return (-6);
+65     }
+66 
+67     while ( (dirp = readdir(dp1)) != NULL)
+68     {
+69         //dirp->d_name è il nome del file nella cartella
+70         if(strcmp(dirp->d_name, "\&.")!=0 && strcmp(dirp->d_name, "\&.\&.")!=0)
+71         {
+72             sprintf (fullName1, "%s/%s", percorso1, dirp->d_name);
+73             sprintf (fullName2, "%s/%s", percorso2, dirp->d_name);
+74             if (lstat(fullName1, &statbuf) < 0 )
+75             {
+76                 fprintf (stderr, "Error\&.\n"); exit (1);
+77             }
+78             //Copia di file
+79             if (S_ISDIR(statbuf\&.st_mode) == 0)
+80             {
+81                f1=open(fullName1, O_RDONLY);
+82                f2=open(fullName2, O_WRONLY | O_CREAT);
+83                if(f1==(-1) || f2==(-1))
+84                {
+85                     fprintf(stderr, "Errore apertura file!");
+86                     exit (2);
+87                }
+88                while((nr=read(f1, vet, N))>0)
+89                {
+90                     nw=write(f2, vet, nr);
+91                     if(nr!=nw)
+92                     {
+93                         fprintf(stderr, "Errore nella copia del file!");
+94                         exit(3);
+95                     }
+96 
+97                     close(f1);
+98                     close(f2);
+99                }
+100             }
+101             //Copia cartella e ricorri
+102             else
+103             {
+104                 c=mkdir(fullName2, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+105                 if(c==-1)
+106                 {
+107                     fprintf(stderr, "Errore creazione directory!");
+108                     exit(4);
+109                 }
+110                 copia(fullName1, fullName2);
+111             }
+112             i++;
+113         }
+114     }
+115 
+116     if (closedir(dp1) < 0)
+117     {
+118         fprintf (stderr, "Error\&.\n");
+119         exit (5);
+120     }
+121     return;
+122 }
+.fi
+.PP
+References N\&.
+.PP
+Referenced by main()\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 13 of file Es2\&.c\&.
+.PP
+.nf
+14 {
+15 
+16     struct stat statbuf1, statbuf2;
+17 
+18     //Controllo errori prima di passare i percorsi alla funzione
+19     assert (argc==3);
+20     if (lstat(argv[1], &statbuf1)<0)
+21     {
+22         fprintf(stderr, "Errore nel primo statbuf\n");
+23         return (-1);
+24     }
+25     if (lstat(argv[2], &statbuf2)<0)
+26     {
+27         fprintf(stderr, "Errore nel secondo statbuf\n");
+28         return (-2);
+29     }
+30     //Controllo che sia una directory
+31     if (S_ISDIR(statbuf1\&.st_mode)==0)
+32     {
+33         fprintf(stderr, "Il primo percorso non è una directory\n");
+34         return (-3);
+35     }
+36     if (S_ISDIR(statbuf2\&.st_mode)==0)
+37     {
+38         fprintf(stderr, "Il secondo percorso non è una directory\n");
+39         return (-4);
+40     }
+41 
+42     copia(argv[1], argv[2]);
+43 
+44     return 0;
+45 }
+.fi
+.PP
+References copia()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CLinux from the source code\&.

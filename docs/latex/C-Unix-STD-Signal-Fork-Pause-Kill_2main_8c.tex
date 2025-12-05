@@ -1,0 +1,96 @@
+\hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Signal-\/\+Fork-\/\+Pause-\/\+Kill/main.c File Reference}
+\label{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c}\index{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill/main.c@{src/C-\/Unix-\/STD-\/Signal-\/Fork-\/Pause-\/Kill/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_ae4504f4a7837723d570d36055ef2e91d}{handler}} (int s)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_ae4504f4a7837723d570d36055ef2e91d}\label{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_ae4504f4a7837723d570d36055ef2e91d}} 
+\index{main.c@{main.c}!handler@{handler}}
+\index{handler@{handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily void handler (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     pid\_t p1;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     (void)signal(SIGINT, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{20     (void)signal(SIGCHLD, \mbox{\hyperlink{C-Unix-STD-Signal_2main_8c_a3c2348f39cf58c5c0f48742b32b15d83}{handler}});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     p1=fork();}
+\DoxyCodeLine{23     assert(p1!=-\/1);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordflow}{if}(p1==0) \textcolor{comment}{//Figlio}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         pause();}
+\DoxyCodeLine{28         printf(\textcolor{stringliteral}{"\(\backslash\)nSono il figlio con PID \%d\(\backslash\)n"}, getpid());}
+\DoxyCodeLine{29         exit(0);}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(p1!=0) \textcolor{comment}{//Padre}}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         pause();}
+\DoxyCodeLine{34         kill(p1, SIGINT);}
+\DoxyCodeLine{35         pause();}
+\DoxyCodeLine{36         printf(\textcolor{stringliteral}{"Padre terminato\(\backslash\)n"});}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+
+
+References handler().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}

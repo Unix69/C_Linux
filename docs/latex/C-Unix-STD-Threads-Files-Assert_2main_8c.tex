@@ -1,0 +1,340 @@
+\hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c}{}\doxysection{src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Threads-\/\+Files-\/\+Assert/main.c File Reference}
+\label{C-Unix-STD-Threads-Files-Assert_2main_8c}\index{src/C-\/Unix-\/STD-\/Threads-\/Files-\/Assert/main.c@{src/C-\/Unix-\/STD-\/Threads-\/Files-\/Assert/main.c}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-Unix-STD-Threads-Files-Assert_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnf}{nf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_a0240ac851181b84ac374872dc5434ee4}{N}}~50
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnf}{nf}} \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_abaebd55c361905e88cbbc31e2612f134}{nomifile}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_a3537ea331a49d96f98776366f25ba0c2}{bubblesort}} (void $\ast$ptr)
+\item 
+void $\ast$ \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445}{funzione}} (void $\ast$ptr)
+\item 
+int \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_ae076966ba86ec537886a5ae77b8c232c}{Read\+File\+In}} (void $\ast$ptr)
+\item 
+void \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_af75094754983d7fa31c5bbebc9b95825}{Write\+File\+Out}} (void $\ast$ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_a0240ac851181b84ac374872dc5434ee4}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_a0240ac851181b84ac374872dc5434ee4}} 
+\index{main.c@{main.c}!N@{N}}
+\index{N@{N}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~50}
+
+
+
+Definition at line 9 of file main.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_abaebd55c361905e88cbbc31e2612f134}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_abaebd55c361905e88cbbc31e2612f134}} 
+\index{main.c@{main.c}!nomifile@{nomifile}}
+\index{nomifile@{nomifile}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{nomifile}{nomifile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnf}{nf}} \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_abaebd55c361905e88cbbc31e2612f134}{nomifile}}}
+
+
+
+Definition at line 23 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_a3537ea331a49d96f98776366f25ba0c2}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_a3537ea331a49d96f98776366f25ba0c2}} 
+\index{main.c@{main.c}!bubblesort@{bubblesort}}
+\index{bubblesort@{bubblesort}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{bubblesort()}{bubblesort()}}
+{\footnotesize\ttfamily void bubblesort (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keywordtype}{int} i, j, tmp;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \mbox{\hyperlink{structnf}{nomifile}} *arg=(\mbox{\hyperlink{structnf}{nomifile}} *)ptr;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordflow}{for}(i=1; i<arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}}; i++)\{}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keywordflow}{for}(j=0; j<(arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}}-\/i); j++)}
+\DoxyCodeLine{81 \{}
+\DoxyCodeLine{82            }
+\DoxyCodeLine{83 \textcolor{keywordflow}{if}(arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j]>arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j+1])}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85   }
+\DoxyCodeLine{86 tmp=arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j];}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j]=arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j+1];}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[j+1]=tmp;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \}}
+\DoxyCodeLine{93 \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \}}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \}}
+
+\end{DoxyCode}
+
+
+References nf\+::buf, and nf\+::nr.
+
+
+
+Referenced by funzione().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_a3537ea331a49d96f98776366f25ba0c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445}} 
+\index{main.c@{main.c}!funzione@{funzione}}
+\index{funzione@{funzione}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{funzione()}{funzione()}}
+{\footnotesize\ttfamily void$\ast$ funzione (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34 \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_ae076966ba86ec537886a5ae77b8c232c}{ReadFileIn}}(ptr);}
+\DoxyCodeLine{35 \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_a3537ea331a49d96f98776366f25ba0c2}{bubblesort}}(ptr);}
+\DoxyCodeLine{36 \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_af75094754983d7fa31c5bbebc9b95825}{WriteFileOut}}(ptr);}
+\DoxyCodeLine{37 \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+
+
+References bubblesort(), Read\+File\+In(), and Write\+File\+Out().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 136 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137 \{}
+\DoxyCodeLine{138     }
+\DoxyCodeLine{139 \textcolor{keywordflow}{if}((argc<=2)||(argc\%2==0))  \textcolor{comment}{//Gli argomenti devono essere almeno 3 e sempre dispari}}
+\DoxyCodeLine{140 \{}
+\DoxyCodeLine{141     fprintf(stderr, \textcolor{stringliteral}{"Errore negli argomenti!\(\backslash\)n"});}
+\DoxyCodeLine{142     exit(0);}
+\DoxyCodeLine{143 \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     }
+\DoxyCodeLine{146 \textcolor{keywordtype}{int} \mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}=(argc-\/1)/2, i, j=1, err; \textcolor{comment}{//Il numero di thread è il numero di file/2}}
+\DoxyCodeLine{147 pthread\_t *tid;}
+\DoxyCodeLine{148 \mbox{\hyperlink{structnf}{nomifile}} **v;}
+\DoxyCodeLine{149 tid=malloc(\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}*\textcolor{keyword}{sizeof}(pthread\_t)); \textcolor{comment}{//Allocazione vettori}}
+\DoxyCodeLine{150 v=malloc(\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnf}{nomifile}} *));}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)}
+\DoxyCodeLine{153 v[i]=malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnf}{nomifile}}));}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keywordflow}{for}(i=0; i<\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}; i++)  \textcolor{comment}{//Inizializzazione vettore struct}}
+\DoxyCodeLine{156 \{       }
+\DoxyCodeLine{157 strcpy(v[i]-\/>filein, argv[j]);}
+\DoxyCodeLine{158 j++;}
+\DoxyCodeLine{159 strcpy(v[i]-\/>fileout, argv[j]);    }
+\DoxyCodeLine{160 j++;}
+\DoxyCodeLine{161 err=pthread\_create(\&tid[i], NULL, \mbox{\hyperlink{C-Unix-STD-Threads-Files-Assert_2main_8c_aa4848d9d4fae67f64d8e89c42f13e445}{funzione}}, v[i]);    }
+\DoxyCodeLine{162 assert(err==0);}
+\DoxyCodeLine{163 \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 pthread\_join(tid[\mbox{\hyperlink{C-Unix-STD-Threads_2main_8c_a3e41ff700a58779685d32cfab7fd6a9d}{n}}-\/1], NULL);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \}}
+
+\end{DoxyCode}
+
+
+References nf\+::filein, nf\+::fileout, funzione(), and n.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_ae076966ba86ec537886a5ae77b8c232c}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_ae076966ba86ec537886a5ae77b8c232c}} 
+\index{main.c@{main.c}!ReadFileIn@{ReadFileIn}}
+\index{ReadFileIn@{ReadFileIn}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ReadFileIn()}{ReadFileIn()}}
+{\footnotesize\ttfamily void Read\+File\+In (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45 FILE *fin;}
+\DoxyCodeLine{46 \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \mbox{\hyperlink{structnf}{nomifile}} *arg=(\mbox{\hyperlink{structnf}{nomifile}} *)ptr;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 fin=fopen(arg-\/>\mbox{\hyperlink{structnf_a93e42904a8e219e686801d25a1b5250d}{filein}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{51 fscanf(fin, \textcolor{stringliteral}{"\%d"}, \&arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}});}
+\DoxyCodeLine{52 arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}=malloc((arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}})*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keywordflow}{for}(i=0; i<arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}}; i++)\{}
+\DoxyCodeLine{55     fscanf(fin, \textcolor{stringliteral}{"\%d"}, \&arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[i]);}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 fclose(fin);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+
+
+References nf\+::buf, nf\+::filein, and nf\+::nr.
+
+
+
+Referenced by funzione().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_ae076966ba86ec537886a5ae77b8c232c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{C-Unix-STD-Threads-Files-Assert_2main_8c_af75094754983d7fa31c5bbebc9b95825}\label{C-Unix-STD-Threads-Files-Assert_2main_8c_af75094754983d7fa31c5bbebc9b95825}} 
+\index{main.c@{main.c}!WriteFileOut@{WriteFileOut}}
+\index{WriteFileOut@{WriteFileOut}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{WriteFileOut()}{WriteFileOut()}}
+{\footnotesize\ttfamily void Write\+File\+Out (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file main.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109 \{}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111 FILE *fout;}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113 \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{114     }
+\DoxyCodeLine{115 \mbox{\hyperlink{structnf}{nomifile}} *arg=(\mbox{\hyperlink{structnf}{nomifile}} *)ptr;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     }
+\DoxyCodeLine{118 fout=fopen(arg-\/>\mbox{\hyperlink{structnf_a5793651d4405e044e43fe6c968f9cd71}{fileout}}, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     }
+\DoxyCodeLine{121 \textcolor{keywordflow}{for}(i=0; i<arg-\/>\mbox{\hyperlink{structnf_a8167b0868e2f22d46ec5b636e1140a8c}{nr}}; i++)}
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123         }
+\DoxyCodeLine{124 fprintf(fout, \textcolor{stringliteral}{"\%d\(\backslash\)n"}, arg-\/>\mbox{\hyperlink{structnf_a2d65956630ea04051ce25d0b4024b77b}{buf}}[i]);}
+\DoxyCodeLine{125     }
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 fclose(fout);}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \}}
+
+\end{DoxyCode}
+
+
+References nf\+::buf, nf\+::fileout, and nf\+::nr.
+
+
+
+Referenced by funzione().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{C-Unix-STD-Threads-Files-Assert_2main_8c_af75094754983d7fa31c5bbebc9b95825_icgraph}
+\end{center}
+\end{figure}

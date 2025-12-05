@@ -1,0 +1,26 @@
+var dir_68267d1309a1af8e8297ef4c3efbcdba =
+[
+    [ "C-Func-pointer", "dir_c7f83489df87b131649996f8bb3a997c.html", "dir_c7f83489df87b131649996f8bb3a997c" ],
+    [ "C-STD-File", "dir_d608ead1479416d172d68aa705dbd8e1.html", "dir_d608ead1479416d172d68aa705dbd8e1" ],
+    [ "C-Unix-STD-Basic-Fork", "dir_49305261bf6ff94fada450c192e61126.html", "dir_49305261bf6ff94fada450c192e61126" ],
+    [ "C-Unix-STD-Copy-DirectoryTree", "dir_a3238c4ad8eebeeba0d3fdd797cbb0a5.html", "dir_a3238c4ad8eebeeba0d3fdd797cbb0a5" ],
+    [ "C-Unix-STD-Execl", "dir_6bb9564253a6db87f653b09cb3e84914.html", "dir_6bb9564253a6db87f653b09cb3e84914" ],
+    [ "C-Unix-STD-Execlp-System", "dir_b16285d9a2635e270f06e482641a2dc9.html", "dir_b16285d9a2635e270f06e482641a2dc9" ],
+    [ "C-Unix-STD-Explore-File-Directories", "dir_9eeb97d7f148460511892c8187e4bc95.html", "dir_9eeb97d7f148460511892c8187e4bc95" ],
+    [ "C-Unix-STD-Fork", "dir_44ce6739b4f03b87c495713e4340766c.html", "dir_44ce6739b4f03b87c495713e4340766c" ],
+    [ "C-Unix-STD-Fork-Sleep", "dir_1782dc143a8048dfbd85c0e0503d5263.html", "dir_1782dc143a8048dfbd85c0e0503d5263" ],
+    [ "C-Unix-STD-Fork-Wait", "dir_ea6b1bfa14d3023a7e3939c20b154150.html", "dir_ea6b1bfa14d3023a7e3939c20b154150" ],
+    [ "C-Unix-STD-Fork-Wait-Precedence", "dir_00464b16ee2bec967cf648726b766296.html", "dir_00464b16ee2bec967cf648726b766296" ],
+    [ "C-Unix-STD-Fork-WaitPid", "dir_d9def2803627233598d8b820df9ecdb8.html", "dir_d9def2803627233598d8b820df9ecdb8" ],
+    [ "C-Unix-STD-Kill", "dir_8c0cb2524e2d6febbf1641ad94a3e6d4.html", "dir_8c0cb2524e2d6febbf1641ad94a3e6d4" ],
+    [ "C-Unix-STD-Signal", "dir_0a21ed9862cb6895ef57a7e5f00c3670.html", "dir_0a21ed9862cb6895ef57a7e5f00c3670" ],
+    [ "C-Unix-STD-Signal-Fork", "dir_507f71258ee889799d006eb0becb7b39.html", "dir_507f71258ee889799d006eb0becb7b39" ],
+    [ "C-Unix-STD-Signal-Fork-Kill", "dir_731d30b3c91816d9e16caf4c82e09da5.html", "dir_731d30b3c91816d9e16caf4c82e09da5" ],
+    [ "C-Unix-STD-Signal-Fork-Pause", "dir_dc2cc08b0c53ecde8fc98fa986b18b84.html", "dir_dc2cc08b0c53ecde8fc98fa986b18b84" ],
+    [ "C-Unix-STD-Signal-Fork-Pause-Kill", "dir_39cc5e5615c11e3d468160ef21753f54.html", "dir_39cc5e5615c11e3d468160ef21753f54" ],
+    [ "C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait", "dir_c636affc194b442b3897673368dc0952.html", "dir_c636affc194b442b3897673368dc0952" ],
+    [ "C-Unix-STD-Signal-Fork-Pause-Kill-Pipe", "dir_e44c3c34bf500ca67c9d3c523fcb067e.html", "dir_e44c3c34bf500ca67c9d3c523fcb067e" ],
+    [ "C-Unix-STD-Signal-Fork-Pause-Kill-Wait", "dir_b13f4342c02915ea6998d8031ee7a3dc.html", "dir_b13f4342c02915ea6998d8031ee7a3dc" ],
+    [ "C-Unix-STD-Threads", "dir_c1bb1ff012f1d944050ad786ea344bc5.html", "dir_c1bb1ff012f1d944050ad786ea344bc5" ],
+    [ "C-Unix-STD-Threads-Files-Assert", "dir_55afefa5cb51208ec3be32df87ab06fb.html", "dir_55afefa5cb51208ec3be32df87ab06fb" ]
+];

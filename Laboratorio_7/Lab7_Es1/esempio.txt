@@ -1,7 +1,0 @@
-Libri 10
-Penne 4
-Matite 2
-Libri 20
-Penne 3
-Matite 8
-Libri 9

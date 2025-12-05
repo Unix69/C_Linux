@@ -1,0 +1,47 @@
+.TH "src/C-Unix-STD-Basic-Fork/Es3.c" 3 "Fri Dec 5 2025" "CLinux" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/C-Unix-STD-Basic-Fork/Es3.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+
+.PP
+Definition at line 5 of file Es3\&.c\&.
+.PP
+.nf
+6 {
+7     int i;
+8 
+9     for (i=2; i>=1; i--)
+10     {
+11         if (!fork ())
+12         printf ("%d\n", -i);
+13         else
+14         printf ("%d\n", i);
+15     }
+16 
+17     return 0;
+18 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CLinux from the source code\&.
