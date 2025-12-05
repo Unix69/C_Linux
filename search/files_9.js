@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_2ec_0',['main.c',['../C-Unix-STD-Kill_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Threads_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Threads-Files-Assert_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Pause_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Pause-Kill-Wait_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Signal-Fork-Kill_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Fork_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Fork-WaitPid_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Fork-Wait_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Fork-Wait-Precedence_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Fork-Sleep_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Execlp-System_2main_8c.html',1,'(Global Namespace)'],['../C-Unix-STD-Execl_2main_8c.html',1,'(Global Namespace)'],['../C-STD-File_2main_8c.html',1,'(Global Namespace)'],['../C-Func-pointer_2main_8c.html',1,'(Global Namespace)']]],
-  ['makefile_1',['Makefile',['../Makefile.html',1,'']]]
+  ['son1_2etxt_0',['son1.txt',['../son1_8txt.html',1,'']]],
+  ['son2_2etxt_1',['son2.txt',['../son2_8txt.html',1,'']]],
+  ['stylesheet_2ecss_2',['stylesheet.css',['../stylesheet_8css.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['🏁_20goal_0',['🏁 Goal',['../md_PROJECT.html#autotoc_md9',1,'']]]
+  ['🚀_0',['Getting Started 🚀',['../md_README.html#autotoc_md8',1,'']]],
+  ['🚀_20run_1',['🚀 Run',['../md_README.html#autotoc_md19',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zip_0',['Option A — Download ZIP',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md84',1,'']]]
+  ['⚙️_20configuration_0',['⚙️ Configuration',['../md_README.html#autotoc_md17',1,'']]]
 ];

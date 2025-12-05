@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['general_20contribution_20rules_0',['General Contribution Rules',['../md_README.html#autotoc_md52',1,'']]],
-  ['generate_20project_20documentation_1',['Use Case 1 — Generate Project Documentation',['../md_Usage_2USECASES.html#autotoc_md129',1,'']]],
-  ['generation_2',['Documentation Generation',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md92',1,'']]],
-  ['getting_20started_20🚀_3',['Getting Started 🚀',['../md_README.html#autotoc_md28',1,'']]],
-  ['giacca_4',['giacca',['../son1_8txt.html#a9e58ceaa24ccad5db826c43e82e6b4f2',1,'son1.txt']]],
-  ['gnu_20linux_5',['gnu linux',['../md_README.html#autotoc_md31',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md32',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md33',1,'🐧 On GNU/Linux']]],
-  ['goal_6',['🏁 Goal',['../md_PROJECT.html#autotoc_md9',1,'']]],
-  ['grammar_20rules_7',['Versioning Grammar Rules',['../md_Version_2RELEASE__POLICY.html#autotoc_md221',1,'']]],
-  ['guidelines_8',['Pull Request Guidelines',['../md_README.html#autotoc_md57',1,'']]],
-  ['guides_20📚_9',['guides 📚',['../md_README.html#autotoc_md48',1,'Official Guides 📚'],['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md99',1,'Other Guides 📚'],['../namespacemyNamespace.html#autotoc_md115',1,'Other Guides 📚'],['../md_Usage_2USER__GUIDE.html#autotoc_md142',1,'Other Guides 📚']]]
+  ['handler_0',['handler',['../C-Unix-STD-Signal-Fork-Kill_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-Wait_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c'],['../C-Unix-STD-Signal_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c']]],
+  ['header_2ehtml_1',['header.html',['../header_8html.html',1,'']]],
+  ['how_20to_20fork_20the_20project_2',['How to Fork the Project',['../md_README.html#autotoc_md28',1,'']]],
+  ['how_20to_20open_20a_20pull_20request_3',['How to Open a Pull Request',['../md_README.html#autotoc_md30',1,'']]],
+  ['how_20to_20open_20an_20issue_4',['How to Open an Issue',['../md_README.html#autotoc_md33',1,'']]]
 ];

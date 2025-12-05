@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['each_20project_0',['How It Works for Each Project',['../md_PROJECT.html#autotoc_md13',1,'']]],
-  ['encoding_1',['Version Label Encoding',['../md_Version_2RELEASE__POLICY.html#autotoc_md218',1,'']]],
-  ['enforcement_2',['Enforcement',['../md_CODE__OF__CONDUCT.html#autotoc_md5',1,'']]],
-  ['environment_20setup_20⚙️_3',['Environment Setup ⚙️',['../md_Usage_2DEVELOPMENT__GUIDE.html#autotoc_md104',1,'']]],
-  ['es1_2ec_4',['Es1.c',['../Es1_8c.html',1,'']]],
-  ['es2_2ec_5',['Es2.c',['../Es2_8c.html',1,'']]],
-  ['es3_2ec_6',['Es3.c',['../Es3_8c.html',1,'']]],
-  ['example_20interactions_7',['Example Interactions',['../md_Usage_2ACTORS.html#autotoc_md73',1,'']]],
-  ['exit_20📎_8',['Exit 📎',['../md_Version_2API.html#autotoc_md157',1,'']]],
-  ['extend_20apis_9',['How to extend APIs',['../namespacemyNamespace.html#autotoc_md114',1,'']]],
-  ['extendability_10',['🛠️ Extendability',['../md_Version_2API.html#autotoc_md152',1,'']]]
+  ['faq_20❓_0',['FAQ ❓',['../md_README.html#autotoc_md36',1,'']]],
+  ['file_1',['file',['../structfile.html',1,'']]],
+  ['file1_2etxt_2',['file1.txt',['../file1_8txt.html',1,'']]],
+  ['file1in_2etxt_3',['file1in.txt',['../file1in_8txt.html',1,'']]],
+  ['file1out_2etxt_4',['file1out.txt',['../file1out_8txt.html',1,'']]],
+  ['file2_2etxt_5',['file2.txt',['../file2_8txt.html',1,'']]],
+  ['file2in_2etxt_6',['file2in.txt',['../file2in_8txt.html',1,'']]],
+  ['file2out_2etxt_7',['file2out.txt',['../file2out_8txt.html',1,'']]],
+  ['file3in_2etxt_8',['file3in.txt',['../file3in_8txt.html',1,'']]],
+  ['file3out_2etxt_9',['file3out.txt',['../file3out_8txt.html',1,'']]],
+  ['filein_10',['filein',['../structnf.html#a93e42904a8e219e686801d25a1b5250d',1,'nf']]],
+  ['fileout_11',['fileout',['../structnf.html#a5793651d4405e044e43fe6c968f9cd71',1,'nf']]],
+  ['footer_2ehtml_12',['footer.html',['../footer_8html.html',1,'']]],
+  ['fork_20the_20project_13',['How to Fork the Project',['../md_README.html#autotoc_md28',1,'']]],
+  ['forking_20the_20project_14',['1. Forking the Project',['../md_README.html#autotoc_md27',1,'']]],
+  ['ftype_15',['ftype',['../C-Unix-STD-Threads_2main_8c.html#a07435a1b8efe8619e22333135f55b960',1,'main.c']]],
+  ['funzione_16',['funzione',['../Es1_8c.html#ad0dfd7a4e6fb7bd41c1a36a678f2594d',1,'funzione(char *):&#160;Es1.c'],['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#adcf7e4cfa20ac15c29cf0e5bfb15f1f0',1,'funzione(void *ptr):&#160;main.c']]]
 ];

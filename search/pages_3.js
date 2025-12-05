@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['development_5fguide_0',['DEVELOPMENT_GUIDE',['../md_Usage_2DEVELOPMENT__GUIDE.html',1,'']]]
+  ['of_20conduct_0',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]]
 ];

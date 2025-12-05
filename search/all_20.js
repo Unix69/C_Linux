@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['❌_0',['Obsolescence ❌',['../md_Version_2VERSION.html#autotoc_md240',1,'']]],
-  ['❌_20uninstall_1',['❌ Uninstall',['../md_README.html#autotoc_md41',1,'']]]
+  ['🐧_20on_20gnu_20linux_0',['🐧 on gnu linux',['../md_README.html#autotoc_md11',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md12',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md13',1,'🐧 On GNU/Linux']]]
 ];

@@ -1,26 +1,10 @@
 var searchData=
 [
-  ['obsolescence_20❌_0',['Obsolescence ❌',['../md_Version_2VERSION.html#autotoc_md240',1,'']]],
-  ['obsolete_1',['4. Obsolete',['../md_Version_2VERSION.html#autotoc_md237',1,'']]],
-  ['of_20changes_2',['🔧 Types of Changes',['../md_Version_2CHANGELOG.html#autotoc_md177',1,'']]],
-  ['of_20conduct_3',['of conduct',['../md_README.html#autotoc_md61',1,'4. Code of Conduct'],['../md_CODE__OF__CONDUCT.html',1,'Contributor Covenant Code of Conduct']]],
-  ['of_20contents_4',['of contents',['../md_Usage_2USER__GUIDE.html#autotoc_md136',1,'📓 Table of Contents'],['../md_Version_2API.html#autotoc_md145',1,'📓 Table of Contents'],['../md_Version_2BUG.html#autotoc_md168',1,'📓 Table of Contents'],['../md_Usage_2DEVELOPMENT__GUIDE.html#autotoc_md102',1,'📓 Table of Contents'],['../md_Version_2CHANGELOG.html#autotoc_md176',1,'📓 Table of Contents'],['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md77',1,'📓 Table of Contents'],['../md_Version_2FEATURE.html#autotoc_md183',1,'📓 Table of Contents'],['../md_Version_2FIX.html#autotoc_md195',1,'📓 Table of Contents'],['../md_Version_2NAMESPACE.html#autotoc_md204',1,'📓 Table of Contents'],['../md_Version_2RELEASE__POLICY.html#autotoc_md216',1,'📓 Table of Contents'],['../md_README.html#autotoc_md25',1,'📓 Table of Contents'],['../md_PROJECT.html#autotoc_md7',1,'📓 Table of Contents'],['../md_README.html#autotoc_md51',1,'Table of Contents'],['../md_Version_2VERSION.html#autotoc_md226',1,'Table of Contents']]],
-  ['of_20the_20doxygen_20site_5',['Advantages of the Doxygen Site',['../md_PROJECT.html#autotoc_md17',1,'']]],
-  ['official_20guides_20📚_6',['Official Guides 📚',['../md_README.html#autotoc_md48',1,'']]],
-  ['official_20links_7',['official links',['../md_Version_2FIX.html#autotoc_md203',1,'Official Links'],['../md_Version_2FEATURE.html#autotoc_md194',1,'Official Links'],['../md_Version_2NAMESPACE.html#autotoc_md215',1,'Official Links'],['../md_Version_2CHANGELOG.html#autotoc_md182',1,'Official Links'],['../md_Version_2RELEASE__POLICY.html#autotoc_md225',1,'Official Links'],['../md_Version_2BUG.html#autotoc_md175',1,'Official Links'],['../md_Version_2API.html#autotoc_md167',1,'Official Links'],['../md_Version_2VERSION.html#autotoc_md247',1,'Official Links'],['../md_PROJECT.html#autotoc_md24',1,'Official Links'],['../md_README.html#autotoc_md65',1,'Official Links']]],
-  ['on_20gnu_20linux_8',['on gnu linux',['../md_README.html#autotoc_md31',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md32',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md33',1,'🐧 On GNU/Linux']]],
-  ['open_20a_20pull_20request_9',['How to Open a Pull Request',['../md_README.html#autotoc_md56',1,'']]],
-  ['open_20an_20issue_10',['How to Open an Issue',['../md_README.html#autotoc_md59',1,'']]],
-  ['operations_20🧭_11',['User Operations 🧭',['../md_Usage_2USER__GUIDE.html#autotoc_md138',1,'']]],
-  ['option_20a_20—_20download_20zip_12',['Option A — Download ZIP',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md84',1,'']]],
-  ['option_20b_20—_20clone_20repository_13',['Option B — Clone Repository',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md85',1,'']]],
-  ['optional_14',['optional',['../md_Usage_2ACTORS.html#autotoc_md72',1,'4. CI/CD System (Optional)'],['../md_Usage_2ROLES.html#autotoc_md122',1,'CI/CD Role (Optional)']]],
-  ['other_20guides_20📚_15',['other guides 📚',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md99',1,'Other Guides 📚'],['../namespacemyNamespace.html#autotoc_md115',1,'Other Guides 📚'],['../md_Usage_2USER__GUIDE.html#autotoc_md142',1,'Other Guides 📚']]],
-  ['our_20pledge_16',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
-  ['our_20responsibilities_17',['Our Responsibilities',['../md_CODE__OF__CONDUCT.html#autotoc_md3',1,'']]],
-  ['our_20standards_18',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md2',1,'']]],
-  ['output_5ffile_19',['output_file',['../structfile.html#a3023b66d40b41162b9e81f68dab5330f',1,'file']]],
-  ['overview_20',['overview',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md78',1,'Administration Overview'],['../md_Usage_2USECASES.html#autotoc_md127',1,'Overview']]],
-  ['overview_20👤_21',['User Overview 👤',['../md_Usage_2USER__GUIDE.html#autotoc_md137',1,'']]],
-  ['overview_20🧠_22',['Development Overview 🧠',['../md_Usage_2DEVELOPMENT__GUIDE.html#autotoc_md103',1,'']]]
+  ['pledge_0',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
+  ['prerequisites_1',['💻 Prerequisites',['../md_README.html#autotoc_md9',1,'']]],
+  ['proc_2',['proc',['../C-Unix-STD-Threads_2main_8c.html#a1cb97c3eeabb262b8fa130b26787e8c5',1,'main.c']]],
+  ['project_3',['project',['../md_README.html#autotoc_md27',1,'1. Forking the Project'],['../md_README.html#autotoc_md28',1,'How to Fork the Project']]],
+  ['pull_20request_4',['How to Open a Pull Request',['../md_README.html#autotoc_md30',1,'']]],
+  ['pull_20request_20guidelines_5',['Pull Request Guidelines',['../md_README.html#autotoc_md31',1,'']]],
+  ['pull_20requests_6',['2. Pull Requests',['../md_README.html#autotoc_md29',1,'']]]
 ];

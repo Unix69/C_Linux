@@ -65,25 +65,6 @@ function initDirectoryTree(containerId) {
     const treeData = [
         { type: "file", name: "README.md", icon: "📝", link: basePath + "docs/html/md_README.html" },
         { type: "file", name: "ISSUE_TEMPLATE.md", icon: "📝", link: basePath + "docs/html/md_ISSUE_TEMPLATE.html" },
-        { type: "folder", name: "Version", icon: "📁", children: [
-            { type: "file", name: "BUG.md", icon: "🐞", link: basePath + "docs/html/md_Version_BUG.html" },
-            { type: "file", name: "CHANGELOG.md", icon: "📋", link: basePath + "docs/html/md_Version_CHANGELOG.html" },
-            { type: "file", name: "VERSION.md", icon: "🏷️", link: basePath + "docs/html/md_Version_VERSION.html" },
-            { type: "file", name: "API.md", icon: "🧩", link: basePath + "docs/html/md_Version_API.html" },
-            { type: "file", name: "NAMESPACE.md", icon: "📦", link: basePath + "docs/html/md_Version_NAMESPACE.html" },
-            { type: "file", name: "RELEASE_POLICY.md", icon: "📜", link: basePath + "docs/html/md_Version_RELEASE_POLICY.html" },
-            { type: "file", name: "FEATURE.md", icon: "⭐", link: basePath + "docs/html/md_Version_FEATURE.html" },
-            { type: "file", name: "FIX.md", icon: "🔧", link: basePath + "docs/html/md_Version_FIX.html" }
-        ]},
-        { type: "folder", name: "Usage", icon: "📁", children: [
-            { type: "file", name: "ADMINISTRATOR_GUIDE.md", icon: "🧑‍💼", link: basePath + "docs/html/md_Usage_ADMINISTRATOR_GUIDE.html" },
-            { type: "file", name: "ROLES.md", icon: "👥", link: basePath + "docs/html/md_Usage_ROLES.html" },
-            { type: "file", name: "DEVELOPMENT_GUIDE.md", icon: "🧑‍💻", link: basePath + "docs/html/md_Usage_DEVELOPMENT_GUIDE.html" },
-            { type: "file", name: "ACTORS.md", icon: "👤", link: basePath + "docs/html/md_Usage_ACTORS.html" },
-            { type: "file", name: "USECASES.md", icon: "🎮", link: basePath + "docs/html/md_Usage_USECASES.html" },
-            { type: "file", name: "USER_GUIDE.md", icon: "📘", link: basePath + "docs/html/md_Usage_USER_GUIDE.html" }
-        ]},
-        { type: "file", name: "PROJECT.md", icon: "📄", link: basePath + "docs/html/md_PROJECT.html" },
         { type: "file", name: "CONTACT_US.md", icon: "☎️", link: basePath + "docs/html/md_CONTACT_US.html" },
         { type: "file", name: "template.css", icon: "🎨", link: basePath + "docs/html/template.css" },
         { type: "file", name: "LICENSE.md", icon: "📜", link: basePath + "docs/html/md_LICENSE.html" },

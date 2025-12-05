@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['4_20—_20update_20project_20version_0',['Use Case 4 — Update Project Version',['../md_Usage_2USECASES.html#autotoc_md132',1,'']]],
-  ['4_20ci_20cd_20system_20optional_1',['4. CI/CD System (Optional)',['../md_Usage_2ACTORS.html#autotoc_md72',1,'']]],
-  ['4_20code_20of_20conduct_2',['4. Code of Conduct',['../md_README.html#autotoc_md61',1,'']]],
-  ['4_20obsolete_3',['4. Obsolete',['../md_Version_2VERSION.html#autotoc_md237',1,'']]]
+  ['a_0',['a',['../C-Unix-STD-Signal_2main_8c.html#aa4c2a5552e9bc49b1816ff532f558c74',1,'main.c']]],
+  ['a_20pull_20request_1',['How to Open a Pull Request',['../md_README.html#autotoc_md30',1,'']]],
+  ['acknowledgements_2',['Acknowledgements',['../md_README.html#autotoc_md40',1,'']]],
+  ['an_20issue_3',['How to Open an Issue',['../md_README.html#autotoc_md33',1,'']]],
+  ['attribution_4',['Attribution',['../md_CODE__OF__CONDUCT.html#autotoc_md6',1,'']]],
+  ['authors_20🧑‍💻_5',['Authors 🧑‍💻',['../md_README.html#autotoc_md39',1,'']]]
 ];
