@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['scope_0',['Scope',['../md_CODE__OF__CONDUCT.html#autotoc_md4',1,'']]],
+  ['script_3a_1',['Using &lt;tt&gt;doxygen.sh&lt;/tt&gt; script:',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md87',1,'']]],
+  ['see_20also_2',['see also',['../md_Version_2BUG.html#autotoc_md172',1,'See Also'],['../md_Usage_2ACTORS.html#autotoc_md74',1,'See Also'],['../md_README.html#autotoc_md62',1,'See Also'],['../md_PROJECT.html#autotoc_md21',1,'See Also'],['../md_Usage_2ROLES.html#autotoc_md124',1,'See Also'],['../md_Usage_2USECASES.html#autotoc_md133',1,'See Also'],['../md_Version_2API.html#autotoc_md164',1,'See Also'],['../md_Version_2CHANGELOG.html#autotoc_md179',1,'See Also'],['../md_Version_2FEATURE.html#autotoc_md191',1,'See Also'],['../md_Version_2FIX.html#autotoc_md200',1,'See Also'],['../md_Version_2NAMESPACE.html#autotoc_md212',1,'See Also'],['../md_Version_2RELEASE__POLICY.html#autotoc_md222',1,'See Also'],['../md_Version_2VERSION.html#autotoc_md244',1,'See Also']]],
+  ['setup_20⚙️_3',['Environment Setup ⚙️',['../md_Usage_2DEVELOPMENT__GUIDE.html#autotoc_md104',1,'']]],
+  ['sh_20tt_20script_3a_4',['Using &lt;tt&gt;doxygen.sh&lt;/tt&gt; script:',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md87',1,'']]],
+  ['show_5',['show',['../C-Func-pointer_2main_8c.html#a595b8fe6a1f06ee5d494f0d8ff35efb8',1,'main.c']]],
+  ['site_6',['site',['../md_PROJECT.html#autotoc_md17',1,'Advantages of the Doxygen Site'],['../md_PROJECT.html#autotoc_md15',1,'HTML-based site']]],
+  ['son1_2etxt_7',['son1.txt',['../son1_8txt.html',1,'']]],
+  ['son2_2etxt_8',['son2.txt',['../son2_8txt.html',1,'']]],
+  ['sort_9',['sort',['../C-Unix-STD-Threads_2main_8c.html#a1af3b2e4cf0d5f2b98a9aab56888454d',1,'main.c']]],
+  ['source_20code_20integration_10',['3️⃣ Source Code Integration',['../md_PROJECT.html#autotoc_md18',1,'']]],
+  ['stack_11',['💻 Tech Stack',['../md_PROJECT.html#autotoc_md19',1,'']]],
+  ['standard_12',['Release Policy Standard',['../md_Version_2RELEASE__POLICY.html#autotoc_md217',1,'']]],
+  ['standard_20doxyfile_3a_13',['Using Standard Doxyfile:',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md89',1,'']]],
+  ['standards_14',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md2',1,'']]],
+  ['start_20📎_15',['Start 📎',['../md_Version_2API.html#autotoc_md156',1,'']]],
+  ['start_20the_20documentation_20process_16',['How to start the documentation process',['../md_Usage_2USER__GUIDE.html#autotoc_md140',1,'']]],
+  ['started_20🚀_17',['Getting Started 🚀',['../md_README.html#autotoc_md28',1,'']]],
+  ['structure_18',['Folder Structure',['../md_PROJECT.html#autotoc_md12',1,'']]],
+  ['structure_20🧩_19',['Code Structure 🧩',['../md_Usage_2DEVELOPMENT__GUIDE.html#autotoc_md105',1,'']]],
+  ['stylesheet_2ecss_20',['stylesheet.css',['../stylesheet_8css.html',1,'']]],
+  ['sub_21',['sub',['../C-Func-pointer_2main_8c.html#aa578f1c3a478f0c16cc1e19a419e4729',1,'main.c']]],
+  ['system_22',['How to restart the system',['../md_Usage_2ADMINISTRATOR__GUIDE.html#autotoc_md97',1,'']]],
+  ['system_20optional_23',['4. CI/CD System (Optional)',['../md_Usage_2ACTORS.html#autotoc_md72',1,'']]]
+];
