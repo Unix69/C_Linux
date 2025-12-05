@@ -41,7 +41,7 @@
   <br>
 
   <p>
-    
+    A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem
   </p>
 </div>
 
