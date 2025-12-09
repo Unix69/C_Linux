@@ -1,0 +1,36 @@
+warning: source examples is not a readable file or directory... skipping.
+warning: source ./*.html is not a readable file or directory... skipping.
+warning: source ./*.sh is not a readable file or directory... skipping.
+warning: source ./*.md is not a readable file or directory... skipping.
+warning: source *.js is not a readable file or directory... skipping.
+warning: source ./include is not a readable file or directory... skipping.
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/CONTACT_US.md:39: warning: Illegal </br> tag found
+
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/CONTACT_US.md:40: warning: Illegal </br> tag found
+
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/CONTACT_US.md:41: warning: Illegal </br> tag found
+
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:414: warning: explicit link request to 'create' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:415: warning: explicit link request to 'change' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:416: warning: explicit link request to 'make' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:417: warning: explicit link request to 'unzip' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:418: warning: explicit link request to 'copy' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:419: warning: explicit link request to 'remove' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:425: warning: explicit link request to 'create' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:426: warning: explicit link request to 'change' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:427: warning: explicit link request to 'clone' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:428: warning: explicit link request to 'copy' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:429: warning: explicit link request to 'remove' could not be resolved
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:510: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:514: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:519: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:520: warning: Found unknown command '\doxygen'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:521: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:522: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:523: warning: Found unknown command '\cp'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:524: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:530: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:531: warning: Found unknown command '\rm'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:532: warning: Found unknown command '\echo'
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:878: warning: Unexpected html tag <br> found within <a href=...> context
+/home/giuseppe/Documents/Programming/Repositories/C_Linux/README.md:906: warning: found </div> tag without matching <div>

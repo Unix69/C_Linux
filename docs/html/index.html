@@ -43,51 +43,57 @@ h1 {
 <body>
 <header>
     <img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux">
-    <h1 style="font-size: 96px;">C_Linux</h1>
+    <h1 style="font-size: 96px;"><a style="text-decoration: none; color: #f4f4f4;" href="https://github.com/Unix69/C_Linux" target="_blank">C_Linux</a></h1>
     <img src="Images/Logo/doxygen.svg" alt="Doxygen">
 </header>
 
 <div class="section">
-    <h2 style="font-size: 64px; margin-bottom: 0px;">C_Linux</h2>
-    <b>Powered by </b>
-    <a style="align-self: center; text-decoration: none;" href="https://github.com">
-        <img src="Images/Logo/GitHubLogo.svg" align="bottom" alt="GitHub" width="24px" height="24px">
-        <b>GitHub</b>
-    </a>,
-    <a style="align-self: center; text-decoration: none;" href="https://www.doxygen.nl/index.html">
-        <img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px">
-        <b>Doxygen</b>
-    </a> and
-    <a style="align-self: center; text-decoration: none;" href="https://www.gnu.org/software/make/">
-        <img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="24px" height="24px">
-        <b>GNU Make</b>
-    </a>
-
-    <br><br><br><br>
-    <h3 style="font-size: 20px; margin-top: 0;">
-        A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem:
-    </h3>
-    <ul>
-      <li><code>string.h</code></li>
-      <li><code>string.h</code></li>
-      <li><code>stdio.h</code></li>
-      <li><code>stdlib.h</code></li>
-      <li><code>assert.h</code></li>
-      <li><code>fcntl.h</code></li>
-      <li><code>unistd.h</code></li>
-      <li><code>signal.h </code></li>
-      <li><code>sys/types.h</code></li>
-      <li><code>sys/stat.h</code></li>
-      <li><code>pthread.h</code></li>
+    <div style="text-align: center;">
+      <img src="Images/Logo/c-language.svg" alt="C-language" width="128" height="128"/>
+      <br>
+      <br>
+      <b>Powered by</b>
+      <a style="margin-left: 12px; align-self: center; text-decoration: none;" href="https://github.com">
+          <img src="Images/Logo/GitHubLogo.svg" align="bottom" alt="GitHub" width="24px" height="24px">
+          <b>GitHub</b>
+      </a>
+      <a style="align-self: center; text-decoration: none;" href="https://www.doxygen.nl/index.html">
+          <img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px">
+          <b>Doxygen</b>
+      </a>
+      <a style="align-self: center; text-decoration: none;" href="https://www.gnu.org/software/make/">
+          <img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="24px" height="24px">
+          <b>GNU Make</b>
+      </a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="font-size: 16px; margin-top: 0;">
+        A set of <b>C examples</b> showing usage of certain <b>C standard functions</b> and <b>C Unix-like system calls</b>, exploring the below mentioned <b>header files</b>.
+    </div>
+    <br>
+    <ul style="list-style-type: none;">
+      <li><b>C Standard headers supported on Linux and Windows:</b> <code>string.h</code>, <code>stdio.h</code>, <code>stdlib.h</code>, <code>assert.h</code>, <code>signal.h </code>, <code>sys/stat.h</code></li>
+      <li><b>C Unix-like headers supported only on Unix based systems:</b> <code>fcntl.h</code>, <code>unistd.h</code>, <code>sys/types.h</code>, <code>pthread.h</code></li>
     </ul>
+    <br>
+    <div style="font-size: 14px; margin-top: 0;">For example the usage of <b>string.h</b> functions such as <code>strlen</code>, <code>strcpy</code>, <code>strcmp</code>, or Unix system calls related to processes, filesystem and threads such as:
+        <ul>
+          <li><code>execl</code>, <code>execlp</code>, <code>execv</code>, <code>system</code>, <code>fork</code></li>
+          <li><code>signal</code>, <code>wait</code>, <code>waitpid</code>, <code>pause</code>, <code>kill</code></li>
+          <li><code>pipe</code>, <code>opendir</code>, <code>readdir</code>, <code>mkdir</code>, <code>closedir</code>, <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code></li>
+          <li><code>pthread_create</code>, <code>pthread_join</code></li>
+        </ul>
+      </div>
     <div style="margin-top: 48px;"></div>
     <br>
-    <p style="font-size: 18px; margin-top: 0;">Generate your documentation in a few steps</p>
+    <div style="font-size: 22px; margin-top: 0;">🚀 <b>Explore the HTML and Markdown documentation</b> and <b>Generate executables</b> for all examples in a few steps</div>
     <ol style="list-style-type: decimal; display: inline-block; text-align: left; font-size: 18px; line-height: 2;">
         <li>⬇️ Download the project from GitHub or as a zip file</li>
-        <li>⚙️ Execute <code>make build</code> to compile (optional)</li>
-        <li>📄 Execute <code>make doc</code> to generate the documentation</li>
-        <li>🌐 Access the HTML documentation at <code>docs/html/index.html</code></li>
+        <li>⚙️ Execute <code>make all</code> to compile all C examples into executables and to generate the documentation</li>
+        <li>🌐 Access the HTML documentation at <code>docs/html/index.html</code> linked to the <b>Markdown-HTML pages</b> converted by <b>Doxygen</b></li>
     </ol>
 </div>
 
@@ -97,14 +103,16 @@ h1 {
 <h2>📌 Project</h2>
 <ul style="list-style-type: none; padding-left: 0;">
     <li><b>Name:</b> C_Linux</li>
-    <li><b>Brief:</b> A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem</li>
-    <li><b>Logo:</b> <img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="64px" height="64px"/></li>
-    <li><b>Source Directory:</b> src/</li>
-    <li><b>Requirements:</b> 
-        <a href="https://github.com"><img src="Images/Logo/GitHubLogo.svg" alt="GitHub" width="16px" height="16px"><b>GitHub</b></a>,
-        <a href="https://www.doxygen.nl/index.html"><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="16px" height="16px"><b>Doxygen</b></a> 
-        and <b><a href="https://www.gnu.org/software/make/" target="_blank">GNU Make</a></b>
-    </li>
+    <li><b>Brief:</b> A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem</li>   
+    <li><b>Goal:</b> C_Linux offers developers the possibility to use the provided examples as knowledge or as template or code snippet to export into another C Unix based project</li>
+</ul>
+<br>
+<ul style="list-style-type: none; padding-left: 0;">
+    <li><b>GitHub Repository:</b> <a href="https://github.com/Unix69/C_Linux" target="_blank">C_Linux</a></li>
+    <li><b>Based on:</b> <a href="https://github.com/unix69/EmbeddedDocsTemplates" target="_blank">EmbeddedDocsTemplates</a></li>
+    <li><b>Source Directory:</b> <a href="https://github.com/Unix69/C_Linux/tree/master/src" target="_blank"><code>/src</code></a></li>
+    <li><b>OS Requirements:</b> Ubuntu 20.04 or upper to compile and use <b>C-Unix system call examples</b> (unistd.h, ...)</li>
+    <li><b>Software Requirements:</b> <a href="https://github.com"><img src="Images/Logo/GitHubLogo.svg" alt="GitHub" width="16px" height="16px"><b>GitHub</b></a>, <a href="https://www.doxygen.nl/index.html"><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="16px" height="16px"><b>Doxygen</b></a>, <b><a href="https://www.gnu.org/software/make/" target="_blank">GNU Make</a></b> and <a href="https://gcc.gnu.org/"><img src="Images/Logo/GnuLinuxLogo.svg" alt="GnuLinuxLogo" width="16px" height="16px"><b>GNU C Compiler</b></a></li>
 </ul>
 <br>
 <h4 align="center">Now <a href="/C_Linux/docs/html/md_README.html#getting-started">Getting Start</a> with C_Linux!</h4>
@@ -122,23 +130,18 @@ h1 {
 
 
 <div class="section">
-<h2> 📝 Markdown Documentation</h2>
-  <ul style="list-style-type: none; padding-left: 0;">
-    <li><b>Readme Documentation:</b> 
-        <a href="/C_Linux/docs/html/md_README.html">README.md</a>
-    </li>
-    <li><b>Markdown Documentation Directory:</b> <code>root</code> </li>
+<h2> <img src="Images/Logo/GitHubLogo.svg" alt="GitHub" width="24px" height="24px"> Markdown Docs</h4>
+<ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 15px;">
+  <li><b>Markdown Documentation Directory:</b> <code>/</code> </li>
+  <li><b>Main Markdown Page:</b> <a href="/C_Linux/docs/html/md_README.html">README.md</a></li>
 </ul>
-</div>
-
-<div class="section">
-<h2>  <img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px"> HTML Documentation</h2>
-  <ul style="list-style-type: none; padding-left: 0;">
-    <li><b>HTML Output Directory:</b> docs/html/</li>
-    <li><b>HTML Documentation:</b> 
-        <a href="/C_Linux/docs/html/index.html">/html/docs/index.html</a>
+<h2> <img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px"> HTML Docs</h4>
+  <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 15px;">
+    <li><b>HTML Documentation Directory:</b> <code>docs/html/</code></li>
+    <li><b>Main HTML Page:</b> <a href="/C_Linux/docs/html/index.html">/html/docs/index.html</a>
     </li>
 </ul>
+<br>
 </div>
 
 <div class="section">
@@ -170,60 +173,128 @@ void parseInput(char* input) { ... }
 
 <div class="section">
   <h2>🔧 Documentation Configuration</h2>
-  <b>Edit</b> the <b>Doxygen</b> and the <b>Make toolchain configuration</b> by modifing:  
-  <br>
+  <p>
+  In order to <b>customize</b> the <b>building process</b> and your version of <b>HTML and Markdown project documentation</b>,
+  you can <b>edit</b> the <b>Doxygen configuration</b>, <b>Markdown file content</b>, and the <b>Make toolchain configuration</b> by modifying:
+  </p>
   <ul style="list-style-type: none; padding-left: 0;">
-    <li> <code>./Doxyfile</code></li>
-    <li> <code>./Makefile</code></li>
-    <li> <code>./DoxygenLayout.xml</code></li>
-    <li> <code>./doxygen.sh</code></li>
-    <li> <code>./doxygen.ini</code></li>
+      <li>
+          <code title="Main Doxygen configuration file controlling input, output, parsing, HTML/Markdown options, and filters.">./Doxyfile</code>
+          – Main <b>Doxygen configuration file</b>; contains all settings for generating documentation.
+      </li>
+      <li>
+          <code title="Build script for compiling C files, generating .o object files, linking executables, and running documentation generation.">./Makefile</code>
+          – Build and project management script.
+      </li>
+      <li>
+          <code title="Defines the structure and order of HTML documentation; allows customizing menus, panels, and file links.">./DoxygenLayout.xml</code>
+          – XML layout configuration for HTML documentation.
+      </li>
+      <li>
+          <code title="Shell script that prepares and runs Doxygen, applies custom settings, and copies images/resources if needed.">./doxygen.sh</code>
+          – Script to automate Doxygen setup and execution.
+      </li>
+      <li>
+          <code title="Optional ini file for additional project-specific configuration and parsing settings for Doxygen.">./doxygen.ini</code>
+          – Additional Doxygen configuration file.
+      </li>
+      <li>
+          Each <code title="Markdown files (README.md, LICENSE.md, ISSUE_TEMPLATE.md, etc.) converted to HTML documentation.">.md</code> file in the root directory
+          – All root Markdown files converted to HTML.
+      </li>
   </ul>
 
-  or <b>Edit</b> the internal <b>Doxygen HTML</b>, <b>CSS</b> and <b>Js</b> files like:
-
+  <p>
+  Alternatively, you can <b>edit</b> the internal <b>Doxygen HTML</b>, <b>CSS</b> and <b>Javascript</b> files:
+  </p>
   <ul style="list-style-type: none; padding-left: 0;">
-  <li> <code>./header.html</code></li>
-  <li> <code>./footer.html</code></li>
-  <li> <code>./index.html</code></li>
-  <li> <code>./stylesheet.css</code></li>
-  <li> <code>./index.css</code></li>
-  <li> <code>./template.css</code></li>
-  <li> <code>./link.js</code></li>
+      <li>
+          <code title="HTML header included in all pages; contains logo, top menu, or recurring elements.">./header.html</code>
+          – Page header.
+      </li>
+      <li>
+          <code title="HTML footer included in all pages; usually contains copyright, links, or contact info.">./footer.html</code>
+          – Page footer.
+      </li>
+      <li>
+          <code title="Main entry page for documentation navigation; usually index.html in docs/html.">./index.html</code>
+          – Main documentation page.
+      </li>
+      <li>
+          <code title="Global CSS file controlling fonts, colors, spacing, tables, and general styles.">./stylesheet.css</code>
+          – General documentation styles.
+      </li>
+      <li>
+          <code title="CSS specific for the index page layout and special rules.">./index.css</code>
+          – Index page styles.
+      </li>
+      <li>
+          <code title="CSS template used across multiple pages for consistent styling.">./template.css</code>
+          – Template styles.
+      </li>
+      <li>
+          <code title="Javascript managing interactive features such as link updates, dynamic navigation, and search filters.">./link.js</code>
+          – Interactive scripts for navigation and links.
+      </li>
+      <li>
+          <code title="Javascript that generates the dynamic directory tree and handles previews for files.">./directory-tree.js</code>
+          – Directory tree and file preview management.
+      </li>
   </ul>
-
-
-
 </div>
 
+
 <div class="section">
-  <h2>⚙️ Make Documentation</h2>
+  <h2>⚙️ Make Project</h2>
   <ol>
-    <li> <b>Install</b> <b>make</b> and <b>doxygen</b> tools if needed.</li>
-    <li> <b>Put</b> your <b>source code</b> into <code>./src</code>.</li>
+    <li> <b>Install</b> <b>make</b>, <b>doxygen</b> and <b>gcc</b> tools if needed.</li>
     <li> <b>Open a terminal</b> in <code>./</code>.</li>
-    <li> <b>Type</b> the <code>make build</code> command. </li>
-    <li> <b>Type</b> the <code>make doc</code> command. </li>
-    <li> ✅ Documentation generated at <code>docs/</code>. You can find Doxygen HTML documentation at <code>docs/html/index.html</code></li>
+    <li>
+      <ul>
+        <li> A. Run make as <code>make</code> to build and generate C example's executables and C_Linux HTML Documentation using one-shot command. 
+        <li> B. Run make as<ul>
+                <li> <code>make build</code> to build the .o object files of each C example.</li>
+                <li> <code>make build_doc</code> to build the documentation resources to produce it. </li>
+                <li> <code>make doc</code> to generate the doxygen HTML documentation starting from documentation resources</li>
+                <li> <code>make link_all</code> to link for each C example, all .o object file contained into an executable file.</li>
+              </ul>
+        </li>
+        <li> C. Run gcc on each C example you want to build, then generate the documentation with <code>make doc_build</code> and <code>make doc</code><ul>
+                <li> Tipically <code>gcc -c C-Unix-xxx/main.c -o main.o</code> to build the .o object files of the given example.</li>
+                <li> Then <code>gcc -c C-Unix-xxx/main.o -o program</code>  to generate the executable named <code>program</code>.</li>
+                <li> <code>make doc_build</code> to build the documentation resources to produce it.</li>
+                <li> <code>make doc</code> to generate the doxygen HTML documentation starting from documentation resources.</li>
+              </ul>
+        </li>
+      </ul>
+    </li>
   </ol>
-  <br>
-  ⚠️ Warnings logged to <code>docs/doxygen_warnings.log</code>
+  <br>  
+  <ul style="list-style-type: none;">
+    <li> ✅ Example executables and .o object files generated into direct sub-directories of <code>src/</code>.</li>
+    <li> ✅ Project Documentation generated at <code>docs/</code>. You can find Doxygen HTML documentation at <code>docs/html/index.html</code></li>
+    <li> ⚠️ Documentation Generation Warnings logged to <code>docs/doxygen_warnings.log</code></li>
+    <li> ⚠️ On Windows you can use the default make toolchain, but the build process will provide you <b>error</b> and <b>warning</b> on <b>certain examples</b>. So be carefully on running the generated executables.</li>
+  </ul>
   <br>
 </div>
 
 <div class="section">
-  <h2>🗑️ Clean Documentation</h2>
+  <h2>🗑️ Clean Project</h2>
   <ol>
     <li> <b>Install</b> <b>make</b> tool if needed.</li>
     <li> <b>Open a terminal</b> in <code>./</code>.</li>
     <li> <b>Type</b> the <code>make clean</code> command. </li>
-    <li> ❌ Documentation and Doxyfile is deleted </li>
   </ol>
+  
+  <br>
+  ❌ All Example executables and .o object files, Project Documentation and Resources are deleted.
+  <br>
+
 </div>
 
-
 <div class="section">
-  <h2><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px"> Doxygen Customization</h2>
+  <h2><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="24px" height="24px"> Default Doxygen Customization</h2>
   <b>C_Linux</b> use doxygen customization as follow:  
   <br>
   <ul style="list-style-type: none; padding-left: 0;">
@@ -252,21 +323,6 @@ void parseInput(char* input) { ... }
 
 </div>
 
-<div class="section">
-  <h2> ✅ Advantages</h2>
-  The <b>C_Linux</b> offers multiple advantages for software documentation and maintenance:
-  <ul>
-    <li>🔗 <strong>Complete Traceability:</strong> Every change in the code or functionality is documented and linked to the corresponding version.</li>
-    <li>⚙️ <strong>Automation:</strong> Make + Doxygen toolchain automatically updates HTML documentation with Markdown content and inline code comments.</li>
-    <li>🧩 <strong>Integration:</strong> Doxygen tags (@fix, @bug, @change, @todo, @api, @namespace, @feature) link development notes directly to source code.</li>
-    <li>📂 <strong>Modular Clarity:</strong> Folder structure (Version, Usage) separates concepts and production phases, making documentation readable and navigable.</li>
-    <li>🤝 <strong>Collaboration-Friendly:</strong> Multiple team members can edit Markdown files, while Doxygen generates a unified, always up-to-date HTML site.</li>
-    <li>⏱️ <strong>Up-to-Date Documentation:</strong> Changes in code or project structure automatically propagate to the documentation without manual intervention.</li>
-    <li>📏 <strong>Standardization:</strong> Provides a consistent template to structure and maintain project documentation across multiple projects.</li>
-    <li>🌐 <strong>Interactive HTML Site:</strong> HTML-based site mirrors Markdown organization with navigation tree, search, and clickable references.</li>
-  </ul>
-</div>
-
 
 <br>
 <br>
@@ -276,7 +332,7 @@ void parseInput(char* input) { ... }
 
   <!-- Sezione download / GitHub -->
   <div id="custom-footer-download" class="custom-footer-download">
-    <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip" 
+    <a href="https://github.com/Unix69/C_Linux/archive/refs/heads/main.zip" 
        class="btn-download" target="_blank">⬇️ Download</a>
     <a href="https://github.com/Unix69/C_Linux" 
        class="btn-github" target="_blank">🐙 View on GitHub</a>
