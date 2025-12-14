@@ -118,38 +118,71 @@ $(document).ready(function(){initNavTree('Makefile_source.html',''); initResizab
   <div class="headertitle"><div class="title">Makefile</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Makefile.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span># Makefile for building Doxygen documentation</div>
+<a href="Makefile.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span># Makefile for building Doxygen documentation and C_Linux</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span># Variables</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>DOXYGEN_SH = ./doxygen.sh</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>DOXYFILE   = Doxyfile</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>DOCS_DIR   = docs</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>OUTDIR     = docs/html</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span># Default target</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>all:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    @echo &quot;Use &#39;make build&#39; &#39;make doc&#39; to build README Template and generate the documentation for your code!&quot;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span># Build Documentation target</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>build:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    @echo &quot;==&gt; Running Doxygen setup script...&quot;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    @$(DOXYGEN_SH)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span># Make Documentation target</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>doc:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    @echo &quot;==&gt; Running Doxygen with $(DOXYFILE)...&quot;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    @doxygen $(DOXYFILE)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    @echo &quot;==&gt; Documentation successfully generated in $(DOCS_DIR)/&quot;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    @echo &quot;==&gt; Copying image assets to the HTML output folder...&quot; </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    @cp -R Images $(OUTDIR) 2&gt;/dev/null || true</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    @echo &quot;==&gt; Copy completed.&quot;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span># Clean target</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>clean:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    @echo &quot;==&gt; Removing documentation output directory...&quot;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    @rm -rf $(DOCS_DIR)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    @echo &quot;==&gt; Clean completed.&quot;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>CC         = gcc</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>CFLAGS     = -Wall -O2</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>SRC_DIR    = src</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span># Find all .c files in src subfolders</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>SRCS := $(shell find $(SRC_DIR) -name &quot;*.c&quot;)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>OBJS := $(SRCS:.c=.o)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span># Find all subfolders in src</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>SUBDIRS := $(shell find $(SRC_DIR) -mindepth 1 -type d)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span># Default target</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>all: build doc link_all</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span># Build .o files for all .c files</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>build: $(OBJS)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    @echo &quot;==&gt; Build of object files completed.&quot;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span># Link all .o in each folder to one executable named as the folder</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>link_all: $(SUBDIRS)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    @echo &quot;==&gt; Linking completed for all subfolders.&quot;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>$(SUBDIRS):</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    @echo &quot;Linking objects in $@...&quot;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    @OBJS_IN_DIR=$$(find $@ -maxdepth 1 -name &quot;*.o&quot;); \</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    if [ ! -z &quot;$$OBJS_IN_DIR&quot; ]; then \</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        $(CC) $(CFLAGS) $$OBJS_IN_DIR -o $@; \</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        echo &quot;Executable created: $@&quot;; \</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    fi</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span># Pattern rule to build .o from .c</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%.o: %.c</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    @echo &quot;Compiling $&lt;...&quot;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    $(CC) $(CFLAGS) -c $&lt; -o $@</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span># Build Documentation target (Doxygen setup script)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>doc_build:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    @echo &quot;==&gt; Running Doxygen setup script...&quot;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    @$(DOXYGEN_SH)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span># Make Documentation target</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>doc:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    @echo &quot;==&gt; Running Doxygen with $(DOXYFILE)...&quot;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    @doxygen $(DOXYFILE)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    @echo &quot;==&gt; Documentation successfully generated in $(DOCS_DIR)/&quot;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    @echo &quot;==&gt; Copying image assets to the HTML output folder...&quot; </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    @cp -R Images $(OUTDIR) 2&gt;/dev/null || true</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    @echo &quot;==&gt; Copy completed.&quot;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span># Clean target</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>clean:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    @echo &quot;==&gt; Removing object files in src...&quot;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    @find $(SRC_DIR) -name &quot;*.o&quot; -type f -exec rm -f {} \;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    @echo &quot;==&gt; Removing executables in src...&quot;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    @find $(SRC_DIR) -mindepth 1 -type f ! -name &quot;*.c&quot; ! -name &quot;*.txt&quot; ! -name &quot;*.h&quot; ! -name &quot;*.hpp&quot; -executable -exec rm -f {} \;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    @echo &quot;==&gt; Removing documentation output directory...&quot;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    @rm -rf $(DOCS_DIR)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    @echo &quot;==&gt; Clean completed.&quot;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.17-->
