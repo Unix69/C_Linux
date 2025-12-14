@@ -234,16 +234,17 @@ function initDirectoryTree(containerId) {
             const li = document.createElement("li");
             li.className = item.type;
 
-            if (item.type === "folder") {
-                li.appendChild(document.createTextNode((item.icon ?? "📁") + " " + item.name));
+            const icon = item.icon ?? (item.type === "folder" ? "📁" : "📄");
+            li.appendChild(document.createTextNode(icon + " "));
 
+            if (item.type === "folder") {
+                li.appendChild(document.createTextNode(item.name));
                 if (item.children?.length) {
                     li.appendChild(createTree(item.children));
                 }
             }
 
             if (item.type === "file") {
-                li.appendChild(document.createTextNode(item.icon + " "));
                 const a = document.createElement("a");
                 a.textContent = item.name;
                 a.href = item.link || "#";
