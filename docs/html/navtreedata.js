@@ -47,34 +47,20 @@ var NAVTREE =
         [ "⭐ Installation", "md_README.html#autotoc_md15", null ],
         [ "🛠️ Build", "md_README.html#autotoc_md16", null ],
         [ "⚙️ Configuration", "md_README.html#autotoc_md17", null ],
-        [ "✅ Tests", "md_README.html#autotoc_md18", null ],
-        [ "🚀 Run", "md_README.html#autotoc_md19", null ],
-        [ "🌍 Deployment", "md_README.html#autotoc_md20", null ],
-        [ "❌ Uninstall", "md_README.html#autotoc_md21", null ]
+        [ "🚀 Run", "md_README.html#autotoc_md18", null ],
+        [ "❌ Uninstall", "md_README.html#autotoc_md19", null ]
       ] ],
-      [ "Releases ⭐", "md_README.html#autotoc_md22", null ],
-      [ "Licenses 📜", "md_README.html#autotoc_md23", null ],
-      [ "Contributing 👋", "md_README.html#autotoc_md24", [
-        [ "1. Forking the Project", "md_README.html#autotoc_md27", [
-          [ "Table of Contents", "md_README.html#autotoc_md25", null ],
-          [ "General Contribution Rules", "md_README.html#autotoc_md26", null ],
-          [ "How to Fork the Project", "md_README.html#autotoc_md28", null ]
-        ] ],
-        [ "2. Pull Requests", "md_README.html#autotoc_md29", [
-          [ "How to Open a Pull Request", "md_README.html#autotoc_md30", null ],
-          [ "Pull Request Guidelines", "md_README.html#autotoc_md31", null ]
-        ] ],
-        [ "3. Issues ⚠️", "md_README.html#autotoc_md32", [
-          [ "How to Open an Issue", "md_README.html#autotoc_md33", null ],
-          [ "Issue Tracker", "md_README.html#autotoc_md34", null ]
-        ] ],
-        [ "4. Code of Conduct", "md_README.html#autotoc_md35", null ]
+      [ "Licenses 📜", "md_README.html#autotoc_md20", null ],
+      [ "Contributing 👋", "md_README.html#autotoc_md21", [
+        [ "General Contribution Guidelines", "md_README.html#autotoc_md23", null ]
       ] ],
-      [ "FAQ ❓", "md_README.html#autotoc_md36", null ],
-      [ "Contact us ☎️", "md_README.html#autotoc_md37", null ],
-      [ "Official Links", "md_README.html#autotoc_md38", null ],
-      [ "Authors 🧑‍💻", "md_README.html#autotoc_md39", null ],
-      [ "Acknowledgements", "md_README.html#autotoc_md40", null ]
+      [ "Authors 🧑‍💻", "md_README.html#autotoc_md25", null ],
+      [ "Contact ☎️", "md_README.html#autotoc_md27", null ],
+      [ "Official Links 🌐", "md_README.html#autotoc_md29", null ],
+      [ "FAQ ❓", "md_README.html#autotoc_md31", null ],
+      [ "Forking & Pull Requests 🔀", "md_README.html#autotoc_md33", null ],
+      [ "Issues ⚠️", "md_README.html#autotoc_md37", null ],
+      [ "Thanks 🙏", "md_README.html#autotoc_md39", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
