@@ -229,16 +229,25 @@ function initDirectoryTree(containerId) {
 
     function createTree(data) {
         const ul = document.createElement("ul");
+
         data.forEach(item => {
             const li = document.createElement("li");
             li.className = item.type;
-            li.appendChild(document.createTextNode(item.icon + " "));
+
+            const icon = item.icon ?? (item.type === "folder" ? "📁" : "📄");
+            li.appendChild(document.createTextNode(icon + " "));
+
+            if (item.type === "folder") {
+                li.appendChild(document.createTextNode(item.name));
+                if (item.children?.length) {
+                    li.appendChild(createTree(item.children));
+                }
+            }
 
             if (item.type === "file") {
                 const a = document.createElement("a");
                 a.textContent = item.name;
                 a.href = item.link || "#";
-                a.style.cursor = "pointer";
 
                 if (item.preview) {
                     a.addEventListener("click", e => {
@@ -248,13 +257,11 @@ function initDirectoryTree(containerId) {
                 }
 
                 li.appendChild(a);
-            } else if (item.type === "folder") {
-                li.appendChild(document.createTextNode(item.name));
-                if (item.children && item.children.length > 0) li.appendChild(createTree(item.children));
             }
 
             ul.appendChild(li);
         });
+
         return ul;
     }
 
