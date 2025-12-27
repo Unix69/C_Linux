@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['license_0',['LICENSE',['../md_LICENSE.html',1,'']]],
-  ['license_2emd_1',['LICENSE.md',['../LICENSE_8md.html',1,'']]],
-  ['licenses_20📜_2',['Licenses 📜',['../md_README.html#autotoc_md23',1,'']]],
-  ['links_3',['Official Links',['../md_README.html#autotoc_md38',1,'']]],
-  ['linux_4',['linux',['../md_README.html#autotoc_md11',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md12',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md13',1,'🐧 On GNU/Linux']]]
+  ['pledge_0',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
+  ['pr_1',['Pull Requests (PR)',['../md_README.html#autotoc_md35',1,'']]],
+  ['prerequisites_2',['💻 Prerequisites',['../md_README.html#autotoc_md9',1,'']]],
+  ['proc_3',['proc',['../C-Unix-STD-Threads_2main_8c.html#a1cb97c3eeabb262b8fa130b26787e8c5',1,'main.c']]],
+  ['project_4',['Fork the Project',['../md_README.html#autotoc_md34',1,'']]],
+  ['pull_20requests_20🔀_5',['Forking &amp; Pull Requests 🔀',['../md_README.html#autotoc_md33',1,'']]],
+  ['pull_20requests_20pr_6',['Pull Requests (PR)',['../md_README.html#autotoc_md35',1,'']]]
 ];

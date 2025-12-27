@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['inc_0',['inc',['../C-Func-pointer_2main_8c.html#ac9a4cea444404d88923f63d231b145f6',1,'main.c']]],
-  ['index_2ecss_1',['index.css',['../index_8css.html',1,'']]],
-  ['index_2ehtml_2',['index.html',['../index_8html.html',1,'']]],
-  ['init_3',['init',['../C-Func-pointer_2main_8c.html#a6b5ad522d78da0ba700142b2571e256c',1,'main.c']]],
-  ['input_5ffile_4',['input_file',['../structfile.html#a180ff7c65113307073261133c0b4e95a',1,'file']]],
-  ['installation_5',['⭐ Installation',['../md_README.html#autotoc_md15',1,'']]],
-  ['issue_6',['How to Open an Issue',['../md_README.html#autotoc_md33',1,'']]],
-  ['issue_20tracker_7',['Issue Tracker',['../md_README.html#autotoc_md34',1,'']]],
-  ['issue_5ftemplate_8',['ISSUE_TEMPLATE',['../md_ISSUE__TEMPLATE.html',1,'']]],
-  ['issue_5ftemplate_2emd_9',['ISSUE_TEMPLATE.md',['../ISSUE__TEMPLATE_8md.html',1,'']]],
-  ['issues_20⚠️_10',['3. Issues ⚠️',['../md_README.html#autotoc_md32',1,'']]]
+  ['of_20conduct_0',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
+  ['of_20contents_1',['📓 Table of Contents',['../md_README.html#autotoc_md7',1,'']]],
+  ['official_20links_20🌐_2',['Official Links 🌐',['../md_README.html#autotoc_md29',1,'']]],
+  ['on_20gnu_20linux_3',['on gnu linux',['../md_README.html#autotoc_md11',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md12',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md13',1,'🐧 On GNU/Linux']]],
+  ['our_20pledge_4',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
+  ['our_20responsibilities_5',['Our Responsibilities',['../md_CODE__OF__CONDUCT.html#autotoc_md3',1,'']]],
+  ['our_20standards_6',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md2',1,'']]],
+  ['output_5ffile_7',['output_file',['../structfile.html#a3023b66d40b41162b9e81f68dab5330f',1,'file']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writefileout_0',['WriteFileOut',['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#af75094754983d7fa31c5bbebc9b95825',1,'main.c']]]
+  ['❌_20uninstall_0',['❌ Uninstall',['../md_README.html#autotoc_md19',1,'']]]
 ];

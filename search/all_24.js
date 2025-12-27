@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['📓_20table_20of_20contents_0',['📓 Table of Contents',['../md_README.html#autotoc_md7',1,'']]]
+  ['🚀_0',['Getting Started 🚀',['../md_README.html#autotoc_md8',1,'']]],
+  ['🚀_20run_1',['🚀 Run',['../md_README.html#autotoc_md18',1,'']]]
 ];

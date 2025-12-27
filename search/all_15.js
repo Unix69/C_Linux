@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['uninstall_0',['❌ Uninstall',['../md_README.html#autotoc_md21',1,'']]],
-  ['us_20☎️_1',['Contact us ☎️',['../md_README.html#autotoc_md37',1,'']]]
+  ['⚙️_20configuration_0',['⚙️ Configuration',['../md_README.html#autotoc_md17',1,'']]]
 ];

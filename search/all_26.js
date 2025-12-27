@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📦_20dependencies_0',['📦 Dependencies',['../md_README.html#autotoc_md10',1,'']]]
+  ['🧑‍💻_0',['Authors 🧑‍💻',['../md_README.html#autotoc_md25',1,'']]]
 ];

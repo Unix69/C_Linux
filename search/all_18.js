@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['☎️_0',['Contact us ☎️',['../md_README.html#autotoc_md37',1,'']]]
+  ['❓_0',['FAQ ❓',['../md_README.html#autotoc_md31',1,'']]]
 ];

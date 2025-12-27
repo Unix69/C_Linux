@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['❓_0',['FAQ ❓',['../md_README.html#autotoc_md36',1,'']]]
+  ['💡_20dependencies_20verification_0',['💡 Dependencies Verification',['../md_README.html#autotoc_md14',1,'']]]
 ];

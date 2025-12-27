@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['n_0',['n',['../Es2_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;Es2.c'],['../Es1_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;Es1.c'],['../C-Unix-STD-Fork-Wait-Precedence_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Fork-WaitPid_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;main.c'],['../C-Unix-STD-Threads_2main_8c.html#a3e41ff700a58779685d32cfab7fd6a9d',1,'n:&#160;main.c']]],
-  ['nf_1',['nf',['../structnf.html',1,'']]],
-  ['nomifile_2',['nomifile',['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#abaebd55c361905e88cbbc31e2612f134',1,'main.c']]],
-  ['nr_3',['nr',['../structnf.html#a8167b0868e2f22d46ec5b636e1140a8c',1,'nf']]]
+  ['scope_0',['Scope',['../md_CODE__OF__CONDUCT.html#autotoc_md4',1,'']]],
+  ['show_1',['show',['../C-Func-pointer_2main_8c.html#a595b8fe6a1f06ee5d494f0d8ff35efb8',1,'main.c']]],
+  ['son1_2etxt_2',['son1.txt',['../son1_8txt.html',1,'']]],
+  ['son2_2etxt_3',['son2.txt',['../son2_8txt.html',1,'']]],
+  ['sort_4',['sort',['../C-Unix-STD-Threads_2main_8c.html#a1af3b2e4cf0d5f2b98a9aab56888454d',1,'main.c']]],
+  ['standards_5',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md2',1,'']]],
+  ['started_20🚀_6',['Getting Started 🚀',['../md_README.html#autotoc_md8',1,'']]],
+  ['stylesheet_2ecss_7',['stylesheet.css',['../stylesheet_8css.html',1,'']]],
+  ['sub_8',['sub',['../C-Func-pointer_2main_8c.html#aa578f1c3a478f0c16cc1e19a419e4729',1,'main.c']]]
 ];
