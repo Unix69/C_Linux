@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['⚠️_0',['Issues ⚠️',['../md_README.html#autotoc_md32',1,'']]]
+  ['⚙️_20configuration_0',['⚙️ Configuration',['../md_README.html#autotoc_md21',1,'']]]
 ];

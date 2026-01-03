@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['❓_0',['FAQ ❓',['../md_README.html#autotoc_md28',1,'']]]
+  ['❌_20uninstall_0',['❌ Uninstall',['../md_README.html#autotoc_md23',1,'']]]
 ];

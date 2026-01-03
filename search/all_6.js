@@ -4,5 +4,5 @@ var searchData=
   ['es1_2ec_1',['Es1.c',['../Es1_8c.html',1,'']]],
   ['es2_2ec_2',['Es2.c',['../Es2_8c.html',1,'']]],
   ['es3_2ec_3',['Es3.c',['../Es3_8c.html',1,'']]],
-  ['examples_4',['Examples',['../md_README.html#autotoc_md8',1,'']]]
+  ['examples_4',['📖 Table of Contents – C Unix &amp; Standard Library Examples',['../md_README.html#autotoc_md7',1,'']]]
 ];

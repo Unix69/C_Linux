@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔀_0',['Forking &amp; Pull Requests 🔀',['../md_README.html#autotoc_md29',1,'']]]
+  ['📦_20dependencies_0',['📦 Dependencies',['../md_README.html#autotoc_md12',1,'']]]
 ];

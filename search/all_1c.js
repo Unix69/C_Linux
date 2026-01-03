@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🌐_0',['Official Links 🌐',['../md_README.html#autotoc_md27',1,'']]]
+  ['⭐_20installation_0',['⭐ Installation',['../md_README.html#autotoc_md19',1,'']]]
 ];

@@ -124,10 +124,50 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 </p>
 <p><a class="anchor" id="table-of-contents"></a></p>
 <h3><a class="anchor" id="autotoc_md7"></a>
-📓 Table of Contents</h3>
-<p>Navigation index to fast explore the content:</p>
+📖 Table of Contents – C Unix &amp; Standard Library Examples</h3>
+<h4>🧩 Function Pointers</h4>
 <ul>
-<li><a class="el" href="md_README.html#examples">Examples</a></li>
+<li><a class="el" href="md_README.html#c-func-pointer">C-Func-pointer</a></li>
+</ul>
+<h4>📄 Standard File I/O</h4>
+<ul>
+<li><a class="el" href="md_README.html#c-std-file">C-STD-File</a></li>
+</ul>
+<h4>🖥️ Unix Process Management – Fork &amp; Wait</h4>
+<ul>
+<li><a class="el" href="md_README.html#c-unix-std-basic-fork">C-Unix-STD-Basic-Fork</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-fork">C-Unix-STD-Fork</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-fork-wait">C-Unix-STD-Fork-Wait</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-fork-waitpid">C-Unix-STD-Fork-WaitPid</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a></li>
+</ul>
+<h4>🔄 Unix Executables &amp; Directories</h4>
+<ul>
+<li><a class="el" href="md_README.html#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-execl">C-Unix-STD-Execl</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a></li>
+<li>C-Unix-STD-Explore-File-Directories</li>
+</ul>
+<h4>⚡ Signals &amp; Inter-Process Communication</h4>
+<ul>
+<li><a class="el" href="md_README.html#c-unix-std-kill">C-Unix-STD-Kill</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal">C-Unix-STD-Signal</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-wait">C-Unix-STD-Signal-Fork-Pause-Kill-Wait</a></li>
+</ul>
+<h4>🧵 Threads &amp; Concurrent File Processing</h4>
+<ul>
+<li><a class="el" href="md_README.html#c-unix-std-threads">C-Unix-STD-Threads</a></li>
+<li><a class="el" href="md_README.html#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a></li>
+</ul>
+<h4>Other sections</h4>
+<ul>
 <li><a class="el" href="md_README.html#getting-started">Getting Started</a></li>
 <li><a class="el" href="md_README.html#license">License</a></li>
 <li><a class="el" href="md_README.html#contributing">Contributing</a><ul>
@@ -141,14 +181,106 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 <li><a class="el" href="md_README.html#authors">Authors</a></li>
 </ul>
 <p><br  />
+</p>
+<hr  />
+<p><br  />
+</p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Summary</h3>
+<p>This collection of examples demonstrates:</p>
+<ul>
+<li><b>Function pointers &amp; generic programming</b> – dynamic invocation and flexible code structures.</li>
+<li><b>File I/O with C Standard Library</b> – byte-wise and stream-based file operations.</li>
+<li><b>Unix process management</b> – creation, synchronization, and termination of child processes.</li>
+<li><b>Signals &amp; IPC mechanisms</b> – using <code>kill()</code>, <code>pause()</code>, <code>pipe()</code>, and <code>wait()</code> for inter-process communication.</li>
+<li><b>Multithreading &amp; thread-safe operations</b> – concurrent processing of data, file I/O, and sorting using <code>pthread_create</code> and <code>pthread_join</code>.</li>
+</ul>
+<p><br  />
  <br  />
 </p>
-<p><a class="anchor" id="examples"></a></p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Examples</h1>
+<p><a class="anchor" id="examples"></a> &lt;section id="c-examples-preamble"&gt; </p><h2>📚 C Unix &amp; Standard Library Examples</h2>
+<p>This collection of examples demonstrates key concepts in <b>C programming</b> on a <b>Unix-like operating system</b> using standard tools and libraries. All examples were developed using: </p>
+<ul>
+<li>
+<b>Language:</b> C (C99/C11 standard) </li>
+<li>
+<b>OS:</b> Linux / Unix-like environments </li>
+<li>
+<b>Toolchain:</b> GCC, Make, POSIX-compliant libraries </li>
+<li>
+<b>Techniques demonstrated:</b> Process creation and management, inter-process communication (IPC), file I/O, signals, threading, synchronization, assertion-based error checking </li>
+<li>
+<b>Libraries used:</b> <code>&lt;stdio.h&gt;</code>, <code>&lt;stdlib.h&gt;</code>, <code>&lt;unistd.h&gt;</code>, <code>&lt;fcntl.h&gt;</code>, <code>&lt;pthread.h&gt;</code>, <code>&lt;assert.h&gt;</code>, <code>&lt;string.h&gt;</code> </li>
+<li>
+<b>Programming techniques:</b> Forking, wait/waitpid, pipes, signals, pause, kill, thread creation and joining, dynamic memory management, bubble sort in threads, concurrent file processing </li>
+</ul>
+<p>Below is a comprehensive list of the examples included in this folder, with direct links to the corresponding detailed sections: </p>
+<ol>
+<li>
+<a href="#c-unix-std-basic-fork">C-Unix-STD-Basic-Fork</a> – Basic process creation using <code>fork()</code>. </li>
+<li>
+<a href="#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a> – Recursive directory copying using standard C file I/O. </li>
+<li>
+<a href="#c-unix-std-execl">C-Unix-STD-Execl</a> – Executing external programs using <code>execl()</code>. </li>
+<li>
+<a href="#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a> – Process execution using <code>execlp()</code> and <code>system()</code>. </li>
+<li>
+<a href="#c-unix-std-explore-file-directories">C-Unix-STD-Explore-File-Directories</a> – Directory exploration with <code>opendir()</code>, <code>readdir()</code>. </li>
+<li>
+<a href="#c-unix-std-fork">C-Unix-STD-Fork</a> – Process creation and basic child execution. </li>
+<li>
+<a href="#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a> – Demonstrates process sleeping and parent-child coordination. </li>
+<li>
+<a href="#c-unix-std-fork-wait">C-Unix-STD-Fork-Wait</a> – Waiting for child processes using <code>wait()</code>. </li>
+<li>
+<a href="#c-unix-std-fork-waitpid">C-Unix-STD-Fork-Waitpid</a> – Selective waiting for child processes with <code>waitpid()</code>. </li>
+<li>
+<a href="#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a> – Controlling execution order of child processes. </li>
+<li>
+<a href="#c-unix-std-kill">C-Unix-STD-Kill</a> – Sending signals to processes using <code>kill()</code>. </li>
+<li>
+<a href="#c-unix-std-signal">C-Unix-STD-Signal</a> – Handling signals with <code>signal()</code> and custom handlers. </li>
+<li>
+<a href="#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a> – Combining signals and child processes. </li>
+<li>
+<a href="#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a> – Parent-child communication via signals and <code>kill()</code>. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a> – Using <code>pause()</code> to synchronize child processes. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a> – Combining <code>pause()</code> and <code>kill()</code> for controlled signaling. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a> – Reading files, signaling children, and synchronizing parent with <code>wait()</code>. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a> – Parent-child IPC via pipes, file reading, and stdout streaming. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill-wait">C-Unix-STD-Signal-Fork-Pause-Kill-Wait</a> – Multi-child signaling with sequential wait synchronization. </li>
+<li>
+<a href="#c-unix-std-threads">C-Unix-STD-Threads</a> – Concurrent file processing using multiple threads. </li>
+<li>
+<a href="#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a> – Multithreaded file processing with bubble sort and assertions for correctness. </li>
+</ol>
+<p>Each example includes detailed explanations of the system calls, functions, and programming techniques used. They serve as a reference for: </p>
+<ul>
+<li>
+Process creation and management </li>
+<li>
+Inter-process communication (pipes, signals) </li>
+<li>
+File I/O and directory exploration </li>
+<li>
+Threading and synchronization </li>
+<li>
+Assertion-based error checking and debugging </li>
+<li>
+Concurrent algorithms (sorting, data processing) </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="c-func-pointer"></a> &lt;section id="c-func-pointer"&gt;</p>
 <h2>🧩 C-Func-pointer</h2>
-<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Func-pointer_2main_8c.html">src/C-Func-pointer/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"></div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Func-pointer/main.c" target="_blank" style="display:inline-block;
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Func-pointer_2main_8c.html">src/C-Func-pointer/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Func-pointer/main.c" target="_blank" style="display:inline-block;
               padding:6px 14px;
               border-radius:6px;
               background:#24292f;
@@ -231,7 +363,7 @@ Two function pointers are declared: <ul>
 </p>
 <p><a class="anchor" id="c-std-file"></a> &lt;section id="c-std-file"&gt;</p>
 <h2>📄 C-STD-File</h2>
-<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-STD-File_2main_8c.html">src/C-STD-File/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"></div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-STD-File/main.c" target="_blank" style="display:inline-block;
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-STD-File_2main_8c.html">src/C-STD-File/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-STD-File/main.c" target="_blank" style="display:inline-block;
               padding:6px 14px;
               border-radius:6px;
               background:#24292f;
@@ -1641,10 +1773,9 @@ Parent continues to the next child. </li>
               text-decoration:none;
               font-weight:600;
               font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
-<p>Demonstrates a <b>bidirectional signal exchange between parent and child processes</b> combined with <code>fork() and <code>kill()</code>. </code></p>
-<p><code> </code></p>
-<p><code>The goal is to understand:</code></p>
-<p><code> </p><ul>
+<p>Demonstrates a <b>bidirectional signal exchange between parent and child processes</b> combined with <code>fork()</code> and <code>kill()</code>. </p>
+<p>The goal is to understand:</p>
+<ul>
 <li>
 parent-child communication using signals </li>
 <li>
@@ -1652,10 +1783,8 @@ how children can respond to signals and reply to parent </li>
 <li>
 looping signal interactions in a controlled sequence </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Parent sets up handlers for <code>SIGUSR1</code>, <code>SIGUSR2</code>, <code>SIGINT</code>. </li>
 <li>
@@ -1675,10 +1804,8 @@ Parent cycles through an array of signals, sending one to the child every second
 <li>
 Demonstrates bidirectional signaling, signal handling, and safe process termination. </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference   </th></tr>
 <tr>
@@ -1690,10 +1817,8 @@ Demonstrates bidirectional signaling, signal handling, and safe process terminat
 <tr>
 <td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference   </th></tr>
 <tr>
@@ -1707,10 +1832,8 @@ Demonstrates bidirectional signaling, signal handling, and safe process terminat
 <tr>
 <td><code>malloc()/free()</code></td><td>Allocate/free memory for signal array</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 👨‍👦 Parent-child process communication </li>
 <li>
@@ -1722,10 +1845,8 @@ Demonstrates bidirectional signaling, signal handling, and safe process terminat
 <li>
 🛡️ Safe process termination via SIGINT </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 📘 <b>fork() man page:</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
 <li>
@@ -1733,24 +1854,15 @@ Demonstrates bidirectional signaling, signal handling, and safe process terminat
 <li>
 📘 <b>kill() man page:</b> <a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code><br  />
-</code></p>
-<p><code><a class="anchor" id="c-unix-std-signal-fork-pause"></a> &lt;section id="c-unix-std-signal-fork-pause"&gt;</code></p>
-<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause</h2>
-<p></code></p>
-<p><code></code></p>
-<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause/main.c</a></code> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
-<p><code> </p><h3>🎯 Purpose</h3>
-<p></code></p>
-<p><code> </code></p>
-<p><code> Demonstrates <b>parent-child synchronization using signals and pause()</b> with file I/O from child processes. </code></p>
-<p><code> </code></p>
-<p><code>The goal is to understand:</code></p>
-<p><code> </p><ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-pause"></a> &lt;section id="c-unix-std-signal-fork-pause"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Pause</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates <b>parent-child synchronization using signals and pause()</b> with file I/O from child processes. </p>
+<p>The goal is to understand:</p>
+<ul>
 <li>
 forking multiple child processes </li>
 <li>
@@ -1760,10 +1872,8 @@ reading files in child processes and writing to stdout </li>
 <li>
 using pause() for waiting on signals </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Open two files for reading: <code><a class="el" href="son1_8txt.html">son1.txt</a></code> and <code><a class="el" href="son2_8txt.html">son2.txt</a></code>. </li>
 <li>
@@ -1791,10 +1901,8 @@ Parent prints PIDs of both children, sends <code>SIGUSR1</code> to each child in
 <li>
 After both children finish, parent closes file descriptors and exits. </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference  </th></tr>
 <tr>
@@ -1808,10 +1916,8 @@ After both children finish, parent closes file descriptors and exits. </li>
 <tr>
 <td>&lt;stdlib.h&gt;</td><td>Exit, malloc</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference  </th></tr>
 <tr>
@@ -1825,10 +1931,8 @@ After both children finish, parent closes file descriptors and exits. </li>
 <tr>
 <td>kill()</td><td>Send signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 👨‍👦 Parent-child communication via signals </li>
 <li>
@@ -1840,10 +1944,8 @@ After both children finish, parent closes file descriptors and exits. </li>
 <li>
 🛡️ Handling child termination signals </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">fork() man page</a> </li>
 <li>
@@ -1851,22 +1953,14 @@ After both children finish, parent closes file descriptors and exits. </li>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">pause() man page</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code><br  />
-</code></p>
-<p><code><a class="anchor" id="c-unix-std-signal-fork-pause-kill"></a> &lt;section id="c-unix-std-signal-fork-pause-kill"&gt;</code></p>
-<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill</h2>
-<p></code></p>
-<p><code></code></p>
-<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c</a></code> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
-<p><code> </p><h3>🎯 Purpose</h3>
-<p></code></p>
-<p><code> </code></p>
-<p><code> Demonstrates <b>signal handling and inter-process notification</b> using a single child process. </code></p>
-<p><code> </p><ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-pause-kill"></a> &lt;section id="c-unix-std-signal-fork-pause-kill"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates <b>signal handling and inter-process notification</b> using a single child process. </p>
+<ul>
 <li>
 Child waits for <code>SIGINT</code> signal before executing </li>
 <li>
@@ -1874,10 +1968,8 @@ Parent can send <code>SIGINT</code> to terminate the child </li>
 <li>
 Shows basic pause-and-signal synchronization </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Install empty signal handlers for <code>SIGINT</code> and <code>SIGCHLD</code>. </li>
 <li>
@@ -1891,10 +1983,8 @@ After signal, child prints a message and exits </li>
 <li>
 Parent pauses, sends <code>SIGINT</code> to child, and waits for completion. </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference  </th></tr>
 <tr>
@@ -1908,10 +1998,8 @@ Parent pauses, sends <code>SIGINT</code> to child, and waits for completion. </l
 <tr>
 <td>&lt;assert.h&gt;</td><td>Assertions for error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference  </th></tr>
 <tr>
@@ -1923,10 +2011,8 @@ Parent pauses, sends <code>SIGINT</code> to child, and waits for completion. </l
 <tr>
 <td>kill()</td><td>Send signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 👨‍👦 Parent-child synchronization via signals </li>
 <li>
@@ -1936,31 +2022,21 @@ Parent pauses, sends <code>SIGINT</code> to child, and waits for completion. </l
 <li>
 🛡️ Signal handling to control execution flow </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">kill() man page</a> </li>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">pause() man page</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code><br  />
-</code></p>
-<p><code><a class="anchor" id="c-unix-std-signal-fork-pause-kill-file-wait"></a> &lt;section id="c-unix-std-signal-fork-pause-kill-file-wait"&gt;</code></p>
-<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</h2>
-<p></code></p>
-<p><code></code></p>
-<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c</a></code> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
-<p><code> </p><h3>🎯 Purpose</h3>
-<p></code></p>
-<p><code> </code></p>
-<p><code> Demonstrates <b>two-child process coordination using signals, pause(), and file I/O</b>. </code></p>
-<p><code> </p><ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-pause-kill-file-wait"></a> &lt;section id="c-unix-std-signal-fork-pause-kill-file-wait"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates <b>two-child process coordination using signals, pause(), and file I/O</b>. </p>
+<ul>
 <li>
 Child processes read separate text files and print to stdout </li>
 <li>
@@ -1968,10 +2044,8 @@ Synchronization between children using signals </li>
 <li>
 Parent controls execution flow </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Install signal handlers for <code>SIGUSR1</code> and <code>SIGCHLD</code>. </li>
 <li>
@@ -1997,10 +2071,8 @@ Send signal back to first child or exit </li>
 <li>
 Parent triggers first signal, then waits for both children to finish. </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference  </th></tr>
 <tr>
@@ -2016,10 +2088,8 @@ Parent triggers first signal, then waits for both children to finish. </li>
 <tr>
 <td>&lt;assert.h&gt;</td><td>Error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference  </th></tr>
 <tr>
@@ -2033,10 +2103,8 @@ Parent triggers first signal, then waits for both children to finish. </li>
 <tr>
 <td>kill()</td><td>Send signals between children</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 👨‍👦 Signal-based synchronization between sibling processes </li>
 <li>
@@ -2046,33 +2114,22 @@ Parent triggers first signal, then waits for both children to finish. </li>
 <li>
 ⚡ Signal-triggered child-to-child communication </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">kill() man page</a> </li>
 <li>
 <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">fork() man page</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code><br  />
-</code></p>
-<p><code><a class="anchor" id="c-unix-std-threads"></a> &lt;section id="c-unix-std-threads"&gt;</code></p>
-<p><code> </p><h2>🧪 C-Unix-STD-Threads</h2>
-<p></code></p>
-<p><code></code></p>
-<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads_2main_8c.html">src/C-Unix-STD-Threads/main.c</a></code> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
-<p><code> </p><h3>🎯 Purpose</h3>
-<p></code></p>
-<p><code> </code></p>
-<p><code> This example demonstrates <b>creating multiple threads to process pairs of files concurrently</b>. Each thread reads integers from an input file, sorts them, and writes to an output file. </code></p>
-<p><code> </code></p>
-<p><code>The goals are to understand:</code></p>
-<p><code> </p><ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-threads"></a> &lt;section id="c-unix-std-threads"&gt;</p>
+<h2>🧪 C-Unix-STD-Threads</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads_2main_8c.html">src/C-Unix-STD-Threads/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>creating multiple threads to process pairs of files concurrently</b>. Each thread reads integers from an input file, sorts them, and writes to an output file. </p>
+<p>The goals are to understand:</p>
+<ul>
 <li>
 Thread creation, argument passing, and termination using <code>pthread_create</code> and <code>pthread_join</code> </li>
 <li>
@@ -2082,10 +2139,8 @@ Memory management for thread arguments </li>
 <li>
 Sorting algorithms in a multithreaded environment </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Parse command-line arguments as <code>input_file output_file</code> pairs. </li>
 <li>
@@ -2105,10 +2160,8 @@ Writes the sorted integers to the output file. </li>
 <li>
 The main thread waits for the last created thread using <code>pthread_join</code> to ensure completion. </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference   </th></tr>
 <tr>
@@ -2120,10 +2173,8 @@ The main thread waits for the last created thread using <code>pthread_join</code
 <tr>
 <td><code>&lt;string.h&gt;</code></td><td>String operations (strcpy, strlen)</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcpy" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference   </th></tr>
 <tr>
@@ -2135,10 +2186,8 @@ The main thread waits for the last created thread using <code>pthread_join</code
 <tr>
 <td>Memory allocation (malloc/free)</td><td>Allocate memory for thread arguments and buffers</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 ⚡ Concurrent execution using threads </li>
 <li>
@@ -2150,33 +2199,22 @@ The main thread waits for the last created thread using <code>pthread_join</code
 <li>
 🔄 Synchronization by joining threads to ensure completion </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 <a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">POSIX pthread_create()</a> </li>
 <li>
 <a href="https://man7.org/linux/man-pages/man3/pthread_join.3.html" target="_blank">POSIX pthread_join()</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code><br  />
-</code></p>
-<p><code><a class="anchor" id="c-unix-std-threads-files-assert"></a> &lt;section id="c-unix-std-threads-files-assert"&gt;</code></p>
-<p><code> </p><h2>🧪 C-Unix-STD-Threads-Files-Assert</h2>
-<p></code></p>
-<p><code></code></p>
-<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads-Files-Assert_2main_8c.html">src/C-Unix-STD-Threads-Files-Assert/main.c</a></code> </div><p></code></p>
-<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads-Files-Assert/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
-<p><code> </p><h3>🎯 Purpose</h3>
-<p></code></p>
-<p><code> </code></p>
-<p><code> This example demonstrates <b>multithreaded file processing with bubble sort</b>, using <code>assert()</code> to guarantee correctness of read/write operations. </code></p>
-<p><code> </code></p>
-<p><code>The goals are to understand:</code></p>
-<p><code> </p><ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-threads-files-assert"></a> &lt;section id="c-unix-std-threads-files-assert"&gt;</p>
+<h2>🧪 C-Unix-STD-Threads-Files-Assert</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads-Files-Assert_2main_8c.html">src/C-Unix-STD-Threads-Files-Assert/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads-Files-Assert/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>multithreaded file processing with bubble sort</b>, using <code>assert()</code> to guarantee correctness of read/write operations. </p>
+<p>The goals are to understand:</p>
+<ul>
 <li>
 Thread-safe processing of multiple input/output files concurrently </li>
 <li>
@@ -2184,10 +2222,8 @@ Using assertions to ensure correct file read/write </li>
 <li>
 Implementing bubble sort algorithm inside threads </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🛠️ Description</h3>
-<p></code></p>
-<p><code> </p><ol>
+<h3>🛠️ Description</h3>
+<ol>
 <li>
 Validate command-line arguments as <code>input_file output_file</code> pairs (odd number of arguments, at least 3). </li>
 <li>
@@ -2207,10 +2243,8 @@ Assertions (<code>assert()</code>) verify that bytes read equal bytes written. <
 <li>
 Main thread waits for the last thread to finish (<code>pthread_join</code>). </li>
 </ol>
-<p></code></p>
-<p><code> </p><h3>📦 Headers and Libraries Used</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
 <tr>
 <th>Header</th><th>Description</th><th>Reference   </th></tr>
 <tr>
@@ -2224,10 +2258,8 @@ Main thread waits for the last thread to finish (<code>pthread_join</code>). </l
 <tr>
 <td><code>&lt;string.h&gt;</code></td><td>String operations</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcpy" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>⚙️ System Calls and Functions</h3>
-<p></code></p>
-<p><code> </p><table class="doxtable">
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
 <tr>
 <th>Function</th><th>Role</th><th>Reference   </th></tr>
 <tr>
@@ -2241,10 +2273,8 @@ Main thread waits for the last thread to finish (<code>pthread_join</code>). </l
 <tr>
 <td>Memory allocation (malloc/free)</td><td>Allocate thread arguments and buffers</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
 </table>
-<p></code></p>
-<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
 <li>
 ⚡ Multithreading for concurrent file processing </li>
 <li>
@@ -2256,10 +2286,8 @@ Main thread waits for the last thread to finish (<code>pthread_join</code>). </l
 <li>
 🔄 Synchronization via <code>pthread_join</code> to ensure completion </li>
 </ul>
-<p></code></p>
-<p><code> </p><h3>🔗 Links</h3>
-<p></code></p>
-<p><code> </p><ul>
+<h3>🔗 Links</h3>
+<ul>
 <li>
 <a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">POSIX pthread_create()</a> </li>
 <li>
@@ -2267,17 +2295,18 @@ Main thread waits for the last thread to finish (<code>pthread_join</code>). </l
 <li>
 <a href="https://en.cppreference.com/w/c/error/assert" target="_blank">C assert()</a> </li>
 </ul>
-<p></code></p>
-<p><code>&lt;/section&gt;</code></p>
-<p><code>There are</code></p>
-<p><code><a class="anchor" id="getting-started"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p>Next step, start to use C_Linux examples by following this getting started guideline.</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="getting-started"></a></p>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Getting Started 🚀</h1>
-<p><code></code></p>
-<p><code><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></code></p>
-<p><code>Follow these steps to get, install and set up the project and generate the documentation:</code></p>
-<p><code></p><ul>
+<p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
+<p>Follow these steps to get, install and set up the project and generate the documentation:</p>
+<ul>
 <li><a class="el" href="md_README.html#prerequisites">**1 - Verify Prerequisites and Dependencies**</a> <br  />
  C_Linux needs to run on <b>hosts</b> equipped with specific <b>hardware</b> and <b>software</b>. <br  />
  So read carefully the <b>prerequisites</b> to respect and the <b>dependencies</b> to satisfy.</li>
@@ -2292,30 +2321,24 @@ Getting Started 🚀</h1>
 <li><a class="el" href="md_README.html#uninstall">**6 - Uninstall**</a> <br  />
  Remove the project and all its dependencies from the system <b>safely and completely</b>.</li>
 </ul>
-<p></code></p>
-<p><code><br  />
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="prerequisites"></a></code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+</p>
+<p><a class="anchor" id="prerequisites"></a></p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 💻 Prerequisites</h2>
-<p><code></code></p>
-<p><code>Before building or running the project, make sure you satisgy the prerequisites to run the project:</code></p>
-<p><code></p><ul>
+<p>Before building or running the project, make sure you satisgy the prerequisites to run the project:</p>
+<ul>
 <li><b>Operating System</b>: GNU/Linux, Windows</li>
 <li><b>Software Dependencies</b>: GitHub, Doxygen, GNU Make, GNU C Compiler</li>
 </ul>
-<p></code></p>
-<p><code><br  />
+<p><br  />
  <br  />
-</code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
 📦 Dependencies</h2>
-<p><code></code></p>
-<p><code>Before building and generating documentation with <b>C_Linux</b>, make sure the following dependencies are installed on your system:</code></p>
-<p><code></p><ul>
+<p>Before building and generating documentation with <b>C_Linux</b>, make sure the following dependencies are installed on your system:</p>
+<ul>
 <li><b>GitHub</b> — <em>Optional.</em> <br  />
  Even if you don’t have a GitHub account or Git installed, you can still generate documentation locally. <br  />
  However, having a <b>GitHub account</b> and using <b>Git</b> is <b>recommended</b> for project deployment and version control.</li>
@@ -2330,39 +2353,27 @@ Getting Started 🚀</h1>
  Required to compile all C examples in <b>C_Linux</b>. <br  />
  Supports C99 standard and POSIX APIs.</li>
 </ul>
-<p></code></p>
-<p><code><br  />
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="install-gcc"></a></code></p>
-<p><code></p><h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU C Compiler (GCC)</h2>
-<p></code></p>
-<p><code></code></p>
-<p><code></code></p>
-<h3><a class="anchor" id="autotoc_md12"></a>
+</p>
+<p><a class="anchor" id="install-gcc"></a></p>
+<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU C Compiler (GCC)</h2>
+<h3><a class="anchor" id="autotoc_md13"></a>
 🐧 On GNU/Linux</h3>
-<p><code></code></p>
-<p><code>Check if GCC is already installed:</code></p>
-<p><code></p><pre>
+<p>Check if GCC is already installed:</p>
+<pre>
 gcc --version
-</pre><p></code></p>
-<p><code>If missing, install it via:</code></p>
-<p><code></p><pre>
+</pre><p>If missing, install it via:</p>
+<pre>
 sudo apt update
 sudo apt install gcc build-essential
-</pre><p></code></p>
-<p><code>Verify installation:</code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+</pre><p>Verify installation:</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
 &lt;pre&gt;</h2>
-<p><code> gcc --version </code></p>
-<p><code></p><h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows</h3>
-<p></code></p>
-<p><code></code></p>
-<p><code></p><h4>✅ Option 1: Using MinGW</h4>
-<p></code></p>
-<p><code></code></p>
-<p><code></p><ol type="1">
+<p>gcc --version </p>
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows</h3>
+<h4>✅ Option 1: Using MinGW</h4>
+<ol type="1">
 <li>Download and install <b>MinGW-w64</b> from: <br  />
  👉 <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a> <br  />
 </li>
@@ -2372,51 +2383,40 @@ sudo apt install gcc build-essential
 </li>
 <li>Verify installation:</li>
 </ol>
-<p></code></p>
-<p><code></p><pre>
+<pre>
 gcc --version
-</pre><p></code></p>
-<p><code>#</code></p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+</pre><p>#</p>
+<h3><a class="anchor" id="autotoc_md15"></a>
 ✅ Option 2: Using Windows Subsystem for Linux (WSL)</h3>
-<p><code></code></p>
-<p><code></p><ol type="1">
+<ol type="1">
 <li>Install WSL with a Linux distribution, e.g., Ubuntu. <br  />
 </li>
 <li>Open WSL terminal and run:</li>
 </ol>
-<p></code></p>
-<p><code></p><pre>
+<pre>
 sudo apt update
 sudo apt install gcc build-essential
 gcc --version
-</pre><p></code></p>
-<p><code>#</code></p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+</pre><p>#</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
 ✅ Option 3: Using Chocolatey</h3>
-<p><code></code></p>
-<p><code>If you have <b>Chocolatey</b> installed:</code></p>
-<p><code></p><pre>
+<p>If you have <b>Chocolatey</b> installed:</p>
+<pre>
 choco install mingw
-</pre><p></code></p>
-<p><code>Verify installation:</code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+</pre><p>Verify installation:</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
 &lt;pre&gt;</h2>
-<p><code> gcc --version </code></p>
-<p><code></code></p>
-<h3><a class="anchor" id="autotoc_md17"></a>
+<p>gcc --version </p>
+<h3><a class="anchor" id="autotoc_md18"></a>
 💡 Dependencies Verification</h3>
-<p><code></code></p>
-<p><code>After installing all dependencies, verify them with:</code></p>
-<p><code></p><pre>
+<p>After installing all dependencies, verify them with:</p>
+<pre>
 git --version
 doxygen --version
 make --version
 gcc --version
-</pre><p></code></p>
-<p><code>If all commands return valid version numbers, you’re ready to build and document your project 🎉</code></p>
-<p><code></p><blockquote class="doxtable">
+</pre><p>If all commands return valid version numbers, you’re ready to build and document your project 🎉</p>
+<blockquote class="doxtable">
 <p>&zwj;💡 Tip: You can also run the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the root directory. <br  />
  It will automatically:</p><ul>
 <li>Check that Doxygen is installed. If not, the script will fail ❌ <br  />
@@ -2428,67 +2428,56 @@ gcc --version
 </blockquote>
 <p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="installation"></a></code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+</p>
+<p><a class="anchor" id="installation"></a></p>
+<h2><a class="anchor" id="autotoc_md19"></a>
 ⭐ Installation</h2>
-<p><code></code></p>
-<p><code>To <em><b>install</b></em> the project follow this setps:</code></p>
-<p><code>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></code></p>
-<p><code> manually or by <b>opening a terminal</b> into your project destination directory, and running the following commands:</code></p>
-<p><code> </p><pre>
+<p>To <em><b>install</b></em> the project follow this setps:</p>
+<p>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></p>
+<p>manually or by <b>opening a terminal</b> into your project destination directory, and running the following commands:</p>
+<pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
   wget <a href="https://github.com/Unix69/README-Template/archive/refs/heads/master.zip">https://github.com/Unix69/README-Template/archive/refs/heads/master.zip</a> #make an http get request to get the project repository ** zip file ** 
   unzip master.zip #unzip the project master.zip file
   cp -R master/ ./ #copy all files recursively from the unziped master directory to your project root directory
   rm -rf master master.zip #remove the unziped master directory and master.zip file
-  </pre><p></code></p>
-<p><code>B. You can <b>clone the repository</b> from GitHub if you have Git installed by running the following commands:</code></p>
-<p><code> </p><pre>
+  </pre><p>B. You can <b>clone the repository</b> from GitHub if you have Git installed by running the following commands:</p>
+<pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
   clone <a href="https://github.com/Unix69/C_Linux.git">https://github.com/Unix69/C_Linux.git</a> #clone the project repository 
   cp -R C_Linux/ ./ #copy all files recursively from the C_Linux directory to your project root directory
   rm -rf C_Linux #remove the C_Linux directory. 
-  </pre><p></code></p>
-<p><code>⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">Download ZIP</a> <br  />
- 🐙 <a href="https://github.com/Unix69/C_Linux">View on GitHub</a></code></p>
-<p><code><br  />
+  </pre><p>⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">Download ZIP</a> <br  />
+ 🐙 <a href="https://github.com/Unix69/C_Linux">View on GitHub</a></p>
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="build"></a></code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md19"></a>
-🛠️ Build</h2>
-<p><code></code></p>
-<p><code>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</code></p>
-<p><code> A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</code></p>
-<p><code> </p><pre>
-    ./doxygen.sh  
-  </pre><p></code></p>
-<p><code> or by running <b>GNU Make</b> with the <b>build</b> target:</code></p>
-<p><code> </p><pre>
-    make build  
-  </pre><p></code></p>
-<p><code> <br  />
-</code></p>
-<p><code> B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the <b>root directory</b> and generate the standard Doxyfile: </p><pre>
-       doxygen -g Doxyfile  
-       </pre><p></code></p>
-<p><code><br  />
- <br  />
-</code></p>
-<p><code><a class="anchor" id="configuration"></a></code></p>
-<p><code></code></p>
+</p>
+<p><a class="anchor" id="build"></a></p>
 <h2><a class="anchor" id="autotoc_md20"></a>
+🛠️ Build</h2>
+<p>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</p>
+<p>A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</p>
+<pre>
+    ./doxygen.sh  
+  </pre><p>or by running <b>GNU Make</b> with the <b>build</b> target:</p>
+<pre>
+    make build  
+  </pre><p><br  />
+</p>
+<p>B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the <b>root directory</b> and generate the standard Doxyfile: </p><pre>
+       doxygen -g Doxyfile  
+       </pre><p><br  />
+ <br  />
+</p>
+<p><a class="anchor" id="configuration"></a></p>
+<h2><a class="anchor" id="autotoc_md21"></a>
 ⚙️ Configuration</h2>
-<p><code></code></p>
-<p><code>To <em><b>configure</b></em> the C_Linux project you can:</code></p>
-<p><code><br  />
-</code></p>
-<p><code></p><ol type="1">
+<p>To <em><b>configure</b></em> the C_Linux project you can:</p>
+<p><br  />
+</p>
+<ol type="1">
 <li><p class="startli">Modify Doxygen's options by:</p>
 <p class="startli">A. <b>Doxygen</b>: Changing/Adding manually a row in <code>./doxygen.ini</code> before run it again, like:</p>
 <p class="startli"><code> DOXY_PARAMETER = "DOXY_PARAMETER-VALUE" <br  />
@@ -2498,71 +2487,56 @@ gcc --version
 <li>Modify the default <b>Makefile</b> and <b>make toolchain</b> to customize and integrate your building behaviour.</li>
 <li>You can change the default <b>Markdown</b> <code>.md</code> files to customize your project <b>markdown documentation</b>. The default <b>Markdown project</b> of <b>C_Linux</b> is structured as follow:</li>
 </ol>
-<p></code></p>
-<p><code></p><div id="directory-tree-container" class="directory-tree"></div><p></code></p>
-<p><code><br  />
+<div id="directory-tree-container" class="directory-tree"></div><p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="run"></a></code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md21"></a>
-🚀 Run</h2>
-<p><code></code></p>
-<p><code>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</code></p>
-<p><code>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</code></p>
-<p><code> </p><pre>
-    doxygen Doxyfile  
-  </pre><p></code></p>
-<p><code>B. <b>GNU Make</b>: Open a terminal into the <b>root directory</b> and run the gnu make installed tool with your <code>Makefile</code> and <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>:</code></p>
-<p><code> </p><pre>
-    make doc  
-  </pre><p></code></p>
-<p><code><br  />
-</code></p>
-<p><code>✅ Now you can find the documentation into <code>./docs/</code> or at your Doxyfile <code>OUTPUT_DIRECTORY</code> path.</code></p>
-<p><code><br  />
- <br  />
-</code></p>
-<p><code><a class="anchor" id="uninstall"></a></code></p>
-<p><code></code></p>
+</p>
+<p><a class="anchor" id="run"></a></p>
 <h2><a class="anchor" id="autotoc_md22"></a>
+🚀 Run</h2>
+<p>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</p>
+<p>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</p>
+<pre>
+    doxygen Doxyfile  
+  </pre><p>B. <b>GNU Make</b>: Open a terminal into the <b>root directory</b> and run the gnu make installed tool with your <code>Makefile</code> and <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>:</p>
+<pre>
+    make doc  
+  </pre><p><br  />
+</p>
+<p>✅ Now you can find the documentation into <code>./docs/</code> or at your Doxyfile <code>OUTPUT_DIRECTORY</code> path.</p>
+<p><br  />
+ <br  />
+</p>
+<p><a class="anchor" id="uninstall"></a></p>
+<h2><a class="anchor" id="autotoc_md23"></a>
 ❌ Uninstall</h2>
-<p><code></code></p>
-<p><code>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</code></p>
-<p><code> </p><pre> make clean </pre><p></code></p>
-<p><code><br  />
+<p>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</p>
+<pre> make clean </pre><p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="license"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
-Licenses 📜</h1>
-<p><code></code></p>
-<p><code><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></code></p>
-<p><code><br  />
-</code></p>
-<p><code>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</code></p>
-<p><code>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
-</code></p>
-<p><code>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></code></p>
-<p><code><br  />
- <br  />
-</code></p>
-<p><code><a class="anchor" id="contributing"></a></code></p>
-<p><code></code></p>
+</p>
+<p><a class="anchor" id="license"></a></p>
 <h1><a class="anchor" id="autotoc_md24"></a>
-Contributing 👋</h1>
-<p><code></code></p>
-<p><code>Thank you for your interest in <b>C_Linux</b>! <br  />
- You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</code></p>
-<p><code><br  />
+Licenses 📜</h1>
+<p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
+<p><br  />
+</p>
+<p>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</p>
+<p>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
+</p>
+<p>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></p>
+<p><br  />
  <br  />
-</code></p>
-<p><code></code></p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+</p>
+<p><a class="anchor" id="contributing"></a></p>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Contributing 👋</h1>
+<p>Thank you for your interest in <b>C_Linux</b>! <br  />
+ You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</p>
+<p><br  />
+ <br  />
+</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
 General Contribution Guidelines</h2>
-<p><code></code></p>
-<p><code></p><ul>
+<ul>
 <li>Read the <a class="el" href="md_CODE__OF__CONDUCT.html">**CODE_OF_CONDUCT.md**</a> <br  />
 </li>
 <li>Understand the project structure <br  />
@@ -2570,9 +2544,8 @@ General Contribution Guidelines</h2>
 <li>Ensure required tools are installed: <b>GCC</b>, <b>Make</b>, <b>Doxygen</b> <br  />
 </li>
 </ul>
-<p></code></p>
-<p><code>When contributing code:</code></p>
-<p><code></p><ol type="1">
+<p>When contributing code:</p>
+<ol type="1">
 <li>Fork the repository <br  />
 </li>
 <li>Create a <b>feature branch</b> (<code>git checkout -b feature/your-feature</code>) <br  />
@@ -2584,32 +2557,24 @@ General Contribution Guidelines</h2>
 <li>Open a <b>Pull Request (PR)</b> <br  />
 </li>
 </ol>
-<p></code></p>
-<p><code>Keep style consistent, update documentation, and run tests.</code></p>
-<p><code><br  />
+<p>Keep style consistent, update documentation, and run tests.</p>
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="authors"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md26"></a>
+</p>
+<p><a class="anchor" id="authors"></a></p>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Authors 🧑‍💻</h1>
-<p><code></code></p>
-<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
-<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
+<div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
  <span>Roles: FO, CEO</span><br  />
  <span>Contributions: <code>FI</code>, <code>OP</code>, <code>DE</code></span><br  />
  <span>Email: <a href="#" onclick="location.href='mai'+'lto:'+'giu'+'se'+'ppe'+'.p'+'edo'+'ne'+'.de'+'ve'+'lop'+'er'+'@gm'+'ai'+'l.c'+'om'; return false;">giuseppe.pedone.developer@gmail.com</a></span><br  />
- <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><p></code></p>
-<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
-<p><code><br  />
+ <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="official-links"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md27"></a>
+</p>
+<p><a class="anchor" id="official-links"></a></p>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Official Links 🌐</h1>
-<p><code></code></p>
-<p><code></p><ul>
+<ul>
 <li><a href="https://gcc.gnu.org/">GNU C Compiler (GCC)</a> – Compiler for C projects <br  />
 </li>
 <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)">C Programming Language</a> – Language reference <br  />
@@ -2623,38 +2588,31 @@ Official Links 🌐</h1>
 <li><a href="https://www.doxygen.nl/">Doxygen</a> – Documentation generator <br  />
 </li>
 </ul>
-<p></code></p>
-<p><code><br  />
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="faq"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md28"></a>
-FAQ ❓</h1>
-<p><code></code></p>
-<p><code><b>Q1: Which C standard is used?</b> <br  />
- A1: All examples are written in <b>C99</b>.</code></p>
-<p><code><b>Q2: Supported OS?</b> <br  />
- A2: <b>POSIX-compliant systems</b>, mainly Linux.</code></p>
-<p><code><b>Q3: Can I modify and redistribute examples?</b> <br  />
- A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</code></p>
-<p><code><b>Q4: How to compile an example?</b> <br  />
- A4: Use <code>gcc</code> or run <code>make</code> in project root.</code></p>
-<p><code><b>Q5: How to report a bug?</b> <br  />
- A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</code></p>
-<p><code><br  />
- <br  />
-</code></p>
-<p><code><a class="anchor" id="fork-project"></a></code></p>
-<p><code></code></p>
+</p>
+<p><a class="anchor" id="faq"></a></p>
 <h1><a class="anchor" id="autotoc_md29"></a>
+FAQ ❓</h1>
+<p><b>Q1: Which C standard is used?</b> <br  />
+ A1: All examples are written in <b>C99</b>.</p>
+<p><b>Q2: Supported OS?</b> <br  />
+ A2: <b>POSIX-compliant systems</b>, mainly Linux.</p>
+<p><b>Q3: Can I modify and redistribute examples?</b> <br  />
+ A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</p>
+<p><b>Q4: How to compile an example?</b> <br  />
+ A4: Use <code>gcc</code> or run <code>make</code> in project root.</p>
+<p><b>Q5: How to report a bug?</b> <br  />
+ A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</p>
+<p><br  />
+ <br  />
+</p>
+<p><a class="anchor" id="fork-project"></a></p>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Forking &amp; Pull Requests 🔀</h1>
-<p><code></code></p>
-<p><code></code></p>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Fork the Project</h3>
-<p><code></code></p>
-<p><code></p><ol type="1">
+<ol type="1">
 <li>Go to the main repository on GitHub <br  />
 </li>
 <li>Click <b>Fork</b> to create your personal copy <br  />
@@ -2663,12 +2621,9 @@ Fork the Project</h3>
 </li>
 <li>Keep it synchronized with the main project</li>
 </ol>
-<p></code></p>
-<p><code></code></p>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Pull Requests (PR)</h3>
-<p><code></code></p>
-<p><code></p><ol type="1">
+<ol type="1">
 <li>Ensure your branch is updated with the main branch <br  />
 </li>
 <li>Confirm all tests and checks pass <br  />
@@ -2687,9 +2642,8 @@ Pull Requests (PR)</h3>
 <li>Apply requested changes and update PR if needed <br  />
 </li>
 </ol>
-<p></code></p>
-<p><code><b>PR Guidelines</b></code></p>
-<p><code></p><ul>
+<p><b>PR Guidelines</b></p>
+<ul>
 <li>Use concise and descriptive titles <br  />
 </li>
 <li>Include examples or references if relevant <br  />
@@ -2697,16 +2651,13 @@ Pull Requests (PR)</h3>
 <li>Avoid committing unrelated files <br  />
 </li>
 </ul>
-<p></code></p>
-<p><code><br  />
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="issues"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+</p>
+<p><a class="anchor" id="issues"></a></p>
+<h1><a class="anchor" id="autotoc_md33"></a>
 Issues ⚠️</h1>
-<p><code></code></p>
-<p><code></p><ul>
+<ul>
 <li>Issues are for reporting bugs, requesting features, or asking questions <br  />
 </li>
 <li>Use the <b><a class="el" href="md_ISSUE__TEMPLATE.html">Issue Template</a></b> if available <br  />
@@ -2723,22 +2674,18 @@ Issues ⚠️</h1>
 </ul>
 </li>
 </ul>
-<p></code></p>
-<p><code>All issues are tracked in the <b>Issues</b> section on GitHub.</code></p>
-<p><code><br  />
+<p>All issues are tracked in the <b>Issues</b> section on GitHub.</p>
+<p><br  />
  <br  />
-</code></p>
-<p><code><a class="anchor" id="thanks"></a></code></p>
-<p><code></code></p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+</p>
+<p><a class="anchor" id="thanks"></a></p>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Thanks 🙏</h1>
-<p><code></code></p>
-<p><code>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
- Your work empowers projects like <b>C_Linux</b> to exist and evolve.</code></p>
-<p><code><br  />
+<p>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
+ Your work empowers projects like <b>C_Linux</b> to exist and evolve.</p>
+<p><br  />
  <br  />
-</code></p>
-<p><code> </code></p>
+</p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
