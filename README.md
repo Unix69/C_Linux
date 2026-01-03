@@ -170,7 +170,7 @@ Let's start to see each example into detail.
 <a id="c-func-pointer"></a>
 <section id="c-func-pointer">
 
-  <h2>🧩 C-Func-pointer</h2>
+  <h2>🧪 C-Func-pointer</h2>
 
   <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
     <p style="margin:0;">
@@ -339,7 +339,7 @@ Let's start to see each example into detail.
 <a id="c-std-file"></a>
 <section id="c-std-file">
 
-  <h2>📄 C-STD-File</h2>
+  <h2>🧪 C-STD-File</h2>
 
   <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
     <p style="margin:0;">
@@ -2993,26 +2993,46 @@ Next step, start to use C_Linux examples by following this getting started guide
 
 [Table of Contents](#table-of-contents)
 
-Follow these steps to get, install and set up the project and generate the documentation:
+This section guides you through preparing your environment and running the **C Unix & Standard Library examples** presented in this collection. The steps are tailored to Linux/Unix hosts and assume a basic familiarity with compiling and executing C programs.
 
 - [**1 - Verify Prerequisites and Dependencies**](#prerequisites)  
-C_Linux needs to run on **hosts** equipped with specific **hardware** and **software**.  
-So read carefully the **prerequisites** to respect and the **dependencies** to satisfy.
+  Ensure your system has the necessary **development tools** and **libraries**:  
+  - **GCC or Clang** compiler (C99/C11 support)  
+  - **Make** for build automation (optional but recommended)  
+  - **POSIX-compliant libraries** (`<unistd.h>`, `<pthread.h>`, `<fcntl.h>`)  
+  - Standard C libraries (`<stdio.h>`, `<stdlib.h>`, `<string.h>`, `<assert.h>`)  
 
-- [**2 - Get and Install**](#installation)  
-Get the project package, then follow the **installation procedure** to correctly set up the environment.
+  Reading this carefully guarantees that each example can be compiled and executed without errors.
 
-- [**3 - Build**](#build)  
-Compile the source code and generate executable artifacts according to your **build configuration**.
+- [**2 - Get the Source Code**](#installation)  
+  Clone or download the repository containing the examples.  
+  Ensure the folder structure under `<code>src/</code>` is preserved, as each example references specific file paths.
 
-- [**4 - Setup and Configure**](#configuration)  
-Adjust configuration files and system parameters required to **customize** the project behaviour.
+- [**3 - Build / Compile Examples**](#build)  
+  Compile each example individually using GCC or your preferred compiler:  
+  <code>gcc -o main main.c -lpthread</code>  
+  Some examples may require the `<code>-lpthread</code>` flag for thread support. Others rely on standard POSIX calls and do not require additional flags.
 
-- [**5 - Run**](#run)  
-Start the project using the provided **startup script** or command sequence.
+- [**4 - Run Examples**](#run)  
+  Execute each compiled binary from the command line.  
+  - Examples using **fork(), exec(), or signals** should be run in a terminal on a Unix-like system.  
+  - File-based examples require input/output files to be placed in the expected paths (`<code>src/C-STD-File/file1.txt</code>`, etc.).  
+  - Threaded examples may generate multiple output files concurrently; ensure write permissions in the folder.
 
-- [**6 - Uninstall**](#uninstall)  
-Remove the project and all its dependencies from the system **safely and completely**.
+- [**5 - Explore and Modify**](#configuration)  
+  Feel free to adjust input files, function parameters, or the number of threads in examples to experiment and observe behavior. This is ideal for learning **Unix process management**, **signals**, and **concurrent programming** in C.
+
+- [**6 - Clean Up / Uninstall**](#uninstall)  
+  Remove compiled binaries and temporary files safely:  
+  <code>rm -f src/**/main</code>  
+  <code>rm -f src/**/file*.out</code>  
+  This ensures your workspace remains clean while preserving the original source files.
+
+---
+
+<p>
+Following these steps guarantees that you can successfully compile, run, and experiment with all examples, from **function pointers** and **file I/O** to **Unix processes**, **signals**, and **threaded programs**.
+</p>
 
 
 <br>
@@ -3052,6 +3072,150 @@ Before building and generating documentation with **C_Linux**, make sure the fol
 - **[GNU C Compiler (GCC)](#install-gcc)** — *Mandatory.*  
   Required to compile all C examples in **C_Linux**.  
   Supports C99 standard and POSIX APIs.
+
+<br>
+<br>
+
+<a id="install-github"></a>
+
+<h2><img src="Images/Logo/GitHubLogo.svg" alt="GitHub" width="64px" height="64px"/> Install GitHub / Git </h2>
+
+### 🐧 On GNU/Linux
+
+<pre>
+sudo apt update
+sudo apt install git
+</pre>
+
+After installation, verify that Git is available:
+
+<pre>
+git --version
+</pre>
+
+To link your project to **GitHub**, create a free account at:  
+👉 [https://github.com/signup](https://github.com/signup)
+
+Then configure Git with your account details:
+
+<pre>
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+</pre>
+
+<br>
+<br>
+
+
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
+
+
+
+1. Download **Git for Windows** from:  
+   👉 [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+2. Run the installer and follow the setup wizard (leave default options checked).  
+3. After installation, open **Git Bash** and verify:
+   <pre>
+   git --version
+   </pre>
+
+4. Optionally create a GitHub account at  
+   👉 [https://github.com/signup](https://github.com/signup)
+
+<br>
+<br>
+
+<a id="install-doxygen"></a>
+
+<h2><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="64px" height="64px"/> Install Doxygen </h2>
+
+### 🐧 On GNU/Linux
+
+<pre>
+sudo apt update
+sudo apt install doxygen graphviz
+</pre>
+
+Verify the installation:
+
+<pre>
+doxygen --version
+</pre>
+
+Optionally, you can generate a sample configuration file with:
+
+<pre>
+doxygen -g
+</pre>
+
+<br>
+<br>
+
+
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
+
+1. Download the Windows installer from:  
+   👉 [https://www.doxygen.nl/download.html](https://www.doxygen.nl/download.html)
+
+2. Run the `.exe` file and follow the setup wizard.  
+3. After installation, open **Command Prompt** and check:
+   <pre>
+   doxygen --version
+   </pre>
+
+4. To enable UML and graphs, install **Graphviz** as well:  
+   👉 [https://graphviz.org/download/](https://graphviz.org/download/)
+
+<br>
+<br>
+
+<a id="install-gnu-make"></a>
+
+<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="64px" height="64px"/> Install GNU Make </h2>
+
+### 🐧 On GNU/Linux
+
+GNU Make is usually preinstalled. Check it with:
+
+<pre>
+make --version
+</pre>
+
+If missing, install it via:
+
+<pre>
+sudo apt update
+sudo apt install make
+</pre>
+
+<br>
+<br>
+
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
+
+You can install **GNU Make** in one of these ways:
+
+#### ✅ Option 1: Using MinGW
+
+1. Download and install **MinGW** from:  
+   👉 [https://www.mingw-w64.org/](https://www.mingw-w64.org/)
+2. During installation, select the “mingw32-make” package.
+3. Add MinGW’s `bin` directory to your system PATH.
+4. Verify installation:
+   <pre>
+   mingw32-make --version
+   </pre>
+
+You can then rename or alias it to `make` for convenience.
+
+#### ✅ Option 2: Using Chocolatey (recommended if available)
+
+If you have **Chocolatey** package manager installed:
+
+<pre>
+choco install make
+</pre>
 
 <br>
 <br>
@@ -3161,7 +3325,7 @@ A. You can download the repository from GitHub:
   <pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
-  wget https://github.com/Unix69/README-Template/archive/refs/heads/master.zip #make an http get request to get the project repository ** zip file ** 
+  wget https://github.com/Unix69/C_Linux/archive/refs/heads/master.zip #make an http get request to get the project repository ** zip file ** 
   unzip master.zip #unzip the project master.zip file
   cp -R master/ ./ #copy all files recursively from the unziped master directory to your project root directory
   rm -rf master master.zip #remove the unziped master directory and master.zip file
@@ -3178,9 +3342,8 @@ B. You can **clone the repository** from GitHub if you have Git installed by run
   </pre> 
 
 
-⬇️ [Download ZIP](https://github.com/Unix69/README-Template/archive/refs/heads/main.zip)  
+⬇️ [Download ZIP](https://github.com/Unix69/C_Linux/archive/refs/heads/main.zip)  
 🐙 [View on GitHub](https://github.com/Unix69/C_Linux)
-
 
 
 <br>
@@ -3191,27 +3354,162 @@ B. You can **clone the repository** from GitHub if you have Git installed by run
 
 ## 🛠️ Build
 
-To ***build*** the project generate a **custom** or **standard Doxyfile**:
+To <b>build C_Linux full project</b> you have to build singularly:
 
-  A. <b>Custom Doxyfile - Doxygen Script</b>: running the `doxygen.sh` script from the **root directory**;
-  
+* the example executables you want.
+* the C_Linux project documentation.
+
+<br>
+
+### 1️⃣ Build All Examples
+
+To build the entire C Unix & Standard Library examples:
+
+* **A. Using GNU Make**
+
   <pre>
-    ./doxygen.sh  
+  make build
+  make link_all
   </pre>
 
-  or by running **GNU Make** with the **build** target:
+  <p>
+    Using <code>make build</code> and <code>make link_all</code> allows compiling and linking all C examples in <code>src/</code> automatically:
+  </p>
+  <ul>
+    <li><code>make build</code> – compiles all <code>.c</code> files in <code>src/</code> into <code>.o</code> object files.
+      <ul>
+        <li>Uses <code>$(CC) $(CFLAGS) -c $< -o $@</code> to compile each source file individually.</li>
+        <li>Prints a message: <code>Compiling &lt;file&gt;...</code> for each compilation.</li>
+        <li>Ensures that all object files are ready for linking in the next step.</li>
+      </ul>
+    </li>
+    <li><code>make link_all</code> – links the object files in each subfolder of <code>src/</code> into a single executable per folder.
+      <ul>
+        <li>Finds all <code>.o</code> files in the folder using <code>find $@ -maxdepth 1 -name "*.o"</code>.</li>
+        <li>Links them with <code>gcc $(CFLAGS) &lt;objects&gt; -o &lt;folder_name&gt;</code>.</li>
+        <li>Prints a success message: <code>Executable created: &lt;folder_name&gt;</code> if linking succeeds.</li>
+        <li>Creates one executable per example folder, mirroring the structure of <code>src/</code>.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    These targets provide a convenient alternative to using <code>find ... -exec gcc ...</code>, as they automatically handle compilation and linking for all examples in the project.
+  </p>
+
+
+* **B. Using the GNU C Compiler**
 
   <pre>
-    make build  
+  find src/ -name "main.c" -exec sh -c 'gcc -Wall -O2 "$1" -o "$(dirname "$1")/main" -lpthread && echo "$(dirname "$1")/main created" || echo "Compilation failed for $1"' _ {} \;
   </pre>
 
-  <br>
+  <p>
+    This command recursively compiles all <code>main.c</code> files under <code>src/</code> into executables:
+  </p>
+  <ul>
+    <li><code>find src/ -name "main.c"</code> – locate all <code>main.c</code> files.</li>
+    <li><code>-exec sh -c '...'</code> – execute a shell command for each file, passing it as <code>$1</code>.</li>
+    <li><code>gcc -Wall -O2 "$1" -o "$(dirname "$1")/main" -lpthread</code> – compile with warnings, optimization, and pthread support; output in the same folder.</li>
+    <li><code>&& echo "$(dirname "$1")/main created"</code> – prints a success message if compilation succeeds.</li>
+    <li><code>|| echo "Compilation failed for $1"</code> – prints an error message if compilation fails.</li>
+  </ul>
 
-  B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the **root directory** and generate the standard Doxyfile:
-       <pre>
-       doxygen -g Doxyfile  
-       </pre>
-  
+<br>
+
+### 2️⃣ Build a Single Example
+
+If you want to **compile only a single example** (e.g., `C-Func-pointer`):
+
+1. Open a terminal in the example folder:
+
+<pre>
+cd src/C-Func-pointer
+</pre>
+
+2. Compile using GCC (add `<code>-lpthread</code>` if the example uses threads):
+
+<pre>
+gcc -o main main.c -lpthread
+</pre>
+
+3. Run the compiled example:
+
+<pre>
+./main
+</pre>
+
+This approach is ideal for **testing or debugging** individual examples without rebuilding the entire project.
+
+<br>
+
+### 2️⃣ Build the Project Documentation
+
+<br>
+
+#### Generate the Doxyfile
+
+<p>
+  To build the project documentation, first of all you have to generate a proper Doxyfile. You have multiple ways to generate the documentation resources for the C Unix & Standard Library examples. Each approach below produces a configured <code>Doxyfile</code>.
+</p>
+
+<ul>
+  <li><strong><code>./doxygen.sh</code> (Custom Doxyfile)</strong> – Runs a setup script that:
+    <ul>
+      <li>Checks if <code>doxygen</code> is installed and exits with an error message if not.</li>
+      <li>Creates a default <code>Doxyfile</code> if one does not already exist in the project root.</li>
+      <li>Reads the project’s <code>doxygen.ini</code> and applies tag settings into <code>Doxyfile</code> automatically.</li>
+      <li>Adds custom aliases and configuration if missing, ensuring output directory and options are set.</li>
+      <li>Leaves you with a fully configured <code>Doxyfile</code> ready to generate docs via Doxygen.</li>
+    </ul>
+  </li>
+
+  <li><strong><code>make doc_build</code></strong> – Equivalent to running the setup script via the project’s Makefile:
+    <ul>
+      <li>Invokes the <code>doxygen.sh</code> script using the Makefile rule <code>doc_build</code>.</li>
+      <li>Prepares the <code>Doxyfile</code> and applies configuration automatically without manual editing.</li>
+      <li>This approach is ideal if you already use <code>make</code> for building and want documentation integrated into the same workflow.</li>
+    </ul>
+  </li>
+
+  <li><strong><code>doxygen -g Doxyfile</code></strong> (Standard Doxyfile):
+    <ul>
+      <li>Directly generates a **default Doxygen configuration file** named <code>Doxyfile</code> with all tags set to default values.</li>
+      <li>Useful if you prefer to edit the configuration manually, or want to start from a clean template.</li>
+      <li>After adjustment, run <code>doxygen Doxyfile</code> to generate the documentation without using the custom setup script.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  In summary:
+</p>
+
+<ul>
+  <li>Use <code>doxygen.sh</code> or <code>make doc_build</code> when you want an **automated, customized Doxyfile** based on your project settings;</li>
+  <li>Use <code>doxygen -g Doxyfile</code> when you want to **manually edit a fresh configuration template** before generating docs.</li>
+</ul>
+
+<br>
+
+#### Generate the Project Documentation
+
+Once the Doxyfile is generated and configured as you wish, to ***make the documentation*** use:
+<ul>
+  <li><b>Doxygen</b> Open a terminal into the **root directory** and run the doxygen installed tool with your `Doxyfile`;
+    <pre>
+      doxygen Doxyfile  
+    </pre>
+  </li>
+
+  <li><strong><code>make doc</code></strong> – Generates documentation using the configured <code>Doxyfile</code>:
+    <ul>
+      <li>Runs the <code>doxygen</code> command internally on the prepared <code>Doxyfile</code>.</li>
+      <li>Produces HTML output (and other formats if enabled) in the directory configured by <code>OUTPUT_DIRECTORY</code> (default is <code>docs/html</code>).</li>
+      <li>Copies optional assets (e.g., image resources) into the documentation output folder after generation.</li>
+      <li>This target completes the documentation build process started by <code>doc_build</code> or <code>doxygen.sh</code>.</li>
+    </ul>
+  </li>
+</ul>
 
 <br>
 <br>
@@ -3220,7 +3518,7 @@ To ***build*** the project generate a **custom** or **standard Doxyfile**:
 
 ## ⚙️ Configuration
 
-To ***configure*** the C_Linux project you can:
+To ***configure*** the C_Linux project, before you generate the documentation, you can:
 
 <br>
 
@@ -3249,24 +3547,78 @@ To ***configure*** the C_Linux project you can:
 
 ## 🚀 Run
 
-Once the Doxyfile is generated and configured as you wish, to ***make the documentation*** use:
+<p>
+  After building the project and/or the documentation, you can run both the generated documentation and the compiled examples.
+</p>
 
-A. <b>Doxygen</b> Open a terminal into the **root directory** and run the doxygen installed tool with your `Doxyfile`;
+<h3>📄 Run Documentation</h3>
 
-  <pre>
-    doxygen Doxyfile  
-  </pre>
+<ul>
+  <li>
+    ✅ The HTML documentation is available in <code>./docs/html/</code> or the path specified by the <code>OUTPUT_DIRECTORY</code> in your <code>Doxyfile</code>.
+  </li>
+  <li>
+    You can open it in a browser using a command like:
+    <pre>xdg-open ./docs/html/index.html</pre>
+    <small>(Linux/Unix)</small>
+  </li>
+  <li>
+    Or, if on macOS:
+    <pre>open ./docs/html/index.html</pre>
+  </li>
+  <li>
+    📌 <strong>All documentation is also fully available on GitHub</strong> as linked <code>.md</code> files. This allows you to navigate the examples directly online or integrate them with the Doxygen-generated HTML documentation via GitHub Pages or a similar static site.
+  </li>
+</ul>
 
-B. <b>GNU Make</b>: Open a terminal into the **root directory** and run the gnu make installed tool with your `Makefile` and `doxygen.sh`:
-  
-  <pre>
-    make doc  
-  </pre>
+<h3>🧩 Run a Single Example</h3>
 
-<br>
+<p>
+  Using <strong>C-Func-pointer</strong> as an example:
+</p>
 
-✅ Now you can find the documentation into `./docs/` or at your Doxyfile `OUTPUT_DIRECTORY` path.
+<ul>
+  <li>
+    Navigate to the folder where the executable was generated:
+    <pre>cd src/C-Func-pointer</pre>
+  </li>
+  <li>
+    Run the executable:
+    <pre>./main</pre>
+  </li>
+  <li>
+    If compilation was done via <code>make build</code> or <code>make link_all</code>, the executable is typically in the same folder as the <code>main.c</code> file.
+  </li>
+</ul>
 
+<h3>⚙️ Run All Examples Automatically</h3>
+
+<p>
+  You can run all executables in the <code>src/</code> tree using a one-liner shell command:
+</p>
+
+<pre>
+find src/ -mindepth 1 -type f -executable -name "main" -exec sh -c './{} || echo "Execution failed for {}"' \;
+</pre>
+
+<ul>
+  <li>This command:
+    <ul>
+      <li>Searches for all <code>main</code> executables inside <code>src/</code> subfolders.</li>
+      <li>Executes each one sequentially.</li>
+      <li>Prints an error message if the execution fails for a specific example.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>💡 Notes</h3>
+
+<ul>
+  <li>Ensure you have built the examples first using <code>make build</code> and linked them with <code>make link_all</code>.</li>
+  <li>The same approach works for all examples, just replace <code>C-Func-pointer</code> with the desired folder.</li>
+  <li>Documentation can be refreshed anytime with <code>make doc</code> after any updates to the source code or comments.</li>
+  <li>GitHub provides a full integrated view of the documentation: both the Doxygen HTML pages and the <code>.md</code> files for examples are cross-linked, giving a convenient online browsing experience.</li>
+</ul>
 
 <br>
 <br>
@@ -3276,9 +3628,61 @@ B. <b>GNU Make</b>: Open a terminal into the **root directory** and run the gnu 
 
 ## ❌ Uninstall
 
-To ***uninstall*** the project just clean the documentation directory `.e/docs/` and your Doxyfile or use the **GNU Make** tool and run the following command:
+<p>
+To <strong>uninstall</strong> the C_Linux project and all its generated artifacts, you have multiple options: you can use the <code>make clean</code> target, or remove files manually using shell commands.
+</p>
 
-  <pre> make clean </pre>
+<h3>🛠️ Using GNU Make</h3>
+
+<p>
+The simplest way is to leverage the <code>clean</code> target from the Makefile:
+</p>
+
+<pre>
+make clean
+</pre>
+
+<ul>
+  <li>This command performs the following steps automatically:
+    <ul>
+      <li>Removes all compiled object files (<code>*.o</code>) in <code>src/</code>.</li>
+      <li>Removes all executables created in the <code>src/</code> subfolders.</li>
+      <li>Deletes the Doxygen documentation output directory (<code>docs/</code>).</li>
+    </ul>
+  </li>
+  <li>It preserves your <code>main.c</code>, <code>.h</code>, <code>.md</code> and other source files, deleting only build artifacts and generated documentation.</li>
+</ul>
+
+<h3>⚙️ Manual Uninstallation</h3>
+
+<p>
+If you prefer to remove everything manually without using Make, you can execute the following shell commands:
+</p>
+
+<pre>
+# Remove object files
+find src/ -name "*.o" -type f -exec rm -f {} \;
+
+# Remove compiled executables
+find src/ -mindepth 1 -type f ! -name "*.c" ! -name "*.txt" ! -name "*.h" ! -name "*.hpp" -executable -exec rm -f {} \;
+
+# Remove generated documentation
+rm -rf docs/
+rm -f Doxyfile
+</pre>
+
+<ul>
+  <li>The first command finds and deletes all object files (<code>*.o</code>) in <code>src/</code> subfolders.</li>
+  <li>The second command removes all executables in <code>src/</code> except source, header, and text files.</li>
+  <li>The third command deletes the documentation directory and optionally the generated <code>Doxyfile</code>.</li>
+</ul>
+
+<h3>💡 Notes</h3>
+<ul>
+  <li>Using <code>make clean</code> is the recommended approach, as it ensures a consistent cleanup according to the Makefile rules.</li>
+  <li>Manual removal is useful if you want to selectively delete artifacts or do not have Make installed.</li>
+  <li>After cleaning, you can safely rebuild the project or regenerate documentation from scratch.</li>
+</ul>
 
 <br>
 <br>

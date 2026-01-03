@@ -17,7 +17,7 @@ OBJS := $(SRCS:.c=.o)
 SUBDIRS := $(shell find $(SRC_DIR) -mindepth 1 -type d)
 
 # Default target
-all: build doc link_all
+all: build doc_build doc link_all
 
 # Build .o files for all .c files
 build: $(OBJS)
