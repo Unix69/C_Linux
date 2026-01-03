@@ -124,50 +124,9 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 </p>
 <p><a class="anchor" id="table-of-contents"></a></p>
 <h3><a class="anchor" id="autotoc_md7"></a>
-📖 Table of Contents – C Unix &amp; Standard Library Examples</h3>
-<h4>🧩 Function Pointers</h4>
+📖 Table of Contents</h3>
 <ul>
-<li><a class="el" href="md_README.html#c-func-pointer">C-Func-pointer</a></li>
-</ul>
-<h4>📄 Standard File I/O</h4>
-<ul>
-<li><a class="el" href="md_README.html#c-std-file">C-STD-File</a></li>
-</ul>
-<h4>🖥️ Unix Process Management – Fork &amp; Wait</h4>
-<ul>
-<li><a class="el" href="md_README.html#c-unix-std-basic-fork">C-Unix-STD-Basic-Fork</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-fork">C-Unix-STD-Fork</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-fork-wait">C-Unix-STD-Fork-Wait</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-fork-waitpid">C-Unix-STD-Fork-WaitPid</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a></li>
-</ul>
-<h4>🔄 Unix Executables &amp; Directories</h4>
-<ul>
-<li><a class="el" href="md_README.html#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-execl">C-Unix-STD-Execl</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a></li>
-<li>C-Unix-STD-Explore-File-Directories</li>
-</ul>
-<h4>⚡ Signals &amp; Inter-Process Communication</h4>
-<ul>
-<li><a class="el" href="md_README.html#c-unix-std-kill">C-Unix-STD-Kill</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal">C-Unix-STD-Signal</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-signal-fork-pause-kill-wait">C-Unix-STD-Signal-Fork-Pause-Kill-Wait</a></li>
-</ul>
-<h4>🧵 Threads &amp; Concurrent File Processing</h4>
-<ul>
-<li><a class="el" href="md_README.html#c-unix-std-threads">C-Unix-STD-Threads</a></li>
-<li><a class="el" href="md_README.html#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a></li>
-</ul>
-<h4>Other sections</h4>
-<ul>
+<li><a class="el" href="md_README.html#examples">C Unix &amp; Standard Library Examples</a></li>
 <li><a class="el" href="md_README.html#getting-started">Getting Started</a></li>
 <li><a class="el" href="md_README.html#license">License</a></li>
 <li><a class="el" href="md_README.html#contributing">Contributing</a><ul>
@@ -214,51 +173,71 @@ Summary</h3>
 <li>
 <b>Programming techniques:</b> Forking, wait/waitpid, pipes, signals, pause, kill, thread creation and joining, dynamic memory management, bubble sort in threads, concurrent file processing </li>
 </ul>
-<p>Below is a comprehensive list of the examples included in this folder, with direct links to the corresponding detailed sections: </p>
-<ol>
+<p>Below is a comprehensive list of the examples included in this folder, grouped by topic, with direct links to their detailed sections: </p>
+<h3>🧩 Function Pointers</h3>
+<ul>
+<li>
+<a href="#c-func-pointer">C-Func-pointer</a> – Demonstrates function pointers in C, dynamic invocation, and generic programming using <code>void *</code>. </li>
+</ul>
+<h3>📄 Standard File I/O</h3>
+<ul>
+<li>
+<a href="#c-std-file">C-STD-File</a> – Basic file input/output, copying files byte by byte, error handling, and EOF processing. </li>
+</ul>
+<h3>🖥️ Unix Process Management – Fork &amp; Wait</h3>
+<ul>
 <li>
 <a href="#c-unix-std-basic-fork">C-Unix-STD-Basic-Fork</a> – Basic process creation using <code>fork()</code>. </li>
 <li>
-<a href="#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a> – Recursive directory copying using standard C file I/O. </li>
+<a href="#c-unix-std-fork">C-Unix-STD-Fork</a> – Process creation and simple child execution. </li>
 <li>
-<a href="#c-unix-std-execl">C-Unix-STD-Execl</a> – Executing external programs using <code>execl()</code>. </li>
-<li>
-<a href="#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a> – Process execution using <code>execlp()</code> and <code>system()</code>. </li>
-<li>
-<a href="#c-unix-std-explore-file-directories">C-Unix-STD-Explore-File-Directories</a> – Directory exploration with <code>opendir()</code>, <code>readdir()</code>. </li>
-<li>
-<a href="#c-unix-std-fork">C-Unix-STD-Fork</a> – Process creation and basic child execution. </li>
-<li>
-<a href="#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a> – Demonstrates process sleeping and parent-child coordination. </li>
+<a href="#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a> – Process sleeping and parent-child coordination. </li>
 <li>
 <a href="#c-unix-std-fork-wait">C-Unix-STD-Fork-Wait</a> – Waiting for child processes using <code>wait()</code>. </li>
 <li>
-<a href="#c-unix-std-fork-waitpid">C-Unix-STD-Fork-Waitpid</a> – Selective waiting for child processes with <code>waitpid()</code>. </li>
+<a href="#c-unix-std-fork-waitpid">C-Unix-STD-Fork-Waitpid</a> – Selective waiting with <code>waitpid()</code>. </li>
 <li>
-<a href="#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a> – Controlling execution order of child processes. </li>
+<a href="#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a> – Controlling execution order of children. </li>
+</ul>
+<h3>🔄 Unix Executables &amp; Directories</h3>
+<ul>
 <li>
-<a href="#c-unix-std-kill">C-Unix-STD-Kill</a> – Sending signals to processes using <code>kill()</code>. </li>
+<a href="#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a> – Recursive directory copying using standard file I/O. </li>
 <li>
-<a href="#c-unix-std-signal">C-Unix-STD-Signal</a> – Handling signals with <code>signal()</code> and custom handlers. </li>
+<a href="#c-unix-std-execl">C-Unix-STD-Execl</a> – Executing external programs with <code>execl()</code>. </li>
 <li>
-<a href="#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a> – Combining signals and child processes. </li>
+<a href="#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a> – Executing external programs using <code>execlp()</code> and <code>system()</code>. </li>
 <li>
-<a href="#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a> – Parent-child communication via signals and <code>kill()</code>. </li>
+<a href="#c-unix-std-explore-file-directories">C-Unix-STD-Explore-File-Directories</a> – Directory exploration using <code>opendir()</code> and <code>readdir()</code>. </li>
+</ul>
+<h3>⚡ Signals &amp; Inter-Process Communication</h3>
+<ul>
 <li>
-<a href="#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a> – Using <code>pause()</code> to synchronize child processes. </li>
+<a href="#c-unix-std-kill">C-Unix-STD-Kill</a> – Sending signals to processes with <code>kill()</code>. </li>
 <li>
-<a href="#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a> – Combining <code>pause()</code> and <code>kill()</code> for controlled signaling. </li>
+<a href="#c-unix-std-signal">C-Unix-STD-Signal</a> – Signal handling and custom handlers with <code>signal()</code>. </li>
 <li>
-<a href="#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a> – Reading files, signaling children, and synchronizing parent with <code>wait()</code>. </li>
+<a href="#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a> – Combining signals with child processes. </li>
 <li>
-<a href="#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a> – Parent-child IPC via pipes, file reading, and stdout streaming. </li>
+<a href="#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a> – Parent-child signaling with <code>kill()</code>. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a> – Synchronization using <code>pause()</code>. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a> – Controlled signaling using <code>pause()</code> and <code>kill()</code>. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a> – File reading, signaling, and parent-child synchronization. </li>
+<li>
+<a href="#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a> – Parent-child IPC via pipes with file streaming to stdout. </li>
 <li>
 <a href="#c-unix-std-signal-fork-pause-kill-wait">C-Unix-STD-Signal-Fork-Pause-Kill-Wait</a> – Multi-child signaling with sequential wait synchronization. </li>
+</ul>
+<h3>🧵 Threads &amp; Concurrent File Processing</h3>
+<ul>
 <li>
-<a href="#c-unix-std-threads">C-Unix-STD-Threads</a> – Concurrent file processing using multiple threads. </li>
+<a href="#c-unix-std-threads">C-Unix-STD-Threads</a> – Concurrent processing of file pairs using threads. </li>
 <li>
-<a href="#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a> – Multithreaded file processing with bubble sort and assertions for correctness. </li>
-</ol>
+<a href="#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a> – Multithreaded file processing with bubble sort and assertion-based checks. </li>
+</ul>
 <p>Each example includes detailed explanations of the system calls, functions, and programming techniques used. They serve as a reference for: </p>
 <ul>
 <li>
@@ -274,6 +253,9 @@ Assertion-based error checking and debugging </li>
 <li>
 Concurrent algorithms (sorting, data processing) </li>
 </ul>
+<p><br  />
+</p>
+<p>Let's start to see each example into detail.</p>
 <p>&lt;/section&gt;</p>
 <p><br  />
  <br  />

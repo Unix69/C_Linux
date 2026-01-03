@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['table_20of_20contents_20–_20c_20unix_20standard_20library_20examples_0',['📖 Table of Contents – C Unix &amp; Standard Library Examples',['../md_README.html#autotoc_md7',1,'']]],
+  ['table_20of_20contents_0',['📖 Table of Contents',['../md_README.html#autotoc_md7',1,'']]],
   ['template_2ecss_1',['template.css',['../template_8css.html',1,'']]],
   ['testo_2etxt_2',['testo.txt',['../testo_8txt.html',1,'']]],
   ['testo_5f1_2etxt_3',['testo_1.txt',['../testo__1_8txt.html',1,'']]],

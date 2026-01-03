@@ -1,7 +1,7 @@
 var searchData=
 [
   ['of_20conduct_0',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
-  ['of_20contents_20–_20c_20unix_20standard_20library_20examples_1',['📖 Table of Contents – C Unix &amp; Standard Library Examples',['../md_README.html#autotoc_md7',1,'']]],
+  ['of_20contents_1',['📖 Table of Contents',['../md_README.html#autotoc_md7',1,'']]],
   ['official_20links_20🌐_2',['Official Links 🌐',['../md_README.html#autotoc_md28',1,'']]],
   ['on_20gnu_20linux_3',['🐧 On GNU/Linux',['../md_README.html#autotoc_md13',1,'']]],
   ['option_202_3a_20using_20windows_20subsystem_20for_20linux_20wsl_4',['✅ Option 2: Using Windows Subsystem for Linux (WSL)',['../md_README.html#autotoc_md15',1,'']]],
