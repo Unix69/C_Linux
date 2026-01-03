@@ -1,16 +1,5 @@
 <div align="center">
 
-<table style="width:320px">
-	<tr>
-		<td style="text-align:left">
-			<img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="160" height="160">
-		</td>
-		<td style="text-align:right">
-			<img src="Images/Logo/doxygen.svg" alt="Doxygen" width="160" height="160"> 
-		</td>
-	</tr> 
-</table> 
-
   <h1>C_Linux</h1>
   
   <br>
@@ -41,48 +30,11 @@
   <br>
 
   <p>
-    A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem
+    A set of <b>C example programs</b> showing the basic usage of <b>Unix system calls</b> related to <b>Filesystem</b>, <b>Processes</b> and <b>Threads</b> to learn about Unix-like filesystem manipulation and C multiprocess and multithread programming.  
   </p>
 </div>
 
 <br>
-<br>
-<br>
-
-
-<div align="center" style="margin-right: 24px;">
-
-  <div align="center" style="font-size: 26px; font-weight: bold; line-height: 1.3; text-align: center;">
-    🧠 Founder & Developer
-  </div>
-  
-  <br>
-  <br>
-  
-  <img src="https://avatars.githubusercontent.com/u/111588387?v=4" width="80px;" alt="Giuseppe Pedone"/><br/>
-  <br>
-  <table style="border: 0; border-collapse: collapse; margin-top: 8px;">
-    <tr>
-      <td align="center" valign="middle">
-        <a style="font-size: 18px;" href="https://github.com/Unix69">
-          <sub><b>Giuseppe Pedone (Unix69)</b></sub>
-        </a>
-        <br/>
-        <a href="mailto:giuseppe.pedone.developer@gmail.com">
-          <img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/>
-        </a>
-        <a href="https://github.com/Unix69">
-          <img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/>
-        </a>
-        <a href="https://t.me/Unix69">
-          <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat&logo=telegram&logoColor=white"/>
-        </a>
-      </td>
-    </tr>
-  </table>
-
-</div>
-
 <br>
 <br>
 
@@ -104,10 +56,191 @@ Navigation index to fast explore the content:
   - [Code Of Conduct](#code-of-conduct)
 - [FAQ](#faq)
 - [Authors](#authors)
-- [Contacts](#contact-us)
 
 <br>
 <br>
+
+<a id="examples"></a>
+
+<a id="c-unix-std-basic-fork"></a>
+<section id="c-unix-std-basic-fork">
+
+  <h2>🧪 C-Unix-STD-Basic-Fork</h2>
+
+  <p><strong>Path:</strong> <code>src/C-Unix-STD-Basic-Fork/main.c</code></p>
+
+  <hr/>
+
+  <h3>🎯 Purpose</h3>
+  <p>
+    This example demonstrates the <strong>basic behavior of the <code>fork()</code> system call</strong>
+    and how a process is <strong>duplicated</strong> into a parent and a child process.
+  </p>
+  <p>
+    The goal is to understand:
+  </p>
+  <ul>
+    <li>how to distinguish parent and child processes</li>
+    <li>how execution flow is duplicated</li>
+    <li>how concurrent processes produce output</li>
+  </ul>
+
+  <hr/>
+
+  <h3>🛠️ Description</h3>
+  <p>
+    The program executes a decreasing <code>for</code> loop (<code>i = 2 → 1</code>).
+    At each iteration:
+  </p>
+  <ol>
+    <li>the <code>fork()</code> system call is invoked</li>
+    <li>the <strong>parent process</strong> receives a value greater than <code>0</code></li>
+    <li>the <strong>child process</strong> receives <code>0</code></li>
+    <li>
+      based on the return value:
+      <ul>
+        <li>the parent prints <code>i</code></li>
+        <li>the child prints <code>-i</code></li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>
+    Since <code>fork()</code> duplicates the current process:
+  </p>
+  <ul>
+    <li>after the first iteration there are <strong>2 running processes</strong></li>
+    <li>after the second iteration there are <strong>4 running processes</strong></li>
+  </ul>
+
+  <p>
+    The order of the printed output is <strong>non-deterministic</strong>,
+    because it depends on the operating system scheduler.
+  </p>
+
+  <hr/>
+
+  <h3>📦 Headers and Libraries Used</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Description</th>
+        <th>Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;stdlib.h&gt;</code></td>
+        <td>Standard utility functions</td>
+        <td>
+          <a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">
+            cppreference
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td><code>&lt;stdio.h&gt;</code></td>
+        <td>Standard input/output</td>
+        <td>
+          <a href="https://en.cppreference.com/w/c/header/stdio" target="_blank">
+            cppreference
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td><code>&lt;unistd.h&gt;</code></td>
+        <td>POSIX process control</td>
+        <td>
+          <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html" target="_blank">
+            Open Group
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr/>
+
+  <h3>⚙️ System Calls and Functions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Function</th>
+        <th>Role</th>
+        <th>Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>fork()</code></td>
+        <td>Creates a new process by duplicating the caller</td>
+        <td>
+          <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">
+            man7.org
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td><code>printf()</code></td>
+        <td>Writes formatted output to stdout</td>
+        <td>
+          <a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">
+            cppreference
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr/>
+
+  <h3>🧠 Key Concepts Introduced</h3>
+  <ul>
+    <li>🔀 Process creation</li>
+    <li>👨‍👦 Parent vs child execution</li>
+    <li>🔁 Concurrent execution</li>
+    <li>🎲 Non-deterministic output</li>
+    <li>📈 Exponential process growth</li>
+  </ul>
+
+  <hr/>
+
+  <h3>🔗 Links</h3>
+  <ul>
+    <li>
+      🐙 <strong>GitHub Example:</strong>
+      <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/tree/main/src/C-Unix-STD-Basic-Fork" target="_blank">
+        Repository Link
+      </a>
+    </li>
+    <li>
+      📘 <strong>POSIX fork() Reference:</strong>
+      <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" target="_blank">
+        Open Group Specification
+      </a>
+    </li>
+  </ul>
+
+  <hr/>
+
+  <h3>👀 View the Code</h3>
+  <p>
+    <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c"
+       target="_blank"
+       style="display:inline-block;padding:8px 14px;border-radius:6px;
+              background:#24292f;color:white;text-decoration:none;font-weight:bold;">
+      🔍 View Code
+    </a>
+  </p>
+
+</section>
+
+
+
+
+
+There are 
 
 <a id="getting-started"></a>
 
@@ -137,7 +270,6 @@ Start the project using the provided **startup script** or command sequence.
 Remove the project and all its dependencies from the system **safely and completely**.
 
 
-
 <br>
 <br>
 
@@ -147,8 +279,8 @@ Remove the project and all its dependencies from the system **safely and complet
 
 Before building or running the project, make sure you satisgy the prerequisites to run the project:
 
-- **Operating System**: GNU/Linux, Windows 
-- **Software Dependencies**: GitHub, Doxygen, GNU Make, GNU C Compiler `
+- **Operating System**: GNU/Linux, Windows
+- **Software Dependencies**: GitHub, Doxygen, GNU Make, GNU C Compiler
 
 <br>
 <br>
@@ -172,156 +304,80 @@ Before building and generating documentation with **C_Linux**, make sure the fol
   and  
   <pre>make clean</pre>
 
+- **[GNU C Compiler (GCC)](#install-gcc)** — *Mandatory.*  
+  Required to compile all C examples in **C_Linux**.  
+  Supports C99 standard and POSIX APIs.
+
+<br>
 <br>
 
-Below are the detailed installation steps for each dependency, both on **Unix/Linux** and **Windows** systems.
+<a id="install-gcc"></a>
 
-<br>
-<br>
-
-<a id="install-github"></a>
-
-<h2><img src="Images/Logo/GitHubLogo.svg" alt="GitHub" width="64px" height="64px"/> Install GitHub / Git </h2>
+<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" width="64px" height="64px"/> Install GNU C Compiler (GCC)</h2>
 
 ### 🐧 On GNU/Linux
 
-<pre>
-sudo apt update
-sudo apt install git
-</pre>
-
-After installation, verify that Git is available:
+Check if GCC is already installed:
 
 <pre>
-git --version
-</pre>
-
-To link your project to **GitHub**, create a free account at:  
-👉 [https://github.com/signup](https://github.com/signup)
-
-Then configure Git with your account details:
-
-<pre>
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-</pre>
-
-<br>
-<br>
-
-
-<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
-
-
-
-1. Download **Git for Windows** from:  
-   👉 [https://git-scm.com/download/win](https://git-scm.com/download/win)
-
-2. Run the installer and follow the setup wizard (leave default options checked).  
-3. After installation, open **Git Bash** and verify:
-   <pre>
-   git --version
-   </pre>
-
-4. Optionally create a GitHub account at  
-   👉 [https://github.com/signup](https://github.com/signup)
-
-<br>
-<br>
-
-<a id="install-doxygen"></a>
-
-<h2><img src="Images/Logo/doxygen.svg" alt="Doxygen" width="64px" height="64px"/> Install Doxygen </h2>
-
-### 🐧 On GNU/Linux
-
-<pre>
-sudo apt update
-sudo apt install doxygen graphviz
-</pre>
-
-Verify the installation:
-
-<pre>
-doxygen --version
-</pre>
-
-Optionally, you can generate a sample configuration file with:
-
-<pre>
-doxygen -g
-</pre>
-
-<br>
-<br>
-
-
-<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
-
-1. Download the Windows installer from:  
-   👉 [https://www.doxygen.nl/download.html](https://www.doxygen.nl/download.html)
-
-2. Run the `.exe` file and follow the setup wizard.  
-3. After installation, open **Command Prompt** and check:
-   <pre>
-   doxygen --version
-   </pre>
-
-4. To enable UML and graphs, install **Graphviz** as well:  
-   👉 [https://graphviz.org/download/](https://graphviz.org/download/)
-
-<br>
-<br>
-
-<a id="install-gnu-make"></a>
-
-<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" width="64px" height="64px"/> Install GNU Make </h2>
-
-### 🐧 On GNU/Linux
-
-GNU Make is usually preinstalled. Check it with:
-
-<pre>
-make --version
+gcc --version
 </pre>
 
 If missing, install it via:
 
 <pre>
 sudo apt update
-sudo apt install make
+sudo apt install gcc build-essential
 </pre>
 
-<br>
-<br>
+Verify installation:
 
-<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows </h3>
+<pre>
+gcc --version
+</pre>
 
-You can install **GNU Make** in one of these ways:
+---
+
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" width="24"/> On Windows</h3>
 
 #### ✅ Option 1: Using MinGW
 
-1. Download and install **MinGW** from:  
-   👉 [https://www.mingw-w64.org/](https://www.mingw-w64.org/)
-2. During installation, select the “mingw32-make” package.
-3. Add MinGW’s `bin` directory to your system PATH.
+1. Download and install **MinGW-w64** from:  
+   👉 [https://www.mingw-w64.org/](https://www.mingw-w64.org/)  
+2. During installation, select the **gcc** package.  
+3. Add the `bin` directory of MinGW to your system PATH.  
 4. Verify installation:
-   <pre>
-   mingw32-make --version
-   </pre>
-
-You can then rename or alias it to `make` for convenience.
-
-#### ✅ Option 2: Using Chocolatey (recommended if available)
-
-If you have **Chocolatey** package manager installed:
 
 <pre>
-choco install make
+gcc --version
 </pre>
 
-<br>
-<br>
+#### ✅ Option 2: Using Windows Subsystem for Linux (WSL)
+
+1. Install WSL with a Linux distribution, e.g., Ubuntu.  
+2. Open WSL terminal and run:
+
+<pre>
+sudo apt update
+sudo apt install gcc build-essential
+gcc --version
+</pre>
+
+#### ✅ Option 3: Using Chocolatey
+
+If you have **Chocolatey** installed:
+
+<pre>
+choco install mingw
+</pre>
+
+Verify installation:
+
+<pre>
+gcc --version
+</pre>
+
+---
 
 ### 💡 Dependencies Verification
 
@@ -331,16 +387,16 @@ After installing all dependencies, verify them with:
 git --version
 doxygen --version
 make --version
+gcc --version
 </pre>
 
 If all commands return valid version numbers, you’re ready to build and document your project 🎉
 
 > 💡 Tip: You can also run the `doxygen.sh` script from the root directory.  
 > It will automatically:
-> - Check that Doxygen is installed. If it is not installed, the doxygen.sh script will fail ❌  and do not proceed.   
-> - Otherwhise it:
->          - Generate a base `Doxyfile` if missing into the root directory.   
-> -        - Apply the custom configuration for **C_Linux** on the Doxyfile
+> - Check that Doxygen is installed. If not, the script will fail ❌  
+> - Generate a base `Doxyfile` if missing  
+> - Apply the custom configuration for **C_Linux**
 
 <br>
 <br>
@@ -483,8 +539,6 @@ To ***uninstall*** the project just clean the documentation directory `.e/docs/`
 <br>
 
 
-
-
 <a name="license"></a>
 
 # Licenses 📜
@@ -515,7 +569,8 @@ You are free to use, modify, and share this template — just give proper credit
 Thank you for your interest in **C_Linux**!  
 You can freely **download and use** the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.
 
----
+<br>
+<br>
 
 ## General Contribution Guidelines
 
@@ -533,7 +588,8 @@ When contributing code:
 
 Keep style consistent, update documentation, and run tests.
 
----
+<br>
+<br>
 
 <a name="authors"></a>
 
@@ -556,21 +612,8 @@ Keep style consistent, update documentation, and run tests.
 
 </div>
 
----
-
-<a name="contact-us"></a>
-
-# Contact ☎️
-
-For questions or support:
-
-- Open a GitHub [Issue](https://github.com/Unix69/C_Linux/issues/new) describing the problem  
-- Email the author for direct questions  
-- Check [Documentation](docs/html/index.html) for reference  
-
-Issues are preferred to track bugs or feature requests efficiently.
-
----
+<br>
+<br>
 
 <a name="official-links"></a>
 
@@ -583,7 +626,8 @@ Issues are preferred to track bugs or feature requests efficiently.
 - [GNU Make](https://www.gnu.org/software/make/) – Build automation  
 - [Doxygen](https://www.doxygen.nl/) – Documentation generator  
 
----
+<br>
+<br>
 
 <a name="faq"></a>
 
@@ -604,7 +648,8 @@ A4: Use `gcc` or run `make` in project root.
 **Q5: How to report a bug?**  
 A5: Open a **GitHub Issue** describing the error, affected example, and steps to reproduce.
 
----
+<br>
+<br>
 
 <a name="fork-project"></a>
 
@@ -634,7 +679,8 @@ A5: Open a **GitHub Issue** describing the error, affected example, and steps to
 - Include examples or references if relevant  
 - Avoid committing unrelated files  
 
----
+<br>
+<br>
 
 <a name="issues"></a>
 
@@ -650,7 +696,8 @@ A5: Open a **GitHub Issue** describing the error, affected example, and steps to
 
 All issues are tracked in the **Issues** section on GitHub.
 
----
+<br>
+<br>
 
 <a name="thanks"></a>
 

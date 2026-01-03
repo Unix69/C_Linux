@@ -106,28 +106,13 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 <div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div align="center"></div><div align="center"><table style="width:320px">
-<tr>
-<td style="text-align:left"><object type="image/svg+xml" data="Images/Logo/GnuLinuxLogo.svg" style="pointer-events: none;" width="160" height="160">GNU/Linux</object>  </td><td style="text-align:right"><object type="image/svg+xml" data="Images/Logo/doxygen.svg" style="pointer-events: none;" width="160" height="160">Doxygen</object>   </td></tr>
-</table>
-</div><div align="center"> <h1>C_Linux</h1>
+<div class="textblock"><div align="center"></div><div align="center"> <h1>C_Linux</h1>
 </div><div align="center"></div><div align="center"> <br  />
 </div><div align="center"> <div align="bottom"> <a href="https://github.com/Unix69/C_Linux/graphs/contributors"><img src="https://img.shields.io/github/contributors/Unix69/C_Linux" alt="contributors" class="inline"/> </a> <a href=""><img src="https://img.shields.io/github/last-commit/Unix69/C_Linux" alt="last update" class="inline"/> </a> <a href="https://github.com/Unix69/C_Linux/network/members"><img src="https://img.shields.io/github/forks/Unix69/C_Linux" alt="forks" class="inline"/> </a> <a href="https://github.com/Unix69/C_Linux/stargazers"><img src="https://img.shields.io/github/stars/Unix69/C_Linux" alt="stars" class="inline"/> </a> <a href="https://github.com/Unix69/C_Linux/issues/"><img src="https://img.shields.io/github/issues/Unix69/C_Linux" alt="open issues" class="inline"/> </a> <a href="https://github.com/Unix69/C_Linux/blob/master/LICENSE.md"><object type="image/svg+xml" data="https://img.shields.io/github/license/Unix69/C_Linux.svg" style="pointer-events: none;">license</object> </a> </div></div><div align="center"> <br  />
  <br  />
-</div><div align="center"> </div><div align="center"> A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem </div><div align="center"> </div><p><br  />
+</div><div align="center"> </div><div align="center"> A set of <b>C example programs</b> showing the basic usage of <b>Unix system calls</b> related to <b>Filesystem</b>, <b>Processes</b> and <b>Threads</b> to learn about Unix-like filesystem manipulation and C multiprocess and multithread programming. <br  />
+ </div><div align="center"> </div><p><br  />
  <br  />
- <br  />
-</p>
-<div align="center" style="margin-right: 24px;"></div><div align="center" style="margin-right: 24px;"> <div align="center" style="font-size: 26px; font-weight: bold; line-height: 1.3; text-align: center;"> 🧠 Founder &amp; Developer </div></div><div align="center" style="margin-right: 24px;"> <br  />
- <br  />
-</div><div align="center" style="margin-right: 24px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Giuseppe Pedone" width="80px;" class="inline"/><br  />
- <br  />
- <table style="border: 0; border-collapse: collapse; margin-top: 8px;">
-<tr>
-<td align="center" valign="middle"><a href="https://github.com/Unix69" style="font-size: 18px;"><sub><b>Giuseppe Pedone (Unix69)</b></sub> </a> <br  />
- <a href="#" onclick="location.href='mai'+'lto:'+'giu'+'se'+'ppe'+'.p'+'edo'+'ne'+'.de'+'ve'+'lop'+'er'+'@gm'+'ai'+'l.c'+'om'; return false;"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&amp;logo=gmail&amp;logoColor=white" alt="" class="inline"/> </a> <a href="https://github.com/Unix69"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&amp;logo=github&amp;logoColor=white" alt="" class="inline"/> </a> <a href="https://t.me/Unix69"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat&amp;logo=telegram&amp;logoColor=white" alt="" class="inline"/> </a>   </td></tr>
-</table>
-</div><div align="center" style="margin-right: 24px;"></div><p><br  />
  <br  />
 </p>
 <p><a class="anchor" id="table-of-contents"></a></p>
@@ -147,11 +132,110 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 </li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#authors">Authors</a></li>
-<li><a href="#contact-us">Contacts</a></li>
 </ul>
 <p><br  />
  <br  />
 </p>
+<p><a class="anchor" id="examples"></a></p>
+<p><a class="anchor" id="c-unix-std-basic-fork"></a> &lt;section id="c-unix-std-basic-fork"&gt;</p>
+<h2>🧪 C-Unix-STD-Basic-Fork</h2>
+<p><b>Path:</b> <code>src/C-Unix-STD-Basic-Fork/main.c</code></p>
+<hr  />
+<h3>🎯 Purpose</h3>
+<p>This example demonstrates the <b>basic behavior of the <code>fork()</code> system call</b> and how a process is <b>duplicated</b> into a parent and a child process. </p>
+<p>The goal is to understand: </p>
+<ul>
+<li>
+how to distinguish parent and child processes </li>
+<li>
+how execution flow is duplicated </li>
+<li>
+how concurrent processes produce output </li>
+</ul>
+<hr  />
+<h3>🛠️ Description</h3>
+<p>The program executes a decreasing <code>for</code> loop (<code>i = 2 → 1</code>). At each iteration: </p>
+<ol>
+<li>
+the <code>fork()</code> system call is invoked </li>
+<li>
+the <b>parent process</b> receives a value greater than <code>0</code> </li>
+<li>
+the <b>child process</b> receives <code>0</code> </li>
+<li>
+based on the return value: <ul>
+<li>
+the parent prints <code>i</code> </li>
+<li>
+the child prints <code>-i</code> </li>
+</ul>
+</li>
+</ol>
+<p>Since <code>fork()</code> duplicates the current process: </p>
+<ul>
+<li>
+after the first iteration there are <b>2 running processes</b> </li>
+<li>
+after the second iteration there are <b>4 running processes</b> </li>
+</ul>
+<p>The order of the printed output is <b>non-deterministic</b>, because it depends on the operating system scheduler. </p>
+<hr  />
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+</table>
+<p>Header </p>
+<p>Description </p>
+<p>Reference  &lt;/thead&gt; &lt;tbody&gt; </p>
+<p><code>&lt;stdlib.h&gt;</code> </p>
+<p>Standard utility functions </p>
+<p><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference </a>   </p>
+<p><code>&lt;stdio.h&gt;</code> </p>
+<p>Standard input/output </p>
+<p><a href="https://en.cppreference.com/w/c/header/stdio" target="_blank">cppreference </a>   </p>
+<p><code>&lt;unistd.h&gt;</code> </p>
+<p>POSIX process control </p>
+<p><a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html" target="_blank">Open Group </a>   &lt;/tbody&gt; </p>
+<hr  />
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+</table>
+<p>Function </p>
+<p>Role </p>
+<p>Reference  &lt;/thead&gt; &lt;tbody&gt; </p>
+<p><code>fork()</code> </p>
+<p>Creates a new process by duplicating the caller </p>
+<p><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org </a>   </p>
+<p><code>printf()</code> </p>
+<p>Writes formatted output to stdout </p>
+<p><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference </a>   &lt;/tbody&gt; </p>
+<hr  />
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Process creation </li>
+<li>
+👨‍👦 Parent vs child execution </li>
+<li>
+🔁 Concurrent execution </li>
+<li>
+🎲 Non-deterministic output </li>
+<li>
+📈 Exponential process growth </li>
+</ul>
+<hr  />
+<h3>🔗 Links</h3>
+<ul>
+<li>
+🐙 <b>GitHub Example:</b> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/tree/main/src/C-Unix-STD-Basic-Fork" target="_blank">Repository Link </a>  </li>
+<li>
+📘 <b>POSIX fork() Reference:</b> <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" target="_blank">Open Group Specification </a>  </li>
+</ul>
+<hr  />
+<h3>👀 View the Code</h3>
+<p><a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c" target="_blank" style="display:inline-block;padding:8px 14px;border-radius:6px;
+              background:#24292f;color:white;text-decoration:none;font-weight:bold;">🔍 View Code </a> </p>
+<p>&lt;/section&gt;</p>
+<p>There are</p>
 <p><a class="anchor" id="getting-started"></a></p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Getting Started 🚀</h1>
@@ -181,7 +265,7 @@ Getting Started 🚀</h1>
 <p>Before building or running the project, make sure you satisgy the prerequisites to run the project:</p>
 <ul>
 <li><b>Operating System</b>: GNU/Linux, Windows</li>
-<li><b>Software Dependencies</b>: GitHub, Doxygen, GNU Make, GNU C Compiler `</li>
+<li><b>Software Dependencies</b>: GitHub, Doxygen, GNU Make, GNU C Compiler</li>
 </ul>
 <p><br  />
  <br  />
@@ -200,138 +284,88 @@ Getting Started 🚀</h1>
  Required to run automated build and documentation generation tasks. <br  />
  Used in this project to simplify commands such as: <pre>make doc</pre> and <br  />
  <pre>make clean</pre></li>
+<li><b><a href="#install-gcc">GNU C Compiler (GCC)</a></b> — <em>Mandatory.</em> <br  />
+ Required to compile all C examples in <b>C_Linux</b>. <br  />
+ Supports C99 standard and POSIX APIs.</li>
 </ul>
 <p><br  />
-</p>
-<p>Below are the detailed installation steps for each dependency, both on <b>Unix/Linux</b> and <b>Windows</b> systems.</p>
-<p><br  />
  <br  />
 </p>
-<p><a class="anchor" id="install-github"></a></p>
-<h2><object type="image/svg+xml" data="Images/Logo/GitHubLogo.svg" style="pointer-events: none;" width="64px" height="64px">GitHub</object> Install GitHub / Git </h2>
+<p><a class="anchor" id="install-gcc"></a></p>
+<h2><object type="image/svg+xml" data="Images/Logo/GnuLinuxLogo.svg" style="pointer-events: none;" width="64px" height="64px">GCC</object> Install GNU C Compiler (GCC)</h2>
 <h3><a class="anchor" id="autotoc_md11"></a>
 🐧 On GNU/Linux</h3>
+<p>Check if GCC is already installed:</p>
 <pre>
-sudo apt update
-sudo apt install git
-</pre><p>After installation, verify that Git is available:</p>
-<pre>
-git --version
-</pre><p>To link your project to <b>GitHub</b>, create a free account at: <br  />
- 👉 <a href="https://github.com/signup">https://github.com/signup</a></p>
-<p>Then configure Git with your account details:</p>
-<pre>
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-</pre><p><br  />
- <br  />
-</p>
-<h3><object type="image/svg+xml" data="Images/Logo/windows-svgrepo-com.svg" style="pointer-events: none;" width="24">Windows logo</object> On Windows </h3>
-<ol type="1">
-<li>Download <b>Git for Windows</b> from: <br  />
- 👉 <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
-<li>Run the installer and follow the setup wizard (leave default options checked). <br  />
-</li>
-<li>After installation, open <b>Git Bash</b> and verify: <pre>
-   git --version
-   </pre></li>
-<li>Optionally create a GitHub account at <br  />
- 👉 <a href="https://github.com/signup">https://github.com/signup</a></li>
-</ol>
-<p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="install-doxygen"></a></p>
-<h2><object type="image/svg+xml" data="Images/Logo/doxygen.svg" style="pointer-events: none;" width="64px" height="64px">Doxygen</object> Install Doxygen </h2>
-<h3><a class="anchor" id="autotoc_md12"></a>
-🐧 On GNU/Linux</h3>
-<pre>
-sudo apt update
-sudo apt install doxygen graphviz
-</pre><p>Verify the installation:</p>
-<pre>
-doxygen --version
-</pre><p>Optionally, you can generate a sample configuration file with:</p>
-<pre>
-doxygen -g
-</pre><p><br  />
- <br  />
-</p>
-<h3><object type="image/svg+xml" data="Images/Logo/windows-svgrepo-com.svg" style="pointer-events: none;" width="24">Windows logo</object> On Windows </h3>
-<ol type="1">
-<li>Download the Windows installer from: <br  />
- 👉 <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a></li>
-<li>Run the <code>.exe</code> file and follow the setup wizard. <br  />
-</li>
-<li>After installation, open <b>Command Prompt</b> and check: <pre>
-   doxygen --version
-   </pre></li>
-<li>To enable UML and graphs, install <b>Graphviz</b> as well: <br  />
- 👉 <a href="https://graphviz.org/download/">https://graphviz.org/download/</a></li>
-</ol>
-<p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="install-gnu-make"></a></p>
-<h2><object type="image/svg+xml" data="Images/Logo/GnuLinuxLogo.svg" style="pointer-events: none;" width="64px" height="64px">GNU/Linux</object> Install GNU Make </h2>
-<h3><a class="anchor" id="autotoc_md13"></a>
-🐧 On GNU/Linux</h3>
-<p>GNU Make is usually preinstalled. Check it with:</p>
-<pre>
-make --version
+gcc --version
 </pre><p>If missing, install it via:</p>
 <pre>
 sudo apt update
-sudo apt install make
-</pre><p><br  />
- <br  />
-</p>
-<h3><object type="image/svg+xml" data="Images/Logo/windows-svgrepo-com.svg" style="pointer-events: none;" width="24">Windows logo</object> On Windows </h3>
-<p>You can install <b>GNU Make</b> in one of these ways:</p>
+sudo apt install gcc build-essential
+</pre><p>Verify installation:</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+&lt;pre&gt;</h2>
+<p>gcc --version </p>
+<h3><object type="image/svg+xml" data="Images/Logo/windows-svgrepo-com.svg" style="pointer-events: none;" width="24">Windows logo</object> On Windows</h3>
 <h4>✅ Option 1: Using MinGW</h4>
 <ol type="1">
-<li>Download and install <b>MinGW</b> from: <br  />
- 👉 <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a></li>
-<li>During installation, select the “mingw32-make” package.</li>
-<li>Add MinGW’s <code>bin</code> directory to your system PATH.</li>
-<li>Verify installation: <pre>
-   mingw32-make --version
-   </pre></li>
+<li>Download and install <b>MinGW-w64</b> from: <br  />
+ 👉 <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a> <br  />
+</li>
+<li>During installation, select the <b>gcc</b> package. <br  />
+</li>
+<li>Add the <code>bin</code> directory of MinGW to your system PATH. <br  />
+</li>
+<li>Verify installation:</li>
 </ol>
-<p>You can then rename or alias it to <code>make</code> for convenience.</p>
-<h4>✅ Option 2: Using Chocolatey (recommended if available)</h4>
-<p>If you have <b>Chocolatey</b> package manager installed:</p>
 <pre>
-choco install make
-</pre><p><br  />
- <br  />
-</p>
+gcc --version
+</pre><p>#</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+✅ Option 2: Using Windows Subsystem for Linux (WSL)</h3>
+<ol type="1">
+<li>Install WSL with a Linux distribution, e.g., Ubuntu. <br  />
+</li>
+<li>Open WSL terminal and run:</li>
+</ol>
+<pre>
+sudo apt update
+sudo apt install gcc build-essential
+gcc --version
+</pre><p>#</p>
 <h3><a class="anchor" id="autotoc_md14"></a>
+✅ Option 3: Using Chocolatey</h3>
+<p>If you have <b>Chocolatey</b> installed:</p>
+<pre>
+choco install mingw
+</pre><p>Verify installation:</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+&lt;pre&gt;</h2>
+<p>gcc --version </p>
+<h3><a class="anchor" id="autotoc_md16"></a>
 💡 Dependencies Verification</h3>
 <p>After installing all dependencies, verify them with:</p>
 <pre>
 git --version
 doxygen --version
 make --version
+gcc --version
 </pre><p>If all commands return valid version numbers, you’re ready to build and document your project 🎉</p>
 <blockquote class="doxtable">
 <p>💡 Tip: You can also run the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the root directory. <br  />
  It will automatically:</p><ul>
-<li>Check that Doxygen is installed. If it is not installed, the <a class="el" href="doxygen_8sh.html">doxygen.sh</a> script will fail ❌ and do not proceed. <br  />
+<li>Check that Doxygen is installed. If not, the script will fail ❌ <br  />
 </li>
-<li>Otherwhise it:<ul>
-<li>Generate a base <code>Doxyfile</code> if missing into the root directory. <br  />
+<li>Generate a base <code>Doxyfile</code> if missing <br  />
 </li>
-</ul>
-</li>
-<li>- Apply the custom configuration for <b>C_Linux</b> on the Doxyfile </li>
+<li>Apply the custom configuration for <b>C_Linux</b> </li>
 </ul>
 </blockquote>
 <p><br  />
  <br  />
 </p>
 <p><a class="anchor" id="installation"></a></p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 ⭐ Installation</h2>
 <p>To <em><b>install</b></em> the project follow this setps:</p>
 <p>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></p>
@@ -356,7 +390,7 @@ make --version
  <br  />
 </p>
 <p><a class="anchor" id="build"></a></p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 🛠️ Build</h2>
 <p>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</p>
 <p>A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</p>
@@ -373,7 +407,7 @@ make --version
  <br  />
 </p>
 <p><a class="anchor" id="configuration"></a></p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 ⚙️ Configuration</h2>
 <p>To <em><b>configure</b></em> the C_Linux project you can:</p>
 <p><br  />
@@ -392,7 +426,7 @@ make --version
  <br  />
 </p>
 <p><a class="anchor" id="run"></a></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 🚀 Run</h2>
 <p>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</p>
 <p>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</p>
@@ -408,14 +442,14 @@ make --version
  <br  />
 </p>
 <p><a class="anchor" id="uninstall"></a></p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 ❌ Uninstall</h2>
 <p>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</p>
 <pre> make clean </pre><p><br  />
  <br  />
 </p>
 <p><a class="anchor" id="license"></a></p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Licenses 📜</h1>
 <p><a href="#table-of-contents">Table of Contents</a></p>
 <p><br  />
@@ -428,12 +462,14 @@ Licenses 📜</h1>
  <br  />
 </p>
 <p><a class="anchor" id="contributing"></a></p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Contributing 👋</h1>
 <p>Thank you for your interest in <b>C_Linux</b>! <br  />
  You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</p>
-<hr  />
-<h2><a class="anchor" id="autotoc_md23"></a>
+<p><br  />
+ <br  />
+</p>
+<h2><a class="anchor" id="autotoc_md24"></a>
 General Contribution Guidelines</h2>
 <ul>
 <li>Read the <a class="el" href="md_CODE_OF_CONDUCT.html">**CODE_OF_CONDUCT.md**</a> <br  />
@@ -457,7 +493,9 @@ General Contribution Guidelines</h2>
 </li>
 </ol>
 <p>Keep style consistent, update documentation, and run tests.</p>
-<hr  />
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="authors"></a></p>
 <h1><a class="anchor" id="autotoc_md25"></a>
 Authors 🧑‍💻</h1>
@@ -465,23 +503,11 @@ Authors 🧑‍💻</h1>
  <span>Roles: FO, CEO</span><br  />
  <span>Contributions: <code>FI</code>, <code>OP</code>, <code>DE</code></span><br  />
  <span>Email: <a href="#" onclick="location.href='mai'+'lto:'+'giu'+'se'+'ppe'+'.p'+'edo'+'ne'+'.de'+'ve'+'lop'+'er'+'@gm'+'ai'+'l.c'+'om'; return false;">giuseppe.pedone.developer@gmail.com</a></span><br  />
- <span>Links: <a href="https://github.com/Unix69"><object type="image/svg+xml" data="Images/Logo/GitHubLogo.svg" style="pointer-events: none;" width="20" height="20"></object> GitHub</a> </span> </div> </div></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><hr  />
-<p><a class="anchor" id="contact-us"></a></p>
-<h1><a class="anchor" id="autotoc_md27"></a>
-Contact ☎️</h1>
-<p>For questions or support:</p>
-<ul>
-<li>Open a GitHub <a href="https://github.com/Unix69/C_Linux/issues/new">Issue</a> describing the problem <br  />
-</li>
-<li>Email the author for direct questions <br  />
-</li>
-<li>Check <a href="docs/html/index.html">Documentation</a> for reference <br  />
-</li>
-</ul>
-<p>Issues are preferred to track bugs or feature requests efficiently.</p>
-<hr  />
+ <span>Links: <a href="https://github.com/Unix69"><object type="image/svg+xml" data="Images/Logo/GitHubLogo.svg" style="pointer-events: none;" width="20" height="20"></object> GitHub</a> </span> </div> </div></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="official-links"></a></p>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Official Links 🌐</h1>
 <ul>
 <li><a href="https://gcc.gnu.org/">GNU C Compiler (GCC)</a> – Compiler for C projects <br  />
@@ -497,9 +523,11 @@ Official Links 🌐</h1>
 <li><a href="https://www.doxygen.nl/">Doxygen</a> – Documentation generator <br  />
 </li>
 </ul>
-<hr  />
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="faq"></a></p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 FAQ ❓</h1>
 <p><b>Q1: Which C standard is used?</b> <br  />
  A1: All examples are written in <b>C99</b>.</p>
@@ -511,11 +539,13 @@ FAQ ❓</h1>
  A4: Use <code>gcc</code> or run <code>make</code> in project root.</p>
 <p><b>Q5: How to report a bug?</b> <br  />
  A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</p>
-<hr  />
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="fork-project"></a></p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Forking &amp; Pull Requests 🔀</h1>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md29"></a>
 Fork the Project</h3>
 <ol type="1">
 <li>Go to the main repository on GitHub <br  />
@@ -526,7 +556,7 @@ Fork the Project</h3>
 </li>
 <li>Keep it synchronized with the main project</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md35"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Pull Requests (PR)</h3>
 <ol type="1">
 <li>Ensure your branch is updated with the main branch <br  />
@@ -556,9 +586,11 @@ Pull Requests (PR)</h3>
 <li>Avoid committing unrelated files <br  />
 </li>
 </ul>
-<hr  />
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="issues"></a></p>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md31"></a>
 Issues ⚠️</h1>
 <ul>
 <li>Issues are for reporting bugs, requesting features, or asking questions <br  />
@@ -578,9 +610,11 @@ Issues ⚠️</h1>
 </li>
 </ul>
 <p>All issues are tracked in the <b>Issues</b> section on GitHub.</p>
-<hr  />
+<p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="thanks"></a></p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Thanks 🙏</h1>
 <p>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
  Your work empowers projects like <b>C_Linux</b> to exist and evolve.</p>

@@ -1,12 +1,5 @@
 
 
-\tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-  &   \\\cline{1-2}
-\end{longtabu}
-
-
  \doxysection*{C\+\_\+\+Linux}
 
 
@@ -22,36 +15,13 @@
 
  
 
- A set of C-\/\+Unix examples showing usage of Unix syscall related to processes, threads, filesystem 
+ A set of {\bfseries{C example programs}} showing the basic usage of {\bfseries{Unix system calls}} related to {\bfseries{Filesystem}}, {\bfseries{Processes}} and {\bfseries{Threads}} to learn about Unix-\/like filesystem manipulation and C multiprocess and multithread programming. ~\newline
+ 
 
  
 
 ~\newline
  ~\newline
- ~\newline
-
-
-
-
-  🧠 Founder \& Developer 
-
- ~\newline
- ~\newline
-
-
- ~\newline
- ~\newline
- \tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{1}{|X[-1]}|}
-\hline
-\PBS\centering \href{https://github.com/Unix69}{\texttt{ \textsubscript{{\bfseries{Giuseppe Pedone (Unix69)}}} }} ~\newline
- \href{mailto:giuseppe.pedone.developer@gmail.com}{\texttt{  }} \href{https://github.com/Unix69}{\texttt{  }} \href{https://t.me/Unix69}{\texttt{  }}   \\\cline{1-1}
-\end{longtabu}
-
-
-
-
-~\newline
  ~\newline
 
 
@@ -73,12 +43,166 @@ Navigation index to fast explore the content\+:
 \end{DoxyItemize}
 \item \href{\#faq}{\texttt{ F\+AQ}}
 \item \href{\#authors}{\texttt{ Authors}}
-\item \href{\#contact-us}{\texttt{ Contacts}}
 \end{DoxyItemize}
 
 ~\newline
  ~\newline
 
+
+\label{_examples}%
+
+
+\label{_c-unix-std-basic-fork}%
+ $<$section id=\char`\"{}c-\/unix-\/std-\/basic-\/fork\char`\"{}$>$
+
+\doxysubsection*{🧪 C-\/\+Unix-\/\+S\+T\+D-\/\+Basic-\/\+Fork}
+
+{\bfseries{Path\+:}} {\ttfamily src/\+C-\/\+Unix-\/\+S\+T\+D-\/\+Basic-\/\+Fork/main.\+c}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{🎯 Purpose}
+
+This example demonstrates the {\bfseries{basic behavior of the {\ttfamily fork()} system call}} and how a process is {\bfseries{duplicated}} into a parent and a child process. 
+
+The goal is to understand\+: 
+
+
+\begin{DoxyItemize}
+\item how to distinguish parent and child processes 
+\item how execution flow is duplicated 
+\item how concurrent processes produce output 
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{🛠️ Description}
+
+The program executes a decreasing {\ttfamily for} loop ({\ttfamily i = 2 → 1}). At each iteration\+: 
+
+
+\begin{DoxyEnumerate}
+\item the {\ttfamily fork()} system call is invoked 
+\item the {\bfseries{parent process}} receives a value greater than {\ttfamily 0} 
+\item the {\bfseries{child process}} receives {\ttfamily 0} 
+\item based on the return value\+: 
+\begin{DoxyItemize}
+\item the parent prints {\ttfamily i} 
+\item the child prints {\ttfamily -\/i} 
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Since {\ttfamily fork()} duplicates the current process\+: 
+
+
+\begin{DoxyItemize}
+\item after the first iteration there are {\bfseries{2 running processes}} 
+\item after the second iteration there are {\bfseries{4 running processes}} 
+\end{DoxyItemize}
+
+The order of the printed output is {\bfseries{non-\/deterministic}}, because it depends on the operating system scheduler. 
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{📦 Headers and Libraries Used}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{0}{|X[-1]}|}
+\hline
+\end{longtabu}
+
+
+Header 
+
+Description 
+
+Reference  $<$/thead$>$ $<$tbody$>$ 
+
+{\ttfamily $<$stdlib.\+h$>$} 
+
+Standard utility functions 
+
+\href{https://en.cppreference.com/w/c/header/stdlib}{\texttt{ cppreference }}   
+
+{\ttfamily $<$stdio.\+h$>$} 
+
+Standard input/output 
+
+\href{https://en.cppreference.com/w/c/header/stdio}{\texttt{ cppreference }}   
+
+{\ttfamily $<$unistd.\+h$>$} 
+
+P\+O\+S\+IX process control 
+
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html}{\texttt{ Open Group }}   $<$/tbody$>$ 
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{⚙️ System Calls and Functions}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{0}{|X[-1]}|}
+\hline
+\end{longtabu}
+
+
+Function 
+
+Role 
+
+Reference  $<$/thead$>$ $<$tbody$>$ 
+
+{\ttfamily fork()} 
+
+Creates a new process by duplicating the caller 
+
+\href{https://man7.org/linux/man-pages/man2/fork.2.html}{\texttt{ man7.\+org }}   
+
+{\ttfamily printf()} 
+
+Writes formatted output to stdout 
+
+\href{https://en.cppreference.com/w/c/io/fprintf}{\texttt{ cppreference }}   $<$/tbody$>$ 
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{🧠 Key Concepts Introduced}
+
+
+\begin{DoxyItemize}
+\item 🔀 Process creation 
+\item 👨‍👦 Parent vs child execution 
+\item 🔁 Concurrent execution 
+\item 🎲 Non-\/deterministic output 
+\item 📈 Exponential process growth 
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{🔗 Links}
+
+
+\begin{DoxyItemize}
+\item 🐙 {\bfseries{Git\+Hub Example\+:}} \href{https://github.com/&lt;username&gt;/&lt;repo&gt;/tree/main/src/C-Unix-STD-Basic-Fork}{\texttt{ Repository Link }}  
+\item 📘 {\bfseries{P\+O\+S\+IX fork() Reference\+:}} \href{https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html}{\texttt{ Open Group Specification }}  
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{👀 View the Code}
+
+\href{https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c}{\texttt{ 🔍 View Code }} 
+
+$<$/section$>$
+
+There are
 
 \label{_getting-started}%
 \hypertarget{md_README_autotoc_md8}{}\doxysection{Getting Started 🚀}\label{md_README_autotoc_md8}
@@ -114,7 +238,7 @@ Before building or running the project, make sure you satisgy the prerequisites 
 
 \begin{DoxyItemize}
 \item {\bfseries{Operating System}}\+: G\+N\+U/\+Linux, Windows
-\item {\bfseries{Software Dependencies}}\+: Git\+Hub, Doxygen, G\+NU Make, G\+NU C Compiler \`{}
+\item {\bfseries{Software Dependencies}}\+: Git\+Hub, Doxygen, G\+NU Make, G\+NU C Compiler
 \end{DoxyItemize}
 
 ~\newline
@@ -138,134 +262,24 @@ Before building and generating documentation with {\bfseries{C\+\_\+\+Linux}}, m
  
 \begin{DoxyPre}make clean\end{DoxyPre}
 
+\item {\bfseries{\href{\#install-gcc}{\texttt{ G\+NU C Compiler (G\+CC)}}}} — {\itshape Mandatory.} ~\newline
+ Required to compile all C examples in {\bfseries{C\+\_\+\+Linux}}. ~\newline
+ Supports C99 standard and P\+O\+S\+IX A\+P\+Is.
 \end{DoxyItemize}
 
 ~\newline
-
-
-Below are the detailed installation steps for each dependency, both on {\bfseries{Unix/\+Linux}} and {\bfseries{Windows}} systems.
-
-~\newline
  ~\newline
 
 
-\label{_install-github}%
+\label{_install-gcc}%
 
 
-\doxysubsection*{ Install Git\+Hub / Git }\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{🐧 On G\+N\+U/\+Linux}\label{md_README_autotoc_md11}
-
-\begin{DoxyPre}
-sudo apt update
-sudo apt install git
-\end{DoxyPre}
-
-
-After installation, verify that Git is available\+:
+\doxysubsection*{ Install G\+NU C Compiler (G\+CC)}\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{🐧 On G\+N\+U/\+Linux}\label{md_README_autotoc_md11}
+Check if G\+CC is already installed\+:
 
 
 \begin{DoxyPre}
-git -\/-\/version
-\end{DoxyPre}
-
-
-To link your project to {\bfseries{Git\+Hub}}, create a free account at\+: ~\newline
- 👉 \href{https://github.com/signup}{\texttt{ https\+://github.\+com/signup}}
-
-Then configure Git with your account details\+:
-
-
-\begin{DoxyPre}
-git config -\/-\/global user.name "Your Name"
-git config -\/-\/global user.email "you@example.com"
-\end{DoxyPre}
-
-
-~\newline
- ~\newline
-
-
-\doxysubsubsection*{ On Windows }
-
-
-\begin{DoxyEnumerate}
-\item Download {\bfseries{Git for Windows}} from\+: ~\newline
- 👉 \href{https://git-scm.com/download/win}{\texttt{ https\+://git-\/scm.\+com/download/win}}
-\item Run the installer and follow the setup wizard (leave default options checked). ~\newline
-
-\item After installation, open {\bfseries{Git Bash}} and verify\+: 
-\begin{DoxyPre}
-   git -\/-\/version
-   \end{DoxyPre}
-
-\item Optionally create a Git\+Hub account at ~\newline
- 👉 \href{https://github.com/signup}{\texttt{ https\+://github.\+com/signup}}
-\end{DoxyEnumerate}
-
-~\newline
- ~\newline
-
-
-\label{_install-doxygen}%
-
-
-\doxysubsection*{ Install Doxygen }\hypertarget{md_README_autotoc_md12}{}\doxysubsubsection{🐧 On G\+N\+U/\+Linux}\label{md_README_autotoc_md12}
-
-\begin{DoxyPre}
-sudo apt update
-sudo apt install doxygen graphviz
-\end{DoxyPre}
-
-
-Verify the installation\+:
-
-
-\begin{DoxyPre}
-doxygen -\/-\/version
-\end{DoxyPre}
-
-
-Optionally, you can generate a sample configuration file with\+:
-
-
-\begin{DoxyPre}
-doxygen -\/g
-\end{DoxyPre}
-
-
-~\newline
- ~\newline
-
-
-\doxysubsubsection*{ On Windows }
-
-
-\begin{DoxyEnumerate}
-\item Download the Windows installer from\+: ~\newline
- 👉 \href{https://www.doxygen.nl/download.html}{\texttt{ https\+://www.\+doxygen.\+nl/download.\+html}}
-\item Run the {\ttfamily .exe} file and follow the setup wizard. ~\newline
-
-\item After installation, open {\bfseries{Command Prompt}} and check\+: 
-\begin{DoxyPre}
-   doxygen -\/-\/version
-   \end{DoxyPre}
-
-\item To enable U\+ML and graphs, install {\bfseries{Graphviz}} as well\+: ~\newline
- 👉 \href{https://graphviz.org/download/}{\texttt{ https\+://graphviz.\+org/download/}}
-\end{DoxyEnumerate}
-
-~\newline
- ~\newline
-
-
-\label{_install-gnu-make}%
-
-
-\doxysubsection*{ Install G\+NU Make }\hypertarget{md_README_autotoc_md13}{}\doxysubsubsection{🐧 On G\+N\+U/\+Linux}\label{md_README_autotoc_md13}
-G\+NU Make is usually preinstalled. Check it with\+:
-
-
-\begin{DoxyPre}
-make -\/-\/version
+gcc -\/-\/version
 \end{DoxyPre}
 
 
@@ -274,48 +288,62 @@ If missing, install it via\+:
 
 \begin{DoxyPre}
 sudo apt update
-sudo apt install make
+sudo apt install gcc build-\/essential
 \end{DoxyPre}
 
 
-~\newline
- ~\newline
+Verify installation\+:\hypertarget{md_README_autotoc_md12}{}\doxysubsection{$<$pre$>$}\label{md_README_autotoc_md12}
+gcc -\/-\/version 
 
-
-\doxysubsubsection*{ On Windows }
-
-You can install {\bfseries{G\+NU Make}} in one of these ways\+:
+\doxysubsubsection*{ On Windows}
 
 \doxyparagraph*{✅ Option 1\+: Using Min\+GW}
 
 
 \begin{DoxyEnumerate}
-\item Download and install {\bfseries{Min\+GW}} from\+: ~\newline
- 👉 \href{https://www.mingw-w64.org/}{\texttt{ https\+://www.\+mingw-\/w64.\+org/}}
-\item During installation, select the “mingw32-\/make” package.
-\item Add Min\+G\+W’s {\ttfamily bin} directory to your system P\+A\+TH.
-\item Verify installation\+: 
-\begin{DoxyPre}
-   mingw32-\/make -\/-\/version
-   \end{DoxyPre}
+\item Download and install {\bfseries{Min\+G\+W-\/w64}} from\+: ~\newline
+ 👉 \href{https://www.mingw-w64.org/}{\texttt{ https\+://www.\+mingw-\/w64.\+org/}} ~\newline
 
+\item During installation, select the {\bfseries{gcc}} package. ~\newline
+
+\item Add the {\ttfamily bin} directory of Min\+GW to your system P\+A\+TH. ~\newline
+
+\item Verify installation\+:
 \end{DoxyEnumerate}
 
-You can then rename or alias it to {\ttfamily make} for convenience.
-
-\doxyparagraph*{✅ Option 2\+: Using Chocolatey (recommended if available)}
-
-If you have {\bfseries{Chocolatey}} package manager installed\+:
-
 
 \begin{DoxyPre}
-choco install make
+gcc -\/-\/version
 \end{DoxyPre}
 
 
-~\newline
- ~\newline
-\hypertarget{md_README_autotoc_md14}{}\doxysubsubsection{💡 Dependencies Verification}\label{md_README_autotoc_md14}
+\#\hypertarget{md_README_autotoc_md13}{}\doxysubsubsection{✅ Option 2\+: Using Windows Subsystem for Linux (\+W\+S\+L)}\label{md_README_autotoc_md13}
+
+\begin{DoxyEnumerate}
+\item Install W\+SL with a Linux distribution, e.\+g., Ubuntu. ~\newline
+
+\item Open W\+SL terminal and run\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyPre}
+sudo apt update
+sudo apt install gcc build-\/essential
+gcc -\/-\/version
+\end{DoxyPre}
+
+
+\#\hypertarget{md_README_autotoc_md14}{}\doxysubsubsection{✅ Option 3\+: Using Chocolatey}\label{md_README_autotoc_md14}
+If you have {\bfseries{Chocolatey}} installed\+:
+
+
+\begin{DoxyPre}
+choco install mingw
+\end{DoxyPre}
+
+
+Verify installation\+:\hypertarget{md_README_autotoc_md15}{}\doxysubsection{$<$pre$>$}\label{md_README_autotoc_md15}
+gcc -\/-\/version \hypertarget{md_README_autotoc_md16}{}\doxysubsubsection{💡 Dependencies Verification}\label{md_README_autotoc_md16}
 After installing all dependencies, verify them with\+:
 
 
@@ -323,6 +351,7 @@ After installing all dependencies, verify them with\+:
 git -\/-\/version
 doxygen -\/-\/version
 make -\/-\/version
+gcc -\/-\/version
 \end{DoxyPre}
 
 
@@ -332,14 +361,11 @@ If all commands return valid version numbers, you’re ready to build and docume
 💡 Tip\+: You can also run the {\ttfamily \mbox{\hyperlink{doxygen_8sh}{doxygen.\+sh}}} script from the root directory. ~\newline
  It will automatically\+:
 \begin{DoxyItemize}
-\item Check that Doxygen is installed. If it is not installed, the \mbox{\hyperlink{doxygen_8sh}{doxygen.\+sh}} script will fail ❌ and do not proceed. ~\newline
+\item Check that Doxygen is installed. If not, the script will fail ❌ ~\newline
 
-\item Otherwhise it\+:
-\begin{DoxyItemize}
-\item Generate a base {\ttfamily Doxyfile} if missing into the root directory. ~\newline
+\item Generate a base {\ttfamily Doxyfile} if missing ~\newline
 
-\end{DoxyItemize}
-\item -\/ Apply the custom configuration for {\bfseries{C\+\_\+\+Linux}} on the Doxyfile 
+\item Apply the custom configuration for {\bfseries{C\+\_\+\+Linux}} 
 \end{DoxyItemize}\end{quote}
 
 
@@ -348,7 +374,7 @@ If all commands return valid version numbers, you’re ready to build and docume
 
 
 \label{_installation}%
-\hypertarget{md_README_autotoc_md15}{}\doxysubsection{⭐ Installation}\label{md_README_autotoc_md15}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{⭐ Installation}\label{md_README_autotoc_md17}
 To {\itshape {\bfseries{install}}} the project follow this setps\+:
 
 A. You can download the repository from Git\+Hub\+: ⬇️ \href{https://github.com/Unix69/README-Template/archive/refs/heads/main.zip}{\texttt{ https\+://github.\+com/\+Unix69/\+R\+E\+A\+D\+M\+E-\/\+Template/archive/refs/heads/main.\+zip}}
@@ -386,7 +412,7 @@ B. You can {\bfseries{clone the repository}} from Git\+Hub if you have Git insta
 
 
 \label{_build}%
-\hypertarget{md_README_autotoc_md16}{}\doxysubsection{🛠️ Build}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md18}{}\doxysubsection{🛠️ Build}\label{md_README_autotoc_md18}
 To {\itshape {\bfseries{build}}} the project generate a {\bfseries{custom}} or {\bfseries{standard Doxyfile}}\+:
 
 A. {\bfseries{Custom Doxyfile -\/ Doxygen Script}}\+: running the {\ttfamily \mbox{\hyperlink{doxygen_8sh}{doxygen.\+sh}}} script from the {\bfseries{root directory}};
@@ -419,7 +445,7 @@ B. {\bfseries{Standard Doxyfile -\/ Command Line}}\+: Open a terminal into the {
 
 
 \label{_configuration}%
-\hypertarget{md_README_autotoc_md17}{}\doxysubsection{⚙️ Configuration}\label{md_README_autotoc_md17}
+\hypertarget{md_README_autotoc_md19}{}\doxysubsection{⚙️ Configuration}\label{md_README_autotoc_md19}
 To {\itshape {\bfseries{configure}}} the C\+\_\+\+Linux project you can\+:
 
 ~\newline
@@ -448,7 +474,7 @@ B. {\bfseries{Doxyfile}}\+: Access the {\ttfamily Doxyfile}, generated by {\ttfa
 
 
 \label{_run}%
-\hypertarget{md_README_autotoc_md18}{}\doxysubsection{🚀 Run}\label{md_README_autotoc_md18}
+\hypertarget{md_README_autotoc_md20}{}\doxysubsection{🚀 Run}\label{md_README_autotoc_md20}
 Once the Doxyfile is generated and configured as you wish, to {\itshape {\bfseries{make the documentation}}} use\+:
 
 A. {\bfseries{Doxygen}} Open a terminal into the {\bfseries{root directory}} and run the doxygen installed tool with your {\ttfamily Doxyfile};
@@ -477,7 +503,7 @@ B. {\bfseries{G\+NU Make}}\+: Open a terminal into the {\bfseries{root directory
 
 
 \label{_uninstall}%
-\hypertarget{md_README_autotoc_md19}{}\doxysubsection{❌ Uninstall}\label{md_README_autotoc_md19}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsection{❌ Uninstall}\label{md_README_autotoc_md21}
 To {\itshape {\bfseries{uninstall}}} the project just clean the documentation directory {\ttfamily .e/docs/} and your Doxyfile or use the {\bfseries{G\+NU Make}} tool and run the following command\+:
 
 
@@ -489,7 +515,7 @@ To {\itshape {\bfseries{uninstall}}} the project just clean the documentation di
 
 
 \label{_license}%
-\hypertarget{md_README_autotoc_md20}{}\doxysection{Licenses 📜}\label{md_README_autotoc_md20}
+\hypertarget{md_README_autotoc_md22}{}\doxysection{Licenses 📜}\label{md_README_autotoc_md22}
 \href{\#table-of-contents}{\texttt{ Table of Contents}}
 
 ~\newline
@@ -507,12 +533,13 @@ You are free to use, modify, and share this template — just give proper credit
 
 
 \label{_contributing}%
-\hypertarget{md_README_autotoc_md21}{}\doxysection{Contributing 👋}\label{md_README_autotoc_md21}
+\hypertarget{md_README_autotoc_md23}{}\doxysection{Contributing 👋}\label{md_README_autotoc_md23}
 Thank you for your interest in {\bfseries{C\+\_\+\+Linux}}! ~\newline
  You can freely {\bfseries{download and use}} the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.
 
-\DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md23}{}\doxysubsection{General Contribution Guidelines}\label{md_README_autotoc_md23}
+~\newline
+ ~\newline
+\hypertarget{md_README_autotoc_md24}{}\doxysubsection{General Contribution Guidelines}\label{md_README_autotoc_md24}
 
 \begin{DoxyItemize}
 \item Read the \mbox{\hyperlink{md_CODE_OF_CONDUCT}{$\ast$$\ast$\+C\+O\+D\+E\+\_\+\+O\+F\+\_\+\+C\+O\+N\+D\+U\+CT.md$\ast$$\ast$}} ~\newline
@@ -541,7 +568,8 @@ When contributing code\+:
 
 Keep style consistent, update documentation, and run tests.
 
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_authors}%
@@ -556,30 +584,12 @@ Keep style consistent, update documentation, and run tests.
 
 
 
-\DoxyHorRuler{0}
-
-
-\label{_contact-us}%
-\hypertarget{md_README_autotoc_md27}{}\doxysection{Contact ☎️}\label{md_README_autotoc_md27}
-For questions or support\+:
-
-
-\begin{DoxyItemize}
-\item Open a Git\+Hub \href{https://github.com/Unix69/C_Linux/issues/new}{\texttt{ Issue}} describing the problem ~\newline
-
-\item Email the author for direct questions ~\newline
-
-\item Check \href{docs/html/index.html}{\texttt{ Documentation}} for reference ~\newline
-
-\end{DoxyItemize}
-
-Issues are preferred to track bugs or feature requests efficiently.
-
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_official-links}%
-\hypertarget{md_README_autotoc_md29}{}\doxysection{Official Links 🌐}\label{md_README_autotoc_md29}
+\hypertarget{md_README_autotoc_md26}{}\doxysection{Official Links 🌐}\label{md_README_autotoc_md26}
 
 \begin{DoxyItemize}
 \item \href{https://gcc.gnu.org/}{\texttt{ G\+NU C Compiler (G\+CC)}} – Compiler for C projects ~\newline
@@ -596,11 +606,12 @@ Issues are preferred to track bugs or feature requests efficiently.
 
 \end{DoxyItemize}
 
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_faq}%
-\hypertarget{md_README_autotoc_md31}{}\doxysection{F\+A\+Q ❓}\label{md_README_autotoc_md31}
+\hypertarget{md_README_autotoc_md27}{}\doxysection{F\+A\+Q ❓}\label{md_README_autotoc_md27}
 {\bfseries{Q1\+: Which C standard is used?}} ~\newline
  A1\+: All examples are written in {\bfseries{C99}}.
 
@@ -616,12 +627,13 @@ Issues are preferred to track bugs or feature requests efficiently.
 {\bfseries{Q5\+: How to report a bug?}} ~\newline
  A5\+: Open a {\bfseries{Git\+Hub Issue}} describing the error, affected example, and steps to reproduce.
 
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_fork-project}%
-\hypertarget{md_README_autotoc_md33}{}\doxysection{Forking \& Pull Requests 🔀}\label{md_README_autotoc_md33}
-\hypertarget{md_README_autotoc_md34}{}\doxysubsubsection{Fork the Project}\label{md_README_autotoc_md34}
+\hypertarget{md_README_autotoc_md28}{}\doxysection{Forking \& Pull Requests 🔀}\label{md_README_autotoc_md28}
+\hypertarget{md_README_autotoc_md29}{}\doxysubsubsection{Fork the Project}\label{md_README_autotoc_md29}
 
 \begin{DoxyEnumerate}
 \item Go to the main repository on Git\+Hub ~\newline
@@ -631,7 +643,7 @@ Issues are preferred to track bugs or feature requests efficiently.
 \item Create a branch dedicated to your feature\+: {\ttfamily git checkout -\/b feature-\/new-\/functionality} ~\newline
 
 \item Keep it synchronized with the main project
-\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md35}{}\doxysubsubsection{Pull Requests (\+P\+R)}\label{md_README_autotoc_md35}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md30}{}\doxysubsubsection{Pull Requests (\+P\+R)}\label{md_README_autotoc_md30}
 
 \begin{DoxyEnumerate}
 \item Ensure your branch is updated with the main branch ~\newline
@@ -665,11 +677,12 @@ Issues are preferred to track bugs or feature requests efficiently.
 
 \end{DoxyItemize}
 
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_issues}%
-\hypertarget{md_README_autotoc_md37}{}\doxysection{Issues ⚠️}\label{md_README_autotoc_md37}
+\hypertarget{md_README_autotoc_md31}{}\doxysection{Issues ⚠️}\label{md_README_autotoc_md31}
 
 \begin{DoxyItemize}
 \item Issues are for reporting bugs, requesting features, or asking questions ~\newline
@@ -691,11 +704,12 @@ Issues are preferred to track bugs or feature requests efficiently.
 
 All issues are tracked in the {\bfseries{Issues}} section on Git\+Hub.
 
-\DoxyHorRuler{0}
+~\newline
+ ~\newline
 
 
 \label{_thanks}%
-\hypertarget{md_README_autotoc_md39}{}\doxysection{Thanks 🙏}\label{md_README_autotoc_md39}
+\hypertarget{md_README_autotoc_md32}{}\doxysection{Thanks 🙏}\label{md_README_autotoc_md32}
 Special thanks to the {\bfseries{Open Source Community}} for providing tools and frameworks such as {\bfseries{G\+CC}}, {\bfseries{Linux}}, {\bfseries{G\+NU Make}}, and {\bfseries{Doxygen}}. ~\newline
  Your work empowers projects like {\bfseries{C\+\_\+\+Linux}} to exist and evolve.
 

@@ -1,11 +1,9 @@
-.TH "md_README" 3 "Sat Dec 27 2025" "CLinux" \" -*- nroff -*-
+.TH "md_README" 3 "Sat Jan 3 2026" "CLinux" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 md_README \- README 
 
-.PP
-     
 .PP
  
 .SH "C_Linux"
@@ -24,35 +22,15 @@ md_README \- README
 .PP
  
 .PP
- A set of C-Unix examples showing usage of Unix syscall related to processes, threads, filesystem 
+ A set of \fBC example programs\fP showing the basic usage of \fBUnix system calls\fP related to \fBFilesystem\fP, \fBProcesses\fP and \fBThreads\fP to learn about Unix-like filesystem manipulation and C multiprocess and multithread programming\&. 
+.br
+ 
 .PP
  
 .PP
 
 .br
  
-.br
- 
-.br
-.PP
-.PP
-  🧠 Founder & Developer 
-.PP
- 
-.br
- 
-.br
-.PP
- 
-.br
- 
-.br
- \fC\*<\fBGiuseppe Pedone (Unix69)\fP\*>  \fP 
-.br
- \fC \fP \fC \fP \fC \fP   
-.PP
-.PP
-
 .br
  
 .br
@@ -82,14 +60,162 @@ Navigation index to fast explore the content:
 \fCFAQ\fP
 .IP "\(bu" 2
 \fCAuthors\fP
-.IP "\(bu" 2
-\fCContacts\fP
 .PP
 .PP
 
 .br
  
 .br
+.PP
+.PP
+ <section id='c-unix-std-basic-fork'>
+.PP
+.SS "🧪 C-Unix-STD-Basic-Fork"
+.PP
+\fBPath:\fP \fCsrc/C-Unix-STD-Basic-Fork/main\&.c\fP
+.PP
+.PP
+.PP
+.SS "🎯 Purpose"
+.PP
+This example demonstrates the \fBbasic behavior of the \fCfork()\fP system call\fP and how a process is \fBduplicated\fP into a parent and a child process\&. 
+.PP
+The goal is to understand: 
+.PP
+.PD 0
+.IP "\(bu" 2
+how to distinguish parent and child processes 
+.IP "\(bu" 2
+how execution flow is duplicated 
+.IP "\(bu" 2
+how concurrent processes produce output 
+.PP
+.PP
+.PP
+.PP
+.SS "🛠️ Description"
+.PP
+The program executes a decreasing \fCfor\fP loop (\fCi = 2 → 1\fP)\&. At each iteration: 
+.PP
+.PD 0
+.IP "1." 4
+the \fCfork()\fP system call is invoked 
+.IP "2." 4
+the \fBparent process\fP receives a value greater than \fC0\fP 
+.IP "3." 4
+the \fBchild process\fP receives \fC0\fP 
+.IP "4." 4
+based on the return value: 
+.PD 0
+
+.IP "  \(bu" 4
+the parent prints \fCi\fP 
+.IP "  \(bu" 4
+the child prints \fC-i\fP 
+.PP
+
+.PP
+.PP
+Since \fCfork()\fP duplicates the current process: 
+.PP
+.PD 0
+.IP "\(bu" 2
+after the first iteration there are \fB2 running processes\fP 
+.IP "\(bu" 2
+after the second iteration there are \fB4 running processes\fP 
+.PP
+.PP
+The order of the printed output is \fBnon-deterministic\fP, because it depends on the operating system scheduler\&. 
+.PP
+.PP
+.PP
+.SS "📦 Headers and Libraries Used"
+.PP
+.PP
+Header 
+.PP
+Description 
+.PP
+Reference  </thead> <tbody> 
+.PP
+\fC<stdlib\&.h>\fP 
+.PP
+Standard utility functions 
+.PP
+\fCcppreference \fP   
+.PP
+\fC<stdio\&.h>\fP 
+.PP
+Standard input/output 
+.PP
+\fCcppreference \fP   
+.PP
+\fC<unistd\&.h>\fP 
+.PP
+POSIX process control 
+.PP
+\fCOpen Group \fP   </tbody> 
+.PP
+.PP
+.PP
+.SS "⚙️ System Calls and Functions"
+.PP
+.PP
+Function 
+.PP
+Role 
+.PP
+Reference  </thead> <tbody> 
+.PP
+\fCfork()\fP 
+.PP
+Creates a new process by duplicating the caller 
+.PP
+\fCman7\&.org \fP   
+.PP
+\fCprintf()\fP 
+.PP
+Writes formatted output to stdout 
+.PP
+\fCcppreference \fP   </tbody> 
+.PP
+.PP
+.PP
+.SS "🧠 Key Concepts Introduced"
+.PP
+.PD 0
+.IP "\(bu" 2
+🔀 Process creation 
+.IP "\(bu" 2
+👨‍👦 Parent vs child execution 
+.IP "\(bu" 2
+🔁 Concurrent execution 
+.IP "\(bu" 2
+🎲 Non-deterministic output 
+.IP "\(bu" 2
+📈 Exponential process growth 
+.PP
+.PP
+.PP
+.PP
+.SS "🔗 Links"
+.PP
+.PD 0
+.IP "\(bu" 2
+🐙 \fBGitHub Example:\fP \fCRepository Link \fP  
+.IP "\(bu" 2
+📘 \fBPOSIX fork() Reference:\fP \fCOpen Group Specification \fP  
+.PP
+.PP
+.PP
+.PP
+.SS "👀 View the Code"
+.PP
+\fC🔍 View Code \fP 
+.PP
+</section>
+.PP
+There are
 .PP
 .SH "Getting Started 🚀"
 .PP
@@ -136,7 +262,7 @@ Before building or running the project, make sure you satisgy the prerequisites 
 .IP "\(bu" 2
 \fBOperating System\fP: GNU/Linux, Windows
 .IP "\(bu" 2
-\fBSoftware Dependencies\fP: GitHub, Doxygen, GNU Make, GNU C Compiler `
+\fBSoftware Dependencies\fP: GitHub, Doxygen, GNU Make, GNU C Compiler
 .PP
 .PP
 
@@ -178,12 +304,13 @@ make clean
 .fi
 .PP
 
-.PP
-.PP
-
+.IP "\(bu" 2
+\fB\fCGNU C Compiler (GCC)\fP\fP — \fIMandatory\&.\fP 
 .br
+ Required to compile all C examples in \fBC_Linux\fP\&. 
+.br
+ Supports C99 standard and POSIX APIs\&.
 .PP
-Below are the detailed installation steps for each dependency, both on \fBUnix/Linux\fP and \fBWindows\fP systems\&.
 .PP
 
 .br
@@ -191,149 +318,14 @@ Below are the detailed installation steps for each dependency, both on \fBUnix/L
 .br
 .PP
 .PP
-.SS " Install GitHub / Git "
+.SS " Install GNU C Compiler (GCC)"
 .SS "🐧 On GNU/Linux"
-.PP
-.nf
-
-sudo apt update
-sudo apt install git
-.fi
-.PP
-.PP
-After installation, verify that Git is available:
+Check if GCC is already installed:
 .PP
 .PP
 .nf
 
-git --version
-.fi
-.PP
-.PP
-To link your project to \fBGitHub\fP, create a free account at: 
-.br
- 👉 \fChttps://github\&.com/signup\fP
-.PP
-Then configure Git with your account details:
-.PP
-.PP
-.nf
-
-git config --global user\&.name 'Your Name'
-git config --global user\&.email 'you@example\&.com'
-.fi
-.PP
-.PP
-
-.br
- 
-.br
-.PP
-.SS " On Windows "
-.PP
-.IP "1." 4
-Download \fBGit for Windows\fP from: 
-.br
- 👉 \fChttps://git-scm\&.com/download/win\fP
-.IP "2." 4
-Run the installer and follow the setup wizard (leave default options checked)\&. 
-.br
-
-.IP "3." 4
-After installation, open \fBGit Bash\fP and verify: 
-.PP
-.nf
-
-   git --version
-   
-.fi
-.PP
-
-.IP "4." 4
-Optionally create a GitHub account at 
-.br
- 👉 \fChttps://github\&.com/signup\fP
-.PP
-.PP
-
-.br
- 
-.br
-.PP
-.PP
-.SS " Install Doxygen "
-.SS "🐧 On GNU/Linux"
-.PP
-.nf
-
-sudo apt update
-sudo apt install doxygen graphviz
-.fi
-.PP
-.PP
-Verify the installation:
-.PP
-.PP
-.nf
-
-doxygen --version
-.fi
-.PP
-.PP
-Optionally, you can generate a sample configuration file with:
-.PP
-.PP
-.nf
-
-doxygen -g
-.fi
-.PP
-.PP
-
-.br
- 
-.br
-.PP
-.SS " On Windows "
-.PP
-.IP "1." 4
-Download the Windows installer from: 
-.br
- 👉 \fChttps://www\&.doxygen\&.nl/download\&.html\fP
-.IP "2." 4
-Run the \fC\&.exe\fP file and follow the setup wizard\&. 
-.br
-
-.IP "3." 4
-After installation, open \fBCommand Prompt\fP and check: 
-.PP
-.nf
-
-   doxygen --version
-   
-.fi
-.PP
-
-.IP "4." 4
-To enable UML and graphs, install \fBGraphviz\fP as well: 
-.br
- 👉 \fChttps://graphviz\&.org/download/\fP
-.PP
-.PP
-
-.br
- 
-.br
-.PP
-.PP
-.SS " Install GNU Make "
-.SS "🐧 On GNU/Linux"
-GNU Make is usually preinstalled\&. Check it with:
-.PP
-.PP
-.nf
-
-make --version
+gcc --version
 .fi
 .PP
 .PP
@@ -343,58 +335,76 @@ If missing, install it via:
 .nf
 
 sudo apt update
-sudo apt install make
+sudo apt install gcc build-essential
 .fi
 .PP
 .PP
-
-.br
- 
-.br
+Verify installation:
+.SS "<pre>"
+gcc --version 
 .PP
-.SS " On Windows "
-.PP
-You can install \fBGNU Make\fP in one of these ways:
+.SS " On Windows"
 .PP
 .SS "✅ Option 1: Using MinGW"
 .PP
 .IP "1." 4
-Download and install \fBMinGW\fP from: 
+Download and install \fBMinGW-w64\fP from: 
 .br
- 👉 \fChttps://www\&.mingw-w64\&.org/\fP
+ 👉 \fChttps://www\&.mingw-w64\&.org/\fP 
+.br
+
 .IP "2." 4
-During installation, select the “mingw32-make” package\&.
+During installation, select the \fBgcc\fP package\&. 
+.br
+
 .IP "3." 4
-Add MinGW’s \fCbin\fP directory to your system PATH\&.
+Add the \fCbin\fP directory of MinGW to your system PATH\&. 
+.br
+
 .IP "4." 4
-Verify installation: 
+Verify installation:
 .PP
-.nf
-
-   mingw32-make --version
-   
-.fi
-.PP
-
-.PP
-.PP
-You can then rename or alias it to \fCmake\fP for convenience\&.
-.PP
-.SS "✅ Option 2: Using Chocolatey (recommended if available)"
-.PP
-If you have \fBChocolatey\fP package manager installed:
 .PP
 .PP
 .nf
 
-choco install make
+gcc --version
 .fi
 .PP
 .PP
+#
+.SS "✅ Option 2: Using Windows Subsystem for Linux (WSL)"
+.IP "1." 4
+Install WSL with a Linux distribution, e\&.g\&., Ubuntu\&. 
+.br
 
-.br
- 
-.br
+.IP "2." 4
+Open WSL terminal and run:
+.PP
+.PP
+.PP
+.nf
+
+sudo apt update
+sudo apt install gcc build-essential
+gcc --version
+.fi
+.PP
+.PP
+#
+.SS "✅ Option 3: Using Chocolatey"
+If you have \fBChocolatey\fP installed:
+.PP
+.PP
+.nf
+
+choco install mingw
+.fi
+.PP
+.PP
+Verify installation:
+.SS "<pre>"
+gcc --version 
 .SS "💡 Dependencies Verification"
 After installing all dependencies, verify them with:
 .PP
@@ -404,6 +414,7 @@ After installing all dependencies, verify them with:
 git --version
 doxygen --version
 make --version
+gcc --version
 .fi
 .PP
 .PP
@@ -414,19 +425,15 @@ If all commands return valid version numbers, you’re ready to build and docume
 .br
  It will automatically:
 .IP "\(bu" 2
-Check that Doxygen is installed\&. If it is not installed, the \fBdoxygen\&.sh\fP script will fail ❌ and do not proceed\&. 
+Check that Doxygen is installed\&. If not, the script will fail ❌ 
 .br
 
 .IP "\(bu" 2
-Otherwhise it:
-.IP "  \(bu" 4
-Generate a base \fCDoxyfile\fP if missing into the root directory\&. 
+Generate a base \fCDoxyfile\fP if missing 
 .br
 
-.PP
-
 .IP "\(bu" 2
-- Apply the custom configuration for \fBC_Linux\fP on the Doxyfile 
+Apply the custom configuration for \fBC_Linux\fP 
 .PP
 .RE
 .PP
@@ -625,7 +632,10 @@ Thank you for your interest in \fBC_Linux\fP!
 .br
  You can freely \fBdownload and use\fP the C examples\&. To contribute, report bugs, or suggest improvements, follow the workflow below\&.
 .PP
-.PP
+
+.br
+ 
+.br
 .SS "General Contribution Guidelines"
 .IP "\(bu" 2
 Read the \fB**CODE_OF_CONDUCT\&.md**\fP 
@@ -667,7 +677,10 @@ Open a \fBPull Request (PR)\fP
 .PP
 Keep style consistent, update documentation, and run tests\&.
 .PP
-.PP
+
+.br
+ 
+.br
 .PP
 .SH "Authors 🧑‍💻"
 .PP
@@ -683,29 +696,10 @@ Keep style consistent, update documentation, and run tests\&.
  Links: \fC GitHub\fP   
 .PP
 .PP
-.PP
-.PP
-.SH "Contact ☎️"
-.PP
-For questions or support:
-.PP
-.IP "\(bu" 2
-Open a GitHub \fCIssue\fP describing the problem 
-.br
 
-.IP "\(bu" 2
-Email the author for direct questions 
 .br
-
-.IP "\(bu" 2
-Check \fCDocumentation\fP for reference 
+ 
 .br
-
-.PP
-.PP
-Issues are preferred to track bugs or feature requests efficiently\&.
-.PP
-.PP
 .PP
 .SH "Official Links 🌐"
 .PP
@@ -735,7 +729,10 @@ Issues are preferred to track bugs or feature requests efficiently\&.
 
 .PP
 .PP
-.PP
+
+.br
+ 
+.br
 .PP
 .SH "FAQ ❓"
 .PP
@@ -759,7 +756,10 @@ Issues are preferred to track bugs or feature requests efficiently\&.
 .br
  A5: Open a \fBGitHub Issue\fP describing the error, affected example, and steps to reproduce\&.
 .PP
-.PP
+
+.br
+ 
+.br
 .PP
 .SH "Forking & Pull Requests 🔀"
 .PP
@@ -830,7 +830,10 @@ Avoid committing unrelated files
 
 .PP
 .PP
-.PP
+
+.br
+ 
+.br
 .PP
 .SH "Issues ⚠️"
 .PP
@@ -866,7 +869,10 @@ Environment: OS, version, configuration
 .PP
 All issues are tracked in the \fBIssues\fP section on GitHub\&.
 .PP
-.PP
+
+.br
+ 
+.br
 .PP
 .SH "Thanks 🙏"
 .PP
