@@ -146,9 +146,14 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 <p><a class="anchor" id="examples"></a></p>
 <p><a class="anchor" id="c-unix-std-basic-fork"></a> &lt;section id="c-unix-std-basic-fork"&gt;</p>
 <h2>🧪 C-Unix-STD-Basic-Fork</h2>
-<p><b>Path:</b> <code>src/C-Unix-STD-Basic-Fork/main.c</code></p>
-<hr  />
-<h3>🎯 Purpose</h3>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code>src/C-Unix-STD-Basic-Fork/main.c</code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
 <p>This example demonstrates the <b>basic behavior of the <code>fork()</code> system call</b> and how a process is <b>duplicated</b> into a parent and a child process. </p>
 <p>The goal is to understand: </p>
 <ul>
@@ -159,7 +164,6 @@ how execution flow is duplicated </li>
 <li>
 how concurrent processes produce output </li>
 </ul>
-<hr  />
 <h3>🛠️ Description</h3>
 <p>The program executes a decreasing <code>for</code> loop (<code>i = 2 → 1</code>). At each iteration: </p>
 <ol>
@@ -186,7 +190,6 @@ after the first iteration there are <b>2 running processes</b> </li>
 after the second iteration there are <b>4 running processes</b> </li>
 </ul>
 <p>The order of the printed output is <b>non-deterministic</b>, because it depends on the operating system scheduler. </p>
-<hr  />
 <h3>📦 Headers and Libraries Used</h3>
 <table class="doxtable">
 <tr>
@@ -198,7 +201,6 @@ after the second iteration there are <b>4 running processes</b> </li>
 <tr>
 <td><code>&lt;unistd.h&gt;</code> </td><td>POSIX process control </td><td><a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html" target="_blank">Open Group </a>    </td></tr>
 </table>
-<hr  />
 <h3>⚙️ System Calls and Functions</h3>
 <table class="doxtable">
 <tr>
@@ -208,7 +210,6 @@ after the second iteration there are <b>4 running processes</b> </li>
 <tr>
 <td><code>printf()</code> </td><td>Writes formatted output to stdout </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference </a>    </td></tr>
 </table>
-<hr  />
 <h3>🧠 Key Concepts Introduced</h3>
 <ul>
 <li>
@@ -222,18 +223,11 @@ after the second iteration there are <b>4 running processes</b> </li>
 <li>
 📈 Exponential process growth </li>
 </ul>
-<hr  />
 <h3>🔗 Links</h3>
 <ul>
 <li>
-🐙 <b>GitHub Example:</b> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/tree/main/src/C-Unix-STD-Basic-Fork" target="_blank">Repository Link </a>  </li>
-<li>
 📘 <b>POSIX fork() Reference:</b> <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" target="_blank">Open Group Specification </a>  </li>
 </ul>
-<hr  />
-<h3>👀 View the Code</h3>
-<p><a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c" target="_blank" style="display:inline-block;padding:8px 14px;border-radius:6px;
-              background:#24292f;color:white;text-decoration:none;font-weight:bold;">🔍 View Code </a> </p>
 <p>&lt;/section&gt;</p>
 <p>There are</p>
 <p><a class="anchor" id="getting-started"></a></p>
