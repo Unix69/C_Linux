@@ -144,6 +144,172 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
  <br  />
 </p>
 <p><a class="anchor" id="examples"></a></p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Examples</h1>
+<p><a class="anchor" id="c-func-pointer"></a> &lt;section id="c-func-pointer"&gt;</p>
+<h2>🧩 C-Func-pointer</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Func-pointer_2main_8c.html">src/C-Func-pointer/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"></div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Func-pointer/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates the use of <b>function pointers in C</b>, showing how functions can be assigned to variables, passed around, and invoked dynamically at runtime. </p>
+<p>The goal is to understand: </p>
+<ul>
+<li>
+how to declare and use function pointers </li>
+<li>
+how to pass generic data using <code>void *</code> </li>
+<li>
+how to build flexible and reusable logic </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program manages an integer array of fixed size using a set of functions operating on generic pointers. </p>
+<p>The execution flow is the following: </p>
+<ol>
+<li>
+<code><a class="el" href="C-Func-pointer_2main_8c.html#a6b5ad522d78da0ba700142b2571e256c">init()</a></code> dynamically allocates and initializes an integer array of size <code>dim</code> with all values set to zero  </li>
+<li>
+Two function pointers are declared: <ul>
+<li>
+<code>add</code> → points to <code><a class="el" href="C-Func-pointer_2main_8c.html#ac9a4cea444404d88923f63d231b145f6">inc()</a></code> </li>
+<li>
+<code>dec</code> → points to <code><a class="el" href="C-Func-pointer_2main_8c.html#aa578f1c3a478f0c16cc1e19a419e4729">sub()</a></code> </li>
+</ul>
+</li>
+<li>
+<code><a class="el" href="C-Func-pointer_2main_8c.html#ac9a4cea444404d88923f63d231b145f6">inc()</a></code> increments each element of the array by a given value  </li>
+<li>
+<code><a class="el" href="C-Func-pointer_2main_8c.html#aa578f1c3a478f0c16cc1e19a419e4729">sub()</a></code> decrements each element of the array by a given value  </li>
+<li>
+<code><a class="el" href="C-Func-pointer_2main_8c.html#a595b8fe6a1f06ee5d494f0d8ff35efb8">show()</a></code> prints the content of the array  </li>
+</ol>
+<p>All data manipulation functions receive the array as a <code>void *</code>, demonstrating a <b>generic programming approach</b> in C. </p>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output operations </td><td><a href="https://en.cppreference.com/w/c/header/stdio" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>Dynamic memory allocation </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code> </td><td>String manipulation utilities </td><td><a href="https://en.cppreference.com/w/c/header/string" target="_blank">cppreference </a>    </td></tr>
+</table>
+<h3>⚙️ Functions Used</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>malloc()</code> </td><td>Allocates memory dynamically </td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>printf()</code> </td><td>Prints formatted output </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference </a>    </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🧷 Function pointers </li>
+<li>
+🧬 Generic programming with <code>void *</code> </li>
+<li>
+🧠 Indirect function invocation </li>
+<li>
+📦 Dynamic memory allocation </li>
+<li>
+♻️ Reusable and modular code </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>Function Pointers in C:</b> <a href="https://en.cppreference.com/w/c/language/pointer" target="_blank">cppreference – Pointers </a>  </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-std-file"></a> &lt;section id="c-std-file"&gt;</p>
+<h2>📄 C-STD-File</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-STD-File_2main_8c.html">src/C-STD-File/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"></div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-STD-File/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example shows how to perform <b>basic file input/output using the C standard library</b>. The program copies the content of a source file into a destination file, byte by byte. </p>
+<p>It introduces fundamental concepts such as file streams, error handling, and sequential file processing. </p>
+<h3>🛠️ Description</h3>
+<p>The program expects exactly two command-line arguments: </p>
+<ul>
+<li>
+the path of the source file to read </li>
+<li>
+the path of the destination file to write </li>
+</ul>
+<p>The execution flow is the following: </p>
+<ol>
+<li>
+Checks the number of command-line arguments  </li>
+<li>
+Opens the source file in read mode using <code>fopen()</code>  </li>
+<li>
+Opens (or creates) the destination file in write mode  </li>
+<li>
+Reads characters one by one from the source file using <code>fgetc()</code>  </li>
+<li>
+Writes each character to the destination file using <code>fputc()</code>  </li>
+</ol>
+<p>The program stops copying when the <code>EOF</code> (End Of File) marker is reached. This demonstrates a simple and classic file copy algorithm using standard I/O. </p>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output and file streams </td><td><a href="https://en.cppreference.com/w/c/header/stdio" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code> </td><td>Runtime assertions for error checking </td><td><a href="https://en.cppreference.com/w/c/header/assert" target="_blank">cppreference </a>    </td></tr>
+</table>
+<h3>⚙️ Standard Functions Used</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fopen()</code> </td><td>Opens a file stream </td><td><a href="https://en.cppreference.com/w/c/io/fopen" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>fgetc()</code> </td><td>Reads a character from a file </td><td><a href="https://en.cppreference.com/w/c/io/fgetc" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>fputc()</code> </td><td>Writes a character to a file </td><td><a href="https://en.cppreference.com/w/c/io/fputc" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>fprintf()</code> </td><td>Prints formatted output to a stream </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference </a>   </td></tr>
+<tr>
+<td><code>assert()</code> </td><td>Checks runtime conditions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference </a>    </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+📂 File streams (<code>FILE *</code>) </li>
+<li>
+📝 Character-based file I/O </li>
+<li>
+⚠️ Basic error handling </li>
+<li>
+🧪 Runtime assertions </li>
+<li>
+📄 End Of File (<code>EOF</code>) handling </li>
+</ul>
+<h3>🔗 Related References</h3>
+<ul>
+<li>
+📘 <b>C File I/O:</b> <a href="https://en.cppreference.com/w/c/io" target="_blank">cppreference – C Input/Output </a>  </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
 <p><a class="anchor" id="c-unix-std-basic-fork"></a> &lt;section id="c-unix-std-basic-fork"&gt;</p>
 <h2>🧪 C-Unix-STD-Basic-Fork</h2>
 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code>src/C-Unix-STD-Basic-Fork/main.c</code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c" target="_blank" style="display:inline-block;
@@ -229,13 +395,1889 @@ after the second iteration there are <b>4 running processes</b> </li>
 📘 <b>POSIX fork() Reference:</b> <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" target="_blank">Open Group Specification </a>  </li>
 </ul>
 <p>&lt;/section&gt;</p>
-<p>There are</p>
-<p><a class="anchor" id="getting-started"></a></p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Getting Started 🚀</h1>
-<p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
-<p>Follow these steps to get, install and set up the project and generate the documentation:</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-copy-directorytree"></a> &lt;section id="c-unix-std-copy-directorytree"&gt;</p>
+<h2>🧪 C-Unix-STD-Copy-DirectoryTree</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code>src/C-Unix-STD-Copy-DirectoryTree/main.c</code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Copy-DirectoryTree/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>recursive copying of a directory tree using Unix system calls</b>. It shows how to duplicate all files and subdirectories from a source directory to a destination directory. </p>
+<p>The goal is to understand:</p>
 <ul>
+<li>
+how to traverse directories recursively </li>
+<li>
+how to handle files and directories differently </li>
+<li>
+how low-level file I/O works in Unix </li>
+<li>
+how to implement robust error handling </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program expects exactly two command-line arguments: </p>
+<ul>
+<li>
+the path of the source directory </li>
+<li>
+the path of the destination directory </li>
+</ul>
+<p>Execution flow:</p>
+<ol>
+<li>
+Validate argument count using <code>assert()</code>. </li>
+<li>
+Retrieve file status of source and destination using <code>lstat()</code>. </li>
+<li>
+Check that both paths are directories using <code>S_ISDIR()</code>. </li>
+<li>
+Invoke the recursive <code><a class="el" href="Es2_8c.html#ad9e977b3c72a6680e4588e296647cd92">copia()</a></code> function: <ul>
+<li>
+Open source and destination directories with <code>opendir()</code>. </li>
+<li>
+Iterate over directory entries using <code>readdir()</code>, skipping <code>.</code> and <code>..</code>. </li>
+<li>
+Build full paths for each entry with <code>sprintf()</code>. </li>
+<li>
+Check entry type using <code>lstat()</code>: <ul>
+<li>
+If a file, copy its contents using <code>open()</code>, <code>read()</code>, and <code>write()</code>. </li>
+<li>
+If a directory, create it using <code>mkdir()</code> and recursively call <code><a class="el" href="Es2_8c.html#ad9e977b3c72a6680e4588e296647cd92">copia()</a></code>. </li>
+</ul>
+</li>
+<li>
+Close directory streams with <code>closedir()</code>. </li>
+</ul>
+</li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard I/O for <code>fprintf()</code> </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>Standard utilities, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/types.h&gt;</code> </td><td>Data types for system calls </td><td><a href="https://man7.org/linux/man-pages/man2/stat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/stat.h&gt;</code> </td><td>File status and mode macros (<code>S_ISDIR</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/stat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>Unix standard functions (<code>read, write, close</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/read.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;dirent.h&gt;</code> </td><td>Directory handling (<code>opendir, readdir, closedir</code>) </td><td><a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;fcntl.h&gt;</code> </td><td>File control flags (<code>O_RDONLY, O_WRONLY, O_CREAT</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code> </td><td>Runtime assertions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>lstat()</code> </td><td>Retrieve file or directory status </td><td><a href="https://man7.org/linux/man-pages/man2/lstat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>S_ISDIR()</code> </td><td>Check if path is a directory </td><td><a href="https://man7.org/linux/man-pages/man2/stat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>opendir()</code> </td><td>Open a directory stream </td><td><a href="https://man7.org/linux/man-pages/man3/opendir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>readdir()</code> </td><td>Read entries from a directory </td><td><a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>closedir()</code> </td><td>Close a directory stream </td><td><a href="https://man7.org/linux/man-pages/man3/closedir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>open()</code> </td><td>Open a file descriptor </td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>read()</code> </td><td>Read bytes from a file descriptor </td><td><a href="https://man7.org/linux/man-pages/man2/read.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>write()</code> </td><td>Write bytes to a file descriptor </td><td><a href="https://man7.org/linux/man-pages/man2/write.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>mkdir()</code> </td><td>Create a new directory </td><td><a href="https://man7.org/linux/man-pages/man2/mkdir.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sprintf()</code> </td><td>Build full file paths as strings </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>assert()</code> </td><td>Runtime condition checks </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>fprintf()</code> </td><td>Print formatted error messages to <code>stderr</code> </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+📂 Recursive directory traversal </li>
+<li>
+📝 Low-level file I/O with <code>open/read/write</code> </li>
+<li>
+⚠️ Error handling with <code>fprintf()</code>, <code>assert()</code>, and <code>exit()</code> </li>
+<li>
+🔄 Preserving directory structure </li>
+<li>
+🧪 Runtime validation of command-line arguments </li>
+<li>
+🔁 Recursion for nested directories </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>Unix Directory Handling:</b> <a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">opendir/readdir/closedir</a> </li>
+<li>
+📘 <b>Unix File I/O:</b> <a href="https://man7.org/linux/man-pages/man2/read.2.html" target="_blank">read/write/open</a> </li>
+<li>
+📘 <b>C File I/O:</b> <a href="https://en.cppreference.com/w/c/io" target="_blank">cppreference – C Input/Output</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-execl"></a> &lt;section id="c-unix-std-execl"&gt;</p>
+<h2>🧪 C-Unix-STD-Execl</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Execl_2main_8c.html">src/C-Unix-STD-Execl/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Execl/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates the <b>use of the <code>execl()</code> system call</b> to replace the current process image with a new program. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how <code>execl()</code> replaces the current process </li>
+<li>
+how execution flow stops after a successful <code>execl()</code> </li>
+<li>
+the effect on program output when <code>execl()</code> fails </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program expects one command-line argument specifying the program to execute: </p>
+<ul>
+<li>
+Print the current process ID and increment a counter. </li>
+<li>
+Call <code>execl()</code> with the provided program path. </li>
+<li>
+If <code>execl()</code> succeeds, the new program replaces the current process and the next <code>fprintf()</code> is not executed. </li>
+<li>
+If <code>execl()</code> fails, an error message is printed and the program exits with <code>return 1</code>. </li>
+</ul>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output functions </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>POSIX system calls, <code>execl(), getpid()</code> </td><td><a href="https://man7.org/linux/man-pages/man3/execl.3.html" target="_blank">man7.org</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>execl()</code> </td><td>Replaces current process image with a new program </td><td><a href="https://man7.org/linux/man-pages/man3/execl.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>getpid()</code> </td><td>Returns the process ID of the current process </td><td><a href="https://man7.org/linux/man-pages/man2/getpid.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>fprintf()</code> </td><td>Print formatted output to a stream (stdout or stderr) </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔁 Process replacement with <code>execl()</code> </li>
+<li>
+👀 Execution flow stops after successful <code>execl()</code> </li>
+<li>
+⚠️ Handling execl failure </li>
+<li>
+📄 Process identification with <code>getpid()</code> </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX execl():</b> <a href="https://man7.org/linux/man-pages/man3/execl.3.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-execlp-system"></a> &lt;section id="c-unix-std-execlp-system"&gt;</p>
+<h2>🧪 C-Unix-STD-Execlp-System</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Execlp-System_2main_8c.html">src/C-Unix-STD-Execlp-System/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Execlp-System/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>process creation and execution using <code>fork()</code>, <code>system()</code>, and <code>execlp()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how <code>fork()</code> creates concurrent processes </li>
+<li>
+how <code>system()</code> can execute shell commands </li>
+<li>
+how <code>execlp()</code> replaces the process image </li>
+<li>
+how parent and child processes interact </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program executes nested loops with process creation: </p>
+<ol>
+<li>
+Call <code>fork()</code> to create the first child. </li>
+<li>
+For <code>i = 0</code> to <code>1</code>: <ul>
+<li>
+If in the parent process, build a command string and execute it using <code>system()</code>. </li>
+<li>
+If in the child process, build a string and execute it using <code>execlp()</code> with <code>echo</code>. </li>
+</ul>
+</li>
+<li>
+The <code>execlp()</code> calls replace the child process image with <code>echo</code>, while <code>system()</code> runs in the parent process. </li>
+<li>
+This demonstrates concurrent execution and process replacement within the same loop. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output functions </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, <code>system()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>POSIX system calls (<code>fork()</code>, <code>execlp()</code>) </td><td><a href="https://man7.org/linux/man-pages/man3/execlp.3.html" target="_blank">man7.org</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create a new child process </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>execlp()</code> </td><td>Replace current process image with a new program found in PATH </td><td><a href="https://man7.org/linux/man-pages/man3/execlp.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>system()</code> </td><td>Execute shell command in a separate process </td><td><a href="https://man7.org/linux/man-pages/man3/system.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sprintf()</code> </td><td>Format string into buffer for command execution </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Process creation and concurrency with <code>fork()</code> </li>
+<li>
+🔁 Process replacement with <code>execlp()</code> </li>
+<li>
+💻 Shell command execution with <code>system()</code> </li>
+<li>
+⚠️ Parent vs child process execution control </li>
+<li>
+📄 Demonstrates interaction between multiple processes in a loop </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>POSIX execlp():</b> <a href="https://man7.org/linux/man-pages/man3/execlp.3.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>system():</b> <a href="https://man7.org/linux/man-pages/man3/system.3.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-explore-directories"></a> &lt;section id="c-unix-std-explore-directories"&gt;</p>
+<h2>🧪 C-Unix-STD-Explore-Directories</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code>src/C-Unix-STD-Explore-Directories/main.c</code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Explore-Directories/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>recursive exploration of directories</b> in a file system. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how to navigate directories using <code>opendir()</code> and <code>readdir()</code> </li>
+<li>
+how to distinguish files and directories using <code>lstat()</code> </li>
+<li>
+how recursion can be applied to traverse an entire directory tree </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program expects a single command-line argument specifying the root directory: </p>
+<ol>
+<li>
+Check if the provided path exists and is a directory using <code>lstat()</code>. </li>
+<li>
+Call a recursive function <code><a class="el" href="Es1_8c.html#ad0dfd7a4e6fb7bd41c1a36a678f2594d">funzione()</a></code> to explore the directory tree. </li>
+<li>
+Inside the recursive function: <ul>
+<li>
+Open the directory with <code>opendir()</code>. </li>
+<li>
+Iterate over all entries with <code>readdir()</code>. </li>
+<li>
+For files, print the full path. </li>
+<li>
+For directories, print the path and recursively explore its contents. </li>
+</ul>
+</li>
+<li>
+Close the directory after traversal with <code>closedir()</code>. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Input/output functions </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>POSIX system calls (<code>lstat()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/lstat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/stat.h&gt;</code> </td><td>File status information </td><td><a href="https://en.cppreference.com/w/c/sys/stat" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;dirent.h&gt;</code> </td><td>Directory stream handling </td><td><a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code> </td><td>String manipulation functions </td><td><a href="https://en.cppreference.com/w/c/string" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>lstat()</code> </td><td>Get information about a file or directory </td><td><a href="https://man7.org/linux/man-pages/man2/lstat.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>opendir()</code> </td><td>Open a directory stream </td><td><a href="https://man7.org/linux/man-pages/man3/opendir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>readdir()</code> </td><td>Read the next entry in a directory </td><td><a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>closedir()</code> </td><td>Close a directory stream </td><td><a href="https://man7.org/linux/man-pages/man3/closedir.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>fprintf()</code> </td><td>Print formatted output to stdout/stderr </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+📂 Directory traversal using <code>opendir()/readdir()</code> </li>
+<li>
+📝 Differentiating files and directories </li>
+<li>
+🔁 Recursive algorithms </li>
+<li>
+⚠️ Basic error handling in file systems </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX Directory Operations:</b> <a href="https://man7.org/linux/man-pages/man3/readdir.3.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-fork"></a> &lt;section id="c-unix-std-fork"&gt;</p>
+<h2>🧪 C-Unix-STD-Fork</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Fork_2main_8c.html">src/C-Unix-STD-Fork/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Fork/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>process creation using <code>fork()</code> and semaphores</b> to control output order. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how multiple child processes can be created concurrently </li>
+<li>
+how to use semaphores to synchronize process output </li>
+<li>
+how process execution order can be controlled </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program reads a string from stdin and creates one child process per character: </p>
+<ol>
+<li>
+Initialize a semaphore to zero. </li>
+<li>
+For each character, create a child process using <code>fork()</code>. </li>
+<li>
+Each child waits on the semaphore (<code>sem_wait()</code>) before printing its character. </li>
+<li>
+The parent posts to the semaphore (<code>sem_post()</code>) sequentially to allow children to print in order. </li>
+<li>
+Child processes exit after printing, ensuring ordered output. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, memory allocation, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>POSIX process control (<code>fork()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;semaphore.h&gt;</code> </td><td>POSIX semaphores for process synchronization </td><td><a href="https://man7.org/linux/man-pages/man7/sem_overview.7.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code> </td><td>String manipulation (<code>strlen()</code>, <code>strdup()</code>) </td><td><a href="https://en.cppreference.com/w/c/string" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create a new child process </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sem_init()</code> </td><td>Initialize semaphore </td><td><a href="https://man7.org/linux/man-pages/man3/sem_init.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sem_wait()</code> </td><td>Wait (decrement) on semaphore </td><td><a href="https://man7.org/linux/man-pages/man3/sem_wait.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sem_post()</code> </td><td>Signal (increment) semaphore </td><td><a href="https://man7.org/linux/man-pages/man3/sem_post.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>printf()</code> </td><td>Output character to stdout </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Process creation with <code>fork()</code> </li>
+<li>
+🔁 Process synchronization using semaphores </li>
+<li>
+📝 Ordered output from concurrent processes </li>
+<li>
+⚠️ Proper use of <code>exit()</code> in child processes </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>POSIX semaphores:</b> <a href="https://man7.org/linux/man-pages/man7/sem_overview.7.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-fork-sleep"></a> &lt;section id="c-unix-std-fork-sleep"&gt;</p>
+<h2>🧪 C-Unix-STD-Fork-Sleep</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Fork-Sleep_2main_8c.html">src/C-Unix-STD-Fork-Sleep/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Fork-Sleep/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>nested process creation using <code>fork()</code> and controlled termination with <code>sleep()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how multiple levels of processes can be spawned </li>
+<li>
+how to differentiate "leaf" processes </li>
+<li>
+how <code>sleep()</code> can be used to control process timing and termination </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program expects two command-line arguments: number of iterations <code>n</code> and sleep time <code>t</code>: </p>
+<ol>
+<li>
+Loop <code>i = 0 → n-1</code>, creating child processes with <code>fork()</code>. </li>
+<li>
+Within the loop, if in the parent process, another <code>fork()</code> may be called to create nested children. </li>
+<li>
+After all forks, the process sleeps for <code>t</code> seconds. </li>
+<li>
+After waking, the leaf process prints a termination message. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Input/output functions </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, <code>atoi()</code>, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>POSIX system calls, <code>fork()</code>, <code>sleep()</code> </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/wait.h&gt;</code> </td><td>Waiting for process termination </td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code> </td><td>Runtime assertions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create a new child process </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>sleep()</code> </td><td>Pause process execution for a specified time </td><td><a href="https://man7.org/linux/man-pages/man3/sleep.3.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>printf()</code> </td><td>Output to stdout </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>assert()</code> </td><td>Verify runtime conditions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Nested process creation with <code>fork()</code> </li>
+<li>
+⏳ Process timing control with <code>sleep()</code> </li>
+<li>
+⚠️ Parent vs leaf process identification </li>
+<li>
+📄 Controlled process termination </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>sleep():</b> <a href="https://man7.org/linux/man-pages/man3/sleep.3.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-fork-wait"></a> &lt;section id="c-unix-std-fork-wait"&gt;</p>
+<h2>🧪 C-Unix-STD-Fork-Wait</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Fork-Wait_2main_8c.html">src/C-Unix-STD-Fork-Wait/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Fork-Wait/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>process creation with <code>fork()</code> and parent-child synchronization using <code>wait()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how the parent waits for child processes to complete before continuing </li>
+<li>
+how to pass data from the parent to children using memory arrays </li>
+<li>
+how sequential output can be enforced using <code>wait()</code> </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program expects a single command-line argument <code>n</code> for the number of integers: </p>
+<ol>
+<li>
+Allocate an array of size <code>n</code> dynamically using <code>malloc()</code>. </li>
+<li>
+Read <code>n</code> integers from the user into the array. </li>
+<li>
+Loop over the array, and for each element: <ul>
+<li>
+Call <code>fork()</code> to create a child process. </li>
+<li>
+In the parent process: <ul>
+<li>
+Call <code>wait(NULL)</code> to wait for the child to finish. </li>
+<li>
+Print the corresponding integer from the array. </li>
+<li>
+Exit with the child index as exit code. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+Child processes exit immediately after creation. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>Memory allocation (<code>malloc()</code>), <code>atoi()</code>, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>Process creation (<code>fork()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/wait.h&gt;</code> </td><td>Waiting for child process termination (<code>wait()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code> </td><td>Runtime assertions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create child processes </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>wait()</code> </td><td>Wait for a child process to terminate </td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>malloc()</code> </td><td>Allocate dynamic memory for the integer array </td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>exit()</code> </td><td>Terminate a process with a specific exit code </td><td><a href="https://en.cppreference.com/w/c/program/exit" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Process creation and parent-child hierarchy </li>
+<li>
+⏳ Sequential execution of child processes using <code>wait()</code> </li>
+<li>
+📝 Passing and printing data via shared memory arrays </li>
+<li>
+⚠️ Proper termination of child processes </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>POSIX wait():</b> <a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><a class="anchor" id="c-unix-std-fork-wait-precedence"></a> &lt;section id="c-unix-std-fork-wait-precedence"&gt;</p>
+<h2>🧪 C-Unix-STD-Fork-Wait-Precedence</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Fork-Wait-Precedence_2main_8c.html">src/C-Unix-STD-Fork-Wait-Precedence/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Fork-Wait-Precedence/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>process creation with multiple <code>fork()</code> calls and <code>wait()</code> to enforce execution precedence</b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how a complex tree of processes can be spawned </li>
+<li>
+how <code>wait()</code> controls which child completes before the parent proceeds </li>
+<li>
+how to trace parent-child relationships and execution order </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program creates a complex hierarchy of child processes: </p>
+<ol>
+<li>
+Parent creates child P1 with <code>fork()</code>. P1 prints its PID and exits. </li>
+<li>
+The parent waits for P1 to finish using <code>wait()</code>. </li>
+<li>
+Parent sequentially spawns P2, P3, … P12 with additional <code>fork()</code> calls, sometimes nested. </li>
+<li>
+Each child prints its PID, parent PID, and an iteration index, then exits. </li>
+<li>
+The use of <code>wait()</code> ensures that the parent continues only after specific children terminate, enforcing precedence. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>Utilities, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>Process creation (<code>fork()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/wait.h&gt;</code> </td><td>Process termination synchronization (<code>wait()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code> </td><td>Runtime assertions </td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create child processes in sequence and nested hierarchies </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>wait()</code> </td><td>Wait for specific child process to terminate, enforcing execution order </td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>printf()</code> </td><td>Print process information </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>exit()</code> </td><td>Terminate a process with a status code </td><td><a href="https://en.cppreference.com/w/c/program/exit" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Nested and sequential process creation </li>
+<li>
+⏳ Controlling execution precedence using <code>wait()</code> </li>
+<li>
+📄 Tracking PID and PPID relationships </li>
+<li>
+⚠️ Proper child process termination to prevent zombies </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>POSIX wait():</b> <a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-fork-waitpid"></a> &lt;section id="c-unix-std-fork-waitpid"&gt;</p>
+<h2>🧪 C-Unix-STD-Fork-Waitpid</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code>src/C-Unix-STD-Fork-Waitpid/main.c</code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Fork-Waitpid/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>process creation using <code>fork()</code> and selective waiting using <code>waitpid()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how to create multiple child processes </li>
+<li>
+how <code>waitpid()</code> can wait for specific child processes instead of any child </li>
+<li>
+how to handle process termination selectively </li>
+</ul>
+<h3>🛠️ Description</h3>
+<p>The program creates <code>N</code> child processes in a loop: </p>
+<ol>
+<li>
+For each child, call <code>fork()</code> and store the child PID in an array. </li>
+<li>
+In child processes, immediately exit with <code>EXIT_SUCCESS</code>. </li>
+<li>
+After creating children, the parent selectively waits for children with index &gt; <code>M</code> using <code>waitpid()</code>. </li>
+<li>
+This demonstrates control over which child processes to wait for and allows partial concurrent execution. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code> </td><td>Standard input/output </td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code> </td><td>General utilities, <code>exit()</code> </td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code> </td><td>Process creation (<code>fork()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>&lt;sys/wait.h&gt;</code> </td><td>Selective waiting for child processes (<code>waitpid()</code>) </td><td><a href="https://man7.org/linux/man-pages/man2/waitpid.2.html" target="_blank">man7.org</a>   </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Role </th><th>Reference    </th></tr>
+<tr>
+<td><code>fork()</code> </td><td>Create child processes </td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>waitpid()</code> </td><td>Wait for a specific child process to terminate </td><td><a href="https://man7.org/linux/man-pages/man2/waitpid.2.html" target="_blank">man7.org</a>  </td></tr>
+<tr>
+<td><code>exit()</code> </td><td>Terminate a process </td><td><a href="https://en.cppreference.com/w/c/program/exit" target="_blank">cppreference</a>   </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Multiple child process creation </li>
+<li>
+🧩 Selective waiting using <code>waitpid()</code> </li>
+<li>
+⚠️ Preventing zombie processes </li>
+<li>
+⏱️ Partial concurrency control </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>POSIX fork():</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>POSIX waitpid():</b> <a href="https://man7.org/linux/man-pages/man2/waitpid.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-pause-kill-pipe"></a> &lt;section id="c-unix-std-signal-fork-pause-kill-pipe"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill-Pipe_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill-Pipe/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill-Pipe/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>parent-child communication using a pipe</b>, where the child reads a file and sends its content to the parent through the pipe. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+How to create a pipe for IPC between parent and child </li>
+<li>
+How a child can write data to a pipe and parent can read it </li>
+<li>
+How to coordinate file I/O with process communication </li>
+</ul>
+<h3>🛠️ Description</h3>
+<ol>
+<li>
+Create a pipe using <code>pipe()</code> for IPC. </li>
+<li>
+Fork a child process: <ul>
+<li>
+Child closes the read-end of the pipe. </li>
+<li>
+Opens <code><a class="el" href="testo_8txt.html">testo.txt</a></code> and reads its content. </li>
+<li>
+Writes the content to the pipe. </li>
+</ul>
+</li>
+<li>
+Parent process closes the write-end of the pipe. </li>
+<li>
+Parent reads from the pipe and writes the content to stdout. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>fork, pipe, read, write</td><td><a href="https://man7.org/linux/man-pages/man2/pipe.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;fcntl.h&gt;</code></td><td>File open/read</td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>File I/O and stdout</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code></td><td>Error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>fork()</code></td><td>Create child process</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pipe()</code></td><td>Create IPC pipe</td><td><a href="https://man7.org/linux/man-pages/man2/pipe.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>read()</code>, <code>write()</code></td><td>Read/write through pipe and file</td><td><a href="https://man7.org/linux/man-pages/man2/read.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>close()</code></td><td>Close pipe ends</td><td><a href="https://man7.org/linux/man-pages/man2/close.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>exit()</code></td><td>Terminate a process</td><td><a href="https://en.cppreference.com/w/c/program/exit" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+📡 Parent-child IPC via pipe </li>
+<li>
+👨‍👦 Coordinated file read and stdout output </li>
+<li>
+🔁 Streaming data between processes using pipe </li>
+<li>
+⚠️ Ensuring proper pipe closure to prevent deadlocks </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">POSIX fork()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/pipe.2.html" target="_blank">POSIX pipe()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/read.2.html" target="_blank">POSIX read()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/write.2.html" target="_blank">POSIX write()</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-pause-kill-wait"></a> &lt;section id="c-unix-std-signal-fork-pause-kill-wait"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill-Wait</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill-Wait_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill-Wait/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill-Wait/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This example demonstrates <b>two-child signal-based communication with parent synchronization using <code>wait()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+How to use signals (<code>SIGUSR1</code>, <code>SIGUSR2</code>) for inter-process communication </li>
+<li>
+How to synchronize parent with multiple children using <code>wait()</code> </li>
+<li>
+How to coordinate sequential execution of child processes </li>
+</ul>
+<h3>🛠️ Description</h3>
+<ol>
+<li>
+Fork two child processes. </li>
+<li>
+Child processes pause until receiving their respective signal (<code>SIGUSR1</code> or <code>SIGUSR2</code>). </li>
+<li>
+Parent sends signals in a controlled order and waits for child termination using <code>wait()</code>. </li>
+<li>
+This ensures orderly execution and prevents zombie processes. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>Standard input/output</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Exit, general utilities</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>fork(), pause()</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;signal.h&gt;</code></td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;sys/wait.h&gt;</code></td><td>wait() for child processes</td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>fork()</code></td><td>Create child processes</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>signal()</code></td><td>Install signal handlers</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pause()</code></td><td>Wait for a signal</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>kill()</code></td><td>Send signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>wait()</code></td><td>Wait for child termination</td><td><a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Parent-child signaling with <code>SIGUSR1</code>/<code>SIGUSR2</code> </li>
+<li>
+⏱️ Synchronizing parent with children using <code>wait()</code> </li>
+<li>
+⚠️ Preventing zombie processes </li>
+<li>
+🧩 Coordinated sequential execution </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">POSIX signal()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/wait.2.html" target="_blank">POSIX wait()</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-kill"></a> &lt;section id="c-unix-std-kill"&gt;</p>
+<h2>🧪 C-Unix-STD-Kill</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Kill_2main_8c.html">src/C-Unix-STD-Kill/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Kill/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>This program demonstrates the use of the <b><code>kill()</code> system call</b> to send signals to a specific process based on command-line arguments. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how to target a process by PID </li>
+<li>
+how to send different signals (<code>SIGUSR1</code>, <code>SIGUSR2</code>, <code>SIGINT</code>) </li>
+<li>
+how command-line arguments can control signal behavior </li>
+</ul>
+<h3>🛠️ Description</h3>
+<ol>
+<li>
+Expect exactly two command-line arguments: target PID and a command string. </li>
+<li>
+Compare the command string: <ul>
+<li>
+<code>somma</code> → send <code>SIGUSR2</code> </li>
+<li>
+<code>differenza</code> → send <code>SIGUSR1</code> </li>
+<li>
+<code>fine</code> → send <code>SIGINT</code> </li>
+</ul>
+</li>
+<li>
+If the command is invalid, print an error message. </li>
+<li>
+Uses <code>kill(pid, signal)</code> to notify the target process. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header </th><th>Description </th><th>Reference    </th></tr>
+<tr>
+<td><code>&lt;signal.h&gt;</code></td><td>Signal handling and sending (<code>kill()</code>)</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Conversion (<code>atoi()</code>)</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>Process primitives</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code></td><td>String comparison (<code>strcmp()</code>)</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcmp" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code></td><td>Runtime assertion to check argument count</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>kill()</code></td><td>Send a signal to a process by PID</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>atoi()</code></td><td>Convert string to integer (PID)</td><td><a href="https://en.cppreference.com/w/c/string/byte/atoi" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>strcmp()</code></td><td>Compare command strings</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcmp" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+🔀 Process targeting by PID </li>
+<li>
+⚡ Sending signals to control remote process behavior </li>
+<li>
+⚠️ Handling invalid commands safely </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>kill() man page:</b> <a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal"></a> &lt;section id="c-unix-std-signal"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal_2main_8c.html">src/C-Unix-STD-Signal/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates <b>signal handling using <code>signal()</code> and <code>pause()</code></b>. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+how to handle multiple signals (<code>SIGUSR1</code>, <code>SIGUSR2</code>, <code>SIGINT</code>) </li>
+<li>
+how a process can react to external signals </li>
+<li>
+using <code>pause()</code> to wait for signals </li>
+</ul>
+<h3>🛠️ Description</h3>
+<ol>
+<li>
+Set up handlers for <code>SIGUSR1</code>, <code>SIGUSR2</code>, <code>SIGINT</code> using <code>signal()</code>. </li>
+<li>
+Read two integers from the user. </li>
+<li>
+Enter an infinite loop calling <code>pause()</code> to wait for signals. </li>
+<li>
+When a signal is received: <ul>
+<li>
+<code>SIGUSR1</code>: print the difference of the two integers. </li>
+<li>
+<code>SIGUSR2</code>: print the sum of the two integers. </li>
+<li>
+<code>SIGINT</code>: terminate the process. </li>
+</ul>
+</li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;signal.h&gt;</code></td><td>Signal handling (<code>signal()</code>)</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>Input/output</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>General utilities (<code>exit()</code>)</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>Pause and process control</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>signal()</code></td><td>Install a handler for a specific signal</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pause()</code></td><td>Wait until a signal is received</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>scanf()</code></td><td>Read integers from user</td><td><a href="https://en.cppreference.com/w/c/io/fscanf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>printf()</code></td><td>Print results</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+⚡ Signal handling </li>
+<li>
+⏳ Waiting for signals using <code>pause()</code> </li>
+<li>
+📝 Dynamic reaction to external events </li>
+<li>
+⚠️ Graceful termination via signals </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>signal() man page:</b> <a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>pause() man page:</b> <a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork"></a> &lt;section id="c-unix-std-signal-fork"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork_2main_8c.html">src/C-Unix-STD-Signal-Fork/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates the combination of <b>fork() and signal handling</b>, showing how a parent can control child processes using signals. </p>
+<p>The goal is to understand:</p>
+<ul>
+<li>
+creating multiple child processes with <code>fork()</code> </li>
+<li>
+sending signals to children to trigger handlers </li>
+<li>
+coordinating execution between parent and children </li>
+</ul>
+<h3>🛠️ Description</h3>
+<ol>
+<li>
+Accept exactly one command-line argument <code>n</code>, the number of child processes. </li>
+<li>
+Install a signal handler <code><a class="el" href="C-Unix-STD-Signal-Fork_2main_8c.html#ac362edcde293f4b89960bc46fe848ea9">manager()</a></code> for <code>SIGUSR1</code> in children. </li>
+<li>
+Loop <code>n</code> times: <ul>
+<li>
+fork a child process </li>
+<li>
+child calls <code>pause()</code> and waits for a signal </li>
+<li>
+parent sleeps 2 seconds, prints info, then sends <code>SIGUSR1</code> to the child </li>
+</ul>
+</li>
+<li>
+Children print a message when receiving <code>SIGUSR1</code> and exit. </li>
+<li>
+Parent continues to the next child. </li>
+</ol>
+<h3>📦 Headers and Libraries Used</h3>
+<table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;signal.h&gt;</code></td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>Process control and fork</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>Input/output</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code></td><td>Runtime checks</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>⚙️ System Calls and Functions</h3>
+<table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>fork()</code></td><td>Create a child process</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>signal()</code></td><td>Assign handler to <code>SIGUSR1</code></td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pause()</code></td><td>Wait until a signal arrives</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>kill()</code></td><td>Parent sends signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>printf()</code></td><td>Output messages to stdout</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a>  </td></tr>
+</table>
+<h3>🧠 Key Concepts Introduced</h3>
+<ul>
+<li>
+👶 Child processes with fork() </li>
+<li>
+⚡ Signal communication parent → child </li>
+<li>
+⏳ Synchronized execution using pause() and sleep() </li>
+<li>
+📝 Process info reporting via signals </li>
+</ul>
+<h3>🔗 Links</h3>
+<ul>
+<li>
+📘 <b>fork() man page:</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>signal() man page:</b> <a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>pause() man page:</b> <a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p>&lt;/section&gt;</p>
+<p><br  />
+</p>
+<p><a class="anchor" id="c-unix-std-signal-fork-kill"></a> &lt;section id="c-unix-std-signal-fork-kill"&gt;</p>
+<h2>🧪 C-Unix-STD-Signal-Fork-Kill</h2>
+<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Kill_2main_8c.html">src/C-Unix-STD-Signal-Fork-Kill/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Kill/main.c" target="_blank" style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">🔍 View Code </a> </div><h3>🎯 Purpose</h3>
+<p>Demonstrates a <b>bidirectional signal exchange between parent and child processes</b> combined with <code>fork() and <code>kill()</code>. </code></p>
+<p><code> </code></p>
+<p><code>The goal is to understand:</code></p>
+<p><code> </p><ul>
+<li>
+parent-child communication using signals </li>
+<li>
+how children can respond to signals and reply to parent </li>
+<li>
+looping signal interactions in a controlled sequence </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Parent sets up handlers for <code>SIGUSR1</code>, <code>SIGUSR2</code>, <code>SIGINT</code>. </li>
+<li>
+Parent forks a single child process. </li>
+<li>
+Child enters an infinite loop, waiting for signals using <code>pause()</code> and reacts: <ul>
+<li>
+<code>SIGUSR1</code>: send <code>SIGUSR2</code> to parent </li>
+<li>
+<code>SIGUSR2</code>: send <code>SIGUSR1</code> to parent </li>
+<li>
+<code>SIGINT</code>: send <code>SIGINT</code> to parent and terminate </li>
+</ul>
+</li>
+<li>
+Parent cycles through an array of signals, sending one to the child every second in a loop. </li>
+<li>
+Demonstrates bidirectional signaling, signal handling, and safe process termination. </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;signal.h&gt;</code></td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;unistd.h&gt;</code></td><td>Process control and fork</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>Input/output</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>fork()</code></td><td>Create child process</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>signal()</code></td><td>Install signal handlers in parent and child</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>kill()</code></td><td>Send signal to a process</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pause()</code></td><td>Child waits for signals</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>malloc()/free()</code></td><td>Allocate/free memory for signal array</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+👨‍👦 Parent-child process communication </li>
+<li>
+🔁 Bidirectional signaling </li>
+<li>
+⏳ Synchronization using signals and pause() </li>
+<li>
+⚡ Dynamic reaction to signal events </li>
+<li>
+🛡️ Safe process termination via SIGINT </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+📘 <b>fork() man page:</b> <a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>signal() man page:</b> <a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </li>
+<li>
+📘 <b>kill() man page:</b> <a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code><br  />
+</code></p>
+<p><code><a class="anchor" id="c-unix-std-signal-fork-pause"></a> &lt;section id="c-unix-std-signal-fork-pause"&gt;</code></p>
+<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause</h2>
+<p></code></p>
+<p><code></code></p>
+<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause/main.c</a></code> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
+<p><code> </p><h3>🎯 Purpose</h3>
+<p></code></p>
+<p><code> </code></p>
+<p><code> Demonstrates <b>parent-child synchronization using signals and pause()</b> with file I/O from child processes. </code></p>
+<p><code> </code></p>
+<p><code>The goal is to understand:</code></p>
+<p><code> </p><ul>
+<li>
+forking multiple child processes </li>
+<li>
+sending signals to children to trigger specific actions </li>
+<li>
+reading files in child processes and writing to stdout </li>
+<li>
+using pause() for waiting on signals </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Open two files for reading: <code><a class="el" href="son1_8txt.html">son1.txt</a></code> and <code><a class="el" href="son2_8txt.html">son2.txt</a></code>. </li>
+<li>
+Install a signal handler for <code>SIGUSR1</code> and <code>SIGCHLD</code>. </li>
+<li>
+Fork the first child: <ul>
+<li>
+Child pauses until <code>SIGUSR1</code> is received </li>
+<li>
+Reads 50 bytes from <code><a class="el" href="son1_8txt.html">son1.txt</a></code> and writes to stdout </li>
+</ul>
+</li>
+<li>
+Fork the second child: <ul>
+<li>
+Child pauses until <code>SIGUSR1</code> is received </li>
+<li>
+Reads 50 bytes from <code><a class="el" href="son2_8txt.html">son2.txt</a></code> and writes to stdout </li>
+<li>
+Child sleeps 5 seconds then exits </li>
+</ul>
+</li>
+<li>
+Parent prints PIDs of both children, sends <code>SIGUSR1</code> to each child in sequence, using pause() to synchronize. </li>
+<li>
+After both children finish, parent closes file descriptors and exits. </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference  </th></tr>
+<tr>
+<td>&lt;signal.h&gt;</td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;unistd.h&gt;</td><td>Process control, fork, pause</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;fcntl.h&gt;</td><td>File I/O open/read/write</td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;stdio.h&gt;</td><td>Standard input/output</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>&lt;stdlib.h&gt;</td><td>Exit, malloc</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference  </th></tr>
+<tr>
+<td>fork()</td><td>Create child processes</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>signal()</td><td>Install signal handlers</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>pause()</td><td>Wait for a signal</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>open(), read(), write()</td><td>File I/O in child processes</td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>kill()</td><td>Send signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+👨‍👦 Parent-child communication via signals </li>
+<li>
+⏳ Process synchronization using pause() </li>
+<li>
+📂 File reading in forked processes </li>
+<li>
+⚡ Signal-triggered execution in children </li>
+<li>
+🛡️ Handling child termination signals </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">fork() man page</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">signal() man page</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">pause() man page</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code><br  />
+</code></p>
+<p><code><a class="anchor" id="c-unix-std-signal-fork-pause-kill"></a> &lt;section id="c-unix-std-signal-fork-pause-kill"&gt;</code></p>
+<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill</h2>
+<p></code></p>
+<p><code></code></p>
+<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c</a></code> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
+<p><code> </p><h3>🎯 Purpose</h3>
+<p></code></p>
+<p><code> </code></p>
+<p><code> Demonstrates <b>signal handling and inter-process notification</b> using a single child process. </code></p>
+<p><code> </p><ul>
+<li>
+Child waits for <code>SIGINT</code> signal before executing </li>
+<li>
+Parent can send <code>SIGINT</code> to terminate the child </li>
+<li>
+Shows basic pause-and-signal synchronization </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Install empty signal handlers for <code>SIGINT</code> and <code>SIGCHLD</code>. </li>
+<li>
+Fork a child process: <ul>
+<li>
+Child pauses until <code>SIGINT</code> is received </li>
+<li>
+After signal, child prints a message and exits </li>
+</ul>
+</li>
+<li>
+Parent pauses, sends <code>SIGINT</code> to child, and waits for completion. </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference  </th></tr>
+<tr>
+<td>&lt;signal.h&gt;</td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;unistd.h&gt;</td><td>Process control</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;stdlib.h&gt;</td><td>Exit, memory allocation</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>&lt;stdio.h&gt;</td><td>Standard I/O</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>&lt;assert.h&gt;</td><td>Assertions for error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference  </th></tr>
+<tr>
+<td>fork()</td><td>Create child process</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>signal()</td><td>Install signal handlers</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>pause()</td><td>Wait for a signal</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>kill()</td><td>Send signal to child</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+👨‍👦 Parent-child synchronization via signals </li>
+<li>
+⏳ Using pause() for waiting signals </li>
+<li>
+⚡ Sending SIGINT to terminate child process </li>
+<li>
+🛡️ Signal handling to control execution flow </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">kill() man page</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">pause() man page</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code><br  />
+</code></p>
+<p><code><a class="anchor" id="c-unix-std-signal-fork-pause-kill-file-wait"></a> &lt;section id="c-unix-std-signal-fork-pause-kill-file-wait"&gt;</code></p>
+<p><code> </p><h2>🧪 C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</h2>
+<p></code></p>
+<p><code></code></p>
+<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html">src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c</a></code> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
+<p><code> </p><h3>🎯 Purpose</h3>
+<p></code></p>
+<p><code> </code></p>
+<p><code> Demonstrates <b>two-child process coordination using signals, pause(), and file I/O</b>. </code></p>
+<p><code> </p><ul>
+<li>
+Child processes read separate text files and print to stdout </li>
+<li>
+Synchronization between children using signals </li>
+<li>
+Parent controls execution flow </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Install signal handlers for <code>SIGUSR1</code> and <code>SIGCHLD</code>. </li>
+<li>
+Fork first child: <ul>
+<li>
+Wait for signal from parent </li>
+<li>
+Read <code><a class="el" href="testo__1_8txt.html">testo_1.txt</a></code> and print content </li>
+<li>
+Send signal to second child after finishing </li>
+</ul>
+</li>
+<li>
+Fork second child: <ul>
+<li>
+Wait for signal from first child </li>
+<li>
+Read <code>testo_3.txt</code> and print content </li>
+<li>
+Send signal back to first child or exit </li>
+</ul>
+</li>
+<li>
+Parent triggers first signal, then waits for both children to finish. </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference  </th></tr>
+<tr>
+<td>&lt;signal.h&gt;</td><td>Signal handling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;unistd.h&gt;</td><td>fork, pause</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;fcntl.h&gt;</td><td>File open/read</td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>&lt;stdio.h&gt;</td><td>File I/O and stdout</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>&lt;stdlib.h&gt;</td><td>Exit, malloc</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>&lt;assert.h&gt;</td><td>Error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference  </th></tr>
+<tr>
+<td>fork()</td><td>Create child processes</td><td><a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>signal()</td><td>Install handlers for inter-process signaling</td><td><a href="https://man7.org/linux/man-pages/man2/signal.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>pause()</td><td>Wait for signals</td><td><a href="https://man7.org/linux/man-pages/man2/pause.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>open(), read(), write()</td><td>File I/O for children</td><td><a href="https://man7.org/linux/man-pages/man2/open.2.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td>kill()</td><td>Send signals between children</td><td><a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">man7.org</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+👨‍👦 Signal-based synchronization between sibling processes </li>
+<li>
+📂 Coordinated file reading and stdout output </li>
+<li>
+⏳ Using pause() for controlled execution flow </li>
+<li>
+⚡ Signal-triggered child-to-child communication </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/kill.2.html" target="_blank">kill() man page</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man2/fork.2.html" target="_blank">fork() man page</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code><br  />
+</code></p>
+<p><code><a class="anchor" id="c-unix-std-threads"></a> &lt;section id="c-unix-std-threads"&gt;</code></p>
+<p><code> </p><h2>🧪 C-Unix-STD-Threads</h2>
+<p></code></p>
+<p><code></code></p>
+<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads_2main_8c.html">src/C-Unix-STD-Threads/main.c</a></code> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
+<p><code> </p><h3>🎯 Purpose</h3>
+<p></code></p>
+<p><code> </code></p>
+<p><code> This example demonstrates <b>creating multiple threads to process pairs of files concurrently</b>. Each thread reads integers from an input file, sorts them, and writes to an output file. </code></p>
+<p><code> </code></p>
+<p><code>The goals are to understand:</code></p>
+<p><code> </p><ul>
+<li>
+Thread creation, argument passing, and termination using <code>pthread_create</code> and <code>pthread_join</code> </li>
+<li>
+How to process independent data concurrently </li>
+<li>
+Memory management for thread arguments </li>
+<li>
+Sorting algorithms in a multithreaded environment </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Parse command-line arguments as <code>input_file output_file</code> pairs. </li>
+<li>
+Allocate memory for thread IDs and thread argument structures. </li>
+<li>
+Create one thread per file pair, passing a structure containing input/output filenames. </li>
+<li>
+Each thread executes the following steps: <ul>
+<li>
+Opens the input file and reads integers into a buffer. </li>
+<li>
+Sorts the integers using bubble sort. </li>
+<li>
+Writes the sorted integers to the output file. </li>
+</ul>
+</li>
+<li>
+The main thread waits for the last created thread using <code>pthread_join</code> to ensure completion. </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;pthread.h&gt;</code></td><td>POSIX threads API</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>File I/O and stdout</td><td><a href="https://en.cppreference.com/w/c/io/fprintf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code></td><td>String operations (strcpy, strlen)</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcpy" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>pthread_create()</code></td><td>Create a new thread</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pthread_join()</code></td><td>Wait for a thread to terminate</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_join.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>fopen()</code>, <code>fscanf()</code>, <code>fprintf()</code></td><td>File read/write operations</td><td><a href="https://en.cppreference.com/w/c/io/fscanf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>Memory allocation (malloc/free)</td><td>Allocate memory for thread arguments and buffers</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+⚡ Concurrent execution using threads </li>
+<li>
+📁 File I/O in multithreaded applications </li>
+<li>
+🧮 Sorting algorithms executed in parallel </li>
+<li>
+💾 Dynamic memory allocation for passing arguments safely to threads </li>
+<li>
+🔄 Synchronization by joining threads to ensure completion </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">POSIX pthread_create()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man3/pthread_join.3.html" target="_blank">POSIX pthread_join()</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code><br  />
+</code></p>
+<p><code><a class="anchor" id="c-unix-std-threads-files-assert"></a> &lt;section id="c-unix-std-threads-files-assert"&gt;</code></p>
+<p><code> </p><h2>🧪 C-Unix-STD-Threads-Files-Assert</h2>
+<p></code></p>
+<p><code></code></p>
+<p style="margin:0;"><code> </p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Unix-STD-Threads-Files-Assert_2main_8c.html">src/C-Unix-STD-Threads-Files-Assert/main.c</a></code> </div><p></code></p>
+<p><code></p><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Threads-Files-Assert/main.c" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#24292f;color:white;text-decoration:none;font-weight:600;font-size:0.9em;">🔍 View Code </a> </div><p></code></p>
+<p><code> </p><h3>🎯 Purpose</h3>
+<p></code></p>
+<p><code> </code></p>
+<p><code> This example demonstrates <b>multithreaded file processing with bubble sort</b>, using <code>assert()</code> to guarantee correctness of read/write operations. </code></p>
+<p><code> </code></p>
+<p><code>The goals are to understand:</code></p>
+<p><code> </p><ul>
+<li>
+Thread-safe processing of multiple input/output files concurrently </li>
+<li>
+Using assertions to ensure correct file read/write </li>
+<li>
+Implementing bubble sort algorithm inside threads </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🛠️ Description</h3>
+<p></code></p>
+<p><code> </p><ol>
+<li>
+Validate command-line arguments as <code>input_file output_file</code> pairs (odd number of arguments, at least 3). </li>
+<li>
+Allocate structures and thread IDs for all file pairs. </li>
+<li>
+Create one thread per file pair: <ul>
+<li>
+Thread reads integers from input file. </li>
+<li>
+Thread sorts integers using bubble sort. </li>
+<li>
+Thread writes sorted integers to output file. </li>
+<li>
+Assertions (<code>assert()</code>) verify that bytes read equal bytes written. </li>
+</ul>
+</li>
+<li>
+Main thread waits for the last thread to finish (<code>pthread_join</code>). </li>
+</ol>
+<p></code></p>
+<p><code> </p><h3>📦 Headers and Libraries Used</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Header</th><th>Description</th><th>Reference   </th></tr>
+<tr>
+<td><code>&lt;pthread.h&gt;</code></td><td>POSIX threads API</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>&lt;stdio.h&gt;</code></td><td>File I/O</td><td><a href="https://en.cppreference.com/w/c/io/fscanf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;stdlib.h&gt;</code></td><td>Memory allocation, exit</td><td><a href="https://en.cppreference.com/w/c/header/stdlib" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;assert.h&gt;</code></td><td>Error checking</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>&lt;string.h&gt;</code></td><td>String operations</td><td><a href="https://en.cppreference.com/w/c/string/byte/strcpy" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>⚙️ System Calls and Functions</h3>
+<p></code></p>
+<p><code> </p><table class="doxtable">
+<tr>
+<th>Function</th><th>Role</th><th>Reference   </th></tr>
+<tr>
+<td><code>pthread_create()</code></td><td>Create thread for each file pair</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>pthread_join()</code></td><td>Wait for threads to finish</td><td><a href="https://man7.org/linux/man-pages/man3/pthread_join.3.html" target="_blank">man7.org</a> </td></tr>
+<tr>
+<td><code>assert()</code></td><td>Verify correctness of read/write operations</td><td><a href="https://en.cppreference.com/w/c/error/assert" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td><code>fopen()/fscanf()/fprintf()/fclose()</code></td><td>File I/O operations</td><td><a href="https://en.cppreference.com/w/c/io/fscanf" target="_blank">cppreference</a> </td></tr>
+<tr>
+<td>Memory allocation (malloc/free)</td><td>Allocate thread arguments and buffers</td><td><a href="https://en.cppreference.com/w/c/memory/malloc" target="_blank">cppreference</a>  </td></tr>
+</table>
+<p></code></p>
+<p><code> </p><h3>🧠 Key Concepts Introduced</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+⚡ Multithreading for concurrent file processing </li>
+<li>
+📁 Safe file I/O with assertion checks </li>
+<li>
+🧮 Bubble sort algorithm inside threads </li>
+<li>
+💾 Dynamic memory management for thread arguments </li>
+<li>
+🔄 Synchronization via <code>pthread_join</code> to ensure completion </li>
+</ul>
+<p></code></p>
+<p><code> </p><h3>🔗 Links</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+<a href="https://man7.org/linux/man-pages/man3/pthread_create.3.html" target="_blank">POSIX pthread_create()</a> </li>
+<li>
+<a href="https://man7.org/linux/man-pages/man3/pthread_join.3.html" target="_blank">POSIX pthread_join()</a> </li>
+<li>
+<a href="https://en.cppreference.com/w/c/error/assert" target="_blank">C assert()</a> </li>
+</ul>
+<p></code></p>
+<p><code>&lt;/section&gt;</code></p>
+<p><code>There are</code></p>
+<p><code><a class="anchor" id="getting-started"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Getting Started 🚀</h1>
+<p><code></code></p>
+<p><code><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></code></p>
+<p><code>Follow these steps to get, install and set up the project and generate the documentation:</code></p>
+<p><code></p><ul>
 <li><a class="el" href="md_README.html#prerequisites">**1 - Verify Prerequisites and Dependencies**</a> <br  />
  C_Linux needs to run on <b>hosts</b> equipped with specific <b>hardware</b> and <b>software</b>. <br  />
  So read carefully the <b>prerequisites</b> to respect and the <b>dependencies</b> to satisfy.</li>
@@ -250,24 +2292,30 @@ Getting Started 🚀</h1>
 <li><a class="el" href="md_README.html#uninstall">**6 - Uninstall**</a> <br  />
  Remove the project and all its dependencies from the system <b>safely and completely</b>.</li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="prerequisites"></a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+</code></p>
+<p><code><a class="anchor" id="prerequisites"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
 💻 Prerequisites</h2>
-<p>Before building or running the project, make sure you satisgy the prerequisites to run the project:</p>
-<ul>
+<p><code></code></p>
+<p><code>Before building or running the project, make sure you satisgy the prerequisites to run the project:</code></p>
+<p><code></p><ul>
 <li><b>Operating System</b>: GNU/Linux, Windows</li>
 <li><b>Software Dependencies</b>: GitHub, Doxygen, GNU Make, GNU C Compiler</li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+</code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 📦 Dependencies</h2>
-<p>Before building and generating documentation with <b>C_Linux</b>, make sure the following dependencies are installed on your system:</p>
-<ul>
+<p><code></code></p>
+<p><code>Before building and generating documentation with <b>C_Linux</b>, make sure the following dependencies are installed on your system:</code></p>
+<p><code></p><ul>
 <li><b>GitHub</b> — <em>Optional.</em> <br  />
  Even if you don’t have a GitHub account or Git installed, you can still generate documentation locally. <br  />
  However, having a <b>GitHub account</b> and using <b>Git</b> is <b>recommended</b> for project deployment and version control.</li>
@@ -282,27 +2330,39 @@ Getting Started 🚀</h1>
  Required to compile all C examples in <b>C_Linux</b>. <br  />
  Supports C99 standard and POSIX APIs.</li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="install-gcc"></a></p>
-<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU C Compiler (GCC)</h2>
-<h3><a class="anchor" id="autotoc_md11"></a>
+</code></p>
+<p><code><a class="anchor" id="install-gcc"></a></code></p>
+<p><code></p><h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU C Compiler (GCC)</h2>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md12"></a>
 🐧 On GNU/Linux</h3>
-<p>Check if GCC is already installed:</p>
-<pre>
+<p><code></code></p>
+<p><code>Check if GCC is already installed:</code></p>
+<p><code></p><pre>
 gcc --version
-</pre><p>If missing, install it via:</p>
-<pre>
+</pre><p></code></p>
+<p><code>If missing, install it via:</code></p>
+<p><code></p><pre>
 sudo apt update
 sudo apt install gcc build-essential
-</pre><p>Verify installation:</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+</pre><p></code></p>
+<p><code>Verify installation:</code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md13"></a>
 &lt;pre&gt;</h2>
-<p>gcc --version </p>
-<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows</h3>
-<h4>✅ Option 1: Using MinGW</h4>
-<ol type="1">
+<p><code> gcc --version </code></p>
+<p><code></p><h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></p><h4>✅ Option 1: Using MinGW</h4>
+<p></code></p>
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Download and install <b>MinGW-w64</b> from: <br  />
  👉 <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a> <br  />
 </li>
@@ -312,40 +2372,51 @@ sudo apt install gcc build-essential
 </li>
 <li>Verify installation:</li>
 </ol>
-<pre>
+<p></code></p>
+<p><code></p><pre>
 gcc --version
-</pre><p>#</p>
-<h3><a class="anchor" id="autotoc_md13"></a>
+</pre><p></code></p>
+<p><code>#</code></p>
+<h3><a class="anchor" id="autotoc_md14"></a>
 ✅ Option 2: Using Windows Subsystem for Linux (WSL)</h3>
-<ol type="1">
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Install WSL with a Linux distribution, e.g., Ubuntu. <br  />
 </li>
 <li>Open WSL terminal and run:</li>
 </ol>
-<pre>
+<p></code></p>
+<p><code></p><pre>
 sudo apt update
 sudo apt install gcc build-essential
 gcc --version
-</pre><p>#</p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+</pre><p></code></p>
+<p><code>#</code></p>
+<h3><a class="anchor" id="autotoc_md15"></a>
 ✅ Option 3: Using Chocolatey</h3>
-<p>If you have <b>Chocolatey</b> installed:</p>
-<pre>
+<p><code></code></p>
+<p><code>If you have <b>Chocolatey</b> installed:</code></p>
+<p><code></p><pre>
 choco install mingw
-</pre><p>Verify installation:</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+</pre><p></code></p>
+<p><code>Verify installation:</code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md16"></a>
 &lt;pre&gt;</h2>
-<p>gcc --version </p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<p><code> gcc --version </code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md17"></a>
 💡 Dependencies Verification</h3>
-<p>After installing all dependencies, verify them with:</p>
-<pre>
+<p><code></code></p>
+<p><code>After installing all dependencies, verify them with:</code></p>
+<p><code></p><pre>
 git --version
 doxygen --version
 make --version
 gcc --version
-</pre><p>If all commands return valid version numbers, you’re ready to build and document your project 🎉</p>
-<blockquote class="doxtable">
+</pre><p></code></p>
+<p><code>If all commands return valid version numbers, you’re ready to build and document your project 🎉</code></p>
+<p><code></p><blockquote class="doxtable">
 <p>&zwj;💡 Tip: You can also run the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the root directory. <br  />
  It will automatically:</p><ul>
 <li>Check that Doxygen is installed. If not, the script will fail ❌ <br  />
@@ -357,56 +2428,67 @@ gcc --version
 </blockquote>
 <p><br  />
  <br  />
-</p>
-<p><a class="anchor" id="installation"></a></p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+</code></p>
+<p><code><a class="anchor" id="installation"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md18"></a>
 ⭐ Installation</h2>
-<p>To <em><b>install</b></em> the project follow this setps:</p>
-<p>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></p>
-<p>manually or by <b>opening a terminal</b> into your project destination directory, and running the following commands:</p>
-<pre>
+<p><code></code></p>
+<p><code>To <em><b>install</b></em> the project follow this setps:</code></p>
+<p><code>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></code></p>
+<p><code> manually or by <b>opening a terminal</b> into your project destination directory, and running the following commands:</code></p>
+<p><code> </p><pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
   wget <a href="https://github.com/Unix69/README-Template/archive/refs/heads/master.zip">https://github.com/Unix69/README-Template/archive/refs/heads/master.zip</a> #make an http get request to get the project repository ** zip file ** 
   unzip master.zip #unzip the project master.zip file
   cp -R master/ ./ #copy all files recursively from the unziped master directory to your project root directory
   rm -rf master master.zip #remove the unziped master directory and master.zip file
-  </pre><p>B. You can <b>clone the repository</b> from GitHub if you have Git installed by running the following commands:</p>
-<pre>
+  </pre><p></code></p>
+<p><code>B. You can <b>clone the repository</b> from GitHub if you have Git installed by running the following commands:</code></p>
+<p><code> </p><pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
   clone <a href="https://github.com/Unix69/C_Linux.git">https://github.com/Unix69/C_Linux.git</a> #clone the project repository 
   cp -R C_Linux/ ./ #copy all files recursively from the C_Linux directory to your project root directory
   rm -rf C_Linux #remove the C_Linux directory. 
-  </pre><p>⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">Download ZIP</a> <br  />
- 🐙 <a href="https://github.com/Unix69/C_Linux">View on GitHub</a></p>
-<p><br  />
+  </pre><p></code></p>
+<p><code>⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">Download ZIP</a> <br  />
+ 🐙 <a href="https://github.com/Unix69/C_Linux">View on GitHub</a></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="build"></a></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
-🛠️ Build</h2>
-<p>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</p>
-<p>A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</p>
-<pre>
-    ./doxygen.sh  
-  </pre><p>or by running <b>GNU Make</b> with the <b>build</b> target:</p>
-<pre>
-    make build  
-  </pre><p><br  />
-</p>
-<p>B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the <b>root directory</b> and generate the standard Doxyfile: </p><pre>
-       doxygen -g Doxyfile  
-       </pre><p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="configuration"></a></p>
+</code></p>
+<p><code><a class="anchor" id="build"></a></code></p>
+<p><code></code></p>
 <h2><a class="anchor" id="autotoc_md19"></a>
+🛠️ Build</h2>
+<p><code></code></p>
+<p><code>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</code></p>
+<p><code> A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</code></p>
+<p><code> </p><pre>
+    ./doxygen.sh  
+  </pre><p></code></p>
+<p><code> or by running <b>GNU Make</b> with the <b>build</b> target:</code></p>
+<p><code> </p><pre>
+    make build  
+  </pre><p></code></p>
+<p><code> <br  />
+</code></p>
+<p><code> B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the <b>root directory</b> and generate the standard Doxyfile: </p><pre>
+       doxygen -g Doxyfile  
+       </pre><p></code></p>
+<p><code><br  />
+ <br  />
+</code></p>
+<p><code><a class="anchor" id="configuration"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md20"></a>
 ⚙️ Configuration</h2>
-<p>To <em><b>configure</b></em> the C_Linux project you can:</p>
-<p><br  />
-</p>
-<ol type="1">
+<p><code></code></p>
+<p><code>To <em><b>configure</b></em> the C_Linux project you can:</code></p>
+<p><code><br  />
+</code></p>
+<p><code></p><ol type="1">
 <li><p class="startli">Modify Doxygen's options by:</p>
 <p class="startli">A. <b>Doxygen</b>: Changing/Adding manually a row in <code>./doxygen.ini</code> before run it again, like:</p>
 <p class="startli"><code> DOXY_PARAMETER = "DOXY_PARAMETER-VALUE" <br  />
@@ -416,56 +2498,71 @@ gcc --version
 <li>Modify the default <b>Makefile</b> and <b>make toolchain</b> to customize and integrate your building behaviour.</li>
 <li>You can change the default <b>Markdown</b> <code>.md</code> files to customize your project <b>markdown documentation</b>. The default <b>Markdown project</b> of <b>C_Linux</b> is structured as follow:</li>
 </ol>
-<div id="directory-tree-container" class="directory-tree"></div><p><br  />
+<p></code></p>
+<p><code></p><div id="directory-tree-container" class="directory-tree"></div><p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="run"></a></p>
-<h2><a class="anchor" id="autotoc_md20"></a>
-🚀 Run</h2>
-<p>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</p>
-<p>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</p>
-<pre>
-    doxygen Doxyfile  
-  </pre><p>B. <b>GNU Make</b>: Open a terminal into the <b>root directory</b> and run the gnu make installed tool with your <code>Makefile</code> and <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>:</p>
-<pre>
-    make doc  
-  </pre><p><br  />
-</p>
-<p>✅ Now you can find the documentation into <code>./docs/</code> or at your Doxyfile <code>OUTPUT_DIRECTORY</code> path.</p>
-<p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="uninstall"></a></p>
+</code></p>
+<p><code><a class="anchor" id="run"></a></code></p>
+<p><code></code></p>
 <h2><a class="anchor" id="autotoc_md21"></a>
+🚀 Run</h2>
+<p><code></code></p>
+<p><code>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</code></p>
+<p><code>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</code></p>
+<p><code> </p><pre>
+    doxygen Doxyfile  
+  </pre><p></code></p>
+<p><code>B. <b>GNU Make</b>: Open a terminal into the <b>root directory</b> and run the gnu make installed tool with your <code>Makefile</code> and <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>:</code></p>
+<p><code> </p><pre>
+    make doc  
+  </pre><p></code></p>
+<p><code><br  />
+</code></p>
+<p><code>✅ Now you can find the documentation into <code>./docs/</code> or at your Doxyfile <code>OUTPUT_DIRECTORY</code> path.</code></p>
+<p><code><br  />
+ <br  />
+</code></p>
+<p><code><a class="anchor" id="uninstall"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md22"></a>
 ❌ Uninstall</h2>
-<p>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</p>
-<pre> make clean </pre><p><br  />
+<p><code></code></p>
+<p><code>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</code></p>
+<p><code> </p><pre> make clean </pre><p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="license"></a></p>
-<h1><a class="anchor" id="autotoc_md22"></a>
-Licenses 📜</h1>
-<p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
-<p><br  />
-</p>
-<p>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</p>
-<p>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
-</p>
-<p>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></p>
-<p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="contributing"></a></p>
+</code></p>
+<p><code><a class="anchor" id="license"></a></code></p>
+<p><code></code></p>
 <h1><a class="anchor" id="autotoc_md23"></a>
-Contributing 👋</h1>
-<p>Thank you for your interest in <b>C_Linux</b>! <br  />
- You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</p>
-<p><br  />
+Licenses 📜</h1>
+<p><code></code></p>
+<p><code><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></code></p>
+<p><code><br  />
+</code></p>
+<p><code>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</code></p>
+<p><code>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
+</code></p>
+<p><code>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></code></p>
+<p><code><br  />
  <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+</code></p>
+<p><code><a class="anchor" id="contributing"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md24"></a>
+Contributing 👋</h1>
+<p><code></code></p>
+<p><code>Thank you for your interest in <b>C_Linux</b>! <br  />
+ You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</code></p>
+<p><code><br  />
+ <br  />
+</code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md25"></a>
 General Contribution Guidelines</h2>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li>Read the <a class="el" href="md_CODE__OF__CONDUCT.html">**CODE_OF_CONDUCT.md**</a> <br  />
 </li>
 <li>Understand the project structure <br  />
@@ -473,8 +2570,9 @@ General Contribution Guidelines</h2>
 <li>Ensure required tools are installed: <b>GCC</b>, <b>Make</b>, <b>Doxygen</b> <br  />
 </li>
 </ul>
-<p>When contributing code:</p>
-<ol type="1">
+<p></code></p>
+<p><code>When contributing code:</code></p>
+<p><code></p><ol type="1">
 <li>Fork the repository <br  />
 </li>
 <li>Create a <b>feature branch</b> (<code>git checkout -b feature/your-feature</code>) <br  />
@@ -486,24 +2584,32 @@ General Contribution Guidelines</h2>
 <li>Open a <b>Pull Request (PR)</b> <br  />
 </li>
 </ol>
-<p>Keep style consistent, update documentation, and run tests.</p>
-<p><br  />
+<p></code></p>
+<p><code>Keep style consistent, update documentation, and run tests.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="authors"></a></p>
-<h1><a class="anchor" id="autotoc_md25"></a>
+</code></p>
+<p><code><a class="anchor" id="authors"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Authors 🧑‍💻</h1>
-<div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
+<p><code></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
  <span>Roles: FO, CEO</span><br  />
  <span>Contributions: <code>FI</code>, <code>OP</code>, <code>DE</code></span><br  />
  <span>Email: <a href="#" onclick="location.href='mai'+'lto:'+'giu'+'se'+'ppe'+'.p'+'edo'+'ne'+'.de'+'ve'+'lop'+'er'+'@gm'+'ai'+'l.c'+'om'; return false;">giuseppe.pedone.developer@gmail.com</a></span><br  />
- <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p><br  />
+ <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><p></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="official-links"></a></p>
-<h1><a class="anchor" id="autotoc_md26"></a>
+</code></p>
+<p><code><a class="anchor" id="official-links"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Official Links 🌐</h1>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li><a href="https://gcc.gnu.org/">GNU C Compiler (GCC)</a> – Compiler for C projects <br  />
 </li>
 <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)">C Programming Language</a> – Language reference <br  />
@@ -517,31 +2623,38 @@ Official Links 🌐</h1>
 <li><a href="https://www.doxygen.nl/">Doxygen</a> – Documentation generator <br  />
 </li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="faq"></a></p>
-<h1><a class="anchor" id="autotoc_md27"></a>
-FAQ ❓</h1>
-<p><b>Q1: Which C standard is used?</b> <br  />
- A1: All examples are written in <b>C99</b>.</p>
-<p><b>Q2: Supported OS?</b> <br  />
- A2: <b>POSIX-compliant systems</b>, mainly Linux.</p>
-<p><b>Q3: Can I modify and redistribute examples?</b> <br  />
- A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</p>
-<p><b>Q4: How to compile an example?</b> <br  />
- A4: Use <code>gcc</code> or run <code>make</code> in project root.</p>
-<p><b>Q5: How to report a bug?</b> <br  />
- A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</p>
-<p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="fork-project"></a></p>
+</code></p>
+<p><code><a class="anchor" id="faq"></a></code></p>
+<p><code></code></p>
 <h1><a class="anchor" id="autotoc_md28"></a>
+FAQ ❓</h1>
+<p><code></code></p>
+<p><code><b>Q1: Which C standard is used?</b> <br  />
+ A1: All examples are written in <b>C99</b>.</code></p>
+<p><code><b>Q2: Supported OS?</b> <br  />
+ A2: <b>POSIX-compliant systems</b>, mainly Linux.</code></p>
+<p><code><b>Q3: Can I modify and redistribute examples?</b> <br  />
+ A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</code></p>
+<p><code><b>Q4: How to compile an example?</b> <br  />
+ A4: Use <code>gcc</code> or run <code>make</code> in project root.</code></p>
+<p><code><b>Q5: How to report a bug?</b> <br  />
+ A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</code></p>
+<p><code><br  />
+ <br  />
+</code></p>
+<p><code><a class="anchor" id="fork-project"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Forking &amp; Pull Requests 🔀</h1>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<p><code></code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Fork the Project</h3>
-<ol type="1">
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Go to the main repository on GitHub <br  />
 </li>
 <li>Click <b>Fork</b> to create your personal copy <br  />
@@ -550,9 +2663,12 @@ Fork the Project</h3>
 </li>
 <li>Keep it synchronized with the main project</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<p></code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Pull Requests (PR)</h3>
-<ol type="1">
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Ensure your branch is updated with the main branch <br  />
 </li>
 <li>Confirm all tests and checks pass <br  />
@@ -571,8 +2687,9 @@ Pull Requests (PR)</h3>
 <li>Apply requested changes and update PR if needed <br  />
 </li>
 </ol>
-<p><b>PR Guidelines</b></p>
-<ul>
+<p></code></p>
+<p><code><b>PR Guidelines</b></code></p>
+<p><code></p><ul>
 <li>Use concise and descriptive titles <br  />
 </li>
 <li>Include examples or references if relevant <br  />
@@ -580,13 +2697,16 @@ Pull Requests (PR)</h3>
 <li>Avoid committing unrelated files <br  />
 </li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="issues"></a></p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+</code></p>
+<p><code><a class="anchor" id="issues"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Issues ⚠️</h1>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li>Issues are for reporting bugs, requesting features, or asking questions <br  />
 </li>
 <li>Use the <b><a class="el" href="md_ISSUE__TEMPLATE.html">Issue Template</a></b> if available <br  />
@@ -603,18 +2723,22 @@ Issues ⚠️</h1>
 </ul>
 </li>
 </ul>
-<p>All issues are tracked in the <b>Issues</b> section on GitHub.</p>
-<p><br  />
+<p></code></p>
+<p><code>All issues are tracked in the <b>Issues</b> section on GitHub.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="thanks"></a></p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+</code></p>
+<p><code><a class="anchor" id="thanks"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md33"></a>
 Thanks 🙏</h1>
-<p>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
- Your work empowers projects like <b>C_Linux</b> to exist and evolve.</p>
-<p><br  />
+<p><code></code></p>
+<p><code>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
+ Your work empowers projects like <b>C_Linux</b> to exist and evolve.</code></p>
+<p><code><br  />
  <br  />
-</p>
+</code></p>
+<p><code> </code></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
