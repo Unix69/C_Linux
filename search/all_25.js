@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🛠️_20build_0',['🛠️ Build',['../md_README.html#autotoc_md16',1,'']]]
+  ['🙏_0',['Thanks 🙏',['../md_README.html#autotoc_md32',1,'']]]
 ];

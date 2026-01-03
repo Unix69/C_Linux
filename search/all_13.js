@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['writefileout_0',['WriteFileOut',['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#af75094754983d7fa31c5bbebc9b95825',1,'main.c']]]
+  ['uninstall_0',['❌ Uninstall',['../md_README.html#autotoc_md21',1,'']]],
+  ['using_20chocolatey_1',['✅ Option 3: Using Chocolatey',['../md_README.html#autotoc_md14',1,'']]],
+  ['using_20windows_20subsystem_20for_20linux_20wsl_2',['✅ Option 2: Using Windows Subsystem for Linux (WSL)',['../md_README.html#autotoc_md13',1,'']]]
 ];

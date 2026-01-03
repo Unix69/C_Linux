@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['🧑‍💻_0',['Authors 🧑‍💻',['../md_README.html#autotoc_md25',1,'']]]
+  ['🚀_0',['Getting Started 🚀',['../md_README.html#autotoc_md8',1,'']]],
+  ['🚀_20run_1',['🚀 Run',['../md_README.html#autotoc_md20',1,'']]]
 ];

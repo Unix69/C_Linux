@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['dependencies_0',['📦 Dependencies',['../md_README.html#autotoc_md10',1,'']]],
-  ['dependencies_20verification_1',['💡 Dependencies Verification',['../md_README.html#autotoc_md14',1,'']]],
-  ['dim_2',['dim',['../C-Func-pointer_2main_8c.html#a4bf6a1e750d841477978a43a04c4f062',1,'main.c']]],
-  ['doxyfile_3',['Doxyfile',['../Doxyfile.html',1,'']]],
-  ['doxygen_2eini_4',['doxygen.ini',['../doxygen_8ini.html',1,'']]],
-  ['doxygen_2esh_5',['doxygen.sh',['../doxygen_8sh.html',1,'']]]
+  ['b_0',['b',['../C-Unix-STD-Signal_2main_8c.html#a148e3876077787926724625411d6e7a9',1,'main.c']]],
+  ['bubblesort_1',['bubblesort',['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#a3537ea331a49d96f98776366f25ba0c2',1,'main.c']]],
+  ['buf_2',['buf',['../structnf.html#a2d65956630ea04051ce25d0b4024b77b',1,'nf']]],
+  ['build_3',['🛠️ Build',['../md_README.html#autotoc_md18',1,'']]]
 ];

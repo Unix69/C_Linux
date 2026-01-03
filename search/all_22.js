@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔀_0',['Forking &amp; Pull Requests 🔀',['../md_README.html#autotoc_md33',1,'']]]
+  ['📜_0',['Licenses 📜',['../md_README.html#autotoc_md22',1,'']]]
 ];

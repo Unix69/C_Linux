@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['license_0',['LICENSE',['../md_LICENSE.html',1,'']]],
-  ['license_2emd_1',['LICENSE.md',['../LICENSE_8md.html',1,'']]],
-  ['licenses_20📜_2',['Licenses 📜',['../md_README.html#autotoc_md20',1,'']]],
-  ['links_20🌐_3',['Official Links 🌐',['../md_README.html#autotoc_md29',1,'']]],
-  ['linux_4',['linux',['../md_README.html#autotoc_md11',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md12',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md13',1,'🐧 On GNU/Linux']]]
+  ['handler_0',['handler',['../C-Unix-STD-Signal-Fork-Kill_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill-Wait_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause-Kill_2main_8c.html#ae4504f4a7837723d570d36055ef2e91d',1,'handler(int s):&#160;main.c'],['../C-Unix-STD-Signal-Fork-Pause_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c'],['../C-Unix-STD-Signal_2main_8c.html#a3c2348f39cf58c5c0f48742b32b15d83',1,'handler(int sig):&#160;main.c']]],
+  ['header_2ehtml_1',['header.html',['../header_8html.html',1,'']]]
 ];
