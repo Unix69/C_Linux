@@ -42,11 +42,44 @@
 
 <a name="table-of-contents"></a>
 
-### 📓 Table of Contents
+### 📖 Table of Contents – C Unix & Standard Library Examples
 
-Navigation index to fast explore the content:
+#### 🧩 Function Pointers
+- [C-Func-pointer](#c-func-pointer)
 
-- [Examples](#examples)
+#### 📄 Standard File I/O
+- [C-STD-File](#c-std-file)
+
+#### 🖥️ Unix Process Management – Fork & Wait
+- [C-Unix-STD-Basic-Fork](#c-unix-std-basic-fork)
+- [C-Unix-STD-Fork](#c-unix-std-fork)
+- [C-Unix-STD-Fork-Sleep](#c-unix-std-fork-sleep)
+- [C-Unix-STD-Fork-Wait](#c-unix-std-fork-wait)
+- [C-Unix-STD-Fork-WaitPid](#c-unix-std-fork-waitpid)
+- [C-Unix-STD-Fork-Wait-Precedence](#c-unix-std-fork-wait-precedence)
+
+#### 🔄 Unix Executables & Directories
+- [C-Unix-STD-Copy-DirectoryTree](#c-unix-std-copy-directorytree)
+- [C-Unix-STD-Execl](#c-unix-std-execl)
+- [C-Unix-STD-Execlp-System](#c-unix-std-execlp-system)
+- [C-Unix-STD-Explore-File-Directories](#c-unix-std-explore-file-directories)
+
+#### ⚡ Signals & Inter-Process Communication
+- [C-Unix-STD-Kill](#c-unix-std-kill)
+- [C-Unix-STD-Signal](#c-unix-std-signal)
+- [C-Unix-STD-Signal-Fork](#c-unix-std-signal-fork)
+- [C-Unix-STD-Signal-Fork-Kill](#c-unix-std-signal-fork-kill)
+- [C-Unix-STD-Signal-Fork-Pause](#c-unix-std-signal-fork-pause)
+- [C-Unix-STD-Signal-Fork-Pause-Kill](#c-unix-std-signal-fork-pause-kill)
+- [C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait](#c-unix-std-signal-fork-pause-kill-file-wait)
+- [C-Unix-STD-Signal-Fork-Pause-Kill-Pipe](#c-unix-std-signal-fork-pause-kill-pipe)
+- [C-Unix-STD-Signal-Fork-Pause-Kill-Wait](#c-unix-std-signal-fork-pause-kill-wait)
+
+#### 🧵 Threads & Concurrent File Processing
+- [C-Unix-STD-Threads](#c-unix-std-threads)
+- [C-Unix-STD-Threads-Files-Assert](#c-unix-std-threads-files-assert)
+
+#### Other sections
 - [Getting Started](#getting-started)
 - [License](#license)
 - [Contributing](#contributing)
@@ -58,11 +91,88 @@ Navigation index to fast explore the content:
 - [Authors](#authors)
 
 <br>
+
+---
+
+<br>
+
+### Summary
+
+This collection of examples demonstrates:
+
+- **Function pointers & generic programming** – dynamic invocation and flexible code structures.
+- **File I/O with C Standard Library** – byte-wise and stream-based file operations.
+- **Unix process management** – creation, synchronization, and termination of child processes.
+- **Signals & IPC mechanisms** – using `kill()`, `pause()`, `pipe()`, and `wait()` for inter-process communication.
+- **Multithreading & thread-safe operations** – concurrent processing of data, file I/O, and sorting using `pthread_create` and `pthread_join`.
+
+
+<br>
 <br>
 
 <a id="examples"></a>
+<section id="c-examples-preamble">
+  <h2>📚 C Unix & Standard Library Examples</h2>
 
-# Examples
+  <p>
+    This collection of examples demonstrates key concepts in <strong>C programming</strong> on a <strong>Unix-like operating system</strong> using standard tools and libraries. All examples were developed using:
+  </p>
+
+  <ul>
+    <li><strong>Language:</strong> C (C99/C11 standard)</li>
+    <li><strong>OS:</strong> Linux / Unix-like environments</li>
+    <li><strong>Toolchain:</strong> GCC, Make, POSIX-compliant libraries</li>
+    <li><strong>Techniques demonstrated:</strong> Process creation and management, inter-process communication (IPC), file I/O, signals, threading, synchronization, assertion-based error checking</li>
+    <li><strong>Libraries used:</strong> <code>&lt;stdio.h&gt;</code>, <code>&lt;stdlib.h&gt;</code>, <code>&lt;unistd.h&gt;</code>, <code>&lt;fcntl.h&gt;</code>, <code>&lt;pthread.h&gt;</code>, <code>&lt;assert.h&gt;</code>, <code>&lt;string.h&gt;</code></li>
+    <li><strong>Programming techniques:</strong> Forking, wait/waitpid, pipes, signals, pause, kill, thread creation and joining, dynamic memory management, bubble sort in threads, concurrent file processing</li>
+  </ul>
+
+  <p>
+    Below is a comprehensive list of the examples included in this folder, with direct links to the corresponding detailed sections:
+  </p>
+
+  <ol>
+    <li><a href="#c-unix-std-basic-fork">C-Unix-STD-Basic-Fork</a> – Basic process creation using <code>fork()</code>.</li>
+    <li><a href="#c-unix-std-copy-directorytree">C-Unix-STD-Copy-DirectoryTree</a> – Recursive directory copying using standard C file I/O.</li>
+    <li><a href="#c-unix-std-execl">C-Unix-STD-Execl</a> – Executing external programs using <code>execl()</code>.</li>
+    <li><a href="#c-unix-std-execlp-system">C-Unix-STD-Execlp-System</a> – Process execution using <code>execlp()</code> and <code>system()</code>.</li>
+    <li><a href="#c-unix-std-explore-file-directories">C-Unix-STD-Explore-File-Directories</a> – Directory exploration with <code>opendir()</code>, <code>readdir()</code>.</li>
+    <li><a href="#c-unix-std-fork">C-Unix-STD-Fork</a> – Process creation and basic child execution.</li>
+    <li><a href="#c-unix-std-fork-sleep">C-Unix-STD-Fork-Sleep</a> – Demonstrates process sleeping and parent-child coordination.</li>
+    <li><a href="#c-unix-std-fork-wait">C-Unix-STD-Fork-Wait</a> – Waiting for child processes using <code>wait()</code>.</li>
+    <li><a href="#c-unix-std-fork-waitpid">C-Unix-STD-Fork-Waitpid</a> – Selective waiting for child processes with <code>waitpid()</code>.</li>
+    <li><a href="#c-unix-std-fork-wait-precedence">C-Unix-STD-Fork-Wait-Precedence</a> – Controlling execution order of child processes.</li>
+    <li><a href="#c-unix-std-kill">C-Unix-STD-Kill</a> – Sending signals to processes using <code>kill()</code>.</li>
+    <li><a href="#c-unix-std-signal">C-Unix-STD-Signal</a> – Handling signals with <code>signal()</code> and custom handlers.</li>
+    <li><a href="#c-unix-std-signal-fork">C-Unix-STD-Signal-Fork</a> – Combining signals and child processes.</li>
+    <li><a href="#c-unix-std-signal-fork-kill">C-Unix-STD-Signal-Fork-Kill</a> – Parent-child communication via signals and <code>kill()</code>.</li>
+    <li><a href="#c-unix-std-signal-fork-pause">C-Unix-STD-Signal-Fork-Pause</a> – Using <code>pause()</code> to synchronize child processes.</li>
+    <li><a href="#c-unix-std-signal-fork-pause-kill">C-Unix-STD-Signal-Fork-Pause-Kill</a> – Combining <code>pause()</code> and <code>kill()</code> for controlled signaling.</li>
+    <li><a href="#c-unix-std-signal-fork-pause-kill-file-wait">C-Unix-STD-Signal-Fork-Pause-Kill-File-Wait</a> – Reading files, signaling children, and synchronizing parent with <code>wait()</code>.</li>
+    <li><a href="#c-unix-std-signal-fork-pause-kill-pipe">C-Unix-STD-Signal-Fork-Pause-Kill-Pipe</a> – Parent-child IPC via pipes, file reading, and stdout streaming.</li>
+    <li><a href="#c-unix-std-signal-fork-pause-kill-wait">C-Unix-STD-Signal-Fork-Pause-Kill-Wait</a> – Multi-child signaling with sequential wait synchronization.</li>
+    <li><a href="#c-unix-std-threads">C-Unix-STD-Threads</a> – Concurrent file processing using multiple threads.</li>
+    <li><a href="#c-unix-std-threads-files-assert">C-Unix-STD-Threads-Files-Assert</a> – Multithreaded file processing with bubble sort and assertions for correctness.</li>
+  </ol>
+
+  <p>
+    Each example includes detailed explanations of the system calls, functions, and programming techniques used. They serve as a reference for:
+  </p>
+  <ul>
+    <li>Process creation and management</li>
+    <li>Inter-process communication (pipes, signals)</li>
+    <li>File I/O and directory exploration</li>
+    <li>Threading and synchronization</li>
+    <li>Assertion-based error checking and debugging</li>
+    <li>Concurrent algorithms (sorting, data processing)</li>
+  </ul>
+
+</section>
+
+
+<br>
+<br>
+
 
 <a id="c-func-pointer"></a>
 <section id="c-func-pointer">
@@ -73,7 +183,6 @@ Navigation index to fast explore the content:
     <p style="margin:0;">
       <strong>Path:</strong> <code>src/C-Func-pointer/main.c</code>
     </p>
-
     <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Func-pointer/main.c"
        target="_blank"
        style="display:inline-block;
@@ -243,7 +352,6 @@ Navigation index to fast explore the content:
     <p style="margin:0;">
       <strong>Path:</strong> <code>src/C-STD-File/main.c</code>
     </p>
-
     <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-STD-File/main.c"
        target="_blank"
        style="display:inline-block;
@@ -1476,26 +1584,6 @@ Navigation index to fast explore the content:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <a id="c-unix-std-fork-wait"></a>
 <section id="c-unix-std-fork-wait">
 
@@ -2382,7 +2470,7 @@ Navigation index to fast explore the content:
   <h3>🎯 Purpose</h3>
   <p>
     Demonstrates a <strong>bidirectional signal exchange between parent and child processes</strong>
-    combined with <code>fork()</sub> and <code>kill()</code>.
+    combined with <code>fork()</code> and <code>kill()</code>.
   </p>
   <p>The goal is to understand:</p>
   <ul>
@@ -2899,12 +2987,12 @@ Navigation index to fast explore the content:
 
 </section>
 
+<br>
 
+Next step, start to use C_Linux examples by following this getting started guideline.
 
+<br>
 
-
-
-There are 
 
 <a id="getting-started"></a>
 
