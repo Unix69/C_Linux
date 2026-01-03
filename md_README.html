@@ -261,7 +261,7 @@ Concurrent algorithms (sorting, data processing) </li>
  <br  />
 </p>
 <p><a class="anchor" id="c-func-pointer"></a> &lt;section id="c-func-pointer"&gt;</p>
-<h2>🧩 C-Func-pointer</h2>
+<h2>🧪 C-Func-pointer</h2>
 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-Func-pointer_2main_8c.html">src/C-Func-pointer/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Func-pointer/main.c" target="_blank" style="display:inline-block;
               padding:6px 14px;
               border-radius:6px;
@@ -344,7 +344,7 @@ Two function pointers are declared: <ul>
 <p><br  />
 </p>
 <p><a class="anchor" id="c-std-file"></a> &lt;section id="c-std-file"&gt;</p>
-<h2>📄 C-STD-File</h2>
+<h2>🧪 C-STD-File</h2>
 <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <b>Path:</b> <code><a class="el" href="C-STD-File_2main_8c.html">src/C-STD-File/main.c</a></code> </div><div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;"> <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-STD-File/main.c" target="_blank" style="display:inline-block;
               padding:6px 14px;
               border-radius:6px;
@@ -2287,27 +2287,54 @@ Main thread waits for the last thread to finish (<code>pthread_join</code>). </l
 <h1><a class="anchor" id="autotoc_md10"></a>
 Getting Started 🚀</h1>
 <p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
-<p>Follow these steps to get, install and set up the project and generate the documentation:</p>
+<p>This section guides you through preparing your environment and running the <b>C Unix &amp; Standard Library examples</b> presented in this collection. The steps are tailored to Linux/Unix hosts and assume a basic familiarity with compiling and executing C programs.</p>
 <ul>
-<li><a class="el" href="md_README.html#prerequisites">**1 - Verify Prerequisites and Dependencies**</a> <br  />
- C_Linux needs to run on <b>hosts</b> equipped with specific <b>hardware</b> and <b>software</b>. <br  />
- So read carefully the <b>prerequisites</b> to respect and the <b>dependencies</b> to satisfy.</li>
-<li><a class="el" href="md_README.html#installation">**2 - Get and Install**</a> <br  />
- Get the project package, then follow the <b>installation procedure</b> to correctly set up the environment.</li>
-<li><a class="el" href="md_README.html#build">**3 - Build**</a> <br  />
- Compile the source code and generate executable artifacts according to your <b>build configuration</b>.</li>
-<li><a class="el" href="md_README.html#configuration">**4 - Setup and Configure**</a> <br  />
- Adjust configuration files and system parameters required to <b>customize</b> the project behaviour.</li>
-<li><a class="el" href="md_README.html#run">**5 - Run**</a> <br  />
- Start the project using the provided <b>startup script</b> or command sequence.</li>
-<li><a class="el" href="md_README.html#uninstall">**6 - Uninstall**</a> <br  />
- Remove the project and all its dependencies from the system <b>safely and completely</b>.</li>
+<li><p class="startli"><a class="el" href="md_README.html#prerequisites">**1 - Verify Prerequisites and Dependencies**</a> <br  />
+ Ensure your system has the necessary <b>development tools</b> and <b>libraries</b>: <br  />
+</p><ul>
+<li><b>GCC or Clang</b> compiler (C99/C11 support) <br  />
+</li>
+<li><b>Make</b> for build automation (optional but recommended) <br  />
+</li>
+<li><b>POSIX-compliant libraries</b> (<code>&lt;unistd.h&gt;</code>, <code>&lt;pthread.h&gt;</code>, <code>&lt;fcntl.h&gt;</code>) <br  />
+</li>
+<li>Standard C libraries (<code>&lt;stdio.h&gt;</code>, <code>&lt;stdlib.h&gt;</code>, <code>&lt;string.h&gt;</code>, <code>&lt;assert.h&gt;</code>) <br  />
+</li>
 </ul>
+<p class="startli">Reading this carefully guarantees that each example can be compiled and executed without errors.</p>
+</li>
+<li><a class="el" href="md_README.html#installation">**2 - Get the Source Code**</a> <br  />
+ Clone or download the repository containing the examples. <br  />
+ Ensure the folder structure under <code>&lt;code&gt;src/&lt;/code&gt;</code> is preserved, as each example references specific file paths.</li>
+<li><a class="el" href="md_README.html#build">**3 - Build / Compile Examples**</a> <br  />
+ Compile each example individually using GCC or your preferred compiler: <br  />
+ <code>gcc -o main main.c -lpthread</code> <br  />
+ Some examples may require the <code>&lt;code&gt;-lpthread&lt;/code&gt;</code> flag for thread support. Others rely on standard POSIX calls and do not require additional flags.</li>
+<li><a class="el" href="md_README.html#run">**4 - Run Examples**</a> <br  />
+ Execute each compiled binary from the command line. <br  />
+<ul>
+<li>Examples using <b>fork(), exec(), or signals</b> should be run in a terminal on a Unix-like system. <br  />
+</li>
+<li>File-based examples require input/output files to be placed in the expected paths (<code>&lt;code&gt;<a class="el" href="file1_8txt.html">src/C-STD-File/file1.txt</a>&lt;/code&gt;</code>, etc.). <br  />
+</li>
+<li>Threaded examples may generate multiple output files concurrently; ensure write permissions in the folder.</li>
+</ul>
+</li>
+<li><a class="el" href="md_README.html#configuration">**5 - Explore and Modify**</a> <br  />
+ Feel free to adjust input files, function parameters, or the number of threads in examples to experiment and observe behavior. This is ideal for learning <b>Unix process management</b>, <b>signals</b>, and <b>concurrent programming</b> in C.</li>
+<li><a class="el" href="md_README.html#uninstall">**6 - Clean Up / Uninstall**</a> <br  />
+ Remove compiled binaries and temporary files safely: <br  />
+ <code>rm -f src/**/main</code> <br  />
+ <code>rm -f src/**/file*.out</code> <br  />
+ This ensures your workspace remains clean while preserving the original source files.</li>
+</ul>
+<hr  />
+<p>Following these steps guarantees that you can successfully compile, run, and experiment with all examples, from <b>function pointers</b> and <b>file I/O</b> to <b>Unix processes</b>, <b>signals</b>, and <b>threaded programs</b>. </p>
 <p><br  />
  <br  />
 </p>
 <p><a class="anchor" id="prerequisites"></a></p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 💻 Prerequisites</h2>
 <p>Before building or running the project, make sure you satisgy the prerequisites to run the project:</p>
 <ul>
@@ -2317,17 +2344,17 @@ Getting Started 🚀</h1>
 <p><br  />
  <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 📦 Dependencies</h2>
 <p>Before building and generating documentation with <b>C_Linux</b>, make sure the following dependencies are installed on your system:</p>
 <ul>
-<li><b>GitHub</b> — <em>Optional.</em> <br  />
+<li><b><a class="el" href="md_README.html#install-github">GitHub</a></b> — <em>Optional.</em> <br  />
  Even if you don’t have a GitHub account or Git installed, you can still generate documentation locally. <br  />
  However, having a <b>GitHub account</b> and using <b>Git</b> is <b>recommended</b> for project deployment and version control.</li>
-<li><b>Doxygen</b> — <em>Mandatory.</em> <br  />
+<li><b><a class="el" href="md_README.html#install-doxygen">Doxygen</a></b> — <em>Mandatory.</em> <br  />
  Used to generate documentation from source code and Markdown files. <br  />
  The project won’t build documentation without it.</li>
-<li><b>GNU Make</b> — <em>Mandatory.</em> <br  />
+<li><b><a class="el" href="md_README.html#install-gnu-make">GNU Make</a></b> — <em>Mandatory.</em> <br  />
  Required to run automated build and documentation generation tasks. <br  />
  Used in this project to simplify commands such as: <pre>make doc</pre> and <br  />
  <pre>make clean</pre></li>
@@ -2338,9 +2365,108 @@ Getting Started 🚀</h1>
 <p><br  />
  <br  />
 </p>
+<p><a class="anchor" id="install-github"></a></p>
+<h2><img src="Images/Logo/GitHubLogo.svg" alt="GitHub" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GitHub / Git </h2>
+<h3><a class="anchor" id="autotoc_md14"></a>
+🐧 On GNU/Linux</h3>
+<pre>
+sudo apt update
+sudo apt install git
+</pre><p>After installation, verify that Git is available:</p>
+<pre>
+git --version
+</pre><p>To link your project to <b>GitHub</b>, create a free account at: <br  />
+ 👉 <a href="https://github.com/signup">https://github.com/signup</a></p>
+<p>Then configure Git with your account details:</p>
+<pre>
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+</pre><p><br  />
+ <br  />
+</p>
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows </h3>
+<ol type="1">
+<li>Download <b>Git for Windows</b> from: <br  />
+ 👉 <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li>Run the installer and follow the setup wizard (leave default options checked). <br  />
+</li>
+<li>After installation, open <b>Git Bash</b> and verify: <pre>
+   git --version
+   </pre></li>
+<li>Optionally create a GitHub account at <br  />
+ 👉 <a href="https://github.com/signup">https://github.com/signup</a></li>
+</ol>
+<p><br  />
+ <br  />
+</p>
+<p><a class="anchor" id="install-doxygen"></a></p>
+<h2><img src="Images/Logo/doxygen.svg" alt="Doxygen" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install Doxygen </h2>
+<h3><a class="anchor" id="autotoc_md15"></a>
+🐧 On GNU/Linux</h3>
+<pre>
+sudo apt update
+sudo apt install doxygen graphviz
+</pre><p>Verify the installation:</p>
+<pre>
+doxygen --version
+</pre><p>Optionally, you can generate a sample configuration file with:</p>
+<pre>
+doxygen -g
+</pre><p><br  />
+ <br  />
+</p>
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows </h3>
+<ol type="1">
+<li>Download the Windows installer from: <br  />
+ 👉 <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a></li>
+<li>Run the <code>.exe</code> file and follow the setup wizard. <br  />
+</li>
+<li>After installation, open <b>Command Prompt</b> and check: <pre>
+   doxygen --version
+   </pre></li>
+<li>To enable UML and graphs, install <b>Graphviz</b> as well: <br  />
+ 👉 <a href="https://graphviz.org/download/">https://graphviz.org/download/</a></li>
+</ol>
+<p><br  />
+ <br  />
+</p>
+<p><a class="anchor" id="install-gnu-make"></a></p>
+<h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GNU/Linux" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU Make </h2>
+<h3><a class="anchor" id="autotoc_md16"></a>
+🐧 On GNU/Linux</h3>
+<p>GNU Make is usually preinstalled. Check it with:</p>
+<pre>
+make --version
+</pre><p>If missing, install it via:</p>
+<pre>
+sudo apt update
+sudo apt install make
+</pre><p><br  />
+ <br  />
+</p>
+<h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows </h3>
+<p>You can install <b>GNU Make</b> in one of these ways:</p>
+<h4>✅ Option 1: Using MinGW</h4>
+<ol type="1">
+<li>Download and install <b>MinGW</b> from: <br  />
+ 👉 <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a></li>
+<li>During installation, select the “mingw32-make” package.</li>
+<li>Add MinGW’s <code>bin</code> directory to your system PATH.</li>
+<li>Verify installation: <pre>
+   mingw32-make --version
+   </pre></li>
+</ol>
+<p>You can then rename or alias it to <code>make</code> for convenience.</p>
+<h4>✅ Option 2: Using Chocolatey (recommended if available)</h4>
+<p>If you have <b>Chocolatey</b> package manager installed:</p>
+<pre>
+choco install make
+</pre><p><br  />
+ <br  />
+</p>
 <p><a class="anchor" id="install-gcc"></a></p>
 <h2><img src="Images/Logo/GnuLinuxLogo.svg" alt="GCC" style="pointer-events: none;" width="64px" height="64px" class="inline"/> Install GNU C Compiler (GCC)</h2>
-<h3><a class="anchor" id="autotoc_md13"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 🐧 On GNU/Linux</h3>
 <p>Check if GCC is already installed:</p>
 <pre>
@@ -2350,7 +2476,7 @@ gcc --version
 sudo apt update
 sudo apt install gcc build-essential
 </pre><p>Verify installation:</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 &lt;pre&gt;</h2>
 <p>gcc --version </p>
 <h3><img src="Images/Logo/windows-svgrepo-com.svg" alt="Windows logo" style="pointer-events: none;" width="24" class="inline"/> On Windows</h3>
@@ -2368,7 +2494,7 @@ sudo apt install gcc build-essential
 <pre>
 gcc --version
 </pre><p>#</p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md19"></a>
 ✅ Option 2: Using Windows Subsystem for Linux (WSL)</h3>
 <ol type="1">
 <li>Install WSL with a Linux distribution, e.g., Ubuntu. <br  />
@@ -2380,16 +2506,16 @@ sudo apt update
 sudo apt install gcc build-essential
 gcc --version
 </pre><p>#</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 ✅ Option 3: Using Chocolatey</h3>
 <p>If you have <b>Chocolatey</b> installed:</p>
 <pre>
 choco install mingw
 </pre><p>Verify installation:</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 &lt;pre&gt;</h2>
 <p>gcc --version </p>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 💡 Dependencies Verification</h3>
 <p>After installing all dependencies, verify them with:</p>
 <pre>
@@ -2412,7 +2538,7 @@ gcc --version
  <br  />
 </p>
 <p><a class="anchor" id="installation"></a></p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 ⭐ Installation</h2>
 <p>To <em><b>install</b></em> the project follow this setps:</p>
 <p>A. You can download the repository from GitHub: ⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">https://github.com/Unix69/README-Template/archive/refs/heads/main.zip</a></p>
@@ -2420,7 +2546,7 @@ gcc --version
 <pre>
   mkdir project-root #create the project root directory
   cd project-root #change to the project root directory
-  wget <a href="https://github.com/Unix69/README-Template/archive/refs/heads/master.zip">https://github.com/Unix69/README-Template/archive/refs/heads/master.zip</a> #make an http get request to get the project repository ** zip file ** 
+  wget <a href="https://github.com/Unix69/C_Linux/archive/refs/heads/master.zip">https://github.com/Unix69/C_Linux/archive/refs/heads/master.zip</a> #make an http get request to get the project repository ** zip file ** 
   unzip master.zip #unzip the project master.zip file
   cp -R master/ ./ #copy all files recursively from the unziped master directory to your project root directory
   rm -rf master master.zip #remove the unziped master directory and master.zip file
@@ -2431,35 +2557,207 @@ gcc --version
   clone <a href="https://github.com/Unix69/C_Linux.git">https://github.com/Unix69/C_Linux.git</a> #clone the project repository 
   cp -R C_Linux/ ./ #copy all files recursively from the C_Linux directory to your project root directory
   rm -rf C_Linux #remove the C_Linux directory. 
-  </pre><p>⬇️ <a href="https://github.com/Unix69/README-Template/archive/refs/heads/main.zip">Download ZIP</a> <br  />
+  </pre><p>⬇️ <a href="https://github.com/Unix69/C_Linux/archive/refs/heads/main.zip">Download ZIP</a> <br  />
  🐙 <a href="https://github.com/Unix69/C_Linux">View on GitHub</a></p>
 <p><br  />
  <br  />
 </p>
 <p><a class="anchor" id="build"></a></p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 🛠️ Build</h2>
-<p>To <em><b>build</b></em> the project generate a <b>custom</b> or <b>standard Doxyfile</b>:</p>
-<p>A. <b>Custom Doxyfile - Doxygen Script</b>: running the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script from the <b>root directory</b>;</p>
-<pre>
-    ./doxygen.sh  
-  </pre><p>or by running <b>GNU Make</b> with the <b>build</b> target:</p>
-<pre>
-    make build  
-  </pre><p><br  />
-</p>
-<p>B. <b>Standard Doxyfile - Command Line</b>: Open a terminal into the <b>root directory</b> and generate the standard Doxyfile: </p><pre>
-       doxygen -g Doxyfile  
-       </pre><p><br  />
- <br  />
-</p>
-<p><a class="anchor" id="configuration"></a></p>
-<h2><a class="anchor" id="autotoc_md21"></a>
-⚙️ Configuration</h2>
-<p>To <em><b>configure</b></em> the C_Linux project you can:</p>
+<p>To <b>build C_Linux full project</b> you have to build singularly:</p>
+<ul>
+<li>the example executables you want.</li>
+<li>the C_Linux project documentation.</li>
+</ul>
 <p><br  />
 </p>
-<ol type="1">
+<h3><a class="anchor" id="autotoc_md25"></a>
+1️⃣ Build All Examples</h3>
+<p>To build the entire C Unix &amp; Standard Library examples:</p>
+<ul>
+<li><p class="startli"><b>A. Using GNU Make</b></p>
+<pre>
+  make build
+  make link_all
+  </pre><p class="startli">Using <code>make build</code> and <code>make link_all</code> allows compiling and linking all C examples in <code>src/</code> automatically: </p>
+<ul>
+<li>
+<code>make build</code> – compiles all <code>.c</code> files in <code>src/</code> into <code>.o</code> object files. <ul>
+<li>
+Uses <code>  -c $&lt; -o $&lt;/code&gt; to compile each source file individually. </code></li>
+<li>
+<code>Prints a message: <code>Compiling &lt;file&gt;...</code> for each compilation. </code></li>
+<li>
+<code>Ensures that all object files are ready for linking in the next step. </code></li>
+</ul>
+</li>
+<li>
+<code><code>make link_all</code> – links the object files in each subfolder of <code>src/</code> into a single executable per folder. <ul>
+<li>
+Finds all <code>.o</code> files in the folder using <code>find $@ -maxdepth 1 -name "*.o"</code>. </li>
+<li>
+Links them with <code>gcc  &lt;objects&gt; -o &lt;folder_name&gt;</code>. </li>
+<li>
+Prints a success message: <code>Executable created: &lt;folder_name&gt;</code> if linking succeeds. </li>
+<li>
+Creates one executable per example folder, mirroring the structure of <code>src/</code>. </li>
+</ul>
+</code></li>
+</ul>
+<p class="startli"><code> These targets provide a convenient alternative to using <code>find ... -exec gcc ...</code>, as they automatically handle compilation and linking for all examples in the project. </code></p>
+<p class="startli"><code></code></p>
+</li>
+<li><p class="startli"><code><b>B. Using the GNU C Compiler</b></code></p>
+<p class="startli"><code> </p><pre>
+  find src/ -name "main.c" -exec sh -c 'gcc -Wall -O2 "$1" -o "$(dirname "$1")/main" -lpthread &amp;&amp; echo "$(dirname "$1")/main created" || echo "Compilation failed for $1"' _ {} \;
+  </pre><p></code></p>
+<p class="startli"><code> </code></p>
+<p class="startli"><code> This command recursively compiles all <code>main.c</code> files under <code>src/</code> into executables: </code></p>
+<p class="startli"><code> </p><ul>
+<li>
+<code>find src/ -name "main.c"</code> – locate all <code>main.c</code> files. </li>
+<li>
+<code>-exec sh -c '...'</code> – execute a shell command for each file, passing it as <code>$1</code>. </li>
+<li>
+<code>gcc -Wall -O2 "$1" -o "$(dirname "$1")/main" -lpthread</code> – compile with warnings, optimization, and pthread support; output in the same folder. </li>
+<li>
+<code>&amp;&amp; echo "$(dirname "$1")/main created"</code> – prints a success message if compilation succeeds. </li>
+<li>
+<code>|| echo "Compilation failed for $1"</code> – prints an error message if compilation fails. </li>
+</ul>
+<p></code></p>
+</li>
+</ul>
+<p><code><br  />
+</code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md26"></a>
+2️⃣ Build a Single Example</h3>
+<p><code></code></p>
+<p><code>If you want to <b>compile only a single example</b> (e.g., <code>C-Func-pointer</code>):</code></p>
+<p><code></p><ol type="1">
+<li>Open a terminal in the example folder:</li>
+</ol>
+<p></code></p>
+<p><code></p><pre>
+cd src/C-Func-pointer
+</pre><p></code></p>
+<p><code></p><ol type="1">
+<li>Compile using GCC (add <code>&lt;code&gt;-lpthread&lt;/code&gt;</code> if the example uses threads):</li>
+</ol>
+<p></code></p>
+<p><code></p><pre>
+gcc -o main main.c -lpthread
+</pre><p></code></p>
+<p><code></p><ol type="1">
+<li>Run the compiled example:</li>
+</ol>
+<p></code></p>
+<p><code></p><pre>
+./main
+</pre><p></code></p>
+<p><code>This approach is ideal for <b>testing or debugging</b> individual examples without rebuilding the entire project.</code></p>
+<p><code><br  />
+</code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md27"></a>
+2️⃣ Build the Project Documentation</h3>
+<p><code></code></p>
+<p><code><br  />
+</code></p>
+<p><code></p><h4>Generate the Doxyfile</h4>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<p><code> To build the project documentation, first of all you have to generate a proper Doxyfile. You have multiple ways to generate the documentation resources for the C Unix &amp; Standard Library examples. Each approach below produces a configured <code>Doxyfile</code>. </code></p>
+<p><code></code></p>
+<p><code></p><ul>
+<li>
+<p class="startli"><b><code>./doxygen.sh</code> (Custom Doxyfile)</b> – Runs a setup script that: </p><ul>
+<li>
+Checks if <code>doxygen</code> is installed and exits with an error message if not. </li>
+<li>
+Creates a default <code>Doxyfile</code> if one does not already exist in the project root. </li>
+<li>
+Reads the project’s <code><a class="el" href="doxygen_8ini.html">doxygen.ini</a></code> and applies tag settings into <code>Doxyfile</code> automatically. </li>
+<li>
+Adds custom aliases and configuration if missing, ensuring output directory and options are set. </li>
+<li>
+Leaves you with a fully configured <code>Doxyfile</code> ready to generate docs via Doxygen. </li>
+</ul>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><b><code>make doc_build</code></b> – Equivalent to running the setup script via the project’s Makefile: </p><ul>
+<li>
+Invokes the <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> script using the Makefile rule <code>doc_build</code>. </li>
+<li>
+Prepares the <code>Doxyfile</code> and applies configuration automatically without manual editing. </li>
+<li>
+This approach is ideal if you already use <code>make</code> for building and want documentation integrated into the same workflow. </li>
+</ul>
+<p class="endli"></p>
+</li>
+<li>
+<b><code>doxygen -g Doxyfile</code></b> (Standard Doxyfile): <ul>
+<li>
+Directly generates a <b>default Doxygen configuration file</b> named <code>Doxyfile</code> with all tags set to default values. </li>
+<li>
+Useful if you prefer to edit the configuration manually, or want to start from a clean template. </li>
+<li>
+After adjustment, run <code>doxygen Doxyfile</code> to generate the documentation without using the custom setup script. </li>
+</ul>
+</li>
+</ul>
+<p></code></p>
+<p><code></code></p>
+<p><code> In summary: </code></p>
+<p><code></code></p>
+<p><code></p><ul>
+<li>
+Use <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code> or <code>make doc_build</code> when you want an <b>automated, customized Doxyfile</b> based on your project settings; </li>
+<li>
+Use <code>doxygen -g Doxyfile</code> when you want to <b>manually edit a fresh configuration template</b> before generating docs. </li>
+</ul>
+<p></code></p>
+<p><code><br  />
+</code></p>
+<p><code></p><h4>Generate the Project Documentation</h4>
+<p></code></p>
+<p><code></code></p>
+<p><code>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use: </p><ul>
+<li>
+<p class="startli"><b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>; </p><pre>
+      doxygen Doxyfile  
+    </pre> <p class="endli"></p>
+</li>
+<li>
+<b><code>make doc</code></b> – Generates documentation using the configured <code>Doxyfile</code>: <ul>
+<li>
+Runs the <code>doxygen</code> command internally on the prepared <code>Doxyfile</code>. </li>
+<li>
+Produces HTML output (and other formats if enabled) in the directory configured by <code>OUTPUT_DIRECTORY</code> (default is <code>docs/html</code>). </li>
+<li>
+Copies optional assets (e.g., image resources) into the documentation output folder after generation. </li>
+<li>
+This target completes the documentation build process started by <code>doc_build</code> or <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>. </li>
+</ul>
+</li>
+</ul>
+<p></code></p>
+<p><code><br  />
+ <br  />
+</code></p>
+<p><code><a class="anchor" id="configuration"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md28"></a>
+⚙️ Configuration</h2>
+<p><code></code></p>
+<p><code>To <em><b>configure</b></em> the C_Linux project, before you generate the documentation, you can:</code></p>
+<p><code><br  />
+</code></p>
+<p><code></p><ol type="1">
 <li><p class="startli">Modify Doxygen's options by:</p>
 <p class="startli">A. <b>Doxygen</b>: Changing/Adding manually a row in <code>./doxygen.ini</code> before run it again, like:</p>
 <p class="startli"><code> DOXY_PARAMETER = "DOXY_PARAMETER-VALUE" <br  />
@@ -2469,56 +2767,189 @@ gcc --version
 <li>Modify the default <b>Makefile</b> and <b>make toolchain</b> to customize and integrate your building behaviour.</li>
 <li>You can change the default <b>Markdown</b> <code>.md</code> files to customize your project <b>markdown documentation</b>. The default <b>Markdown project</b> of <b>C_Linux</b> is structured as follow:</li>
 </ol>
-<div id="directory-tree-container" class="directory-tree"></div><p><br  />
+<p></code></p>
+<p><code></p><div id="directory-tree-container" class="directory-tree"></div><p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="run"></a></p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+</code></p>
+<p><code><a class="anchor" id="run"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md29"></a>
 🚀 Run</h2>
-<p>Once the Doxyfile is generated and configured as you wish, to <em><b>make the documentation</b></em> use:</p>
-<p>A. <b>Doxygen</b> Open a terminal into the <b>root directory</b> and run the doxygen installed tool with your <code>Doxyfile</code>;</p>
-<pre>
-    doxygen Doxyfile  
-  </pre><p>B. <b>GNU Make</b>: Open a terminal into the <b>root directory</b> and run the gnu make installed tool with your <code>Makefile</code> and <code><a class="el" href="doxygen_8sh.html">doxygen.sh</a></code>:</p>
-<pre>
-    make doc  
-  </pre><p><br  />
-</p>
-<p>✅ Now you can find the documentation into <code>./docs/</code> or at your Doxyfile <code>OUTPUT_DIRECTORY</code> path.</p>
-<p><br  />
+<p><code></code></p>
+<p><code></code></p>
+<p><code> After building the project and/or the documentation, you can run both the generated documentation and the compiled examples. </code></p>
+<p><code></code></p>
+<p><code></p><h3>📄 Run Documentation</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></p><ul>
+<li>
+✅ The HTML documentation is available in <code>./docs/html/</code> or the path specified by the <code>OUTPUT_DIRECTORY</code> in your <code>Doxyfile</code>.  </li>
+<li>
+You can open it in a browser using a command like: <pre>xdg-open ./docs/html/index.html</pre> <small>(Linux/Unix)</small>  </li>
+<li>
+Or, if on macOS: <pre>open ./docs/html/index.html</pre>  </li>
+<li>
+📌 <b>All documentation is also fully available on GitHub</b> as linked <code>.md</code> files. This allows you to navigate the examples directly online or integrate them with the Doxygen-generated HTML documentation via GitHub Pages or a similar static site.  </li>
+</ul>
+<p></code></p>
+<p><code></p><h3>🧩 Run a Single Example</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<p><code> Using <b>C-Func-pointer</b> as an example: </code></p>
+<p><code></code></p>
+<p><code></p><ul>
+<li>
+Navigate to the folder where the executable was generated: <pre>cd src/C-Func-pointer</pre>  </li>
+<li>
+Run the executable: <pre>./main</pre>  </li>
+<li>
+If compilation was done via <code>make build</code> or <code>make link_all</code>, the executable is typically in the same folder as the <code>main.c</code> file.  </li>
+</ul>
+<p></code></p>
+<p><code></p><h3>⚙️ Run All Examples Automatically</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<p><code> You can run all executables in the <code>src/</code> tree using a one-liner shell command: </code></p>
+<p><code></code></p>
+<p><code></p><pre>
+find src/ -mindepth 1 -type f -executable -name "main" -exec sh -c './{} || echo "Execution failed for {}"' \;
+</pre><p></code></p>
+<p><code></p><ul>
+<li>
+This command: <ul>
+<li>
+Searches for all <code>main</code> executables inside <code>src/</code> subfolders. </li>
+<li>
+Executes each one sequentially. </li>
+<li>
+Prints an error message if the execution fails for a specific example. </li>
+</ul>
+</li>
+</ul>
+<p></code></p>
+<p><code></p><h3>💡 Notes</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></p><ul>
+<li>
+Ensure you have built the examples first using <code>make build</code> and linked them with <code>make link_all</code>. </li>
+<li>
+The same approach works for all examples, just replace <code>C-Func-pointer</code> with the desired folder. </li>
+<li>
+Documentation can be refreshed anytime with <code>make doc</code> after any updates to the source code or comments. </li>
+<li>
+GitHub provides a full integrated view of the documentation: both the Doxygen HTML pages and the <code>.md</code> files for examples are cross-linked, giving a convenient online browsing experience. </li>
+</ul>
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="uninstall"></a></p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+</code></p>
+<p><code><a class="anchor" id="uninstall"></a></code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md30"></a>
 ❌ Uninstall</h2>
-<p>To <em><b>uninstall</b></em> the project just clean the documentation directory <code>.e/docs/</code> and your Doxyfile or use the <b>GNU Make</b> tool and run the following command:</p>
-<pre> make clean </pre><p><br  />
+<p><code></code></p>
+<p><code></code></p>
+<p><code> To <b>uninstall</b> the C_Linux project and all its generated artifacts, you have multiple options: you can use the <code>make clean</code> target, or remove files manually using shell commands. </code></p>
+<p><code></code></p>
+<p><code></p><h3>🛠️ Using GNU Make</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<p><code> The simplest way is to leverage the <code>clean</code> target from the Makefile: </code></p>
+<p><code></code></p>
+<p><code></p><pre>
+make clean
+</pre><p></code></p>
+<p><code></p><ul>
+<li>
+This command performs the following steps automatically: <ul>
+<li>
+Removes all compiled object files (<code>*.o</code>) in <code>src/</code>. </li>
+<li>
+Removes all executables created in the <code>src/</code> subfolders. </li>
+<li>
+Deletes the Doxygen documentation output directory (<code>docs/</code>). </li>
+</ul>
+</li>
+<li>
+It preserves your <code>main.c</code>, <code>.h</code>, <code>.md</code> and other source files, deleting only build artifacts and generated documentation. </li>
+</ul>
+<p></code></p>
+<p><code></p><h3>⚙️ Manual Uninstallation</h3>
+<p></code></p>
+<p><code></code></p>
+<p><code></code></p>
+<p><code> If you prefer to remove everything manually without using Make, you can execute the following shell commands: </code></p>
+<p><code></code></p>
+<p><code></p><pre>
+# Remove object files
+find src/ -name "*.o" -type f -exec rm -f {} \;
+
+# Remove compiled executables
+find src/ -mindepth 1 -type f ! -name "*.c" ! -name "*.txt" ! -name "*.h" ! -name "*.hpp" -executable -exec rm -f {} \;
+
+# Remove generated documentation
+rm -rf docs/
+rm -f Doxyfile
+</pre><p></code></p>
+<p><code></p><ul>
+<li>
+The first command finds and deletes all object files (<code>*.o</code>) in <code>src/</code> subfolders. </li>
+<li>
+The second command removes all executables in <code>src/</code> except source, header, and text files. </li>
+<li>
+The third command deletes the documentation directory and optionally the generated <code>Doxyfile</code>. </li>
+</ul>
+<p></code></p>
+<p><code></p><h3>💡 Notes</h3>
+<p></code></p>
+<p><code> </p><ul>
+<li>
+Using <code>make clean</code> is the recommended approach, as it ensures a consistent cleanup according to the Makefile rules. </li>
+<li>
+Manual removal is useful if you want to selectively delete artifacts or do not have Make installed. </li>
+<li>
+After cleaning, you can safely rebuild the project or regenerate documentation from scratch. </li>
+</ul>
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="license"></a></p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+</code></p>
+<p><code><a class="anchor" id="license"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md31"></a>
 Licenses 📜</h1>
-<p><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></p>
-<p><br  />
-</p>
-<p>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</p>
-<p>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
-</p>
-<p>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></p>
-<p><br  />
+<p><code></code></p>
+<p><code><a class="el" href="md_README.html#table-of-contents">Table of Contents</a></code></p>
+<p><code><br  />
+</code></p>
+<p><code>This project is licensed under the <span class="md-link" data-github="LICENSE.md" data-doxygen="md_LICENSE.html"> <a href="LICENSE.md"><b>Creative Commons Attribution 4.0 International License (CC BY 4.0)</b></a> </span>.</code></p>
+<p><code>You are free to use, modify, and share this template — just give proper credit to <b>Giuseppe Pedone</b>. <br  />
+</code></p>
+<p><code>© 2025 Giuseppe Pedone — <span class="md-link" data-github="https://github.com/Unix69" data-doxygen="https://github.com/Unix69"> <a href="https://github.com/Unix69"><b>GitHub: Unix69</b></a> </span></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="contributing"></a></p>
-<h1><a class="anchor" id="autotoc_md25"></a>
+</code></p>
+<p><code><a class="anchor" id="contributing"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Contributing 👋</h1>
-<p>Thank you for your interest in <b>C_Linux</b>! <br  />
- You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</p>
-<p><br  />
+<p><code></code></p>
+<p><code>Thank you for your interest in <b>C_Linux</b>! <br  />
+ You can freely <b>download and use</b> the C examples. To contribute, report bugs, or suggest improvements, follow the workflow below.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+</code></p>
+<p><code></code></p>
+<h2><a class="anchor" id="autotoc_md33"></a>
 General Contribution Guidelines</h2>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li>Read the <a class="el" href="md_CODE__OF__CONDUCT.html">**CODE_OF_CONDUCT.md**</a> <br  />
 </li>
 <li>Understand the project structure <br  />
@@ -2526,8 +2957,9 @@ General Contribution Guidelines</h2>
 <li>Ensure required tools are installed: <b>GCC</b>, <b>Make</b>, <b>Doxygen</b> <br  />
 </li>
 </ul>
-<p>When contributing code:</p>
-<ol type="1">
+<p></code></p>
+<p><code>When contributing code:</code></p>
+<p><code></p><ol type="1">
 <li>Fork the repository <br  />
 </li>
 <li>Create a <b>feature branch</b> (<code>git checkout -b feature/your-feature</code>) <br  />
@@ -2539,24 +2971,32 @@ General Contribution Guidelines</h2>
 <li>Open a <b>Pull Request (PR)</b> <br  />
 </li>
 </ol>
-<p>Keep style consistent, update documentation, and run tests.</p>
-<p><br  />
+<p></code></p>
+<p><code>Keep style consistent, update documentation, and run tests.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="authors"></a></p>
-<h1><a class="anchor" id="autotoc_md27"></a>
+</code></p>
+<p><code><a class="anchor" id="authors"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Authors 🧑‍💻</h1>
-<div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
+<p><code></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"><div style="display:flex; align-items:flex-start; gap:16px;"> <img src="https://avatars.githubusercontent.com/u/111588387?v=4" alt="Unix69" style="border-radius:50%; width:80px; height:80px;" class="inline"/> <div> <b>Giuseppe Pedone (Unix69)</b><br  />
  <span>Roles: FO, CEO</span><br  />
  <span>Contributions: <code>FI</code>, <code>OP</code>, <code>DE</code></span><br  />
  <span>Email: <a href="#" onclick="location.href='mai'+'lto:'+'giu'+'se'+'ppe'+'.p'+'edo'+'ne'+'.de'+'ve'+'lop'+'er'+'@gm'+'ai'+'l.c'+'om'; return false;">giuseppe.pedone.developer@gmail.com</a></span><br  />
- <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p><br  />
+ <span>Links: <a href="https://github.com/Unix69"><img src="Images/Logo/GitHubLogo.svg" alt="" style="pointer-events: none;" width="20" height="20" class="inline"/> GitHub</a> </span> </div> </div></div><p></code></p>
+<p><code></p><div style="display:flex; flex-direction:column; align-items:center; gap:24px;"></div><p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="official-links"></a></p>
-<h1><a class="anchor" id="autotoc_md28"></a>
+</code></p>
+<p><code><a class="anchor" id="official-links"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Official Links 🌐</h1>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li><a href="https://gcc.gnu.org/">GNU C Compiler (GCC)</a> – Compiler for C projects <br  />
 </li>
 <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)">C Programming Language</a> – Language reference <br  />
@@ -2570,31 +3010,38 @@ Official Links 🌐</h1>
 <li><a href="https://www.doxygen.nl/">Doxygen</a> – Documentation generator <br  />
 </li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="faq"></a></p>
-<h1><a class="anchor" id="autotoc_md29"></a>
+</code></p>
+<p><code><a class="anchor" id="faq"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md36"></a>
 FAQ ❓</h1>
-<p><b>Q1: Which C standard is used?</b> <br  />
- A1: All examples are written in <b>C99</b>.</p>
-<p><b>Q2: Supported OS?</b> <br  />
- A2: <b>POSIX-compliant systems</b>, mainly Linux.</p>
-<p><b>Q3: Can I modify and redistribute examples?</b> <br  />
- A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</p>
-<p><b>Q4: How to compile an example?</b> <br  />
- A4: Use <code>gcc</code> or run <code>make</code> in project root.</p>
-<p><b>Q5: How to report a bug?</b> <br  />
- A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</p>
-<p><br  />
+<p><code></code></p>
+<p><code><b>Q1: Which C standard is used?</b> <br  />
+ A1: All examples are written in <b>C99</b>.</code></p>
+<p><code><b>Q2: Supported OS?</b> <br  />
+ A2: <b>POSIX-compliant systems</b>, mainly Linux.</code></p>
+<p><code><b>Q3: Can I modify and redistribute examples?</b> <br  />
+ A3: Yes! All code is under <b><a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></b>.</code></p>
+<p><code><b>Q4: How to compile an example?</b> <br  />
+ A4: Use <code>gcc</code> or run <code>make</code> in project root.</code></p>
+<p><code><b>Q5: How to report a bug?</b> <br  />
+ A5: Open a <b>GitHub Issue</b> describing the error, affected example, and steps to reproduce.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="fork-project"></a></p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+</code></p>
+<p><code><a class="anchor" id="fork-project"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Forking &amp; Pull Requests 🔀</h1>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<p><code></code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Fork the Project</h3>
-<ol type="1">
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Go to the main repository on GitHub <br  />
 </li>
 <li>Click <b>Fork</b> to create your personal copy <br  />
@@ -2603,9 +3050,12 @@ Fork the Project</h3>
 </li>
 <li>Keep it synchronized with the main project</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<p></code></p>
+<p><code></code></p>
+<h3><a class="anchor" id="autotoc_md39"></a>
 Pull Requests (PR)</h3>
-<ol type="1">
+<p><code></code></p>
+<p><code></p><ol type="1">
 <li>Ensure your branch is updated with the main branch <br  />
 </li>
 <li>Confirm all tests and checks pass <br  />
@@ -2624,8 +3074,9 @@ Pull Requests (PR)</h3>
 <li>Apply requested changes and update PR if needed <br  />
 </li>
 </ol>
-<p><b>PR Guidelines</b></p>
-<ul>
+<p></code></p>
+<p><code><b>PR Guidelines</b></code></p>
+<p><code></p><ul>
 <li>Use concise and descriptive titles <br  />
 </li>
 <li>Include examples or references if relevant <br  />
@@ -2633,13 +3084,16 @@ Pull Requests (PR)</h3>
 <li>Avoid committing unrelated files <br  />
 </li>
 </ul>
-<p><br  />
+<p></code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="issues"></a></p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+</code></p>
+<p><code><a class="anchor" id="issues"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md40"></a>
 Issues ⚠️</h1>
-<ul>
+<p><code></code></p>
+<p><code></p><ul>
 <li>Issues are for reporting bugs, requesting features, or asking questions <br  />
 </li>
 <li>Use the <b><a class="el" href="md_ISSUE__TEMPLATE.html">Issue Template</a></b> if available <br  />
@@ -2656,18 +3110,22 @@ Issues ⚠️</h1>
 </ul>
 </li>
 </ul>
-<p>All issues are tracked in the <b>Issues</b> section on GitHub.</p>
-<p><br  />
+<p></code></p>
+<p><code>All issues are tracked in the <b>Issues</b> section on GitHub.</code></p>
+<p><code><br  />
  <br  />
-</p>
-<p><a class="anchor" id="thanks"></a></p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+</code></p>
+<p><code><a class="anchor" id="thanks"></a></code></p>
+<p><code></code></p>
+<h1><a class="anchor" id="autotoc_md41"></a>
 Thanks 🙏</h1>
-<p>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
- Your work empowers projects like <b>C_Linux</b> to exist and evolve.</p>
-<p><br  />
+<p><code></code></p>
+<p><code>Special thanks to the <b>Open Source Community</b> for providing tools and frameworks such as <b>GCC</b>, <b>Linux</b>, <b>GNU Make</b>, and <b>Doxygen</b>. <br  />
+ Your work empowers projects like <b>C_Linux</b> to exist and evolve.</code></p>
+<p><code><br  />
  <br  />
-</p>
+</code></p>
+<p><code> </code></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,14 +1,10 @@
 var searchData=
 [
-  ['chocolatey_0',['✅ Option 3: Using Chocolatey',['../md_README.html#autotoc_md16',1,'']]],
-  ['code_20of_20conduct_1',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
-  ['code_5fof_5fconduct_2emd_2',['CODE_OF_CONDUCT.md',['../CODE__OF__CONDUCT_8md.html',1,'']]],
-  ['conduct_3',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
-  ['configuration_4',['⚙️ Configuration',['../md_README.html#autotoc_md21',1,'']]],
-  ['contents_5',['📖 Table of Contents',['../md_README.html#autotoc_md7',1,'']]],
-  ['contributing_20👋_6',['Contributing 👋',['../md_README.html#autotoc_md25',1,'']]],
-  ['contribution_20guidelines_7',['General Contribution Guidelines',['../md_README.html#autotoc_md26',1,'']]],
-  ['contributor_20covenant_20code_20of_20conduct_8',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
-  ['copia_9',['copia',['../Es2_8c.html#ad9e977b3c72a6680e4588e296647cd92',1,'Es2.c']]],
-  ['covenant_20code_20of_20conduct_10',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]]
+  ['b_0',['b',['../C-Unix-STD-Signal_2main_8c.html#a148e3876077787926724625411d6e7a9',1,'main.c']]],
+  ['bubblesort_1',['bubblesort',['../C-Unix-STD-Threads-Files-Assert_2main_8c.html#a3537ea331a49d96f98776366f25ba0c2',1,'main.c']]],
+  ['buf_2',['buf',['../structnf.html#a2d65956630ea04051ce25d0b4024b77b',1,'nf']]],
+  ['build_3',['🛠️ Build',['../md_README.html#autotoc_md24',1,'']]],
+  ['build_20a_20single_20example_4',['2️⃣ Build a Single Example',['../md_README.html#autotoc_md26',1,'']]],
+  ['build_20all_20examples_5',['1️⃣ Build All Examples',['../md_README.html#autotoc_md25',1,'']]],
+  ['build_20the_20project_20documentation_6',['2️⃣ Build the Project Documentation',['../md_README.html#autotoc_md27',1,'']]]
 ];

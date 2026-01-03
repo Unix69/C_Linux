@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['verification_0',['💡 Dependencies Verification',['../md_README.html#autotoc_md18',1,'']]]
+  ['uninstall_0',['❌ Uninstall',['../md_README.html#autotoc_md30',1,'']]],
+  ['using_20chocolatey_1',['✅ Option 3: Using Chocolatey',['../md_README.html#autotoc_md20',1,'']]],
+  ['using_20windows_20subsystem_20for_20linux_20wsl_2',['✅ Option 2: Using Windows Subsystem for Linux (WSL)',['../md_README.html#autotoc_md19',1,'']]]
 ];

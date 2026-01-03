@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['pledge_0',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
-  ['pr_1',['Pull Requests (PR)',['../md_README.html#autotoc_md32',1,'']]],
-  ['pre_2',['pre',['../md_README.html#autotoc_md14',1,'&lt;pre&gt;'],['../md_README.html#autotoc_md17',1,'&lt;pre&gt;']]],
-  ['prerequisites_3',['💻 Prerequisites',['../md_README.html#autotoc_md11',1,'']]],
-  ['proc_4',['proc',['../C-Unix-STD-Threads_2main_8c.html#a1cb97c3eeabb262b8fa130b26787e8c5',1,'main.c']]],
-  ['project_5',['Fork the Project',['../md_README.html#autotoc_md31',1,'']]],
-  ['pull_20requests_20🔀_6',['Forking &amp; Pull Requests 🔀',['../md_README.html#autotoc_md30',1,'']]],
-  ['pull_20requests_20pr_7',['Pull Requests (PR)',['../md_README.html#autotoc_md32',1,'']]]
+  ['of_20conduct_0',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
+  ['of_20contents_1',['📖 Table of Contents',['../md_README.html#autotoc_md7',1,'']]],
+  ['official_20links_20🌐_2',['Official Links 🌐',['../md_README.html#autotoc_md35',1,'']]],
+  ['on_20gnu_20linux_3',['on gnu linux',['../md_README.html#autotoc_md14',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md15',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md16',1,'🐧 On GNU/Linux'],['../md_README.html#autotoc_md17',1,'🐧 On GNU/Linux']]],
+  ['option_202_3a_20using_20windows_20subsystem_20for_20linux_20wsl_4',['✅ Option 2: Using Windows Subsystem for Linux (WSL)',['../md_README.html#autotoc_md19',1,'']]],
+  ['option_203_3a_20using_20chocolatey_5',['✅ Option 3: Using Chocolatey',['../md_README.html#autotoc_md20',1,'']]],
+  ['our_20pledge_6',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md1',1,'']]],
+  ['our_20responsibilities_7',['Our Responsibilities',['../md_CODE__OF__CONDUCT.html#autotoc_md3',1,'']]],
+  ['our_20standards_8',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md2',1,'']]],
+  ['output_5ffile_9',['output_file',['../structfile.html#a3023b66d40b41162b9e81f68dab5330f',1,'file']]]
 ];

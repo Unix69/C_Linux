@@ -37,33 +37,40 @@ var NAVTREE =
     [ "LICENSE", "md_LICENSE.html", null ],
     [ "README", "md_README.html", [
       [ "Getting Started 🚀", "md_README.html#autotoc_md10", [
-        [ "💻 Prerequisites", "md_README.html#autotoc_md11", null ],
-        [ "📦 Dependencies", "md_README.html#autotoc_md12", [
-          [ "🐧 On GNU/Linux", "md_README.html#autotoc_md13", null ]
+        [ "💻 Prerequisites", "md_README.html#autotoc_md12", null ],
+        [ "📦 Dependencies", "md_README.html#autotoc_md13", [
+          [ "🐧 On GNU/Linux", "md_README.html#autotoc_md14", null ],
+          [ "🐧 On GNU/Linux", "md_README.html#autotoc_md15", null ],
+          [ "🐧 On GNU/Linux", "md_README.html#autotoc_md16", null ],
+          [ "🐧 On GNU/Linux", "md_README.html#autotoc_md17", null ]
         ] ],
-        [ "<pre>", "md_README.html#autotoc_md14", [
-          [ "✅ Option 2: Using Windows Subsystem for Linux (WSL)", "md_README.html#autotoc_md15", null ],
-          [ "✅ Option 3: Using Chocolatey", "md_README.html#autotoc_md16", null ]
+        [ "<pre>", "md_README.html#autotoc_md18", [
+          [ "✅ Option 2: Using Windows Subsystem for Linux (WSL)", "md_README.html#autotoc_md19", null ],
+          [ "✅ Option 3: Using Chocolatey", "md_README.html#autotoc_md20", null ]
         ] ],
-        [ "<pre>", "md_README.html#autotoc_md17", [
-          [ "💡 Dependencies Verification", "md_README.html#autotoc_md18", null ]
+        [ "<pre>", "md_README.html#autotoc_md21", [
+          [ "💡 Dependencies Verification", "md_README.html#autotoc_md22", null ]
         ] ],
-        [ "⭐ Installation", "md_README.html#autotoc_md19", null ],
-        [ "🛠️ Build", "md_README.html#autotoc_md20", null ],
-        [ "⚙️ Configuration", "md_README.html#autotoc_md21", null ],
-        [ "🚀 Run", "md_README.html#autotoc_md22", null ],
-        [ "❌ Uninstall", "md_README.html#autotoc_md23", null ]
+        [ "⭐ Installation", "md_README.html#autotoc_md23", null ],
+        [ "🛠️ Build", "md_README.html#autotoc_md24", [
+          [ "1️⃣ Build All Examples", "md_README.html#autotoc_md25", null ],
+          [ "2️⃣ Build a Single Example", "md_README.html#autotoc_md26", null ],
+          [ "2️⃣ Build the Project Documentation", "md_README.html#autotoc_md27", null ]
+        ] ],
+        [ "⚙️ Configuration", "md_README.html#autotoc_md28", null ],
+        [ "🚀 Run", "md_README.html#autotoc_md29", null ],
+        [ "❌ Uninstall", "md_README.html#autotoc_md30", null ]
       ] ],
-      [ "Licenses 📜", "md_README.html#autotoc_md24", null ],
-      [ "Contributing 👋", "md_README.html#autotoc_md25", [
-        [ "General Contribution Guidelines", "md_README.html#autotoc_md26", null ]
+      [ "Licenses 📜", "md_README.html#autotoc_md31", null ],
+      [ "Contributing 👋", "md_README.html#autotoc_md32", [
+        [ "General Contribution Guidelines", "md_README.html#autotoc_md33", null ]
       ] ],
-      [ "Authors 🧑‍💻", "md_README.html#autotoc_md27", null ],
-      [ "Official Links 🌐", "md_README.html#autotoc_md28", null ],
-      [ "FAQ ❓", "md_README.html#autotoc_md29", null ],
-      [ "Forking & Pull Requests 🔀", "md_README.html#autotoc_md30", null ],
-      [ "Issues ⚠️", "md_README.html#autotoc_md33", null ],
-      [ "Thanks 🙏", "md_README.html#autotoc_md34", null ]
+      [ "Authors 🧑‍💻", "md_README.html#autotoc_md34", null ],
+      [ "Official Links 🌐", "md_README.html#autotoc_md35", null ],
+      [ "FAQ ❓", "md_README.html#autotoc_md36", null ],
+      [ "Forking & Pull Requests 🔀", "md_README.html#autotoc_md37", null ],
+      [ "Issues ⚠️", "md_README.html#autotoc_md40", null ],
+      [ "Thanks 🙏", "md_README.html#autotoc_md41", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
