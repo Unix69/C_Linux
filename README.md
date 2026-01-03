@@ -67,9 +67,23 @@ Navigation index to fast explore the content:
 
   <h2>🧪 C-Unix-STD-Basic-Fork</h2>
 
-  <p><strong>Path:</strong> <code>src/C-Unix-STD-Basic-Fork/main.c</code></p>
-
-  <hr/>
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <p style="margin:0;">
+      <strong>Path:</strong> <code>src/C-Unix-STD-Basic-Fork/main.c</code>
+    </p>
+    <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c"
+       target="_blank"
+       style="display:inline-block;
+              padding:6px 14px;
+              border-radius:6px;
+              background:#24292f;
+              color:white;
+              text-decoration:none;
+              font-weight:600;
+              font-size:0.9em;">
+      🔍 View Code
+    </a>
+  </div>
 
   <h3>🎯 Purpose</h3>
   <p>
@@ -84,8 +98,6 @@ Navigation index to fast explore the content:
     <li>how execution flow is duplicated</li>
     <li>how concurrent processes produce output</li>
   </ul>
-
-  <hr/>
 
   <h3>🛠️ Description</h3>
   <p>
@@ -117,8 +129,6 @@ Navigation index to fast explore the content:
     The order of the printed output is <strong>non-deterministic</strong>,
     because it depends on the operating system scheduler.
   </p>
-
-  <hr/>
 
   <h3>📦 Headers and Libraries Used</h3>
   <table>
@@ -160,8 +170,6 @@ Navigation index to fast explore the content:
     </tbody>
   </table>
 
-  <hr/>
-
   <h3>⚙️ System Calls and Functions</h3>
   <table>
     <thead>
@@ -193,8 +201,6 @@ Navigation index to fast explore the content:
     </tbody>
   </table>
 
-  <hr/>
-
   <h3>🧠 Key Concepts Introduced</h3>
   <ul>
     <li>🔀 Process creation</li>
@@ -204,16 +210,8 @@ Navigation index to fast explore the content:
     <li>📈 Exponential process growth</li>
   </ul>
 
-  <hr/>
-
   <h3>🔗 Links</h3>
   <ul>
-    <li>
-      🐙 <strong>GitHub Example:</strong>
-      <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/tree/main/src/C-Unix-STD-Basic-Fork" target="_blank">
-        Repository Link
-      </a>
-    </li>
     <li>
       📘 <strong>POSIX fork() Reference:</strong>
       <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" target="_blank">
@@ -221,18 +219,6 @@ Navigation index to fast explore the content:
       </a>
     </li>
   </ul>
-
-  <hr/>
-
-  <h3>👀 View the Code</h3>
-  <p>
-    <a href="https://github.com/&lt;username&gt;/&lt;repo&gt;/blob/main/src/C-Unix-STD-Basic-Fork/main.c"
-       target="_blank"
-       style="display:inline-block;padding:8px 14px;border-radius:6px;
-              background:#24292f;color:white;text-decoration:none;font-weight:bold;">
-      🔍 View Code
-    </a>
-  </p>
 
 </section>
 
